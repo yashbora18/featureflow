@@ -30,11 +30,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useToast } from "@/hooks/use-toast";
+import { EnvironmentFormDialog } from "@/components/environment-form-dialog";
 
 export default function EnvironmentsPage() {
   const queryClient = useQueryClient();
   const { toast } = useToast();
-  
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
   const { 
     data: environments = [], 
     isLoading 
@@ -91,11 +93,16 @@ export default function EnvironmentsPage() {
             Manage your deployment environments and contexts
           </p>
         </div>
-        <Button className="font-mono bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm border border-primary-border w-full sm:w-auto">
+        <Button
+          onClick={() => setIsFormOpen(true)}
+          className="font-mono bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm border border-primary-border w-full sm:w-auto"
+        >
           <Plus className="mr-2 h-4 w-4" />
           New Environment
         </Button>
       </div>
+
+      <EnvironmentFormDialog open={isFormOpen} onOpenChange={setIsFormOpen} />
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {isLoading ? (
@@ -122,7 +129,13 @@ export default function EnvironmentsPage() {
             <Box className="h-12 w-12 mx-auto text-muted-foreground opacity-30 mb-3" />
             <h3 className="font-mono text-lg font-medium text-foreground mb-1">No Environments</h3>
             <p className="text-muted-foreground text-sm mb-4">Create your first environment to get started.</p>
-            <Button variant="outline" className="font-mono text-xs">Create Environment</Button>
+            <Button
+              variant="outline"
+              className="font-mono text-xs"
+              onClick={() => setIsFormOpen(true)}
+            >
+              Create Environment
+            </Button>
           </div>
         ) : (
           environments.map((env) => (
