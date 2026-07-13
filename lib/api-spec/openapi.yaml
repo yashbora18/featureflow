@@ -1,0 +1,872 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: Feature Flag Management System API
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: environments
+    description: Environment management
+  - name: flags
+    description: Feature flag management
+  - name: targeting-rules
+    description: Targeting rule management
+  - name: audit-logs
+    description: Audit log operations
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      description: Returns server health status including DB and Redis connectivity
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+
+  # ── Environments ──────────────────────────────────────────────────────────
+  /environments:
+    get:
+      operationId: listEnvironments
+      tags: [environments]
+      summary: List all environments
+      responses:
+        "200":
+          description: List of environments
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Environment"
+    post:
+      operationId: createEnvironment
+      tags: [environments]
+      summary: Create a new environment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EnvironmentInput"
+      responses:
+        "201":
+          description: Created environment
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Environment"
+
+  /environments/{id}:
+    get:
+      operationId: getEnvironment
+      tags: [environments]
+      summary: Get a single environment
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Environment
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Environment"
+        "404":
+          description: Not found
+    put:
+      operationId: updateEnvironment
+      tags: [environments]
+      summary: Update an environment
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EnvironmentUpdate"
+      responses:
+        "200":
+          description: Updated environment
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Environment"
+    delete:
+      operationId: deleteEnvironment
+      tags: [environments]
+      summary: Delete an environment
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Deleted
+
+  # ── Flags ────────────────────────────────────────────────────────────────
+  /flags/summary:
+    get:
+      operationId: getFlagsSummary
+      tags: [flags]
+      summary: Dashboard summary stats across all environments
+      parameters:
+        - name: environment_id
+          in: query
+          required: false
+          schema:
+            type: ["integer", "null"]
+      responses:
+        "200":
+          description: Summary statistics
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FlagsSummary"
+
+  /flags:
+    get:
+      operationId: listFlags
+      tags: [flags]
+      summary: List feature flags
+      parameters:
+        - name: environment_id
+          in: query
+          required: false
+          schema:
+            type: ["integer", "null"]
+        - name: search
+          in: query
+          required: false
+          schema:
+            type: ["string", "null"]
+        - name: enabled
+          in: query
+          required: false
+          schema:
+            type: ["boolean", "null"]
+      responses:
+        "200":
+          description: List of flags
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Flag"
+    post:
+      operationId: createFlag
+      tags: [flags]
+      summary: Create a new feature flag
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FlagInput"
+      responses:
+        "201":
+          description: Created flag
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Flag"
+
+  /flags/{id}:
+    get:
+      operationId: getFlag
+      tags: [flags]
+      summary: Get a single feature flag
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Flag
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Flag"
+        "404":
+          description: Not found
+    put:
+      operationId: updateFlag
+      tags: [flags]
+      summary: Update a feature flag
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FlagUpdate"
+      responses:
+        "200":
+          description: Updated flag
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Flag"
+    delete:
+      operationId: deleteFlag
+      tags: [flags]
+      summary: Delete a feature flag
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Deleted
+
+  /flags/by-key/{key}:
+    get:
+      operationId: getFlagByKey
+      tags: [flags]
+      summary: Get a feature flag by its string key
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environment_id
+          in: query
+          required: false
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Flag
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Flag"
+        "404":
+          description: Not found
+    put:
+      operationId: updateFlagByKey
+      tags: [flags]
+      summary: Update a feature flag by its string key
+      parameters:
+        - name: key
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environment_id
+          in: query
+          required: false
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FlagUpdate"
+      responses:
+        "200":
+          description: Updated flag
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Flag"
+
+  /flags/{id}/toggle:
+    patch:
+      operationId: toggleFlag
+      tags: [flags]
+      summary: Toggle a flag enabled/disabled
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Toggled flag
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Flag"
+
+  /flags/{id}/versions:
+    get:
+      operationId: listFlagVersions
+      tags: [flags]
+      summary: List versions of a feature flag
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Flag versions
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/FlagVersion"
+
+  # ── Targeting Rules ────────────────────────────────────────────────────────
+  /targeting-rules:
+    get:
+      operationId: listTargetingRules
+      tags: [targeting-rules]
+      summary: List targeting rules
+      parameters:
+        - name: flag_id
+          in: query
+          required: false
+          schema:
+            type: ["integer", "null"]
+        - name: environment_id
+          in: query
+          required: false
+          schema:
+            type: ["integer", "null"]
+      responses:
+        "200":
+          description: List of targeting rules
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/TargetingRule"
+    post:
+      operationId: createTargetingRule
+      tags: [targeting-rules]
+      summary: Create a targeting rule
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TargetingRuleInput"
+      responses:
+        "201":
+          description: Created targeting rule
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TargetingRule"
+
+  /targeting-rules/{id}:
+    put:
+      operationId: updateTargetingRule
+      tags: [targeting-rules]
+      summary: Update a targeting rule
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TargetingRuleUpdate"
+      responses:
+        "200":
+          description: Updated targeting rule
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TargetingRule"
+    delete:
+      operationId: deleteTargetingRule
+      tags: [targeting-rules]
+      summary: Delete a targeting rule
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Deleted
+
+  # ── Audit Logs ─────────────────────────────────────────────────────────────
+  /evaluate:
+    post:
+      operationId: evaluateFlag
+      tags: [evaluate]
+      summary: Evaluate a feature flag for a given environment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EvaluateRequest"
+      responses:
+        "200":
+          description: Resolved flag evaluation result
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EvaluateResponse"
+
+  /audit-logs:
+    get:
+      operationId: listAuditLogs
+      tags: [audit-logs]
+      summary: List audit log entries
+      parameters:
+        - name: environment_id
+          in: query
+          required: false
+          schema:
+            type: ["integer", "null"]
+        - name: flag_id
+          in: query
+          required: false
+          schema:
+            type: ["integer", "null"]
+        - name: action
+          in: query
+          required: false
+          schema:
+            type: ["string", "null"]
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 50
+        - name: offset
+          in: query
+          required: false
+          schema:
+            type: integer
+            default: 0
+      responses:
+        "200":
+          description: Audit logs with pagination metadata
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuditLogList"
+
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+        db:
+          type: string
+        redis:
+          type: string
+        version:
+          type: string
+      required:
+        - status
+
+    # ── Environment ───────────────────────────────────────────────────────
+    Environment:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        slug:
+          type: string
+        description:
+          type: ["string", "null"]
+        color:
+          type: string
+        is_default:
+          type: boolean
+        flag_count:
+          type: integer
+        enabled_count:
+          type: integer
+        created_at:
+          type: string
+        updated_at:
+          type: string
+      required:
+        - id
+        - name
+        - slug
+        - color
+        - is_default
+        - flag_count
+        - enabled_count
+        - created_at
+        - updated_at
+
+    EnvironmentInput:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+        slug:
+          type: string
+          minLength: 1
+        description:
+          type: string
+        color:
+          type: string
+        is_default:
+          type: boolean
+      required:
+        - name
+        - slug
+
+    EnvironmentUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+        description:
+          type: string
+        color:
+          type: string
+        is_default:
+          type: boolean
+
+    # ── Flag ──────────────────────────────────────────────────────────────
+    Flag:
+      type: object
+      properties:
+        id:
+          type: integer
+        key:
+          type: string
+        name:
+          type: string
+        description:
+          type: ["string", "null"]
+        enabled:
+          type: boolean
+        flag_type:
+          type: string
+        default_value:
+          type: ["string", "null"]
+        environment_id:
+          type: integer
+        environment_name:
+          type: string
+        owner:
+          type: ["string", "null"]
+        targeting_rules_count:
+          type: integer
+        version:
+          type: integer
+        created_at:
+          type: string
+        updated_at:
+          type: string
+      required:
+        - id
+        - key
+        - name
+        - enabled
+        - flag_type
+        - environment_id
+        - environment_name
+        - targeting_rules_count
+        - version
+        - created_at
+        - updated_at
+
+    EvaluateRequest:
+      type: object
+      properties:
+        flag_key:
+          type: string
+        environment:
+          type: string
+        user_context:
+          type: object
+          additionalProperties: true
+          nullable: true
+      required:
+        - flag_key
+        - environment
+
+    EvaluateResponse:
+      type: object
+      properties:
+        enabled:
+          type: boolean
+        flag_key:
+          type: string
+        environment:
+          type: string
+        reason:
+          type: string
+      required:
+        - enabled
+        - flag_key
+        - environment
+        - reason
+
+    FlagInput:
+      type: object
+      properties:
+        key:
+          type: string
+          minLength: 1
+        name:
+          type: string
+          minLength: 1
+        description:
+          type: string
+        flag_type:
+          type: string
+          enum: [boolean, string, number, json]
+        default_value:
+          type: string
+        enabled:
+          type: boolean
+        environment_id:
+          type: integer
+        owner:
+          type: string
+      required:
+        - key
+        - name
+        - environment_id
+
+    FlagUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+          minLength: 1
+        description:
+          type: string
+        flag_type:
+          type: string
+          enum: [boolean, string, number, json]
+        default_value:
+          type: string
+        enabled:
+          type: boolean
+        owner:
+          type: string
+
+    FlagVersion:
+      type: object
+      properties:
+        id:
+          type: integer
+        flag_id:
+          type: integer
+        version:
+          type: integer
+        enabled:
+          type: boolean
+        default_value:
+          type: ["string", "null"]
+        changed_by:
+          type: ["string", "null"]
+        change_description:
+          type: ["string", "null"]
+        created_at:
+          type: string
+      required:
+        - id
+        - flag_id
+        - version
+        - enabled
+        - created_at
+
+    FlagsSummary:
+      type: object
+      properties:
+        total_flags:
+          type: integer
+        enabled_flags:
+          type: integer
+        disabled_flags:
+          type: integer
+        total_environments:
+          type: integer
+        flags_by_type:
+          type: object
+          additionalProperties:
+            type: integer
+        recent_changes:
+          type: integer
+        targeting_rules_count:
+          type: integer
+      required:
+        - total_flags
+        - enabled_flags
+        - disabled_flags
+        - total_environments
+        - flags_by_type
+        - recent_changes
+        - targeting_rules_count
+
+    # ── Targeting Rule ────────────────────────────────────────────────────
+    TargetingRule:
+      type: object
+      properties:
+        id:
+          type: integer
+        flag_id:
+          type: integer
+        environment_id:
+          type: integer
+        name:
+          type: string
+        conditions:
+          type: string
+        rollout_percentage:
+          type: integer
+        enabled:
+          type: boolean
+        priority:
+          type: integer
+        created_at:
+          type: string
+        updated_at:
+          type: string
+      required:
+        - id
+        - flag_id
+        - environment_id
+        - name
+        - conditions
+        - rollout_percentage
+        - enabled
+        - priority
+        - created_at
+        - updated_at
+
+    TargetingRuleInput:
+      type: object
+      properties:
+        flag_id:
+          type: integer
+        environment_id:
+          type: integer
+        name:
+          type: string
+          minLength: 1
+        conditions:
+          type: string
+        rollout_percentage:
+          type: integer
+          minimum: 0
+          maximum: 100
+        enabled:
+          type: boolean
+        priority:
+          type: integer
+      required:
+        - flag_id
+        - environment_id
+        - name
+
+    TargetingRuleUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+        conditions:
+          type: string
+        rollout_percentage:
+          type: integer
+          minimum: 0
+          maximum: 100
+        enabled:
+          type: boolean
+        priority:
+          type: integer
+
+    # ── Audit Log ─────────────────────────────────────────────────────────
+    AuditLog:
+      type: object
+      properties:
+        id:
+          type: integer
+        entity_type:
+          type: string
+        entity_id:
+          type: integer
+        entity_name:
+          type: ["string", "null"]
+        action:
+          type: string
+        user_id:
+          type: ["string", "null"]
+        changes:
+          type: ["string", "null"]
+        environment_id:
+          type: ["integer", "null"]
+        environment_name:
+          type: ["string", "null"]
+        created_at:
+          type: string
+      required:
+        - id
+        - entity_type
+        - entity_id
+        - action
+        - created_at
+
+    AuditLogList:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: "#/components/schemas/AuditLog"
+        total:
+          type: integer
+        limit:
+          type: integer
+        offset:
+          type: integer
+      required:
+        - items
+        - total
+        - limit
+        - offset
