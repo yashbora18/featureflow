@@ -7,5 +7,5 @@ class TargetingRule(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     flag_id = Column(Integer, ForeignKey("flags.id"), nullable=False)
-    rule_type = Column(String, nullable=False)
-    rule_value = Column(String, nullable=False)
+    rule_type = Column(String(100), nullable=False)
+    rule_value = Column(String(255), nullable=False)

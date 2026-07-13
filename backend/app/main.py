@@ -1,42 +1,60 @@
+from app.routers.environment import router as environment_router
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers.health import router
-from app.routers.flags import router as flags_router
-from app.routers.evaluate import router as evaluate_router
+from sqlalchemy import text
 
-from app.core.database import engine, Base
+from app.core.database import engine
 
-from app.models.environment import Environment
+# ADD THESE TWO IMPORTS
 from app.models.flag import Flag
-from app.models.flag_version import FlagVersion
-from app.models.targeting_rule import TargetingRule
-from app.models.user_group_membership import UserGroupMembership
-from app.models.audit_log import AuditLog
-from app.core.redis import redis_client
+from app.models.environment import Environment
 
-app = FastAPI(title="Feature Flag API")
+from app.core.redis_client import redis_client
+from app.routers.flags import router as flag_router
+
+app = FastAPI()
+
+# CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5174",
-        "http://localhost:5173"
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
     ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-print("Database Connected Successfully")
-
-Base.metadata.create_all(bind=engine)
-
-app.include_router(router)
-app.include_router(flags_router)
-app.include_router(evaluate_router)
+app.include_router(flag_router)
+app.include_router(environment_router)
 
 
 @app.get("/")
-def home():
-    return {
-        "message": "Feature Flag Backend Running"
-    }
+def root():
+    return {"message": "Welcome to Feature Flag System"}
+
+
+@app.get("/health")
+def health():
+    return {"status": "healthy"}
+
+
+@app.get("/db-test")
+def db_test():
+    try:
+        with engine.connect() as connection:
+            connection.execute(text("SELECT 1"))
+        return {"database": "Connected successfully"}
+    except Exception as e:
+        return {"database": "Connection failed", "error": str(e)}
+
+
+@app.get("/redis-test")
+def redis_test():
+    try:
+        redis_client.set("message", "Redis Connected")
+        value = redis_client.get("message")
+        return {"redis": value}
+    except Exception as e:
+        return {"redis": "Connection failed", "error": str(e)}

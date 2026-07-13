@@ -6,5 +6,5 @@ class UserGroupMembership(Base):
     __tablename__ = "user_group_memberships"
 
     id = Column(Integer, primary_key=True, index=True)
-    user_id = Column(String, nullable=False)
-    group_name = Column(String, nullable=False)
+    user_id = Column(String(100), nullable=False)
+    group_name = Column(String(100), nullable=False)

@@ -1,68 +1,64 @@
-from fastapi.testclient import TestClient
-from app.main import app
-
-client = TestClient(app)
+from unittest.mock import MagicMock
+from app.services.evaluation_service import evaluate_flag
 
 
-def test_evaluation_home():
-    response = client.post(
-        "/evaluate/",
-        json={
-            "flag_key": "new_dashboard",
-            "environment": "production",
-            "user": "rahul"
-        }
-    )
-
-    assert response.status_code == 200
+class MockFlag:
+    def __init__(self, flag_key, enabled, default_value, flag_type="boolean"):
+        self.flag_key = flag_key
+        self.enabled = enabled
+        self.default_value = default_value
+        self.flag_type = flag_type
+        self.environment_id = 1
 
 
-def test_environment_override():
-    response = client.post(
-        "/evaluate/",
-        json={
-            "flag_key": "new_dashboard",
-            "environment": "production",
-            "user": "rahul"
-        }
-    )
+def create_mock_db(flag):
+    db = MagicMock()
 
-    assert response.status_code == 200
+    query = db.query.return_value
+    filter_result = query.filter.return_value
+    filter_result.first.return_value = flag
 
-    data = response.json()
+    return db
 
-    assert data["enabled"] == False
-    assert data["reason"] == "Production override applied"
+
+def test_flag_not_found():
+    db = create_mock_db(None)
+
+    result = evaluate_flag("dark_mode", 1, db)
+
+    assert result["success"] is False
+
+
+def test_enabled_flag():
+    flag = MockFlag("dark_mode", True, True)
+
+    db = create_mock_db(flag)
+
+    result = evaluate_flag("dark_mode", 1, db)
+
+    assert result["enabled"] is True
 
 
 def test_disabled_flag():
-    response = client.post(
-        "/evaluate/",
-        json={
-            "flag_key": "new_dashboard",
-            "environment": "development",
-            "user": "rahul"
-        }
-    )
+    flag = MockFlag("dark_mode", False, True)
 
-    assert response.status_code == 200
+    db = create_mock_db(flag)
 
-    data = response.json()
+    result = evaluate_flag("dark_mode", 1, db)
 
-    assert data["enabled"] == False
+    assert result["enabled"] is False
 
-    
+
 def test_empty_user_context():
-    response = client.post(
-        "/evaluate/",
-        json={
-            "flag_key": "new_dashboard",
-            "environment": "development"
-        }
+    flag = MockFlag("dark_mode", True, True)
+
+    db = create_mock_db(flag)
+
+    result = evaluate_flag(
+        "dark_mode",
+        1,
+        db,
+        user_context={}
     )
 
-    assert response.status_code == 200
-
-    data = response.json()
-
-    assert data["enabled"] == False
+    assert result["success"] is True

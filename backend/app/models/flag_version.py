@@ -8,4 +8,4 @@ class FlagVersion(Base):
     id = Column(Integer, primary_key=True, index=True)
     flag_id = Column(Integer, ForeignKey("flags.id"), nullable=False)
     version = Column(Integer, nullable=False)
-    config = Column(String, nullable=True)
+    config = Column(String)
