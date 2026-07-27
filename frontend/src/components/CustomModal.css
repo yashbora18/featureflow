@@ -1,0 +1,208 @@
+/* ===========================
+   Custom Modal Overlay
+=========================== */
+
+.custom-modal-overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(15,23,42,.55);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    backdrop-filter: blur(6px);
+
+    z-index: 99999;
+
+    animation: fadeIn .25s ease;
+}
+
+/* ===========================
+   Modal Card
+=========================== */
+
+.custom-modal{
+    width: 480px;
+    max-width: 92%;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    padding: 38px 35px;
+
+    text-align: center;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow: 0 25px 70px rgba(15,23,42,.25);
+
+    animation: popup .25s ease;
+}
+
+/* ===========================
+   Heading
+=========================== */
+
+.custom-modal h2{
+    margin: 0;
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+    color: #0f172a;
+}
+
+/* ===========================
+   Description
+=========================== */
+
+.custom-modal p{
+    margin: 18px 0 35px;
+
+    font-size: 17px;
+
+    color: #64748b;
+
+    line-height: 1.7;
+}
+
+/* ===========================
+   Buttons Container
+=========================== */
+
+.modal-buttons{
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+}
+
+/* ===========================
+   Cancel Button
+=========================== */
+
+.cancel-button{
+    min-width: 130px;
+
+    padding: 13px 24px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #e2e8f0;
+
+    color: #334155;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all .25s ease;
+}
+
+.cancel-button:hover{
+    background: #cbd5e1;
+
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   Success Button
+=========================== */
+
+.success-button{
+    min-width: 130px;
+
+    padding: 13px 24px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: linear-gradient(135deg,#2563eb,#1d4ed8);
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all .25s ease;
+}
+
+.success-button:hover{
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 25px rgba(37,99,235,.35);
+}
+
+/* ===========================
+   Delete Button
+=========================== */
+
+.danger-button{
+    min-width: 130px;
+
+    padding: 13px 24px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: linear-gradient(135deg,#ef4444,#dc2626);
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all .25s ease;
+}
+
+.danger-button:hover{
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 25px rgba(239,68,68,.35);
+}
+
+/* ===========================
+   Animations
+=========================== */
+
+@keyframes popup{
+
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}

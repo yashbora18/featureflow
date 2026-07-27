@@ -6,6 +6,7 @@ from app.models.flag import Flag
 from app.models.environment import Environment
 from app.schemas.flag import FlagCreate, FlagResponse
 from app.services.evaluation_service import evaluate_flag
+from app.utils.cache import clear_flag_cache
 
 router = APIRouter(
     prefix="/flags",
@@ -16,10 +17,10 @@ router = APIRouter(
 # ==============================
 # Create Feature Flag
 # ==============================
+
 @router.post("/", response_model=FlagResponse)
 def create_flag(flag: FlagCreate, db: Session = Depends(get_db)):
 
-    # Check duplicate flag key
     existing_flag = db.query(Flag).filter(
         Flag.flag_key == flag.flag_key
     ).first()
@@ -30,7 +31,6 @@ def create_flag(flag: FlagCreate, db: Session = Depends(get_db)):
             detail="Flag key already exists"
         )
 
-    # Check environment exists
     environment = db.query(Environment).filter(
         Environment.id == flag.environment_id
     ).first()
@@ -46,6 +46,7 @@ def create_flag(flag: FlagCreate, db: Session = Depends(get_db)):
         flag_type=flag.flag_type,
         default_value=flag.default_value,
         enabled=flag.enabled,
+        rollout_percentage=flag.rollout_percentage,
         description=flag.description,
         owner_team=flag.owner_team,
         environment_id=flag.environment_id
@@ -55,12 +56,15 @@ def create_flag(flag: FlagCreate, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(new_flag)
 
+    clear_flag_cache(new_flag.flag_key)
+
     return new_flag
 
 
 # ==============================
 # Get All Feature Flags
 # ==============================
+
 @router.get("/", response_model=list[FlagResponse])
 def get_flags(db: Session = Depends(get_db)):
     return db.query(Flag).all()
@@ -69,6 +73,7 @@ def get_flags(db: Session = Depends(get_db)):
 # ==============================
 # Get Feature Flag By Key
 # ==============================
+
 @router.get("/{key}", response_model=FlagResponse)
 def get_flag(key: str, db: Session = Depends(get_db)):
 
@@ -88,6 +93,7 @@ def get_flag(key: str, db: Session = Depends(get_db)):
 # ==============================
 # Update Feature Flag
 # ==============================
+
 @router.put("/{key}", response_model=FlagResponse)
 def update_flag(
     key: str,
@@ -105,7 +111,6 @@ def update_flag(
             detail="Flag not found"
         )
 
-    # Check duplicate key (excluding current flag)
     duplicate = db.query(Flag).filter(
         Flag.flag_key == updated_flag.flag_key,
         Flag.id != flag.id
@@ -117,7 +122,6 @@ def update_flag(
             detail="Flag key already exists"
         )
 
-    # Validate environment
     environment = db.query(Environment).filter(
         Environment.id == updated_flag.environment_id
     ).first()
@@ -132,6 +136,7 @@ def update_flag(
     flag.flag_type = updated_flag.flag_type
     flag.default_value = updated_flag.default_value
     flag.enabled = updated_flag.enabled
+    flag.rollout_percentage = updated_flag.rollout_percentage
     flag.description = updated_flag.description
     flag.owner_team = updated_flag.owner_team
     flag.environment_id = updated_flag.environment_id
@@ -139,31 +144,43 @@ def update_flag(
     db.commit()
     db.refresh(flag)
 
+    clear_flag_cache(flag.flag_key)
+
     return flag
 
 
 # ==============================
 # Evaluate Feature Flag
 # ==============================
+
 @router.get("/evaluate/")
 def evaluate(
     flag_key: str,
     environment_id: int,
+    user_id: str | None = None,
     db: Session = Depends(get_db)
 ):
 
     return evaluate_flag(
-        flag_key,
-        environment_id,
-        db
+        flag_key=flag_key,
+        environment_id=environment_id,
+        db=db,
+        user_context={"user_id": user_id} if user_id else {}
     )
 
-# Delete a Feature Flag
+
+# ==============================
+# Delete Feature Flag
+# ==============================
+
 @router.delete("/{key}")
 def delete_flag(key: str, db: Session = Depends(get_db)):
-    flag = db.query(Flag).filter(Flag.flag_key == key).first()
 
-    if flag is None:
+    flag = db.query(Flag).filter(
+        Flag.flag_key == key
+    ).first()
+
+    if not flag:
         raise HTTPException(
             status_code=404,
             detail="Flag not found"
@@ -171,6 +188,8 @@ def delete_flag(key: str, db: Session = Depends(get_db)):
 
     db.delete(flag)
     db.commit()
+
+    clear_flag_cache(flag.flag_key)
 
     return {
         "message": f"Flag '{key}' deleted successfully"

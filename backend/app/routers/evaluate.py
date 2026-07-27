@@ -1,9 +1,14 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
-from app.core.database import SessionLocal
-from app.models.flag import Flag
-from app.schemas.evaluate import EvaluationRequest
+from app.core.dependencies import get_db
+
+from app.schemas.evaluate import (
+    EvaluateRequest,
+    EvaluateResponse,
+)
+
+from app.services.evaluation_service import evaluate_flag
 
 router = APIRouter(
     prefix="/evaluate",
@@ -11,61 +16,27 @@ router = APIRouter(
 )
 
 
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
-
-
-@router.post("/")
-def evaluate_flag(
-    request: EvaluationRequest,
+@router.post(
+    "/",
+    response_model=EvaluateResponse
+)
+def evaluate(
+    request: EvaluateRequest,
     db: Session = Depends(get_db)
 ):
 
-    flag = db.query(Flag).filter(
-        Flag.flag_key == request.flag_key
-    ).first()
-
-    if not flag:
-        raise HTTPException(
-            status_code=404,
-            detail="Flag not found"
-        )
-
-    valid_environments = [
-        "development",
-        "testing",
-        "staging",
-        "production"
-    ]
-
-    if request.environment.lower() not in valid_environments:
-        raise HTTPException(
-            status_code=400,
-            detail="Invalid environment"
-        )
-
-    enabled = flag.is_enabled
-    reason = "Flag value from database"
-
-    if request.environment.lower() == "production":
-        enabled = False
-        reason = "Production override applied"
-
-    elif enabled:
-        reason = "Flag is enabled"
-
-    else:
-        reason = "Flag is disabled"
+    result = evaluate_flag(
+    flag_key=request.flag_key,
+    environment_id=request.environment_id,
+    db=db,
+    user_context={
+        "evaluation_type": request.evaluation_type,
+        "evaluation_value": request.evaluation_value,
+    }
+)
 
     return {
-        "status": "Evaluation Successful",
-        "flag_key": flag.flag_key,
-        "environment": request.environment,
-        "user": request.user,
-        "enabled": enabled,
-        "reason": reason
+        "flag_key": result["flag_key"],
+        "enabled": result["enabled"],
+        "reason": result["reason"],
     }

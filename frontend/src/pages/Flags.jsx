@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
+import { useNavigate } from "react-router-dom";
 import {
   FiFlag,
   FiCheckCircle,
   FiUsers,
-  FiEdit2,
-  FiTrash2,
 } from "react-icons/fi";
 
+import { MdEdit, MdDelete } from "react-icons/md";
 import { FaToggleOff } from "react-icons/fa";
 import { toast } from "react-toastify";
 
@@ -20,6 +19,9 @@ import {
 } from "../services/flagService";
 
 import FlagForm from "../components/FlagForm";
+import SuccessModal from "../components/SuccessModal";
+import CustomModal from "../components/CustomModal";
+
 function Flags({
   environment,
   showForm,
@@ -33,56 +35,98 @@ function Flags({
   const [statusFilter, setStatusFilter] = useState("all");
   const [error, setError] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
+
   const [selectedFlag, setSelectedFlag] = useState(null);
-    useEffect(() => {
+
+  const [showDeleteModal, setShowDeleteModal] =
+    useState(false);
+
+  const [flagToDelete, setFlagToDelete] =
+    useState(null);
+
+    const [showSuccessModal, setShowSuccessModal] =
+  useState(false);
+
+const [successMessage, setSuccessMessage] =
+  useState("");
+
+  useEffect(() => {
     loadFlags();
   }, []);
 
   const loadFlags = async () => {
     try {
+
       setLoading(true);
 
       const data = await getFlags();
 
-      console.log("API Response:", data);
-
       setFlags(data);
+
       setError("");
+
     } catch (err) {
+
       console.error(err);
-      setError("Unable to fetch feature flags.");
+
+      setError(
+        "Unable to fetch feature flags."
+      );
+
     } finally {
+
       setLoading(false);
+
     }
   };
 
-  const handleDelete = async (flagKey) => {
-    const confirmDelete = window.confirm(
-      `Are you sure you want to delete "${flagKey}"?`
-    );
+  const handleDeleteClick = (flag) => {
+  console.log("handleDeleteClick");
 
-    if (!confirmDelete) return;
+  setFlagToDelete(flag);
+
+  console.log("Setting modal true");
+
+  setShowDeleteModal(true);
+};
+
+  const confirmDelete = async () => {
 
     try {
-      await deleteFlag(flagKey);
 
-      toast.success("Feature Flag Deleted Successfully!");
+      await deleteFlag(flagToDelete.flag_key);
 
-      loadFlags();
+      setShowDeleteModal(false);
+
+setFlagToDelete(null);
+
+loadFlags();
+
+setSuccessMessage("Feature Flag Deleted Successfully!");
+
+setShowSuccessModal(true);
+
     } catch (error) {
+
       console.error(error);
 
-      toast.error("Failed to Delete Feature Flag!");
+      toast.error(
+        "Failed to Delete Feature Flag!"
+      );
     }
   };
-    const filteredFlags = flags.filter((flag) => {
+
+  const filteredFlags = flags.filter((flag) => {
+
     const matchesSearch =
       flag.flag_key
         .toLowerCase()
         .includes(searchTerm.toLowerCase()) ||
+
       flag.owner_team
         .toLowerCase()
         .includes(searchTerm.toLowerCase()) ||
+
       flag.flag_type
         .toLowerCase()
         .includes(searchTerm.toLowerCase());
@@ -99,34 +143,25 @@ function Flags({
 
   const totalFlags = filteredFlags.length;
 
-  const enabledFlags = filteredFlags.filter(
-    (flag) => flag.enabled
-  ).length;
+  const enabledFlags =
+    filteredFlags.filter(
+      (flag) => flag.enabled
+    ).length;
 
-  const disabledFlags = filteredFlags.filter(
-    (flag) => !flag.enabled
-  ).length;
+  const disabledFlags =
+    filteredFlags.filter(
+      (flag) => !flag.enabled
+    ).length;
 
   const teams = [
     ...new Set(
-      filteredFlags.map((flag) => flag.owner_team)
+      filteredFlags.map(
+        (flag) => flag.owner_team
+      )
     ),
   ].length;
 
-  const lastUpdated =
-    filteredFlags.length > 0
-      ? [...filteredFlags]
-          .sort(
-            (a, b) =>
-              new Date(b.updated_at) -
-              new Date(a.updated_at)
-          )[0].updated_at
-      : null;
-
-  const activeEnvironment = environment;
-    return (
-    <div className="flags-page">
-      
+  return (    <div className="flags-page">
 
       {/* ================= PAGE HEADER ================= */}
 
@@ -174,9 +209,12 @@ function Flags({
 
         <div className="dashboard-card total">
 
-          <div className="card-icon total-icon">
-            <FiFlag />
-          </div>
+          <div
+    className="card-icon"
+    style={{ background: "#eef4ff" }}
+>
+    <FiFlag size={30} color="#64748b" />
+</div>
 
           <h3>{totalFlags}</h3>
 
@@ -192,9 +230,12 @@ function Flags({
 
         <div className="dashboard-card enabled">
 
-          <div className="card-icon enabled-icon">
-            <FiCheckCircle />
-          </div>
+          <div
+    className="card-icon"
+    style={{ background: "#ecfdf5" }}
+>
+    <FiCheckCircle size={30} color="#22c55e" />
+</div>
 
           <h3>{enabledFlags}</h3>
 
@@ -210,9 +251,12 @@ function Flags({
 
         <div className="dashboard-card disabled">
 
-          <div className="card-icon disabled-icon">
-            <FaToggleOff />
-          </div>
+          <div
+    className="card-icon"
+    style={{ background: "#fef2f2" }}
+>
+    <FaToggleOff size={30} color="#ef4444" />
+</div>
 
           <h3>{disabledFlags}</h3>
 
@@ -228,9 +272,12 @@ function Flags({
 
         <div className="dashboard-card team">
 
-          <div className="card-icon team-icon">
-            <FiUsers />
-          </div>
+          <div
+    className="card-icon"
+    style={{ background: "#f5f3ff" }}
+>
+    <FiUsers size={30} color="#8b5cf6" />
+</div>
 
           <h3>{teams}</h3>
 
@@ -242,51 +289,9 @@ function Flags({
 
         </div>
 
-        {/* Last Updated */}
-
-        <div className="dashboard-card updated">
-
-          <div className="card-icon updated-icon">
-            🕒
-          </div>
-
-          <h3>
-  {lastUpdated
-    ? new Date(lastUpdated).toLocaleString("en-IN", {
-        dateStyle: "medium",
-        timeStyle: "short",
-      })
-    : "-"}
-</h3>
-
-          <p>Last Updated</p>
-
-          <small>
-            Most recently modified flag
-          </small>
-
-        </div>
-
-        {/* Active Environment */}
-
-        <div className="dashboard-card environment">
-
-          <div className="card-icon environment-icon">
-            🌍
-          </div>
-
-          <h3>{activeEnvironment}</h3>
-
-          <p>Environment</p>
-
-          <small>
-            Current selected environment
-          </small>
-
-        </div>
-
       </div>
-            {/* ================= TABLE TOOLBAR ================= */}
+
+      {/* ================= TABLE TOOLBAR ================= */}
 
       <div className="table-toolbar">
 
@@ -332,24 +337,35 @@ function Flags({
 
         <div className="search-container">
 
-          <span className="search-icon">
-            🔍
-          </span>
+  <span className="search-icon">
+    🔍
+  </span>
 
-          <input
-            type="text"
-            className="search-box"
-            placeholder="Search feature flags..."
-            value={searchTerm}
-            onChange={(e) =>
-              setSearchTerm(e.target.value)
-            }
-          />
+  <input
+    type="text"
+    className="search-box"
+    placeholder="Search feature flags..."
+    value={searchTerm}
+    onChange={(e) =>
+      setSearchTerm(e.target.value)
+    }
+  />
 
-        </div>
+</div>
+
+<button
+  className="create-flag-btn"
+  onClick={() => {
+    setSelectedFlag(null);
+    setShowForm(true);
+  }}
+>
+  + Create Flag
+</button>
 
       </div>
-            {/* ================= MODAL ================= */}
+
+      {/* ================= CREATE / EDIT MODAL ================= */}
 
       {showForm && (
 
@@ -365,11 +381,19 @@ function Flags({
                 setShowForm(false);
               }}
 
-              onFlagCreated={() => {
-                loadFlags();
-                setSelectedFlag(null);
-                setShowForm(false);
-              }}
+              onFlagCreated={(message) => {
+
+  loadFlags();
+
+  setSelectedFlag(null);
+
+  setShowForm(false);
+
+  setSuccessMessage(message);
+
+  setShowSuccessModal(true);
+
+}}
 
             />
 
@@ -378,7 +402,8 @@ function Flags({
         </div>
 
       )}
-            {/* ================= LOADING ================= */}
+
+      {/* ================= LOADING ================= */}
 
       {loading && (
         <p className="loading">
@@ -393,132 +418,164 @@ function Flags({
           {error}
         </p>
       )}
-            {/* ================= TABLE ================= */}
+
+      {/* ================= TABLE ================= */}
 
       {!loading && !error && (
 
         <table className="flag-table">
 
           <thead>
-
-            <tr>
-
-              <th>Flag Key</th>
-              <th>Type</th>
-              <th>Status</th>
-              <th>Owner Team</th>
-              <th>Action</th>
-
-            </tr>
-
-          </thead>
+  <tr>
+    <th>FLAG ID</th>
+    <th>FLAG KEY</th>
+    <th>TYPE</th>
+    <th>STATUS</th>
+    <th>OWNER TEAM</th>
+    <th>ACTIONS</th>
+  </tr>
+</thead>
 
           <tbody>
+  {filteredFlags.length > 0 ? (
 
-            {filteredFlags.length > 0 ? (
+    filteredFlags.map((flag) => (
 
-              filteredFlags.map((flag) => (
+      <tr key={flag.id}>
 
-                <tr key={flag.id}>
+        {/* Flag ID */}
+        <td>
+          <span className="flag-id">
+            {flag.id}
+          </span>
+        </td>
 
-                  <td>
+        {/* Flag Key */}
+        <td>
   <span
     className="flag-key"
-    onClick={() =>
-      navigate(`/flag/${flag.id}`, {
-        state: { flag },
-      })
-    }
+    onClick={() => {
+      navigate(`/flag/${flag.flag_key}`);
+    }}
   >
     {flag.flag_key}
   </span>
 </td>
 
-                  <td>
+        {/* Flag Type */}
+        <td>
+          <span className="type-badge">
+            {flag.flag_type}
+          </span>
+        </td>
 
-                    <span className="type-badge">
-                      {flag.flag_type}
-                    </span>
+        {/* Status */}
+        <td>
+          <span
+            className={
+              flag.enabled
+                ? "status-enabled"
+                : "status-disabled"
+            }
+          >
+            {flag.enabled
+              ? "Enabled"
+              : "Disabled"}
+          </span>
+        </td>
 
-                  </td>
+        {/* Owner */}
+        <td>
+          <span className="owner-badge">
+            {flag.owner_team}
+          </span>
+        </td>
 
-                  <td>
+        {/* Actions */}
+        <td className="action-buttons">
 
-                    <span
-                      className={
-                        flag.enabled
-                          ? "status-enabled"
-                          : "status-disabled"
-                      }
-                    >
-                      {flag.enabled
-                        ? "Enabled"
-                        : "Disabled"}
-                    </span>
+          <button
+  className="icon-btn edit-btn"
+  title="Edit Flag"
+  onClick={() => {
+    setSelectedFlag(flag);
+    setShowForm(true);
+  }}
+>
+  <MdEdit size={10} />
+</button>
 
-                  </td>
+<button
+  className="icon-btn delete-btn"
+  title="Delete Flag"
+  onClick={() => {
+    handleDeleteClick(flag);
+  }}
+>
+  <MdDelete size={10} />
+</button>
 
-                  <td>
+        </td>
 
-                    <span className="owner-badge">
-                      {flag.owner_team}
-                    </span>
+      </tr>
 
-                  </td>
+    ))
 
-                  <td className="action-buttons">
+  ) : (
 
-                    <button
-                      className="icon-btn edit-btn"
-                      title="Edit Flag"
-                      onClick={() => {
-                        setSelectedFlag(flag);
-                        setShowForm(true);
-                      }}
-                    >
-                      <FiEdit2 />
-                    </button>
+    <tr>
 
-                    <button
-                      className="icon-btn delete-btn"
-                      title="Delete Flag"
-                      onClick={() =>
-                        handleDelete(flag.flag_key)
-                      }
-                    >
-                      <FiTrash2 />
-                    </button>
+      <td colSpan="6" className="empty">
 
-                  </td>
+        <div>
 
-                </tr>
+          <h3>🔍 No Feature Flags Found</h3>
 
-              ))
+          <p>Try changing your search or filter.</p>
 
-            ) : (
+        </div>
 
-              <tr>
+      </td>
 
-                <td colSpan="5" className="empty">
-  <div>
-    <h3>🔍 No Feature Flags Found</h3>
+    </tr>
 
-    <p>
-      Try changing your search or filter.
-    </p>
-  </div>
-</td>
-
-              </tr>
-
-            )}
-
-          </tbody>
+  )}
+</tbody>
 
         </table>
 
       )}
-          </div>
+
+      {showDeleteModal && (
+  <CustomModal
+    isOpen={showDeleteModal}
+    title="Delete this flag?"
+    message={
+      flagToDelete
+        ? `"${flagToDelete.flag_key}" will be permanently deleted.`
+        : ""
+    }
+    confirmText="Delete"
+    cancelText="Cancel"
+    danger={true}
+    onConfirm={confirmDelete}
+    onCancel={() => {
+      setShowDeleteModal(false);
+      setFlagToDelete(null);
+    }}
+  />
+)}
+
+<SuccessModal
+  isOpen={showSuccessModal}
+  title="Success!"
+  message={successMessage}
+  buttonText="OK"
+  onClose={() => setShowSuccessModal(false)}
+/>
+
+    </div>
+
   );
 }
 

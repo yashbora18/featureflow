@@ -1,8 +1,13 @@
-from typing import Optional
 from pydantic import BaseModel
 
-
-class EvaluationRequest(BaseModel):
+class EvaluateRequest(BaseModel):
     flag_key: str
-    environment: str
-    user: Optional[str] = None
+    environment_id: int
+    evaluation_type: str
+    evaluation_value: str
+
+
+class EvaluateResponse(BaseModel):
+    flag_key: str
+    enabled: bool
+    reason: str

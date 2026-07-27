@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import {
   FiFlag,
   FiDatabase,
@@ -8,6 +8,13 @@ import {
 import "./Sidebar.css";
 
 function Sidebar() {
+
+  const location = useLocation();
+
+  const isFlagsActive =
+    location.pathname === "/" ||
+    location.pathname.startsWith("/flag/");
+
   return (
     <aside className="sidebar">
 
@@ -17,25 +24,43 @@ function Sidebar() {
 
       <nav className="sidebar-menu">
 
-        <Link to="/" className="menu-item active">
+        <NavLink
+          to="/"
+          className={isFlagsActive ? "menu-item active" : "menu-item"}
+        >
           <FiFlag className="menu-icon" />
           <span>Flags</span>
-        </Link>
+        </NavLink>
 
-        <Link to="/environments" className="menu-item">
+        <NavLink
+          to="/environments"
+          className={({ isActive }) =>
+            isActive ? "menu-item active" : "menu-item"
+          }
+        >
           <FiDatabase className="menu-icon" />
           <span>Environments</span>
-        </Link>
+        </NavLink>
 
-        <Link to="/audit-log" className="menu-item">
+        <NavLink
+          to="/audit-log"
+          className={({ isActive }) =>
+            isActive ? "menu-item active" : "menu-item"
+          }
+        >
           <FiFileText className="menu-icon" />
           <span>Audit Log</span>
-        </Link>
+        </NavLink>
 
-        <Link to="/settings" className="menu-item">
+        <NavLink
+          to="/settings"
+          className={({ isActive }) =>
+            isActive ? "menu-item active" : "menu-item"
+          }
+        >
           <FiSettings className="menu-icon" />
           <span>Settings</span>
-        </Link>
+        </NavLink>
 
       </nav>
 

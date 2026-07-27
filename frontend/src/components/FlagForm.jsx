@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
+
 import { getEnvironments } from "../services/environmentService";
-import { createFlag, updateFlag } from "../services/flagService";
+import {
+  createFlag,
+  updateFlag,
+} from "../services/flagService";
 
 function FlagForm({
   flag,
@@ -48,8 +52,7 @@ function FlagForm({
       });
     }
   }, [flag]);
-
-  const handleChange = (e) => {
+    const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
 
     setFormData({
@@ -69,10 +72,25 @@ function FlagForm({
     try {
       if (flag) {
         await updateFlag(flag.flag_key, formData);
-        alert("✅ Feature Flag Updated Successfully!");
+
+        toast.success("Feature Flag Updated Successfully!");
+
+        if (onFlagCreated) {
+          onFlagCreated(
+            "Feature Flag Updated Successfully!"
+          );
+        }
+
       } else {
         await createFlag(formData);
-        alert("✅ Feature Flag Created Successfully!");
+
+        toast.success("Feature Flag Created Successfully!");
+
+        if (onFlagCreated) {
+          onFlagCreated(
+            "Feature Flag Created Successfully!"
+          );
+        }
       }
 
       setFormData({
@@ -85,19 +103,22 @@ function FlagForm({
         environment_id: 1,
       });
 
-      if (onFlagCreated) {
-        onFlagCreated();
+      if (onClose) {
+        onClose();
       }
+
     } catch (error) {
       console.error(error);
+
+      console.log(error.response?.data);
+
       toast.error("Operation Failed!");
     }
   };
 
-    return (
+  return (
     <div className="flag-form">
-
-      <div className="form-header">
+            <div className="form-header">
 
         <h2>
           {flag
@@ -106,8 +127,8 @@ function FlagForm({
         </h2>
 
         <button
-          className="close-icon"
           type="button"
+          className="close-icon"
           onClick={onClose}
         >
           ✕
@@ -117,7 +138,10 @@ function FlagForm({
 
       <form onSubmit={handleSubmit}>
 
+        {/* Flag Key */}
+
         <div>
+
           <label>Flag Key</label>
 
           <input
@@ -128,9 +152,13 @@ function FlagForm({
             onChange={handleChange}
             required
           />
+
         </div>
 
+        {/* Flag Type */}
+
         <div>
+
           <label>Flag Type</label>
 
           <input
@@ -138,9 +166,13 @@ function FlagForm({
             value="Boolean"
             disabled
           />
+
         </div>
 
+        {/* Default Value */}
+
         <div>
+
           <label>Default Value</label>
 
           <div className="toggle-group">
@@ -172,6 +204,8 @@ function FlagForm({
 
         </div>
 
+        {/* Owner Team */}
+
         <div>
 
           <label>Owner Team</label>
@@ -187,6 +221,8 @@ function FlagForm({
 
         </div>
 
+        {/* Description */}
+
         <div className="full-width">
 
           <label>Description</label>
@@ -200,6 +236,8 @@ function FlagForm({
           />
 
         </div>
+
+        {/* Environment */}
 
         <div>
 
@@ -221,6 +259,8 @@ function FlagForm({
           </select>
 
         </div>
+
+        {/* Status */}
 
         <div>
 
@@ -254,6 +294,7 @@ function FlagForm({
           </div>
 
         </div>
+                {/* Buttons */}
 
         <div className="button-group">
 

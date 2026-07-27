@@ -1,19 +1,132 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Inter',sans-serif;
+/* ==========================
+   LIGHT THEME
+========================== */
+
+:root {
+  --background: #f5f7fb;
+  --surface: #ffffff;
+  --surface-secondary: #f8fafc;
+
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+
+  --border: #dbeafe;
+
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+
+  --success: #22c55e;
+  --danger: #ef4444;
+
+  --shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+/* ==========================
+   DARK THEME
+========================== */
+
+.dark-theme {
+  --background: #0f172a;
+  --surface: #1e293b;
+  --surface-secondary: #334155;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+
+  --border: #475569;
+
+  --primary: #3b82f6;
+  --primary-hover: #60a5fa;
+
+  --success: #22c55e;
+  --danger: #ef4444;
+
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+}
+
+/* ==========================
+   RESET
+========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
 html,
 body,
-#root{
-    width:100%;
-    min-height:100vh;
+#root {
+  width: 100%;
+  min-height: 100vh;
 }
 
-body{
-    background:#f5f7fb;
+/* ==========================
+   BODY
+========================== */
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+/* ==========================
+   APP
+========================== */
+
+.app {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--text-primary);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+/* ==========================
+   COMMON ELEMENTS
+========================== */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+::selection {
+  background: var(--primary);
+  color: #ffffff;
 }

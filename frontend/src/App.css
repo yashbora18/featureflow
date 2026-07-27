@@ -2,3 +2,33 @@
   width: 100%;
   min-height: 100vh;
 }
+
+.app{
+    display:flex;
+    min-height:100vh;
+    background:#f8fafc;
+}
+
+.main-layout{
+
+    margin-left:250px;
+
+    width:calc(100% - 250px);
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+.page-content{
+
+    padding:100px 30px 30px;
+
+    width:100%;
+
+    flex:1;
+
+    overflow-x:hidden;
+}

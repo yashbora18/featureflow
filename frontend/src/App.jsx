@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
@@ -8,62 +8,74 @@ import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import Flags from "./pages/Flags";
 import FlagDetail from "./pages/FlagDetail";
+import Environments from "./pages/Environments";
+
+import "./App.css";
 
 function App() {
+
   const [environment, setEnvironment] = useState("Development");
   const [showForm, setShowForm] = useState(false);
 
+  const [darkMode, setDarkMode] = useState(() => {
+    return localStorage.getItem("theme") === "dark";
+  });
+
+  useEffect(() => {
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
+
   return (
     <>
-      <Sidebar />
+      <div className={darkMode ? "app dark-theme" : "app"}>
 
-      <div
-        style={{
-          marginLeft: "250px",
-          minHeight: "100vh",
-          background: "#f5f7fb",
-        }}
-      >
-        <Navbar
-          environment={environment}
-          setEnvironment={setEnvironment}
-          onCreateFlag={() => setShowForm(true)}
-        />
+        <Sidebar />
 
-        <div
-          style={{
-            padding: "70px 25px 25px",
-          }}
-        >
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Flags
-                  environment={environment}
-                  showForm={showForm}
-                  setShowForm={setShowForm}
-                />
-              }
-            />
+        <div className="main-layout">
 
-            <Route
-              path="/flag/:id"
-              element={<FlagDetail />}
-            />
-          </Routes>
+          <Navbar
+            environment={environment}
+            setEnvironment={setEnvironment}
+            darkMode={darkMode}
+            setDarkMode={setDarkMode}
+          />
+
+          <main className="page-content">
+
+            <Routes>
+
+              <Route
+                path="/"
+                element={
+                  <Flags
+                    environment={environment}
+                    showForm={showForm}
+                    setShowForm={setShowForm}
+                  />
+                }
+              />
+
+              <Route
+                path="/flag/:id"
+                element={<FlagDetail />}
+              />
+
+              <Route
+                path="/environments"
+                element={<Environments />}
+              />
+
+            </Routes>
+
+          </main>
+
         </div>
+
       </div>
 
       <ToastContainer
         position="top-right"
         autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        pauseOnHover
-        draggable
-        pauseOnFocusLoss
         theme="colored"
       />
     </>

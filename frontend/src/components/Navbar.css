@@ -1,164 +1,507 @@
-/* ==========================
-   NAVBAR
-========================== */
+/* =====================================================
+   SAAS NAVBAR
+===================================================== */
 
 .navbar{
     position:fixed;
-    top:0;
-    left:250px;
-    right:0;
+    top:16px;
+    left:266px;
+    right:18px;
 
     height:72px;
-
-    background:#ffffff;
 
     display:flex;
     justify-content:space-between;
     align-items:center;
 
-    padding:0 30px;
+    padding:0 28px;
 
-    border-bottom:1px solid #e5e7eb;
-    box-shadow:0 4px 15px rgba(15,23,42,.08);
+    background:rgba(255,255,255,.96);
+
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+
+    border:1px solid #e5e7eb;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 8px 28px rgba(15,23,42,.08);
 
     z-index:1000;
+
+    transition:.3s ease;
 }
 
-/* ==========================
-   TITLE
-========================== */
+/* =====================================================
+   LEFT SIDE
+===================================================== */
 
 .navbar-title{
+
     display:flex;
     align-items:center;
-    gap:12px;
+    gap:14px;
 
-    font-size:25px;
+    font-size:28px;
     font-weight:700;
-    color:#1e3a8a;
+
+    color:#111827;
 }
 
 .navbar-icon{
-    font-size:26px;
+
+    font-size:28px;
+
     color:#2563eb;
+
+    flex-shrink:0;
 }
 
-/* ==========================
+/* =====================================================
    RIGHT SIDE
-========================== */
+===================================================== */
 
 .navbar-actions{
+
     display:flex;
     align-items:center;
-    gap:22px;
+
+    gap:16px;
 }
 
-/* ==========================
+/* =====================================================
    ENVIRONMENT
-========================== */
+===================================================== */
 
 .navbar-environment{
+
     display:flex;
     align-items:center;
+
     gap:12px;
 }
 
 .env-label{
-    font-size:15px;
-    font-weight:600;
-    color:#475569;
-}
 
-/* React Select Width */
+    font-size:14px;
+    font-weight:600;
+
+    color:#64748b;
+}
 
 .navbar-environment > div{
-    width:240px;
+
+    width:250px;
 }
 
-/* ==========================
-   CREATE BUTTON
-========================== */
+/* =====================================================
+   ICON BUTTONS
+===================================================== */
 
-.navbar-create-btn{
+.notification-wrapper,
+.profile-wrapper{
 
+    position:relative;
+}
+
+.notification-btn,
+.theme-toggle{
+
+    width:46px;
     height:46px;
 
-    padding:0 24px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-    border:none;
+    border-radius:14px;
 
-    border-radius:12px;
+    background:#ffffff;
 
-    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    border:1px solid #e5e7eb;
 
-    color:#ffffff;
-
-    font-size:15px;
-    font-weight:600;
+    color:#475569;
 
     cursor:pointer;
 
     transition:all .25s ease;
+
+    box-shadow:
+        0 4px 14px rgba(15,23,42,.05);
 }
 
-.navbar-create-btn:hover{
+.notification-btn:hover,
+.theme-toggle:hover{
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+    border-color:#2563eb;
 
     transform:translateY(-2px);
 
-    box-shadow:0 12px 25px rgba(37,99,235,.28);
+    box-shadow:
+        0 10px 20px rgba(37,99,235,.18);
 }
 
-.navbar-create-btn:active{
+.notification-btn:active,
+.theme-toggle:active{
 
-    transform:scale(.98);
+    transform:scale(.96);
 }
 
-/* ==========================
+.notification-btn svg,
+.theme-toggle svg{
+
+    font-size:20px;
+}
+
+/* =====================================================
+   BADGE
+===================================================== */
+
+.notification-badge{
+
+    position:absolute;
+
+    top:11px;
+    right:11px;
+
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+
+    background:#ef4444;
+
+    border:2px solid #ffffff;
+}
+
+/* =====================================================
+   PROFILE
+===================================================== */
+
+.profile-card{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding:8px 16px;
+
+    background:#ffffff;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:16px;
+
+    cursor:pointer;
+
+    transition:all .25s ease;
+
+    box-shadow:
+        0 4px 14px rgba(15,23,42,.05);
+}
+
+.profile-card:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 12px 24px rgba(15,23,42,.08);
+
+    border-color:#2563eb;
+}
+
+.profile-avatar{
+
+    width:40px;
+    height:40px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    font-size:18px;
+
+    transition:.25s ease;
+}
+
+.profile-card:hover .profile-avatar{
+
+    background:#2563eb;
+
+    color:#ffffff;
+}
+
+.profile-info{
+
+    display:flex;
+    flex-direction:column;
+}
+
+.profile-name{
+
+    font-size:14px;
+    font-weight:700;
+
+    color:#111827;
+}
+
+.profile-role{
+
+    font-size:12px;
+
+    color:#64748b;
+}
+
+/* =====================================================
+   DROPDOWN
+===================================================== */
+
+.notification-dropdown,
+.profile-dropdown{
+
+    position:absolute;
+
+    top:58px;
+    right:0;
+
+    width:280px;
+
+    background:#ffffff;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 18px 40px rgba(15,23,42,.12);
+
+    animation:dropdown .25s ease;
+
+    z-index:9999;
+}
+
+.notification-dropdown h4{
+
+    margin:0;
+
+    padding:16px 18px;
+
+    font-size:15px;
+    font-weight:700;
+
+    color:#111827;
+
+    background:#f8fafc;
+
+    border-bottom:1px solid #e5e7eb;
+}
+
+.notification-item{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding:16px 18px;
+
+    font-size:14px;
+
+    color:#475569;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+}
+
+.notification-icon{
+
+    font-size:18px;
+
+    flex-shrink:0;
+}
+
+.notification-icon.blue{
+    color:#2563eb;
+}
+
+.notification-icon.green{
+    color:#16a34a;
+}
+
+.notification-icon.orange{
+    color:#f97316;
+}
+
+.notification-item span{
+    flex:1;
+}
+
+.profile-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding:14px 18px;
+
+    font-size:14px;
+
+    color:#475569;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+}
+
+.profile-icon{
+    font-size:18px;
+    flex-shrink:0;
+    color:#64748b;
+}
+
+.profile-item span{
+    flex:1;
+}
+
+.profile-item:hover{
+    background:#eff6ff;
+    color:#2563eb;
+}
+
+.profile-item:hover .profile-icon{
+    color:#2563eb;
+}
+
+.profile-item.logout{
+    color:#ef4444;
+}
+
+.profile-item.logout .profile-icon{
+    color:#ef4444;
+}
+
+.profile-item.logout:hover{
+    background:#fee2e2;
+    color:#dc2626;
+}
+
+.profile-item.logout:hover .profile-icon{
+    color:#dc2626;
+}
+
+.notification-item:hover,
+.profile-item:hover{
+
+    background:#eff6ff;
+
+    color:#2563eb;
+}
+
+.profile-item.logout{
+
+    color:#ef4444;
+}
+
+.profile-item.logout:hover{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+}
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+@keyframes dropdown{
+
+    from{
+
+        opacity:0;
+        transform:translateY(-10px);
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =====================================================
    RESPONSIVE
-========================== */
+===================================================== */
 
-@media(max-width:900px){
+@media(max-width:992px){
 
-    .navbar{
+.navbar{
 
-        left:0;
+left:0;
+right:0;
+top:0;
 
-        padding:15px;
+height:auto;
 
-        height:auto;
+padding:16px;
 
-        flex-direction:column;
+border-radius:0;
 
-        align-items:flex-start;
+flex-direction:column;
 
-        gap:18px;
-    }
+align-items:flex-start;
 
-    .navbar-actions{
+gap:18px;
+}
 
-        width:100%;
+.navbar-actions{
 
-        flex-direction:column;
+width:100%;
 
-        align-items:stretch;
-    }
+justify-content:space-between;
 
-    .navbar-environment{
+flex-wrap:wrap;
+}
 
-        width:100%;
+.navbar-environment{
 
-        flex-direction:column;
+width:100%;
+}
 
-        align-items:flex-start;
-    }
+.navbar-environment>div{
 
-    .navbar-environment > div{
+width:100%;
+}
 
-        width:100%;
-    }
+}
 
-    .navbar-create-btn{
+@media(max-width:768px){
 
-        width:100%;
-    }
+.navbar-title{
+
+font-size:22px;
+}
+
+.navbar-icon{
+
+font-size:24px;
+}
+
+.profile-info{
+
+display:none;
+}
+
 }

@@ -8,7 +8,13 @@ export const getFlags = async () => {
   return response.data;
 };
 
-// Create a new flag
+// Get single flag
+export const getFlag = async (key) => {
+  const response = await axios.get(`${API_URL}/${key}`);
+  return response.data;
+};
+
+// Create flag
 export const createFlag = async (flag) => {
   const response = await axios.post(`${API_URL}/`, flag);
   return response.data;
@@ -23,5 +29,26 @@ export const updateFlag = async (key, flag) => {
 // Delete flag
 export const deleteFlag = async (flagKey) => {
   const response = await axios.delete(`${API_URL}/${flagKey}`);
+  return response.data;
+};
+
+// Evaluate Flag
+export const evaluateFlag = async (
+  flag_key,
+  environment_id,
+  evaluation_type,
+  evaluation_value
+) => {
+
+  const response = await axios.post(
+    `http://127.0.0.1:8000/evaluate/`,
+    {
+        flag_key,
+        environment_id,
+        evaluation_type,
+        evaluation_value,
+    }
+);
+
   return response.data;
 };

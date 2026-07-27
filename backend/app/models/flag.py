@@ -1,4 +1,5 @@
-from datetime import datetime
+from datetime import datetime, timezone
+
 
 from sqlalchemy import (
     Column,
@@ -43,6 +44,12 @@ class Flag(Base):
         default=False
     )
 
+    rollout_percentage = Column(
+    Integer,
+    default=100,
+    nullable=False
+)
+
     description = Column(
         String(255)
     )
@@ -60,14 +67,14 @@ class Flag(Base):
     )
 
     created_at = Column(
-        DateTime,
-        default=datetime.utcnow,
-        nullable=False
-    )
+    DateTime(timezone=True),
+    default=lambda: datetime.now(timezone.utc),
+    nullable=False
+)
 
     updated_at = Column(
-        DateTime,
-        default=datetime.utcnow,
-        onupdate=datetime.utcnow,
-        nullable=False
-    )
+    DateTime(timezone=True),
+    default=lambda: datetime.now(timezone.utc),
+    onupdate=lambda: datetime.now(timezone.utc),
+    nullable=False
+)
