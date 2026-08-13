@@ -1,0 +1,167 @@
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(79, 70, 229, .15),
+            transparent 35%
+        ),
+        var(--background);
+}
+
+
+/* =====================================================
+   HERO CONTAINER
+===================================================== */
+
+.hero-container {
+
+    width: min(1300px, 92%);
+
+    max-width: 100%;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 0.95fr 1.05fr;
+
+    gap: 50px;
+
+    align-items: center;
+
+    padding: 140px 0 80px;
+
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+html.dark .hero {
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(99, 102, 241, .20),
+            transparent 35%
+        ),
+        #020617;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .hero {
+
+        min-height: auto;
+
+    }
+
+    .hero-container {
+
+        width: min(90%, 760px);
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        text-align: center;
+
+        padding: 120px 0 70px;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .hero {
+
+        min-height: auto;
+
+        width: 100%;
+
+    }
+
+    .hero-container {
+
+        width: 92%;
+
+        max-width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 32px;
+
+        padding: 100px 0 60px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .hero {
+
+        min-height: auto;
+
+    }
+
+    .hero-container {
+
+        width: 94%;
+
+        gap: 28px;
+
+        padding: 90px 0 50px;
+
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .hero-container {
+
+        width: 92%;
+
+        gap: 24px;
+
+        padding: 85px 0 45px;
+
+    }
+
+}

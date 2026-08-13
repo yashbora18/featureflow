@@ -1,0 +1,859 @@
+{
+  "nav": {
+    "features": "機能",
+    "workflow": "ワークフロー",
+    "techStack": "技術スタック",
+    "contact": "お問い合わせ",
+    "login": "ログイン",
+    "getStarted": "始める"
+  },
+
+  "hero": {
+    "badge": "最新の機能管理",
+    "title": "機能をリリース",
+    "highlight": "自信を持って",
+    "description": "FeatureFlowを使用して、機能のリリースを管理し、環境を管理し、ユーザーをターゲットに設定し、新機能を安全に段階的に展開できます。",
+    "getStarted": "始める",
+    "learnMore": "詳しく見る"
+  },
+
+  "heroPreview": {
+    "dashboard": "FeatureFlowダッシュボード",
+    "activeFlags": "有効な機能フラグ",
+    "environments": "環境",
+    "success": "評価成功率",
+    "rollout": "展開の進捗",
+    "analytics": "機能分析",
+    "activities": {
+      "payment": "決済機能が有効になりました",
+      "aiSearch": "AI検索の展開が更新されました",
+      "darkMode": "ダークモードのターゲティングが変更されました"
+    }
+  },
+
+  "heroStats": {
+    "activeFlags": "有効な機能フラグ",
+    "environments": "環境",
+    "evaluation": "評価成功率",
+    "teams": "チーム"
+  },
+
+  "trustedTeams": {
+    "badge": "最新のチームのために構築",
+    "title": "すべてのチームから信頼されています",
+    "description": "FeatureFlowは、エンジニアリングチームとプロダクトチームが機能を安全に管理・提供できるよう支援します。",
+    "cards": {
+      "engineering": {
+        "title": "エンジニアリング",
+        "text": "アプリケーションコードを変更せずに機能リリースを管理できます。"
+      },
+      "qa": {
+        "title": "QAチーム",
+        "text": "異なる環境で機能を安全にテストできます。"
+      },
+      "product": {
+        "title": "プロダクトチーム",
+        "text": "機能の段階的な展開を管理し、より良いユーザー体験を提供できます。"
+      },
+      "devops": {
+        "title": "DevOps",
+        "text": "環境とデプロイを自信を持って管理できます。"
+      },
+      "platform": {
+        "title": "プラットフォームチーム",
+        "text": "機能管理とガバナンスを一元的に維持できます。"
+      }
+    }
+  },
+
+  "features": {
+    "badge": "強力な機能",
+    "title": "安全なリリースに必要なすべて",
+    "description": "FeatureFlowは、機能のリリース、ターゲティング、段階的展開、監視を完全に管理できます。",
+    "learnMore": "詳しく見る",
+    "cards": {
+      "flags": {
+        "title": "機能フラグ",
+        "description": "アプリケーションコードを変更せずに機能フラグを作成・管理できます。"
+      },
+      "targeting": {
+        "title": "ユーザーターゲティング",
+        "description": "柔軟なターゲティングルールを使用して、特定のユーザーやグループへの機能アクセスを制御できます。"
+      },
+      "rollouts": {
+        "title": "段階的な展開",
+        "description": "パーセンテージベースの展開と段階的なリリースを使用して、機能を徐々にリリースできます。"
+      },
+      "environments": {
+        "title": "環境",
+        "description": "開発、ステージング、本番環境ごとに機能設定を独立して管理できます。"
+      },
+      "analytics": {
+        "title": "分析",
+        "description": "機能の利用状況を監視し、機能フラグのパフォーマンスを把握できます。"
+      },
+      "audit": {
+        "title": "監査ログ",
+        "description": "機能の変更を追跡し、重要な操作の完全な履歴を維持できます。"
+      },
+      "evaluation": {
+        "title": "機能評価",
+        "description": "ユーザー、グループ、環境、ターゲティングルールに基づいて機能フラグを動的に評価できます。"
+      },
+      "security": {
+        "title": "セキュリティ",
+        "description": "安全なアクセスと一元管理された設定により、機能管理を安全に制御できます。"
+      }
+    }
+  },
+
+  "showcase": {
+    "badge": "FeatureFlowを実際に見る",
+    "title": "必要なすべてを1つのプラットフォームで",
+    "description": "チームが機能を管理、リリース、監視するための強力なツールをご覧ください。",
+    "learnMore": "詳しく見る",
+    "cards": {
+      "flags": {
+        "title": "機能フラグ",
+        "subtitle": "機能を即座に制御",
+        "description": "新しいコードをデプロイせずに、機能フラグを即座に作成、管理、有効化、無効化できます。"
+      },
+      "environment": {
+        "title": "環境管理",
+        "subtitle": "1つのプラットフォーム、複数の環境",
+        "description": "開発、ステージング、本番環境の機能設定を簡単に管理できます。"
+      },
+      "analytics": {
+        "title": "強力な分析",
+        "subtitle": "機能を理解する",
+        "description": "機能のパフォーマンス、展開の進捗、利用状況を明確で実用的な分析によって追跡できます。"
+      },
+      "audit": {
+        "title": "監査ログ",
+        "subtitle": "完全な変更履歴",
+        "description": "詳細な監査ログと変更履歴によって、重要な機能変更をすべて追跡できます。"
+      }
+    }
+  },
+
+  "workflow": {
+    "badge": "シンプルな機能ワークフロー",
+    "title": "アイデアからリリースまで",
+    "description": "作成、ターゲティング、評価、リリース、監視まで、機能のライフサイクル全体を管理できます。",
+    "steps": {
+      "create": {
+        "title": "作成",
+        "description": "機能フラグを作成し、デフォルトの動作を設定します。"
+      },
+      "targeting": {
+        "title": "ターゲット設定",
+        "description": "機能を提供するユーザーとグループを定義します。"
+      },
+      "evaluate": {
+        "title": "評価",
+        "description": "環境とターゲティングルールに基づいて機能フラグを評価します。"
+      },
+      "release": {
+        "title": "リリース",
+        "description": "機能をユーザーへ段階的に展開します。"
+      },
+      "monitor": {
+        "title": "監視",
+        "description": "機能のパフォーマンス、変更、展開の進捗を追跡します。"
+      }
+    }
+  },
+
+  "architecture": {
+    "badge": "システムアーキテクチャ",
+    "title": "信頼性の高い機能提供のために構築",
+    "description": "FeatureFlowは、フロントエンド、バックエンド、評価エンジン、データベースを接続するスケーラブルなアーキテクチャを使用しています。",
+    "frontend": {
+      "title": "フロントエンド",
+      "description": "機能フラグ、環境、ターゲティング、分析、監査ログを管理する最新のReactインターフェースです。"
+    },
+    "backend": {
+      "title": "バックエンドAPI",
+      "description": "機能管理、ターゲティングルール、評価リクエスト、アプリケーションロジックを処理するFastAPIバックエンドです。"
+    },
+    "engine": {
+      "title": "評価エンジン",
+      "description": "環境、ユーザーターゲティング、グループ、展開ルールを使用して機能フラグを評価します。"
+    },
+    "modules": {
+      "flags": "機能フラグ",
+      "targeting": "ターゲティング",
+      "audit": "監査ログ"
+    },
+    "database": {
+      "title": "データベース",
+      "description": "機能フラグ、環境、ターゲティングルール、ユーザーグループ、バージョン、監査履歴を保存します。"
+    }
+  },
+
+  "techStack": {
+    "badge": "テクノロジースタック",
+    "title": "最新のテクノロジーで構築",
+    "description": "FeatureFlowは、高速でスケーラブルかつ保守しやすい機能管理プラットフォームを実現するため、信頼性の高い最新技術で構築されています。",
+    "cards": {
+      "react": "レスポンシブでインタラクティブなユーザー体験を実現する最新のコンポーネントベースのフロントエンドです。",
+      "fastapi": "機能管理と評価のための高性能バックエンドAPIです。",
+      "postgresql": "機能とアプリケーションデータを保存する信頼性の高いリレーショナルデータベースです。",
+      "javascript": "インタラクティブなフロントエンド体験を支える主要なプログラミング言語です。",
+      "html": "アプリケーションの構造を構築するためのセマンティックマークアップです。",
+      "css": "レスポンシブで洗練されたユーザーインターフェースのための最新のスタイリングです。",
+      "git": "ソースコードと開発履歴を管理するためのバージョン管理システムです。",
+      "github": "プロジェクトを管理するためのリポジトリおよびコラボレーションプラットフォームです。",
+      "docker": "一貫した開発とデプロイを実現するコンテナ対応アーキテクチャです。"
+    }
+  },
+
+  "premium": {
+    "badge": "最新のチームのために構築",
+    "title1": "より速くリリース。",
+    "title2": "常にコントロール。",
+    "description": "FeatureFlowは、ターゲティング、展開、セキュリティ、分析を完全に管理しながら、機能をより速くリリースする自信をチームに提供します。",
+    "points": {
+      "rollout": "安全で段階的な機能展開",
+      "security": "安全な機能管理",
+      "analytics": "強力なリリース分析"
+    },
+    "button": "FeatureFlowを見る",
+    "imageAlt": "FeatureFlow分析ダッシュボード"
+  },
+
+  "statistics": {
+    "badge": "数字で見るFeatureFlow",
+    "title": "チームとともに成長できる設計",
+    "description": "チームが機能を効率的にリリース、制御、監視できるように設計された強力な機能管理機能です。",
+    "cards": {
+      "flags": {
+        "title": "機能フラグ",
+        "description": "アプリケーション全体で機能フラグを作成・管理できます。"
+      },
+      "environments": {
+        "title": "環境",
+        "description": "開発、ステージング、本番環境の機能を管理できます。"
+      },
+      "targeting": {
+        "number": "10以上",
+        "title": "ターゲティングオプション",
+        "description": "柔軟なターゲティングルールを使用して機能へのアクセスを制御します。"
+      },
+      "audit": {
+        "title": "監査カバレッジ",
+        "description": "完全な監査履歴によって重要な機能変更を追跡できます。"
+      }
+    }
+  },
+
+  "cta": {
+    "badge": "始める準備はできましたか？",
+    "title": "機能をより速くリリース。\n常にコントロール。",
+    "description": "FeatureFlowで機能リリースの管理を始め、安全にリリースする自信をチームに提供しましょう。",
+    "getStarted": "始める",
+    "login": "ログイン"
+  },
+
+  "footer": {
+    "description": "FeatureFlowは、チームによる機能フラグの管理、リリースの制御、ユーザーのターゲティング、機能の安心したリリースを支援します。",
+    "platform": "プラットフォーム",
+    "features": "機能",
+    "workflow": "ワークフロー",
+    "techStack": "技術スタック",
+    "resources": "リソース",
+    "documentation": "ドキュメント",
+    "api": "APIリファレンス",
+    "support": "サポート",
+    "connect": "接続",
+    "contact": "お問い合わせ",
+    "copyright": "© 2026 FeatureFlow. All rights reserved."
+  },
+
+  "common": {
+    "language": "言語",
+    "loading": "読み込み中...",
+    "search": "検索",
+    "cancel": "キャンセル",
+    "save": "保存",
+    "delete": "削除",
+    "edit": "編集",
+    "refresh": "更新",
+    "close": "閉じる",
+    "create": "作成",
+    "update": "更新",
+    "filter": "フィルター",
+    "yes": "はい",
+    "no": "いいえ",
+    "enabled": "有効",
+    "disabled": "無効",
+    "active": "アクティブ",
+    "inactive": "非アクティブ",
+    "true": "真",
+    "false": "偽",
+    "unknown": "不明",
+    "ok": "OK",
+    "show": "表示",
+    "rows": "行",
+    "page": "ページ",
+    "of": "/"
+  },
+
+  "auth": {
+    "platform": "機能フラグ管理プラットフォーム"
+  },
+
+  "loginLeft": {
+    "title1": "機能をリリース",
+    "title2": "自信を持って",
+    "description": "FeatureFlowは、強力な機能フラグと制御された展開によって、チームが機能を安全にリリース、管理、監視できるよう支援します。",
+    "instantRollouts": "即時展開",
+    "instantRolloutsDesc": "アプリケーションを再デプロイせずに機能を即座にリリースできます。",
+    "safeReleases": "安全なリリース",
+    "safeReleasesDesc": "機能の公開範囲を制御し、デプロイのリスクを軽減します。",
+    "realTimeAnalytics": "リアルタイム分析",
+    "realTimeAnalyticsDesc": "機能のパフォーマンスと展開状況をリアルタイムで監視します。",
+    "enterpriseReady": "エンタープライズ対応",
+    "enterpriseReadyDesc": "セキュリティ、スケーラビリティ、チームコラボレーションを考慮して構築されています。"
+  },
+
+  "browser": {
+    "dashboardAlt": "FeatureFlowダッシュボードのプレビュー"
+  },
+
+  "login": {
+    "welcome": "おかえりなさい",
+    "description": "FeatureFlowワークスペースにログインして、機能の管理を続けましょう。",
+    "email": "メールアドレス",
+    "emailPlaceholder": "メールアドレスを入力してください",
+    "password": "パスワード",
+    "passwordPlaceholder": "パスワードを入力してください",
+    "remember": "ログイン状態を保持する",
+    "forgotPassword": "パスワードをお忘れですか？",
+    "signIn": "ログイン",
+    "signingIn": "ログイン中...",
+    "or": "または",
+    "continueGoogle": "Googleで続行",
+    "newTo": "初めてですか？",
+    "createWorkspace": "ワークスペースを作成",
+    "messages": {
+      "enterEmail": "メールアドレスを入力してください。",
+      "invalidEmail": "有効なメールアドレスを入力してください。",
+      "passwordRequired": "パスワードを入力してください。",
+      "incorrectCredentials": "メールアドレスまたはパスワードが正しくありません。",
+      "serverError": "サーバーエラーが発生しました。後でもう一度お試しください。",
+      "connectionError": "サーバーに接続できません。",
+      "signInFailed": "ログインに失敗しました。もう一度お試しください。",
+      "redirecting": "ダッシュボードへ移動しています...",
+      "googleComingSoon": "Googleログインは近日提供予定です。"
+    }
+  },
+
+  "signup": {
+    "createAccount": "アカウントを作成",
+    "description": "FeatureFlowワークスペースを作成して、機能フラグの管理を始めましょう。",
+    "username": "ユーザー名",
+    "usernamePlaceholder": "ユーザー名を入力してください",
+    "email": "メールアドレス",
+    "emailPlaceholder": "メールアドレスを入力してください",
+    "password": "パスワード",
+    "passwordPlaceholder": "パスワードを入力してください",
+    "confirmPassword": "パスワードの確認",
+    "confirmPasswordPlaceholder": "パスワードをもう一度入力してください",
+    "terms": "利用規約と条件に同意します",
+    "creatingAccount": "アカウントを作成中...",
+    "or": "または",
+    "google": "Googleで続行",
+    "alreadyHaveWorkspace": "すでにワークスペースをお持ちですか？",
+    "signIn": "ログイン",
+    "googleComingSoon": "Googleでの登録は近日提供予定です。",
+    "success": {
+      "accountCreated": "アカウントが正常に作成されました！"
+    },
+    "errors": {
+      "usernameRequired": "ユーザー名を入力してください。",
+      "emailRequired": "メールアドレスを入力してください。",
+      "invalidEmail": "有効なメールアドレスを入力してください。",
+      "passwordLength": "パスワードは8文字以上である必要があります。",
+      "passwordMismatch": "パスワードが一致しません。",
+      "acceptTerms": "利用規約と条件に同意してください。",
+      "signupFailed": "登録に失敗しました。もう一度お試しください。"
+    }
+  },
+
+  "navbar": {
+    "dashboard": "ダッシュボード",
+    "environment": "環境",
+    "toggleTheme": "テーマを切り替える",
+    "notifications": "通知",
+    "notification1": "新しい機能の展開が開始されました。",
+    "notification2": "機能フラグが正常に更新されました。",
+    "notification3": "分析レポートが生成されました。",
+    "admin": "管理者",
+    "featureManager": "機能マネージャー",
+    "profile": "プロフィール",
+    "settings": "設定",
+    "logout": "ログアウト",
+    "logoutConfirm": "本当にログアウトしますか？",
+    "logoutSuccess": "正常にログアウトしました。"
+  },
+
+  "sidebar": {
+    "enterprisePlatform": "エンタープライズ機能管理プラットフォーム",
+    "dashboard": "ダッシュボード",
+    "analytics": "分析",
+    "flags": "機能フラグ",
+    "environments": "環境",
+    "team": "チーム",
+    "auditLogs": "監査ログ",
+    "settings": "設定",
+    "systemOnline": "システムオンライン",
+    "api": "API",
+    "healthy": "正常",
+    "database": "データベース",
+    "connected": "接続済み",
+    "redis": "Redis",
+    "running": "稼働中",
+    "version": "バージョン",
+    "copyright": "© 2026 FeatureFlow"
+  },
+
+  "dashboard": {
+    "loading": "ダッシュボードを読み込み中..."
+  },
+
+  "dashboardHeader": {
+    "badge": "エンタープライズ機能管理",
+    "goodMorning": "おはようございます",
+    "goodAfternoon": "こんにちは",
+    "goodEvening": "こんばんは",
+    "user": "ユーザー",
+    "description": "1つのダッシュボードから機能フラグ、環境、展開を管理できます。",
+    "refresh": "更新"
+  },
+
+  "stats": {
+    "totalFlags": "機能フラグ総数",
+    "totalFlagsChange": "設定済みの機能フラグ",
+    "activeFlags": "有効な機能フラグ",
+    "activeFlagsChange": "現在有効",
+    "environments": "環境",
+    "environmentsChange": "デプロイ環境",
+    "evaluations": "評価",
+    "evaluationsChange": "本日の機能評価"
+  },
+
+  "rollout": {
+    "title": "展開の概要",
+    "subtitle": "環境全体の機能リリースの進捗を監視します。",
+    "fullRelease": "完全リリース",
+    "almostComplete": "ほぼ完了",
+    "gradualRollout": "段階的展開",
+    "empty": "展開データがありません。",
+    "rollout": "展開",
+    "percentage": "割合",
+    "stage": "ステージ",
+    "disabled": "無効",
+    "canary": "カナリアリリース",
+    "gradual": "段階的展開",
+    "almost": "ほぼ完了",
+    "full": "完全リリース"
+  },
+
+  "recentActivity": {
+    "title": "最近のアクティビティ",
+    "subtitle": "機能フラグの変更と更新を追跡します。",
+    "empty": "最近のアクティビティはありません。",
+    "created": "作成",
+    "updated": "更新",
+    "modified": "変更",
+    "featureFlag": "機能フラグ"
+  },
+
+  "systemHealth": {
+    "title": "システム状態",
+    "subtitle": "プラットフォームサービスを監視します。",
+    "backendApi": "バックエンドAPI",
+    "postgresql": "PostgreSQLデータベース",
+    "redisCache": "Redisキャッシュ",
+    "healthy": "正常",
+    "connected": "接続済み",
+    "running": "稼働中",
+    "offline": "オフライン",
+    "disconnected": "切断",
+    "operational": "稼働中",
+    "services": "サービス",
+    "allHealthy": "すべてのプラットフォームサービスが正常に動作しています。",
+    "attention": "一部のサービスに注意が必要です。"
+  },
+
+  "quickActions": {
+    "title": "クイックアクション",
+    "subtitle": "頻繁に使用するプラットフォーム機能へアクセスします。",
+    "createFlag": "機能フラグを作成",
+    "createDescription": "新しい機能フラグをすばやく作成します。",
+    "evaluateFlag": "フラグを評価",
+    "evaluateDescription": "機能の動作をすぐにテストします。",
+    "environments": "環境を管理",
+    "environmentDescription": "リリースを安全に管理します。",
+    "auditLogs": "監査ログ",
+    "auditDescription": "変更履歴を追跡します。"
+  },
+
+  "cleanup": {
+    "title": "機能フラグのクリーンアップ",
+    "description": "古い、または使用されていない機能フラグを確認・管理します。",
+    "flag": "フラグ",
+    "environment": "環境",
+    "status": "ステータス",
+    "lastUpdated": "最終更新",
+    "owner": "担当者",
+    "action": "操作",
+    "delete": "削除",
+    "deleteConfirm": "この機能フラグを削除してもよろしいですか？",
+    "deleteSuccess": "機能フラグを正常に削除しました。",
+    "deleteFailed": "機能フラグの削除に失敗しました。",
+    "empty": "古い機能フラグはありません。",
+    "markReviewed": "確認済みにする"
+  },
+
+  "flagLifecycle": {
+    "title": "機能フラグのライフサイクル",
+    "subtitle": "機能フラグの状態を追跡します。",
+    "active": "アクティブ",
+    "disabled": "無効",
+    "stale": "古い",
+    "total": "機能フラグ総数",
+    "health": "機能フラグの状態",
+    "message": "未使用のフラグを継続的に監視し、古いリリースを定期的に整理してください。"
+  },
+
+  "deploymentSafety": {
+    "title": "デプロイの安全性",
+    "subtitle": "リリースの信頼性を監視します。",
+    "safe": "安全なデプロイ",
+    "warning": "注意が必要",
+    "rolloutChecks": "展開チェック",
+    "environmentChecks": "環境チェック",
+    "passed": "合格",
+    "activeFlags": "有効な機能フラグ",
+    "totalFlags": "機能フラグ総数",
+    "messageSafe": "現在、デプロイは安定しており安全です。",
+    "messageWarning": "一部のデプロイに注意が必要です。"
+  },
+
+  "targetingSummary": {
+    "title": "ターゲティング概要",
+    "subtitle": "ユーザー層のターゲティングルールを監視します。",
+    "userRules": "ユーザーターゲティング",
+    "groupRules": "グループターゲティング",
+    "percentageRules": "パーセント展開",
+    "totalRules": "ルール総数",
+    "coverage": "ターゲティング範囲",
+    "activeMessage": "機能リリースのユーザーターゲティングが設定されています。",
+    "emptyMessage": "ターゲティングルールはまだ設定されていません。"
+  },
+
+  "analytics": {
+    "loading": "分析を読み込み中...",
+    "title": "分析",
+    "subtitle": "機能のパフォーマンスを監視",
+    "description": "機能の利用状況、展開パフォーマンス、評価メトリクスを監視します。",
+    "exportCSV": "CSVをエクスポート",
+    "exportPDF": "PDFをエクスポート",
+
+    "range": {
+      "7Days": "7日間",
+      "15Days": "15日間",
+      "30Days": "30日間"
+    },
+
+    "evaluations": "機能評価",
+    "totalEvaluations": "評価総数",
+    "activeFlags": "有効な機能フラグ",
+    "enabled": "有効",
+    "rolloutSuccess": "展開成功率",
+    "healthy": "正常",
+    "environments": "環境",
+    "available": "利用可能",
+
+    "evaluationTrend": "評価の傾向",
+    "evaluationOverTime": "時間経過による評価",
+
+    "noEvaluationData": "評価データなし",
+    "noFeatureEvaluations": "この期間に利用可能な機能評価はありません。",
+
+    "flagDistribution": "機能フラグの分布",
+    "enabledVsDisabled": "有効な機能フラグと無効な機能フラグ",
+    "noAnalyticsData": "利用可能な分析データがありません。",
+
+    "mostEvaluatedFlags": "最も評価された機能フラグ",
+    "mostEvaluatedDescription": "評価アクティビティに基づく上位の機能フラグ",
+    "noTopFlagsData": "データなし",
+
+    "environmentDistribution": "環境別分布",
+    "flagUsage": "環境全体の機能フラグ使用状況",
+    "flags": "フラグ",
+
+    "evaluationSummary": "評価概要",
+    "evaluationOverview": "機能評価アクティビティの概要です。",
+    "todayEvaluations": "今日の評価",
+    "averageDaily": "1日あたりの平均評価",
+    "peakEvaluation": "評価のピーク",
+
+    "peakDay": "ピーク日",
+    "growthTrend": "成長傾向",
+    "increasing": "増加",
+    "decreasing": "減少",
+
+    "insights": "分析インサイト",
+    "insightsDescription": "機能のパフォーマンス概要と利用パターン",
+    "mostUsedFeature": "最も使用された機能",
+    "environment": "環境",
+    "totalFlags": "機能フラグ総数",
+    "noData": "データなし",
+    "noEvaluationActivity": "評価アクティビティはまだありません。",
+    "mostEvaluatedFeature": "{{flag}}が最も評価された機能です。",
+
+    "successfulEvaluations": "成功した評価",
+    "failedEvaluations": "失敗した評価",
+    "evaluationHistory": "評価履歴",
+    "usage": "利用状況分析",
+    "performance": "パフォーマンス概要"
+  },
+
+  "groups": {
+    "betaUsers": "ベータユーザー",
+    "premiumPlan": "プレミアムプラン",
+    "internalTeam": "社内チーム"
+  },
+
+  "groupTargetingModal": {
+    "title": "ターゲットグループを追加",
+    "selectGroup": "グループを選択"
+  },
+
+  "targetingModal": {
+    "title": "ターゲットユーザーを追加",
+    "userId": "ユーザーID",
+    "placeholder": "ユーザーIDを入力"
+  },
+
+  "groupTargeting": {
+    "title": "グループターゲティング",
+    "description": "特定のユーザーグループに対してこの機能を有効にします。",
+    "addGroup": "グループを追加",
+    "empty": "グループターゲティングルールはまだ設定されていません。",
+    "addSuccess": "グループターゲティングルールを正常に追加しました。",
+    "addFailed": "グループターゲティングルールの追加に失敗しました。",
+    "deleteSuccess": "グループターゲティングルールを正常に削除しました。",
+    "deleteFailed": "グループターゲティングルールの削除に失敗しました。"
+  },
+
+  "messages": {
+    "loadFailed": "機能フラグの読み込みに失敗しました。",
+    "userAdded": "ユーザーターゲティングルールを正常に追加しました。",
+    "addUserFailed": "ユーザーターゲティングルールの追加に失敗しました。",
+    "userDeleted": "ユーザーターゲティングルールを正常に削除しました。",
+    "deleteUserFailed": "ユーザーターゲティングルールの削除に失敗しました。",
+    "rolloutUpdated": "展開を正常に更新しました。",
+    "rolloutFailed": "展開の更新に失敗しました。",
+    "enterUserId": "ユーザーIDを入力してください。",
+    "enterGroupName": "グループ名を入力してください。",
+    "evaluationCompleted": "機能評価が完了しました。",
+    "evaluationFailed": "機能評価に失敗しました。"
+  },
+
+  "auditLogs": {
+    "title": "監査ログ",
+    "description": "すべての機能フラグのアクティビティとシステム変更を追跡します。",
+    "emptyTitle": "監査ログが見つかりません",
+    "emptyDescription": "監査アクティビティはまだ記録されていません。",
+    "searchPlaceholder": "監査ログを検索...",
+    "allActions": "すべての操作",
+    "allFlags": "すべてのフラグ",
+    "filter": "フィルター",
+    "viewDiff": "差分を表示",
+    "detailsTitle": "監査ログの詳細",
+    "flag": "フラグ",
+    "action": "操作",
+    "actor": "実行者",
+    "timestamp": "タイムスタンプ",
+    "jsonDiff": "JSON差分",
+    "copyJson": "JSONをコピー",
+    "table": {
+      "timestamp": "タイムスタンプ",
+      "actor": "実行者",
+      "flag": "機能フラグ",
+      "action": "操作",
+      "viewDiff": "差分を表示"
+    },
+    "actions": {
+      "created": "作成",
+      "updated": "更新",
+      "deleted": "削除"
+    }
+  },
+
+  "team": {
+    "title": "チーム管理",
+    "description": "プロジェクトメンバーとその役割を管理します。",
+    "addMember": "メンバーを追加",
+    "totalMembers": "メンバー総数",
+    "developers": "開発者",
+    "managers": "マネージャー",
+    "activeMembers": "アクティブなメンバー",
+    "search": "チームメンバーを検索...",
+    "name": "名前",
+    "email": "メールアドレス",
+    "role": "役割",
+    "status": "ステータス",
+    "actions": "操作",
+    "roles": {
+      "Feature Manager": "機能マネージャー",
+      "Backend Developer": "バックエンド開発者",
+      "Frontend Developer": "フロントエンド開発者",
+      "QA Engineer": "QAエンジニア"
+    },
+    "statuses": {
+      "Active": "アクティブ",
+      "Inactive": "非アクティブ"
+    }
+  },
+
+  "environment": {
+    "development": "開発",
+    "staging": "ステージング",
+    "production": "本番",
+
+    "pageTitle": "環境",
+    "pageDescription": "開発、ステージング、本番環境を管理します。",
+
+    "create": "作成",
+    "createEnvironment": "環境を作成",
+    "creating": "作成中...",
+
+    "refresh": "更新",
+    "refreshing": "更新中...",
+
+    "editEnvironment": "環境を編集",
+
+    "deleteTitle": "環境を削除",
+    "deleteConfirm": "次の環境を削除してもよろしいですか",
+    "deleteWarning": "この操作は元に戻せません。",
+    "deleting": "削除中...",
+
+    "environmentName": "環境名",
+    "environmentDescription": "環境の説明",
+
+    "totalEnvironments": "環境総数",
+    "activeEnvironments": "アクティブな環境",
+    "defaultConfigurations": "デフォルト設定",
+
+    "environmentOverride": "環境オーバーライド",
+    "customOverridesConfigured": "カスタムオーバーライドが設定されています",
+    "noOverrides": "オーバーライドなし",
+    "usingDefaultValues": "デフォルト値を使用",
+
+    "searchPlaceholder": "環境を検索...",
+
+    "all": "すべて",
+    "onlyOverrides": "オーバーライドのみ",
+    "noOverrideFilter": "オーバーライドなし",
+
+    "featureFlag": "機能フラグ",
+    "featureFlagDescription": "環境を表示する機能フラグを選択してください。",
+    "selectFeature": "機能を選択",
+
+    "showing": "表示中",
+    "environments": "環境",
+
+    "environmentList": "環境一覧",
+
+    "active": "アクティブ",
+
+    "emptyTable": "環境が見つかりません。",
+    "emptyOverrides": "オーバーライドが見つかりません。",
+
+    "table": {
+      "id": "ID",
+      "environment": "環境",
+      "description": "説明",
+      "status": "ステータス",
+      "action": "操作"
+    },
+
+    "overrideTitle": "環境オーバーライド",
+    "overrideDescription": "異なる環境の機能フラグ値を管理します。",
+    "overrideValue": "オーバーライド値",
+
+    "enabledTrue": "有効（真）",
+    "disabledFalse": "無効（偽）",
+
+    "overridden": "オーバーライド済み",
+    "default": "デフォルト",
+
+    "lastUpdated": "最終更新",
+
+    "saving": "保存中...",
+
+    "editOverride": "オーバーライドを編集",
+
+    "overrideInfoTitle": "オーバーライド情報",
+    "overrideInfoDescription": "指定された環境では、オーバーライド値がデフォルトの機能フラグ値より優先されます。",
+
+    "messages": {
+      "created": "環境を正常に作成しました。",
+      "updated": "環境を正常に更新しました。",
+      "deleted": "環境を正常に削除しました。",
+      "createFailed": "環境の作成に失敗しました。",
+      "updateFailed": "環境の更新に失敗しました。",
+      "deleteFailed": "環境の削除に失敗しました。"
+    }
+  },
+
+  "settings": {
+    "title": "設定",
+    "description": "FeatureFlowの設定とアカウント設定を管理します。",
+
+    "profile": {
+      "title": "プロフィール設定",
+      "description": "プロフィール情報を表示します。",
+      "name": "名前",
+      "email": "メールアドレス",
+      "role": "役割",
+      "admin": "管理者"
+    },
+
+    "appearance": {
+      "title": "外観設定",
+      "description": "アプリケーションの外観とデフォルト環境をカスタマイズします。",
+      "theme": "テーマ",
+      "light": "ライト",
+      "dark": "ダーク",
+      "defaultEnvironment": "デフォルト環境"
+    },
+
+    "notifications": {
+      "title": "通知設定",
+      "description": "通知設定を管理します。",
+      "email": "メール通知",
+      "audit": "監査ログ通知",
+      "feature": "機能フラグ通知",
+      "deployment": "デプロイ通知"
+    },
+
+    "security": {
+      "title": "セキュリティ設定",
+      "description": "アカウントのセキュリティとパスワードを管理します。",
+      "currentPassword": "現在のパスワード",
+      "currentPlaceholder": "現在のパスワードを入力",
+      "newPassword": "新しいパスワード",
+      "newPlaceholder": "新しいパスワードを入力",
+      "confirmPassword": "パスワードの確認",
+      "confirmPlaceholder": "新しいパスワードをもう一度入力",
+      "updatePassword": "パスワードを更新",
+      "logout": "ログアウト"
+    }
+  }
+}

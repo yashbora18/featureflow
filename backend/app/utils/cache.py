@@ -1,10 +1,24 @@
 from app.core.redis_client import redis_client
 
 
-def clear_flag_cache(flag_key: str):
-    pattern = f"evaluation:{flag_key}:*"
+def clear_flag_cache(flag_key):
 
-    keys = redis_client.keys(pattern)
+    try:
 
-    if keys:
-        redis_client.delete(*keys)
+        keys = redis_client.keys(
+            f"*{flag_key}*"
+        )
+
+        for key in keys:
+
+            redis_client.delete(key)
+
+
+    except Exception as e:
+
+        print(
+            "Redis unavailable:",
+            e
+        )
+
+        pass

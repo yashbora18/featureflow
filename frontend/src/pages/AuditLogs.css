@@ -1,0 +1,1864 @@
+/* =====================================================
+   AUDIT LOG PAGE
+===================================================== */
+
+.audit-page{
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:28px;
+
+}
+
+
+
+/* =====================================================
+   FILTER BAR
+===================================================== */
+
+
+.audit-filters{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.search-box{
+
+    position:relative;
+
+    width:360px;
+
+}
+
+
+
+.search-icon{
+
+    position:absolute;
+
+    left:16px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#94a3b8;
+
+    font-size:18px;
+
+}
+
+
+
+.search-input{
+
+    width:100%;
+
+    height:52px;
+
+    padding:0 18px 0 45px;
+
+    border-radius:14px;
+
+    border:1px solid #dbe5f5;
+
+    background:white;
+
+    font-size:15px;
+
+    outline:none;
+
+}
+
+
+
+.search-input:focus{
+
+    border-color:#8b5cf6;
+
+}
+
+
+
+
+.date-range{
+
+    height:52px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:0 16px;
+
+    background:white;
+
+    border-radius:14px;
+
+    border:1px solid #dbe5f5;
+
+}
+
+
+
+.date-range input{
+
+    border:none;
+
+    outline:none;
+
+    font-size:14px;
+
+}
+
+
+
+.date-arrow{
+
+    color:#64748b;
+
+}
+
+
+
+
+
+.filter-select{
+
+    height:52px;
+
+    min-width:180px;
+
+    padding:0 16px;
+
+    border-radius:14px;
+
+    border:1px solid #dbe5f5;
+
+    background:white;
+
+    font-size:14px;
+
+    cursor:pointer;
+
+}
+
+
+
+.filter-select:focus{
+
+    outline:none;
+
+    border-color:#8b5cf6;
+
+}
+
+
+
+.filter-btn{
+
+    height:52px;
+
+    padding:0 26px;
+
+    border-radius:14px;
+
+    border:none;
+
+    background:#7c3aed;
+
+    color:white;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+
+.audit-table-container{
+
+    background:white;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    border:1px solid #e2e8f0;
+
+    box-shadow:
+
+    0 10px 30px rgba(15,23,42,.06);
+
+}
+
+
+
+.audit-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+
+
+.audit-table thead{
+
+    background:#f8fafc;
+
+}
+
+
+
+.audit-table th{
+
+    padding:18px 22px;
+
+    text-align:left;
+
+    color:#475569;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+}
+
+
+
+.audit-table td{
+
+    padding:20px 22px;
+
+    border-bottom:1px solid #edf2f7;
+
+    color:#334155;
+
+    font-size:15px;
+
+}
+
+
+
+.audit-table tbody tr:hover td{
+
+    background:#faf8ff;
+
+}
+
+
+
+
+
+/* =====================================================
+   ACTION BADGE
+===================================================== */
+
+
+.action-badge{
+
+    display:inline-flex;
+
+    padding:7px 14px;
+
+    border-radius:999px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+
+
+
+.created{
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+}
+
+
+
+.updated{
+
+    background:#fef3c7;
+
+    color:#b45309;
+
+}
+
+
+
+.deleted{
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+}
+
+
+
+.evaluated{
+
+    background:#dbeafe;
+
+    color:#2563eb;
+
+}
+
+
+
+
+/* =====================================================
+   VIEW DIFF BUTTON
+===================================================== */
+
+
+.diff-btn{
+
+    height:38px;
+
+    padding:0 16px;
+
+    border-radius:10px;
+
+    border:1px solid #ddd6fe;
+
+    background:#f1edff;
+
+    color:#7c3aed;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+
+
+.diff-btn:hover{
+
+    background:#7c3aed;
+
+    color:white;
+
+}
+
+
+
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+
+.modal-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(15,23,42,.45);
+
+    backdrop-filter:blur(6px);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:9999;
+
+}
+
+
+
+.diff-modal{
+
+    width:650px;
+
+    max-width:90%;
+
+    background:white;
+
+    border-radius:28px;
+
+    padding:42px;
+
+    box-shadow:
+
+    0 25px 60px rgba(15,23,42,.25);
+
+}
+
+
+
+.diff-modal h2{
+
+    margin-bottom:25px;
+
+    font-size:32px;
+
+    font-weight:800;
+
+    color:#0f172a;
+
+}
+
+
+
+.diff-info{
+
+    padding:18px;
+
+    background:#f8fafc;
+
+    border-radius:16px;
+
+    border:1px solid #e2e8f0;
+
+}
+
+
+
+.diff-info p{
+
+    margin:8px 0;
+
+    color:#334155;
+
+}
+
+
+
+
+
+.diff-modal pre{
+
+    margin-top:20px;
+
+    background:#0f172a;
+
+    color:#e2e8f0;
+
+    padding:20px;
+
+    border-radius:16px;
+
+    max-height:350px;
+
+    overflow:auto;
+
+}
+
+
+
+
+
+.copy-btn{
+
+    margin-top:20px;
+
+    height:45px;
+
+    padding:0 20px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#10b981;
+
+    color:white;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+
+
+
+.close-btn{
+
+    margin-left:12px;
+
+    height:45px;
+
+    padding:0 22px;
+
+    border-radius:12px;
+
+    border:none;
+
+    background:#e2e8f0;
+
+    color:#334155;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+
+
+
+.close-btn:hover{
+
+    background:#cbd5e1;
+
+}
+
+
+
+
+
+/* =====================================================
+ RESPONSIVE
+===================================================== */
+
+
+@media(max-width:768px){
+
+
+.audit-filters{
+
+    flex-direction:column;
+
+    align-items:stretch;
+
+}
+
+
+.search-box{
+
+    width:100%;
+
+}
+
+
+.filter-select,
+.filter-btn{
+
+    width:100%;
+
+}
+
+
+.audit-table-container{
+
+    overflow-x:auto;
+
+}
+
+
+.audit-table{
+
+    min-width:900px;
+
+}
+
+
+.diff-modal{
+
+    width:90%;
+
+    padding:25px;
+
+}
+
+
+}
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+
+
+.audit-pagination{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:20px;
+
+    padding:18px 22px;
+
+    background:white;
+
+    border-radius:20px;
+
+    border:1px solid #e2e8f0;
+
+    box-shadow:
+    0 10px 25px rgba(15,23,42,.05);
+
+}
+
+
+
+.rows-selector{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#475569;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+
+
+.rows-selector select{
+
+    height:40px;
+
+    padding:0 14px;
+
+    border-radius:10px;
+
+    border:1px solid #dbe5f5;
+
+    background:white;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+}
+
+
+
+
+.page-buttons{
+
+    display:flex;
+
+    gap:8px;
+
+}
+
+
+
+.page-buttons button{
+
+
+    min-width:40px;
+
+    height:40px;
+
+    border-radius:10px;
+
+    border:1px solid #ddd6fe;
+
+    background:white;
+
+    color:#7c3aed;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+
+}
+
+
+
+.page-buttons button:hover{
+
+    background:#f1edff;
+
+}
+
+
+
+.page-buttons .active-page{
+
+
+    background:#7c3aed;
+
+    color:white;
+
+    border-color:#7c3aed;
+
+}
+
+
+
+.page-buttons button:disabled{
+
+    opacity:.5;
+
+    cursor:not-allowed;
+
+}
+
+
+
+
+
+
+/* =====================================================
+   FILTER IMPROVEMENT
+===================================================== */
+
+
+.audit-filters{
+
+    background:white;
+
+    padding:18px;
+
+    border-radius:22px;
+
+    border:1px solid #e2e8f0;
+
+    box-shadow:
+
+    0 8px 25px rgba(15,23,42,.05);
+
+}
+
+
+
+
+.filter-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+
+    0 10px 25px rgba(124,58,237,.25);
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   TABLE IMPROVEMENT
+===================================================== */
+
+
+.audit-table-container{
+
+    box-shadow:
+
+    0 12px 35px rgba(15,23,42,.08);
+
+}
+
+
+
+.audit-table tbody tr{
+
+    transition:.25s ease;
+
+}
+
+
+
+.audit-table tbody tr:hover{
+
+    transform:scale(1.002);
+
+}
+
+
+
+
+
+/* =====================================================
+   MODAL BUTTON ALIGNMENT
+===================================================== */
+
+
+.copy-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+
+.close-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+
+
+
+
+/* =====================================================
+   RESPONSIVE PAGINATION
+===================================================== */
+
+
+@media(max-width:768px){
+
+
+.audit-pagination{
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+
+.page-buttons{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+
+}
+
+/* =====================================================
+   AUDIT LOG PAGE — DARK MODE
+===================================================== */
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+html.dark .audit-page{
+
+    color:var(--text-primary);
+
+}
+
+
+/* =====================================================
+   FILTER BAR
+===================================================== */
+
+html.dark .audit-filters{
+
+    background:var(--surface);
+
+    border-color:var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+/* SEARCH */
+
+html.dark .search-input{
+
+    background:var(--surface);
+
+    color:var(--text-primary);
+
+    border-color:var(--border);
+
+}
+
+
+html.dark .search-input::placeholder{
+
+    color:#64748b;
+
+}
+
+
+html.dark .search-input:focus{
+
+    border-color:#7c3aed;
+
+    box-shadow:
+        0 0 0 4px rgba(124,58,237,.15);
+
+}
+
+
+html.dark .search-icon{
+
+    color:#94a3b8;
+
+}
+
+
+/* DATE RANGE */
+
+html.dark .date-range{
+
+    background:var(--surface);
+
+    border-color:var(--border);
+
+}
+
+
+html.dark .date-range input{
+
+    background:transparent;
+
+    color:var(--text-primary);
+
+}
+
+
+html.dark .date-arrow{
+
+    color:#94a3b8;
+
+}
+
+
+/* FILTER SELECT */
+
+html.dark .filter-select{
+
+    background:var(--surface);
+
+    color:var(--text-primary);
+
+    border-color:var(--border);
+
+}
+
+
+html.dark .filter-select option{
+
+    background:#111827;
+
+    color:#f8fafc;
+
+}
+
+
+html.dark .filter-select:focus{
+
+    border-color:#7c3aed;
+
+}
+
+
+/* FILTER BUTTON */
+
+html.dark .filter-btn{
+
+    background:
+    linear-gradient(
+        135deg,
+        #7c3aed,
+        #a855f7
+    );
+
+    color:white;
+
+}
+
+
+html.dark .filter-btn:hover{
+
+    background:
+    linear-gradient(
+        135deg,
+        #6d28d9,
+        #9333ea
+    );
+
+}
+
+
+/* =====================================================
+   AUDIT TABLE
+===================================================== */
+
+html.dark .audit-table-container{
+
+    background:var(--surface);
+
+    border-color:var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+html.dark .audit-table thead{
+
+    background:#1e293b;
+
+}
+
+
+html.dark .audit-table th{
+
+    background:#1e293b;
+
+    color:#cbd5e1;
+
+    border-bottom:1px solid var(--border);
+
+}
+
+
+html.dark .audit-table td{
+
+    background:var(--surface);
+
+    color:var(--text-primary);
+
+    border-bottom-color:var(--border);
+
+}
+
+
+/* TABLE HOVER */
+
+html.dark .audit-table tbody tr:hover td{
+
+    background:#334155;
+
+}
+
+
+/* =====================================================
+   ACTION BADGES
+===================================================== */
+
+html.dark .created{
+
+    background:rgba(34,197,94,.14);
+
+    color:#4ade80;
+
+}
+
+
+html.dark .updated{
+
+    background:rgba(245,158,11,.14);
+
+    color:#fbbf24;
+
+}
+
+
+html.dark .deleted{
+
+    background:rgba(239,68,68,.14);
+
+    color:#f87171;
+
+}
+
+
+html.dark .evaluated{
+
+    background:rgba(59,130,246,.14);
+
+    color:#60a5fa;
+
+}
+
+
+/* =====================================================
+   VIEW DIFF BUTTON
+===================================================== */
+
+html.dark .diff-btn{
+
+    background:rgba(124,58,237,.16);
+
+    color:#c4b5fd;
+
+    border-color:rgba(167,139,250,.25);
+
+}
+
+
+html.dark .diff-btn:hover{
+
+    background:#7c3aed;
+
+    color:white;
+
+}
+
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+
+html.dark .audit-pagination{
+
+    background:var(--surface);
+
+    border-color:var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+html.dark .rows-selector{
+
+    color:var(--text-secondary);
+
+}
+
+
+html.dark .rows-selector select{
+
+    background:var(--surface);
+
+    color:var(--text-primary);
+
+    border-color:var(--border);
+
+}
+
+
+html.dark .rows-selector select option{
+
+    background:#111827;
+
+    color:#f8fafc;
+
+}
+
+
+/* PAGE BUTTONS */
+
+html.dark .page-buttons button{
+
+    background:var(--surface);
+
+    color:#c4b5fd;
+
+    border-color:rgba(167,139,250,.25);
+
+}
+
+
+html.dark .page-buttons button:hover{
+
+    background:rgba(124,58,237,.16);
+
+    color:#c4b5fd;
+
+}
+
+
+html.dark .page-buttons .active-page{
+
+    background:#7c3aed;
+
+    color:white;
+
+    border-color:#7c3aed;
+
+}
+
+
+html.dark .page-buttons button:disabled{
+
+    opacity:.4;
+
+}
+
+
+/* =====================================================
+   DIFF MODAL
+===================================================== */
+
+html.dark .modal-overlay{
+
+    background:rgba(2,6,23,.72);
+
+}
+
+
+/* DIFF MODAL */
+
+html.dark .diff-modal{
+
+    background:#111827;
+
+    border:1px solid #334155;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.45);
+
+}
+
+
+html.dark .diff-modal h2{
+
+    color:#f8fafc;
+
+}
+
+
+/* DIFF INFORMATION */
+
+html.dark .diff-info{
+
+    background:#1e293b;
+
+    border-color:#334155;
+
+}
+
+
+html.dark .diff-info p{
+
+    color:#cbd5e1;
+
+}
+
+
+/* CODE / JSON AREA */
+
+html.dark .diff-modal pre{
+
+    background:#020617;
+
+    color:#e2e8f0;
+
+    border:1px solid #1e293b;
+
+}
+
+
+/* =====================================================
+   MODAL BUTTONS
+===================================================== */
+
+html.dark .copy-btn{
+
+    background:#059669;
+
+    color:white;
+
+}
+
+
+html.dark .copy-btn:hover{
+
+    background:#047857;
+
+}
+
+
+html.dark .close-btn{
+
+    background:#334155;
+
+    color:#e2e8f0;
+
+}
+
+
+html.dark .close-btn:hover{
+
+    background:#475569;
+
+}
+
+
+/* =====================================================
+   FOCUS
+===================================================== */
+
+html.dark .search-input:focus-visible,
+html.dark .filter-select:focus-visible,
+html.dark .rows-selector select:focus-visible{
+
+    outline:
+        3px solid rgba(167,139,250,.25);
+
+}
+
+/* =====================================================
+   AUDIT LOG HEADER — DARK MODE FIX
+===================================================== */
+
+html.dark .page-header{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+html.dark .page-header h1{
+
+    color:var(--text-primary);
+
+}
+
+
+html.dark .page-header p{
+
+    color:var(--text-secondary);
+
+}
+
+
+/* Header icon */
+
+html.dark .page-header .header-icon{
+
+    background:
+    linear-gradient(
+        135deg,
+        #6366f1,
+        #8b5cf6
+    );
+
+    color:#ffffff;
+
+}
+
+
+/* Refresh button */
+
+html.dark .page-header button{
+
+    background:
+    linear-gradient(
+        135deg,
+        #6366f1,
+        #8b5cf6
+    );
+
+    color:#ffffff;
+
+}
+
+
+html.dark .page-header button:hover{
+
+    background:
+    linear-gradient(
+        135deg,
+        #7c3aed,
+        #a855f7
+    );
+
+}
+
+/* =====================================================
+   ACTION BADGES
+===================================================== */
+
+.action-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 90px;
+
+    padding: 7px 14px;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    white-space: nowrap;
+
+    border: 1px solid transparent;
+
+}
+
+
+/* =====================================================
+   CREATED
+===================================================== */
+
+.action-badge.created {
+
+    background: rgba(34, 197, 94, 0.15);
+
+    color: #22c55e;
+
+    border-color: rgba(34, 197, 94, 0.15);
+
+}
+
+
+/* =====================================================
+   UPDATED
+===================================================== */
+
+.action-badge.updated {
+
+    background: rgba(245, 158, 11, 0.15);
+
+    color: #f59e0b;
+
+    border-color: rgba(245, 158, 11, 0.15);
+
+}
+
+
+/* =====================================================
+   DELETED
+===================================================== */
+
+.action-badge.deleted {
+
+    background: rgba(239, 68, 68, 0.15);
+
+    color: #ef4444;
+
+    border-color: rgba(239, 68, 68, 0.15);
+
+}
+
+
+/* =====================================================
+   ENABLED
+===================================================== */
+
+.action-badge.enabled {
+
+    background: rgba(34, 197, 94, 0.15);
+
+    color: #22c55e;
+
+    border-color: rgba(34, 197, 94, 0.15);
+
+}
+
+
+/* =====================================================
+   DISABLED
+===================================================== */
+
+.action-badge.disabled {
+
+    background: rgba(239, 68, 68, 0.15);
+
+    color: #ef4444;
+
+    border-color: rgba(239, 68, 68, 0.15);
+
+}
+
+
+/* =====================================================
+   ROLLOUT CHANGED
+===================================================== */
+
+.action-badge.rollout-changed {
+
+    background: rgba(139, 92, 246, 0.15);
+
+    color: #a78bfa;
+
+    border-color: rgba(139, 92, 246, 0.15);
+
+}
+
+
+/* =====================================================
+   ENVIRONMENT CHANGED
+===================================================== */
+
+.action-badge.environment-changed {
+
+    background: rgba(59, 130, 246, 0.15);
+
+    color: #60a5fa;
+
+    border-color: rgba(59, 130, 246, 0.15);
+
+}
+
+/* =====================================================
+   AUDIT LOG — IMPROVED RESPONSIVE
+===================================================== */
+
+/* TABLET */
+@media (max-width:1024px){
+
+    .audit-page{
+        gap:24px;
+    }
+
+    .audit-filters{
+        gap:12px;
+    }
+
+    .search-box{
+        width:300px;
+    }
+
+    .filter-select{
+        min-width:160px;
+    }
+
+    .audit-table-container{
+        width:100%;
+        overflow-x:auto;
+        overflow-y:hidden;
+        -webkit-overflow-scrolling:touch;
+    }
+
+    .audit-table{
+        min-width:850px;
+    }
+
+    .audit-pagination{
+        gap:15px;
+    }
+
+}
+
+
+/* MOBILE */
+@media (max-width:768px){
+
+    .audit-page{
+        width:100%;
+        gap:20px;
+    }
+
+
+    /* =========================
+       FILTERS
+    ========================= */
+
+    .audit-filters{
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        gap:12px;
+        padding:15px;
+    }
+
+
+    .search-box{
+        width:100%;
+    }
+
+
+    .search-input{
+        height:48px;
+        font-size:14px;
+    }
+
+
+    .date-range{
+        width:100%;
+        height:48px;
+        justify-content:space-between;
+    }
+
+
+    .date-range input{
+        width:100%;
+        min-width:0;
+    }
+
+
+    .filter-select{
+        width:100%;
+        min-width:0;
+        height:48px;
+    }
+
+
+    .filter-btn{
+        width:100%;
+        height:48px;
+    }
+
+
+    /* =========================
+       TABLE
+    ========================= */
+
+    .audit-table-container{
+        width:100%;
+        max-width:100%;
+        overflow-x:auto;
+        overflow-y:hidden;
+        border-radius:18px;
+        -webkit-overflow-scrolling:touch;
+    }
+
+
+    .audit-table{
+        min-width:850px;
+    }
+
+
+    .audit-table th{
+        padding:15px 16px;
+        font-size:12px;
+    }
+
+
+    .audit-table td{
+        padding:16px;
+        font-size:14px;
+    }
+
+
+    /* =========================
+       PAGINATION
+    ========================= */
+
+    .audit-pagination{
+        width:100%;
+        flex-direction:column;
+        align-items:stretch;
+        gap:16px;
+        padding:16px;
+    }
+
+
+    .rows-selector{
+        justify-content:space-between;
+        width:100%;
+    }
+
+
+    .rows-selector select{
+        height:38px;
+    }
+
+
+    .page-buttons{
+        width:100%;
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+
+    .page-buttons button{
+        min-width:38px;
+        height:38px;
+    }
+
+
+    /* =========================
+       MODAL
+    ========================= */
+
+    .modal-overlay{
+        padding:15px;
+    }
+
+
+    .diff-modal{
+        width:100%;
+        max-width:100%;
+        max-height:90vh;
+        overflow-y:auto;
+        padding:24px;
+        border-radius:22px;
+    }
+
+
+    .diff-modal h2{
+        font-size:24px;
+        margin-bottom:20px;
+    }
+
+
+    .diff-info{
+        padding:15px;
+    }
+
+
+    .diff-modal pre{
+        max-height:280px;
+        padding:15px;
+        font-size:12px;
+        overflow:auto;
+    }
+
+
+    .copy-btn,
+    .close-btn{
+        width:100%;
+        margin-left:0;
+        margin-top:10px;
+    }
+
+}
+
+
+/* SMALL MOBILE */
+@media (max-width:480px){
+
+    .audit-page{
+        gap:16px;
+    }
+
+
+    .audit-filters{
+        padding:12px;
+        border-radius:18px;
+    }
+
+
+    .search-input{
+        height:46px;
+        padding-left:42px;
+    }
+
+
+    .date-range{
+        height:auto;
+        min-height:46px;
+        padding:8px 12px;
+        gap:8px;
+    }
+
+
+    .date-range input{
+        font-size:12px;
+    }
+
+
+    .filter-select{
+        height:46px;
+        font-size:13px;
+    }
+
+
+    .filter-btn{
+        height:46px;
+        font-size:14px;
+    }
+
+
+    .audit-table-container{
+        border-radius:16px;
+    }
+
+
+    .audit-table{
+        min-width:800px;
+    }
+
+
+    .audit-pagination{
+        padding:14px;
+        border-radius:16px;
+    }
+
+
+    .rows-selector{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:8px;
+    }
+
+
+    .page-buttons{
+        gap:6px;
+    }
+
+
+    .page-buttons button{
+        min-width:36px;
+        height:36px;
+        font-size:13px;
+    }
+
+
+    .diff-modal{
+        padding:20px;
+        border-radius:20px;
+    }
+
+
+    .diff-modal h2{
+        font-size:21px;
+    }
+
+
+    .diff-info p{
+        font-size:13px;
+        word-break:break-word;
+    }
+
+
+    .diff-modal pre{
+        font-size:11px;
+        max-height:240px;
+    }
+
+}

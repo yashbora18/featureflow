@@ -1,0 +1,859 @@
+{
+  "nav": {
+    "features": "Funcionalidades",
+    "workflow": "Fluxo de trabalho",
+    "techStack": "Tecnologias",
+    "contact": "Contato",
+    "login": "Entrar",
+    "getStarted": "Começar"
+  },
+
+  "hero": {
+    "badge": "Gerenciamento moderno de funcionalidades",
+    "title": "Lance funcionalidades",
+    "highlight": "com confiança",
+    "description": "Controle lançamentos de funcionalidades, gerencie ambientes, direcione usuários e disponibilize novas funcionalidades com segurança usando o FeatureFlow.",
+    "getStarted": "Começar",
+    "learnMore": "Saiba mais"
+  },
+
+  "heroPreview": {
+    "dashboard": "Painel do FeatureFlow",
+    "activeFlags": "Funcionalidades ativas",
+    "environments": "Ambientes",
+    "success": "Sucesso das avaliações",
+    "rollout": "Progresso do lançamento",
+    "analytics": "Análises das funcionalidades",
+    "activities": {
+      "payment": "Funcionalidade de pagamento ativada",
+      "aiSearch": "Lançamento da pesquisa por IA atualizado",
+      "darkMode": "Direcionamento do modo escuro alterado"
+    }
+  },
+
+  "heroStats": {
+    "activeFlags": "Funcionalidades ativas",
+    "environments": "Ambientes",
+    "evaluation": "Sucesso das avaliações",
+    "teams": "Equipes"
+  },
+
+  "trustedTeams": {
+    "badge": "Criado para equipes modernas",
+    "title": "Confiado por todas as equipes",
+    "description": "O FeatureFlow ajuda as equipes de engenharia e produto a gerenciar e entregar funcionalidades com segurança.",
+    "cards": {
+      "engineering": {
+        "title": "Engenharia",
+        "text": "Gerencie lançamentos de funcionalidades sem alterar o código da aplicação."
+      },
+      "qa": {
+        "title": "Equipes de QA",
+        "text": "Teste funcionalidades com segurança em diferentes ambientes."
+      },
+      "product": {
+        "title": "Equipes de Produto",
+        "text": "Controle os lançamentos de funcionalidades e ofereça melhores experiências aos usuários."
+      },
+      "devops": {
+        "title": "DevOps",
+        "text": "Gerencie ambientes e implantações com confiança."
+      },
+      "platform": {
+        "title": "Equipes de Plataforma",
+        "text": "Mantenha o gerenciamento centralizado de funcionalidades e a governança."
+      }
+    }
+  },
+
+  "features": {
+    "badge": "Funcionalidades poderosas",
+    "title": "Tudo o que você precisa para lançar com segurança",
+    "description": "O FeatureFlow oferece à sua equipe controle completo sobre lançamentos, direcionamento, distribuições graduais e monitoramento de funcionalidades.",
+    "learnMore": "Saiba mais",
+    "cards": {
+      "flags": {
+        "title": "Feature Flags",
+        "description": "Crie e gerencie feature flags sem alterar o código da sua aplicação."
+      },
+      "targeting": {
+        "title": "Direcionamento de usuários",
+        "description": "Controle o acesso às funcionalidades para usuários e grupos específicos usando regras flexíveis de direcionamento."
+      },
+      "rollouts": {
+        "title": "Lançamentos graduais",
+        "description": "Libere funcionalidades gradualmente usando lançamentos baseados em porcentagem e lançamentos por etapas."
+      },
+      "environments": {
+        "title": "Ambientes",
+        "description": "Gerencie configurações de funcionalidades de forma independente nos ambientes de desenvolvimento, homologação e produção."
+      },
+      "analytics": {
+        "title": "Análises",
+        "description": "Monitore o uso das funcionalidades e entenda como suas flags estão funcionando."
+      },
+      "audit": {
+        "title": "Registros de auditoria",
+        "description": "Acompanhe alterações nas funcionalidades e mantenha um histórico completo das ações importantes."
+      },
+      "evaluation": {
+        "title": "Avaliação de funcionalidades",
+        "description": "Avalie feature flags dinamicamente com base em usuários, grupos, ambientes e regras de direcionamento."
+      },
+      "security": {
+        "title": "Segurança",
+        "description": "Mantenha o gerenciamento de funcionalidades sob controle com acesso seguro e configuração centralizada."
+      }
+    }
+  },
+
+  "showcase": {
+    "badge": "Veja o FeatureFlow em ação",
+    "title": "Tudo o que você precisa em uma única plataforma",
+    "description": "Explore as ferramentas poderosas que ajudam sua equipe a gerenciar, lançar e monitorar funcionalidades com confiança.",
+    "learnMore": "Saiba mais",
+    "cards": {
+      "flags": {
+        "title": "Feature Flags",
+        "subtitle": "Controle funcionalidades instantaneamente",
+        "description": "Crie, gerencie, ative e desative feature flags instantaneamente sem implantar novo código."
+      },
+      "environment": {
+        "title": "Gerenciamento de ambientes",
+        "subtitle": "Uma plataforma, vários ambientes",
+        "description": "Gerencie facilmente configurações de funcionalidades nos ambientes de desenvolvimento, homologação e produção."
+      },
+      "analytics": {
+        "title": "Análises poderosas",
+        "subtitle": "Entenda suas funcionalidades",
+        "description": "Acompanhe o desempenho das funcionalidades, o progresso dos lançamentos e o uso com análises claras e úteis."
+      },
+      "audit": {
+        "title": "Registros de auditoria",
+        "subtitle": "Histórico completo de alterações",
+        "description": "Acompanhe cada alteração importante das funcionalidades com registros de auditoria detalhados e histórico de alterações."
+      }
+    }
+  },
+
+  "workflow": {
+    "badge": "Fluxo de trabalho simples",
+    "title": "Da ideia ao lançamento",
+    "description": "Gerencie todo o ciclo de vida de uma funcionalidade, desde a criação e o direcionamento até o lançamento e monitoramento.",
+    "steps": {
+      "create": {
+        "title": "Criar",
+        "description": "Crie uma feature flag e configure seu comportamento padrão."
+      },
+      "targeting": {
+        "title": "Direcionar",
+        "description": "Defina os usuários e grupos que devem receber a funcionalidade."
+      },
+      "evaluate": {
+        "title": "Avaliar",
+        "description": "Avalie feature flags com base no ambiente e nas regras de direcionamento."
+      },
+      "release": {
+        "title": "Lançar",
+        "description": "Libere gradualmente a funcionalidade para seus usuários com confiança."
+      },
+      "monitor": {
+        "title": "Monitorar",
+        "description": "Acompanhe o desempenho das funcionalidades, as alterações e o progresso do lançamento."
+      }
+    }
+  },
+
+  "architecture": {
+    "badge": "Arquitetura do sistema",
+    "title": "Criado para uma entrega confiável de funcionalidades",
+    "description": "O FeatureFlow utiliza uma arquitetura escalável que conecta o frontend, backend, mecanismo de avaliação e banco de dados.",
+    "frontend": {
+      "title": "Frontend",
+      "description": "Uma interface React moderna para gerenciar feature flags, ambientes, direcionamento, análises e registros de auditoria."
+    },
+    "backend": {
+      "title": "API Backend",
+      "description": "Um backend FastAPI que gerencia funcionalidades, regras de direcionamento, solicitações de avaliação e lógica da aplicação."
+    },
+    "engine": {
+      "title": "Mecanismo de avaliação",
+      "description": "Avalia feature flags usando ambientes, direcionamento de usuários, grupos e regras de lançamento."
+    },
+    "modules": {
+      "flags": "Feature Flags",
+      "targeting": "Direcionamento",
+      "audit": "Registros de auditoria"
+    },
+    "database": {
+      "title": "Banco de dados",
+      "description": "Armazena feature flags, ambientes, regras de direcionamento, grupos de usuários, versões e histórico de auditoria."
+    }
+  },
+
+  "techStack": {
+    "badge": "Tecnologias utilizadas",
+    "title": "Construído com tecnologia moderna",
+    "description": "O FeatureFlow é construído com tecnologias confiáveis e modernas para uma plataforma de gerenciamento de funcionalidades rápida, escalável e fácil de manter.",
+    "cards": {
+      "react": "Frontend moderno baseado em componentes para uma experiência de usuário responsiva e interativa.",
+      "fastapi": "API backend de alto desempenho para gerenciamento e avaliação de funcionalidades.",
+      "postgresql": "Banco de dados relacional confiável para armazenar dados das funcionalidades e da aplicação.",
+      "javascript": "Linguagem de programação principal que alimenta a experiência interativa do frontend.",
+      "html": "Marcação semântica para construir a estrutura da aplicação.",
+      "css": "Estilização moderna para uma interface responsiva e refinada.",
+      "git": "Controle de versão para gerenciar o código-fonte e o histórico de desenvolvimento.",
+      "github": "Plataforma de repositório e colaboração para gerenciar o projeto.",
+      "docker": "Arquitetura preparada para contêineres para desenvolvimento e implantação consistentes."
+    }
+  },
+
+  "premium": {
+    "badge": "Criado para equipes modernas",
+    "title1": "Lance mais rápido.",
+    "title2": "Mantenha o controle.",
+    "description": "O FeatureFlow oferece à sua equipe a confiança necessária para lançar funcionalidades mais rapidamente, mantendo controle total sobre direcionamento, lançamentos, segurança e análises.",
+    "points": {
+      "rollout": "Lançamentos seguros e graduais de funcionalidades",
+      "security": "Gerenciamento seguro de funcionalidades",
+      "analytics": "Análises poderosas de lançamentos"
+    },
+    "button": "Explorar FeatureFlow",
+    "imageAlt": "Painel de análises do FeatureFlow"
+  },
+
+  "statistics": {
+    "badge": "FeatureFlow em números",
+    "title": "Criado para crescer com sua equipe",
+    "description": "Recursos poderosos de gerenciamento de funcionalidades projetados para ajudar as equipes a lançar, controlar e monitorar funcionalidades com eficiência.",
+    "cards": {
+      "flags": {
+        "title": "Feature Flags",
+        "description": "Crie e gerencie feature flags em toda a sua aplicação."
+      },
+      "environments": {
+        "title": "Ambientes",
+        "description": "Gerencie funcionalidades nos ambientes de desenvolvimento, homologação e produção."
+      },
+      "targeting": {
+        "number": "Mais de dez",
+        "title": "Opções de direcionamento",
+        "description": "Controle o acesso às funcionalidades usando regras flexíveis de direcionamento."
+      },
+      "audit": {
+        "title": "Cobertura de auditoria",
+        "description": "Acompanhe alterações importantes das funcionalidades com um histórico completo de auditoria."
+      }
+    }
+  },
+
+  "cta": {
+    "badge": "Pronto para começar?",
+    "title": "Lance funcionalidades mais rápido.\nMantenha o controle.",
+    "description": "Comece a gerenciar seus lançamentos de funcionalidades com o FeatureFlow e dê à sua equipe confiança para lançar com segurança.",
+    "getStarted": "Começar",
+    "login": "Entrar"
+  },
+
+  "footer": {
+    "description": "O FeatureFlow ajuda as equipes a gerenciar feature flags, controlar lançamentos, direcionar usuários e lançar funcionalidades com confiança.",
+    "platform": "Plataforma",
+    "features": "Funcionalidades",
+    "workflow": "Fluxo de trabalho",
+    "techStack": "Tecnologias",
+    "resources": "Recursos",
+    "documentation": "Documentação",
+    "api": "Referência da API",
+    "support": "Suporte",
+    "connect": "Conectar",
+    "contact": "Fale conosco",
+    "copyright": "© 2026 FeatureFlow. Todos os direitos reservados."
+  },
+
+  "common": {
+    "language": "Idioma",
+    "loading": "Carregando...",
+    "search": "Pesquisar",
+    "cancel": "Cancelar",
+    "save": "Salvar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "refresh": "Atualizar",
+    "close": "Fechar",
+    "create": "Criar",
+    "update": "Atualizar",
+    "filter": "Filtrar",
+    "yes": "Sim",
+    "no": "Não",
+    "enabled": "Ativado",
+    "disabled": "Desativado",
+    "active": "Ativo",
+    "inactive": "Inativo",
+    "true": "Verdadeiro",
+    "false": "Falso",
+    "unknown": "Desconhecido",
+    "ok": "OK",
+    "show": "Mostrar",
+    "rows": "linhas",
+    "page": "Página",
+    "of": "de"
+  },
+
+  "auth": {
+    "platform": "Plataforma de gerenciamento de Feature Flags"
+  },
+
+  "loginLeft": {
+    "title1": "Lance funcionalidades",
+    "title2": "com confiança",
+    "description": "O FeatureFlow ajuda as equipes a lançar, gerenciar e monitorar funcionalidades com segurança usando feature flags poderosas e lançamentos controlados.",
+    "instantRollouts": "Lançamentos instantâneos",
+    "instantRolloutsDesc": "Libere funcionalidades instantaneamente sem redistribuir sua aplicação.",
+    "safeReleases": "Lançamentos seguros",
+    "safeReleasesDesc": "Controle a exposição das funcionalidades e reduza os riscos de implantação.",
+    "realTimeAnalytics": "Análises em tempo real",
+    "realTimeAnalyticsDesc": "Monitore o desempenho das funcionalidades e a atividade dos lançamentos em tempo real.",
+    "enterpriseReady": "Pronto para empresas",
+    "enterpriseReadyDesc": "Criado com foco em segurança, escalabilidade e colaboração entre equipes."
+  },
+
+  "browser": {
+    "dashboardAlt": "Pré-visualização do painel do FeatureFlow"
+  },
+
+  "login": {
+    "welcome": "Bem-vindo de volta",
+    "description": "Entre no seu espaço de trabalho do FeatureFlow e continue gerenciando suas funcionalidades.",
+    "email": "Endereço de e-mail",
+    "emailPlaceholder": "Digite seu endereço de e-mail",
+    "password": "Senha",
+    "passwordPlaceholder": "Digite sua senha",
+    "remember": "Lembrar de mim",
+    "forgotPassword": "Esqueceu a senha?",
+    "signIn": "Entrar",
+    "signingIn": "Entrando...",
+    "or": "OU",
+    "continueGoogle": "Continuar com Google",
+    "newTo": "Novo no",
+    "createWorkspace": "Criar espaço de trabalho",
+    "messages": {
+      "enterEmail": "Digite seu endereço de e-mail.",
+      "invalidEmail": "Digite um endereço de e-mail válido.",
+      "passwordRequired": "Digite sua senha.",
+      "incorrectCredentials": "E-mail ou senha incorretos.",
+      "serverError": "Erro do servidor. Tente novamente mais tarde.",
+      "connectionError": "Não foi possível conectar ao servidor.",
+      "signInFailed": "Falha ao entrar. Tente novamente.",
+      "redirecting": "Redirecionando para o painel...",
+      "googleComingSoon": "O login com Google estará disponível em breve."
+    }
+  },
+
+  "signup": {
+    "createAccount": "Crie sua conta",
+    "description": "Crie seu espaço de trabalho do FeatureFlow e comece a gerenciar feature flags.",
+    "username": "Nome de usuário",
+    "usernamePlaceholder": "Digite seu nome de usuário",
+    "email": "Endereço de e-mail",
+    "emailPlaceholder": "Digite seu endereço de e-mail",
+    "password": "Senha",
+    "passwordPlaceholder": "Digite sua senha",
+    "confirmPassword": "Confirmar senha",
+    "confirmPasswordPlaceholder": "Confirme sua senha",
+    "terms": "Concordo com os Termos e Condições",
+    "creatingAccount": "Criando conta...",
+    "or": "OU",
+    "google": "Continuar com Google",
+    "alreadyHaveWorkspace": "Já possui um espaço de trabalho?",
+    "signIn": "Entrar",
+    "googleComingSoon": "O cadastro com Google estará disponível em breve.",
+    "success": {
+      "accountCreated": "Conta criada com sucesso!"
+    },
+    "errors": {
+      "usernameRequired": "Digite seu nome de usuário.",
+      "emailRequired": "Digite seu endereço de e-mail.",
+      "invalidEmail": "Digite um endereço de e-mail válido.",
+      "passwordLength": "A senha deve ter pelo menos oito caracteres.",
+      "passwordMismatch": "As senhas não correspondem.",
+      "acceptTerms": "Aceite os Termos e Condições.",
+      "signupFailed": "Falha no cadastro. Tente novamente."
+    }
+  },
+
+  "navbar": {
+    "dashboard": "Painel",
+    "environment": "Ambiente",
+    "toggleTheme": "Alternar tema",
+    "notifications": "Notificações",
+    "notification1": "Um novo lançamento de funcionalidade foi iniciado.",
+    "notification2": "Feature flag atualizada com sucesso.",
+    "notification3": "Relatório de análises gerado.",
+    "admin": "Administrador",
+    "featureManager": "Gerente de funcionalidades",
+    "profile": "Perfil",
+    "settings": "Configurações",
+    "logout": "Sair",
+    "logoutConfirm": "Tem certeza de que deseja sair?",
+    "logoutSuccess": "Sessão encerrada com sucesso."
+  },
+
+  "sidebar": {
+    "enterprisePlatform": "Plataforma empresarial de gerenciamento de funcionalidades",
+    "dashboard": "Painel",
+    "analytics": "Análises",
+    "flags": "Feature Flags",
+    "environments": "Ambientes",
+    "team": "Equipe",
+    "auditLogs": "Registros de auditoria",
+    "settings": "Configurações",
+    "systemOnline": "Sistema online",
+    "api": "API",
+    "healthy": "Saudável",
+    "database": "Banco de dados",
+    "connected": "Conectado",
+    "redis": "Redis",
+    "running": "Em execução",
+    "version": "Versão",
+    "copyright": "© 2026 FeatureFlow"
+  },
+
+  "dashboard": {
+    "loading": "Carregando painel..."
+  },
+
+  "dashboardHeader": {
+    "badge": "Gerenciamento empresarial de funcionalidades",
+    "goodMorning": "Bom dia",
+    "goodAfternoon": "Boa tarde",
+    "goodEvening": "Boa noite",
+    "user": "Usuário",
+    "description": "Gerencie feature flags, ambientes e lançamentos em um único painel.",
+    "refresh": "Atualizar"
+  },
+
+  "stats": {
+    "totalFlags": "Total de Feature Flags",
+    "totalFlagsChange": "Feature flags configuradas",
+    "activeFlags": "Feature Flags ativas",
+    "activeFlagsChange": "Atualmente ativadas",
+    "environments": "Ambientes",
+    "environmentsChange": "Ambientes de implantação",
+    "evaluations": "Avaliações",
+    "evaluationsChange": "Avaliações de funcionalidades hoje"
+  },
+
+  "rollout": {
+    "title": "Visão geral do lançamento",
+    "subtitle": "Monitore o progresso dos lançamentos de funcionalidades nos ambientes.",
+    "fullRelease": "Lançamento completo",
+    "almostComplete": "Quase completo",
+    "gradualRollout": "Lançamento gradual",
+    "empty": "Nenhum dado de lançamento disponível.",
+    "rollout": "Lançamento",
+    "percentage": "Porcentagem",
+    "stage": "Etapa",
+    "disabled": "Desativado",
+    "canary": "Lançamento canário",
+    "gradual": "Lançamento gradual",
+    "almost": "Quase completo",
+    "full": "Lançamento completo"
+  },
+
+  "recentActivity": {
+    "title": "Atividade recente",
+    "subtitle": "Acompanhe alterações e atualizações das feature flags.",
+    "empty": "Nenhuma atividade recente disponível.",
+    "created": "Criada",
+    "updated": "Atualizada",
+    "modified": "Modificada",
+    "featureFlag": "Feature Flag"
+  },
+
+  "systemHealth": {
+    "title": "Saúde do sistema",
+    "subtitle": "Monitore os serviços da plataforma.",
+    "backendApi": "API Backend",
+    "postgresql": "Banco de dados PostgreSQL",
+    "redisCache": "Cache Redis",
+    "healthy": "Saudável",
+    "connected": "Conectado",
+    "running": "Em execução",
+    "offline": "Offline",
+    "disconnected": "Desconectado",
+    "operational": "Operacional",
+    "services": "Serviços",
+    "allHealthy": "Todos os serviços da plataforma estão funcionando normalmente.",
+    "attention": "Alguns serviços precisam de atenção."
+  },
+
+  "quickActions": {
+    "title": "Ações rápidas",
+    "subtitle": "Acesse os recursos da plataforma usados com frequência.",
+    "createFlag": "Criar Feature Flag",
+    "createDescription": "Crie rapidamente uma nova feature flag.",
+    "evaluateFlag": "Avaliar Flag",
+    "evaluateDescription": "Teste o comportamento da funcionalidade instantaneamente.",
+    "environments": "Gerenciar ambientes",
+    "environmentDescription": "Gerencie lançamentos com segurança.",
+    "auditLogs": "Registros de auditoria",
+    "auditDescription": "Acompanhe o histórico de alterações."
+  },
+
+  "cleanup": {
+    "title": "Limpeza de Feature Flags",
+    "description": "Revise e gerencie feature flags antigas ou não utilizadas.",
+    "flag": "Flag",
+    "environment": "Ambiente",
+    "status": "Status",
+    "lastUpdated": "Última atualização",
+    "owner": "Responsável",
+    "action": "Ação",
+    "delete": "Excluir",
+    "deleteConfirm": "Tem certeza de que deseja excluir esta feature flag?",
+    "deleteSuccess": "Feature flag excluída com sucesso.",
+    "deleteFailed": "Falha ao excluir a feature flag.",
+    "empty": "Nenhuma feature flag antiga encontrada.",
+    "markReviewed": "Marcar como revisada"
+  },
+
+  "flagLifecycle": {
+    "title": "Ciclo de vida das Feature Flags",
+    "subtitle": "Acompanhe a saúde das feature flags.",
+    "active": "Ativa",
+    "disabled": "Desativada",
+    "stale": "Antiga",
+    "total": "Total de Feature Flags",
+    "health": "Saúde das Feature Flags",
+    "message": "Continue monitorando flags não utilizadas e remova regularmente lançamentos antigos."
+  },
+
+  "deploymentSafety": {
+    "title": "Segurança da implantação",
+    "subtitle": "Monitore a confiança dos lançamentos.",
+    "safe": "Implantação segura",
+    "warning": "Precisa de atenção",
+    "rolloutChecks": "Verificações do lançamento",
+    "environmentChecks": "Verificações do ambiente",
+    "passed": "Aprovadas",
+    "activeFlags": "Feature Flags ativas",
+    "totalFlags": "Total de Feature Flags",
+    "messageSafe": "Suas implantações estão estáveis e seguras no momento.",
+    "messageWarning": "Algumas implantações precisam de atenção."
+  },
+
+  "targetingSummary": {
+    "title": "Resumo do direcionamento",
+    "subtitle": "Monitore as regras de direcionamento do público.",
+    "userRules": "Direcionamento de usuários",
+    "groupRules": "Direcionamento de grupos",
+    "percentageRules": "Lançamento percentual",
+    "totalRules": "Total de regras",
+    "coverage": "Cobertura do direcionamento",
+    "activeMessage": "O direcionamento do público está configurado para os lançamentos de funcionalidades.",
+    "emptyMessage": "Nenhuma regra de direcionamento configurada."
+  },
+
+  "analytics": {
+    "loading": "Carregando análises...",
+    "title": "Análises",
+    "subtitle": "Monitore o desempenho das funcionalidades",
+    "description": "Monitore o uso das funcionalidades, o desempenho dos lançamentos e as métricas de avaliação.",
+    "exportCSV": "Exportar CSV",
+    "exportPDF": "Exportar PDF",
+
+    "range": {
+      "7Days": "Sete dias",
+      "15Days": "Quinze dias",
+      "30Days": "Trinta dias"
+    },
+
+    "evaluations": "Avaliações de funcionalidades",
+    "totalEvaluations": "Total de avaliações",
+    "activeFlags": "Feature Flags ativas",
+    "enabled": "Ativadas",
+    "rolloutSuccess": "Sucesso do lançamento",
+    "healthy": "Saudável",
+    "environments": "Ambiente",
+    "available": "Disponível",
+
+    "evaluationTrend": "Tendência de avaliações",
+    "evaluationOverTime": "Avaliações ao longo do tempo",
+
+    "noEvaluationData": "Nenhum dado de avaliação",
+    "noFeatureEvaluations": "Nenhuma avaliação de funcionalidade disponível para este período.",
+
+    "flagDistribution": "Distribuição de Feature Flags",
+    "enabledVsDisabled": "Feature Flags ativadas e desativadas",
+    "noAnalyticsData": "Nenhum dado de análise disponível.",
+
+    "mostEvaluatedFlags": "Feature Flags mais avaliadas",
+    "mostEvaluatedDescription": "Principais feature flags com base na atividade de avaliação",
+    "noTopFlagsData": "Nenhum dado disponível",
+
+    "environmentDistribution": "Distribuição por ambiente",
+    "flagUsage": "Uso de Feature Flags nos ambientes",
+    "flags": "Flags",
+
+    "evaluationSummary": "Resumo das avaliações",
+    "evaluationOverview": "Visão geral da atividade de avaliação das funcionalidades.",
+    "todayEvaluations": "Avaliações de hoje",
+    "averageDaily": "Média diária de avaliações",
+    "peakEvaluation": "Pico de avaliações",
+
+    "peakDay": "Dia de pico",
+    "growthTrend": "Tendência de crescimento",
+    "increasing": "Aumentando",
+    "decreasing": "Diminuindo",
+
+    "insights": "Insights de análise",
+    "insightsDescription": "Visão geral do desempenho das funcionalidades e dos padrões de uso",
+    "mostUsedFeature": "Funcionalidade mais utilizada",
+    "environment": "Ambiente",
+    "totalFlags": "Total de Feature Flags",
+    "noData": "Nenhum dado",
+    "noEvaluationActivity": "Nenhuma atividade de avaliação disponível.",
+    "mostEvaluatedFeature": "{{flag}} é a funcionalidade mais avaliada.",
+
+    "successfulEvaluations": "Avaliações bem-sucedidas",
+    "failedEvaluations": "Avaliações malsucedidas",
+    "evaluationHistory": "Histórico de avaliações",
+    "usage": "Análises de uso",
+    "performance": "Visão geral do desempenho"
+  },
+
+  "groups": {
+    "betaUsers": "Usuários beta",
+    "premiumPlan": "Plano premium",
+    "internalTeam": "Equipe interna"
+  },
+
+  "groupTargetingModal": {
+    "title": "Adicionar grupo-alvo",
+    "selectGroup": "Selecionar grupo"
+  },
+
+  "targetingModal": {
+    "title": "Adicionar usuário-alvo",
+    "userId": "ID do usuário",
+    "placeholder": "Digite o ID do usuário"
+  },
+
+  "groupTargeting": {
+    "title": "Direcionamento de grupos",
+    "description": "Ative esta funcionalidade para grupos específicos de usuários.",
+    "addGroup": "Adicionar grupo",
+    "empty": "Nenhuma regra de direcionamento de grupos configurada.",
+    "addSuccess": "Regra de direcionamento do grupo adicionada com sucesso.",
+    "addFailed": "Falha ao adicionar a regra de direcionamento do grupo.",
+    "deleteSuccess": "Regra de direcionamento do grupo excluída com sucesso.",
+    "deleteFailed": "Falha ao excluir a regra de direcionamento do grupo."
+  },
+
+  "messages": {
+    "loadFailed": "Falha ao carregar a feature flag.",
+    "userAdded": "Regra de direcionamento do usuário adicionada com sucesso.",
+    "addUserFailed": "Falha ao adicionar a regra de direcionamento do usuário.",
+    "userDeleted": "Regra de direcionamento do usuário excluída com sucesso.",
+    "deleteUserFailed": "Falha ao excluir a regra de direcionamento do usuário.",
+    "rolloutUpdated": "Lançamento atualizado com sucesso.",
+    "rolloutFailed": "Falha ao atualizar o lançamento.",
+    "enterUserId": "Digite o ID do usuário.",
+    "enterGroupName": "Digite o nome do grupo.",
+    "evaluationCompleted": "Avaliação da funcionalidade concluída.",
+    "evaluationFailed": "Falha na avaliação da funcionalidade."
+  },
+
+  "auditLogs": {
+    "title": "Registros de auditoria",
+    "description": "Acompanhe todas as atividades das feature flags e alterações do sistema.",
+    "emptyTitle": "Nenhum registro de auditoria encontrado",
+    "emptyDescription": "Nenhuma atividade de auditoria foi registrada ainda.",
+    "searchPlaceholder": "Pesquisar registros de auditoria...",
+    "allActions": "Todas as ações",
+    "allFlags": "Todas as Feature Flags",
+    "filter": "Filtrar",
+    "viewDiff": "Ver diferenças",
+    "detailsTitle": "Detalhes do registro de auditoria",
+    "flag": "Flag",
+    "action": "Ação",
+    "actor": "Responsável",
+    "timestamp": "Data e hora",
+    "jsonDiff": "Diferenças JSON",
+    "copyJson": "Copiar JSON",
+    "table": {
+      "timestamp": "Data e hora",
+      "actor": "Responsável",
+      "flag": "Feature Flag",
+      "action": "Ação",
+      "viewDiff": "Ver diferença"
+    },
+    "actions": {
+      "created": "Criada",
+      "updated": "Atualizada",
+      "deleted": "Excluída"
+    }
+  },
+
+  "team": {
+    "title": "Gerenciamento da equipe",
+    "description": "Gerencie os membros do projeto e suas funções.",
+    "addMember": "Adicionar membro",
+    "totalMembers": "Total de membros",
+    "developers": "Desenvolvedores",
+    "managers": "Gerentes",
+    "activeMembers": "Membros ativos",
+    "search": "Pesquisar membros da equipe...",
+    "name": "Nome",
+    "email": "E-mail",
+    "role": "Função",
+    "status": "Status",
+    "actions": "Ações",
+    "roles": {
+      "Feature Manager": "Gerente de funcionalidades",
+      "Backend Developer": "Desenvolvedor Backend",
+      "Frontend Developer": "Desenvolvedor Frontend",
+      "QA Engineer": "Engenheiro de QA"
+    },
+    "statuses": {
+      "Active": "Ativo",
+      "Inactive": "Inativo"
+    }
+  },
+
+  "environment": {
+    "development": "Desenvolvimento",
+    "staging": "Homologação",
+    "production": "Produção",
+
+    "pageTitle": "Ambientes",
+    "pageDescription": "Gerencie os ambientes de desenvolvimento, homologação e produção.",
+
+    "create": "Criar",
+    "createEnvironment": "Criar ambiente",
+    "creating": "Criando...",
+
+    "refresh": "Atualizar",
+    "refreshing": "Atualizando...",
+
+    "editEnvironment": "Editar ambiente",
+
+    "deleteTitle": "Excluir ambiente",
+    "deleteConfirm": "Tem certeza de que deseja excluir",
+    "deleteWarning": "Esta ação não pode ser desfeita.",
+    "deleting": "Excluindo...",
+
+    "environmentName": "Nome do ambiente",
+    "environmentDescription": "Descrição do ambiente",
+
+    "totalEnvironments": "Total de ambientes",
+    "activeEnvironments": "Ambientes ativos",
+    "defaultConfigurations": "Configurações padrão",
+
+    "environmentOverride": "Substituição do ambiente",
+    "customOverridesConfigured": "Substituições personalizadas configuradas",
+    "noOverrides": "Nenhuma substituição",
+    "usingDefaultValues": "Usando valores padrão",
+
+    "searchPlaceholder": "Pesquisar ambientes...",
+
+    "all": "Todos",
+    "onlyOverrides": "Somente substituições",
+    "noOverrideFilter": "Sem substituição",
+
+    "featureFlag": "Feature Flag",
+    "featureFlagDescription": "Selecione uma feature flag para visualizar os ambientes.",
+    "selectFeature": "Selecionar funcionalidade",
+
+    "showing": "Exibindo",
+    "environments": "ambientes",
+
+    "environmentList": "Lista de ambientes",
+
+    "active": "Ativo",
+
+    "emptyTable": "Nenhum ambiente encontrado.",
+    "emptyOverrides": "Nenhuma substituição encontrada.",
+
+    "table": {
+      "id": "ID",
+      "environment": "Ambiente",
+      "description": "Descrição",
+      "status": "Status",
+      "action": "Ação"
+    },
+
+    "overrideTitle": "Substituições de ambiente",
+    "overrideDescription": "Gerencie os valores das feature flags para diferentes ambientes.",
+    "overrideValue": "Valor da substituição",
+
+    "enabledTrue": "Ativado (Verdadeiro)",
+    "disabledFalse": "Desativado (Falso)",
+
+    "overridden": "Substituído",
+    "default": "Padrão",
+
+    "lastUpdated": "Última atualização",
+
+    "saving": "Salvando...",
+
+    "editOverride": "Editar substituição",
+
+    "overrideInfoTitle": "Informações da substituição",
+    "overrideInfoDescription": "Os valores substituídos têm prioridade sobre os valores padrão da feature flag para o ambiente especificado.",
+
+    "messages": {
+      "created": "Ambiente criado com sucesso.",
+      "updated": "Ambiente atualizado com sucesso.",
+      "deleted": "Ambiente excluído com sucesso.",
+      "createFailed": "Falha ao criar o ambiente.",
+      "updateFailed": "Falha ao atualizar o ambiente.",
+      "deleteFailed": "Falha ao excluir o ambiente."
+    }
+  },
+
+  "settings": {
+    "title": "Configurações",
+    "description": "Gerencie suas preferências do FeatureFlow e as configurações da sua conta.",
+
+    "profile": {
+      "title": "Configurações do perfil",
+      "description": "Visualize as informações do seu perfil.",
+      "name": "Nome",
+      "email": "E-mail",
+      "role": "Função",
+      "admin": "Administrador"
+    },
+
+    "appearance": {
+      "title": "Configurações de aparência",
+      "description": "Personalize a aparência da aplicação e o ambiente padrão.",
+      "theme": "Tema",
+      "light": "Claro",
+      "dark": "Escuro",
+      "defaultEnvironment": "Ambiente padrão"
+    },
+
+    "notifications": {
+      "title": "Configurações de notificações",
+      "description": "Gerencie suas preferências de notificações.",
+      "email": "Notificações por e-mail",
+      "audit": "Notificações de registros de auditoria",
+      "feature": "Notificações de Feature Flags",
+      "deployment": "Notificações de implantação"
+    },
+
+    "security": {
+      "title": "Configurações de segurança",
+      "description": "Gerencie a segurança da sua conta e sua senha.",
+      "currentPassword": "Senha atual",
+      "currentPlaceholder": "Digite sua senha atual",
+      "newPassword": "Nova senha",
+      "newPlaceholder": "Digite sua nova senha",
+      "confirmPassword": "Confirmar senha",
+      "confirmPlaceholder": "Confirme sua nova senha",
+      "updatePassword": "Atualizar senha",
+      "logout": "Sair"
+    }
+  }
+}

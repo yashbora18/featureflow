@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(91, 91, 247, .18),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(59, 130, 246, .12),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #11182D,
+            #1B1F45
+        );
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+    max-width: 100%;
+}
+
+.landing-page {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   RESPONSIVE BASE
+===================================================== */
+
+@media (max-width: 1024px) {
+
+    body {
+        background:
+            radial-gradient(
+                circle at top right,
+                rgba(91, 91, 247, .15),
+                transparent 40%
+            ),
+            radial-gradient(
+                circle at bottom left,
+                rgba(59, 130, 246, .10),
+                transparent 45%
+            ),
+            linear-gradient(
+                135deg,
+                #11182D,
+                #1B1F45
+            );
+    }
+
+    .landing-page {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 768px) {
+
+    body {
+        width: 100%;
+        min-width: 0;
+
+        background:
+            radial-gradient(
+                circle at top right,
+                rgba(91, 91, 247, .12),
+                transparent 45%
+            ),
+            linear-gradient(
+                135deg,
+                #11182D,
+                #1B1F45
+            );
+    }
+
+    .landing-page {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    html,
+    body {
+        width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+    .landing-page {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+
+    body {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .landing-page {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+}

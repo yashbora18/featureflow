@@ -1,582 +1,1524 @@
 import { useEffect, useState } from "react";
-
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { toast } from "react-toastify";
+
 import {
   FiFlag,
   FiCheckCircle,
+  FiSearch,
+  FiRefreshCw,
   FiUsers,
 } from "react-icons/fi";
 
-import { MdEdit, MdDelete } from "react-icons/md";
-import { FaToggleOff } from "react-icons/fa";
-import { toast } from "react-toastify";
+import {
+  MdEdit,
+  MdDelete,
+} from "react-icons/md";
 
-import "./Flags.css";
+import { FaToggleOff } from "react-icons/fa";
+
+
+import PageHeader from "../components/common/PageHeader";
+import FlagForm from "../components/FlagForm";
+import SuccessModal from "../components/SuccessModal";
+import LoadingSkeleton from "../components/common/LoadingSkeleton";
+
 
 import {
   getFlags,
   deleteFlag,
 } from "../services/flagService";
 
-import FlagForm from "../components/FlagForm";
-import SuccessModal from "../components/SuccessModal";
-import CustomModal from "../components/CustomModal";
+
+import "./Flags.css";
+
+
+
 
 function Flags({
+
   environment,
+
   showForm,
+
   setShowForm,
+
 }) {
+
+
+  const { t } = useTranslation();
 
   const navigate = useNavigate();
 
-  const [flags, setFlags] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [statusFilter, setStatusFilter] = useState("all");
-  const [error, setError] = useState("");
-  const [searchTerm, setSearchTerm] = useState("");
 
-  const [selectedFlag, setSelectedFlag] = useState(null);
 
-  const [showDeleteModal, setShowDeleteModal] =
-    useState(false);
+  const environmentMap = {
 
-  const [flagToDelete, setFlagToDelete] =
-    useState(null);
+    Development:1,
 
-    const [showSuccessModal, setShowSuccessModal] =
-  useState(false);
+    Staging:2,
 
-const [successMessage, setSuccessMessage] =
+    Production:3,
+
+  };
+
+  const currentEnvironmentId =
+    environmentMap[environment];
+
+
+
+  const [flags,setFlags] = useState([]);
+
+
+  const [loading,setLoading] = useState(true);
+
+
+  const [error,setError] = useState("");
+
+
+
+  const [searchTerm,setSearchTerm] =
   useState("");
 
-  useEffect(() => {
-    loadFlags();
-  }, []);
 
-  const loadFlags = async () => {
-    try {
+
+  const [statusFilter,setStatusFilter] =
+  useState("all");
+
+
+
+  const [selectedFlag,setSelectedFlag] =
+  useState(null);
+
+
+
+  const [flagToDelete,setFlagToDelete] =
+  useState(null);
+
+
+
+  const [showDeleteModal,setShowDeleteModal] =
+  useState(false);
+
+
+
+  const [showSuccessModal,setShowSuccessModal] =
+  useState(false);
+
+
+
+  const [successMessage,setSuccessMessage] =
+  useState("");
+
+
+
+  // Pagination
+
+  const [currentPage,setCurrentPage] =
+  useState(1);
+
+
+  const [itemsPerPage,setItemsPerPage] =
+  useState(10);
+
+
+
+
+  useEffect(()=>{
+
+    loadFlags();
+
+  },[environment]);
+
+
+
+
+
+  const loadFlags = async()=>{
+
+
+    try{
+
 
       setLoading(true);
 
-      const data = await getFlags();
 
-      setFlags(data);
+      const data = await getFlags(
+        environmentMap[environment]
+      );
+
+
+
+      setFlags(
+
+        Array.isArray(data)
+
+        ?
+
+        data
+
+        :
+
+        []
+
+      );
+
 
       setError("");
 
-    } catch (err) {
 
-      console.error(err);
 
-      setError(
-        "Unable to fetch feature flags."
+    }
+
+    catch(error){
+
+
+      console.error(
+        error
       );
 
-    } finally {
+
+      setError(
+        t("flags.fetchError")
+      );
+
+
+    }
+
+    finally{
 
       setLoading(false);
 
     }
+
   };
 
-  const handleDeleteClick = (flag) => {
-  console.log("handleDeleteClick");
 
-  setFlagToDelete(flag);
 
-  console.log("Setting modal true");
 
-  setShowDeleteModal(true);
-};
 
-  const confirmDelete = async () => {
+  const handleRefresh = ()=>{
 
-    try {
+    loadFlags();
 
-      await deleteFlag(flagToDelete.flag_key);
+  };
+
+
+
+
+
+  const handleDeleteClick=(flag)=>{
+
+
+    setFlagToDelete(flag);
+
+    setShowDeleteModal(true);
+
+  };
+
+
+
+
+
+  const confirmDelete = async()=>{
+
+
+    try{
+
+
+      await deleteFlag(
+
+        flagToDelete.flag_key,
+
+        flagToDelete.environment_id
+
+      );
+
+
 
       setShowDeleteModal(false);
 
-setFlagToDelete(null);
 
-loadFlags();
+      setFlagToDelete(null);
 
-setSuccessMessage("Feature Flag Deleted Successfully!");
 
-setShowSuccessModal(true);
 
-    } catch (error) {
+      loadFlags();
+
+
+
+      setSuccessMessage(
+
+        t("flags.deleteSuccess")
+
+      );
+
+
+      setShowSuccessModal(true);
+
+
+    }
+
+    catch(error){
+
 
       console.error(error);
 
+
       toast.error(
-        "Failed to Delete Feature Flag!"
+
+        t("flags.deleteFailed")
+
       );
+
+
     }
+
   };
 
-  const filteredFlags = flags.filter((flag) => {
 
-    const matchesSearch =
+    // ==============================
+  // FILTER FLAGS
+  // ==============================
+
+
+  const filteredFlags = flags.filter((flag)=>{
+
+
+    const searchMatch =
+
       flag.flag_key
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase()) ||
+      ?.toLowerCase()
+      .includes(
+        searchTerm.toLowerCase()
+      )
+
+      ||
 
       flag.owner_team
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase()) ||
+      ?.toLowerCase()
+      .includes(
+        searchTerm.toLowerCase()
+      )
+
+      ||
 
       flag.flag_type
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase());
+      ?.toLowerCase()
+      .includes(
+        searchTerm.toLowerCase()
+      );
 
-    const matchesStatus =
+
+
+    const statusMatch =
+
       statusFilter === "all"
-        ? true
-        : statusFilter === "enabled"
-        ? flag.enabled
-        : !flag.enabled;
 
-    return matchesSearch && matchesStatus;
+      ?
+
+      true
+
+      :
+
+      statusFilter === "enabled"
+
+      ?
+
+      flag.enabled
+
+      :
+
+      !flag.enabled;
+
+
+
+    return (
+
+      searchMatch
+
+      &&
+
+      statusMatch
+
+    );
+
+
   });
+
+
+
+
+
+  // ==============================
+  // STATISTICS
+  // ==============================
+
 
   const totalFlags = filteredFlags.length;
 
-  const enabledFlags =
-    filteredFlags.filter(
-      (flag) => flag.enabled
-    ).length;
 
-  const disabledFlags =
-    filteredFlags.filter(
-      (flag) => !flag.enabled
-    ).length;
 
-  const teams = [
+  const enabledFlags = filteredFlags.filter(
+
+    flag=>flag.enabled
+
+  ).length;
+
+
+
+  const disabledFlags = filteredFlags.filter(
+
+    flag=>!flag.enabled
+
+  ).length;
+
+
+
+  const totalTeams = [
+
     ...new Set(
+
       filteredFlags.map(
-        (flag) => flag.owner_team
+
+        flag=>flag.owner_team
+
       )
-    ),
+
+    )
+
   ].length;
 
-  return (    <div className="flags-page">
 
-      {/* ================= PAGE HEADER ================= */}
 
-      <div className="page-header">
 
-        <div>
 
-          <h1 className="page-title">
-            Feature Flags
-          </h1>
+  // ==============================
+  // PAGINATION
+  // ==============================
 
-          <p className="page-subtitle">
-            Manage feature flags across environments.
-          </p>
 
-        </div>
+  const totalPages = Math.ceil(
 
-      </div>
+    filteredFlags.length /
 
-      {/* ================= WELCOME ================= */}
+    itemsPerPage
 
-      <div className="welcome-banner">
+  );
 
-        <div className="welcome-content">
 
-          <h2>
-            Welcome Back 👋
-          </h2>
 
-          <p>
-            Manage and monitor feature flags across
-            Development, Staging and Production
-            environments.
-          </p>
+  const indexOfLastFlag =
 
-        </div>
+    currentPage *
 
-      </div>
+    itemsPerPage;
 
-      {/* ================= DASHBOARD ================= */}
 
-      <div className="dashboard-cards">
 
-        {/* Total */}
+  const indexOfFirstFlag =
 
-        <div className="dashboard-card total">
+    indexOfLastFlag -
 
-          <div
-    className="card-icon"
-    style={{ background: "#eef4ff" }}
->
-    <FiFlag size={30} color="#64748b" />
-</div>
+    itemsPerPage;
 
-          <h3>{totalFlags}</h3>
 
-          <p>Total Flags</p>
 
-          <small>
-            Manage all feature flags
-          </small>
+  const currentFlags =
 
-        </div>
+    filteredFlags.slice(
 
-        {/* Enabled */}
+      indexOfFirstFlag,
 
-        <div className="dashboard-card enabled">
+      indexOfLastFlag
 
-          <div
-    className="card-icon"
-    style={{ background: "#ecfdf5" }}
->
-    <FiCheckCircle size={30} color="#22c55e" />
-</div>
+    );
 
-          <h3>{enabledFlags}</h3>
 
-          <p>Enabled</p>
 
-          <small>
-            Currently active
-          </small>
 
-        </div>
 
-        {/* Disabled */}
+  const changeRows = (value)=>{
 
-        <div className="dashboard-card disabled">
 
-          <div
-    className="card-icon"
-    style={{ background: "#fef2f2" }}
->
-    <FaToggleOff size={30} color="#ef4444" />
-</div>
+    setItemsPerPage(
 
-          <h3>{disabledFlags}</h3>
+      Number(value)
 
-          <p>Disabled</p>
+    );
 
-          <small>
-            Currently inactive
-          </small>
 
-        </div>
+    setCurrentPage(1);
 
-        {/* Teams */}
 
-        <div className="dashboard-card team">
+  };
 
-          <div
-    className="card-icon"
-    style={{ background: "#f5f3ff" }}
->
-    <FiUsers size={30} color="#8b5cf6" />
-</div>
 
-          <h3>{teams}</h3>
 
-          <p>Teams</p>
 
-          <small>
-            Managing feature flags
-          </small>
 
-        </div>
+  const pageNumbers = [];
 
-      </div>
 
-      {/* ================= TABLE TOOLBAR ================= */}
+  for(
 
-      <div className="table-toolbar">
+    let i=1;
 
-        <div className="filter-buttons">
+    i<=totalPages;
 
-          <button
-            className={`filter-btn ${
-              statusFilter === "all"
-                ? "active-filter"
-                : ""
-            }`}
-            onClick={() => setStatusFilter("all")}
-          >
+    i++
+
+  ){
+
+    pageNumbers.push(i);
+
+  }
+
+
+
+
+
+  if(loading){
+
+    return (
+
+      <LoadingSkeleton />
+
+    );
+
+  }
+
+
+
+
+
+  return (
+
+<div className="flags-page">
+
+
+
+{/* =================================
+    HEADER
+================================= */}
+
+
+{/* =================================
+    ANALYTICS STYLE HEADER
+================================= */}
+
+
+<div className="flags-header-card">
+
+
+    <div className="flags-header-left">
+
+
+        <div className="flags-header-icon">
+
             <FiFlag />
-            All
-          </button>
-
-          <button
-            className={`filter-btn ${
-              statusFilter === "enabled"
-                ? "active-filter"
-                : ""
-            }`}
-            onClick={() => setStatusFilter("enabled")}
-          >
-            <FiCheckCircle />
-            Enabled
-          </button>
-
-          <button
-            className={`filter-btn ${
-              statusFilter === "disabled"
-                ? "active-filter"
-                : ""
-            }`}
-            onClick={() => setStatusFilter("disabled")}
-          >
-            <FaToggleOff />
-            Disabled
-          </button>
 
         </div>
 
-        <div className="search-container">
 
-  <span className="search-icon">
-    🔍
-  </span>
 
-  <input
-    type="text"
-    className="search-box"
-    placeholder="Search feature flags..."
-    value={searchTerm}
-    onChange={(e) =>
-      setSearchTerm(e.target.value)
-    }
-  />
+        <div className="flags-header-content">
 
-</div>
 
-<button
-  className="create-flag-btn"
-  onClick={() => {
-    setSelectedFlag(null);
-    setShowForm(true);
-  }}
->
-  + Create Flag
-</button>
+            <h1>
 
-      </div>
+                {t("flags.pageTitle")}
 
-      {/* ================= CREATE / EDIT MODAL ================= */}
+            </h1>
 
-      {showForm && (
 
-        <div className="modal-overlay">
+            <p>
 
-          <div className="modal-content">
+                {t("flags.pageDescription")}
 
-            <FlagForm
-              flag={selectedFlag}
+            </p>
 
-              onClose={() => {
-                setSelectedFlag(null);
-                setShowForm(false);
-              }}
-
-              onFlagCreated={(message) => {
-
-  loadFlags();
-
-  setSelectedFlag(null);
-
-  setShowForm(false);
-
-  setSuccessMessage(message);
-
-  setShowSuccessModal(true);
-
-}}
-
-            />
-
-          </div>
 
         </div>
 
-      )}
-
-      {/* ================= LOADING ================= */}
-
-      {loading && (
-        <p className="loading">
-          Loading Feature Flags...
-        </p>
-      )}
-
-      {/* ================= ERROR ================= */}
-
-      {!loading && error && (
-        <p className="error">
-          {error}
-        </p>
-      )}
-
-      {/* ================= TABLE ================= */}
-
-      {!loading && !error && (
-
-        <table className="flag-table">
-
-          <thead>
-  <tr>
-    <th>FLAG ID</th>
-    <th>FLAG KEY</th>
-    <th>TYPE</th>
-    <th>STATUS</th>
-    <th>OWNER TEAM</th>
-    <th>ACTIONS</th>
-  </tr>
-</thead>
-
-          <tbody>
-  {filteredFlags.length > 0 ? (
-
-    filteredFlags.map((flag) => (
-
-      <tr key={flag.id}>
-
-        {/* Flag ID */}
-        <td>
-          <span className="flag-id">
-            {flag.id}
-          </span>
-        </td>
-
-        {/* Flag Key */}
-        <td>
-  <span
-    className="flag-key"
-    onClick={() => {
-      navigate(`/flag/${flag.flag_key}`);
-    }}
-  >
-    {flag.flag_key}
-  </span>
-</td>
-
-        {/* Flag Type */}
-        <td>
-          <span className="type-badge">
-            {flag.flag_type}
-          </span>
-        </td>
-
-        {/* Status */}
-        <td>
-          <span
-            className={
-              flag.enabled
-                ? "status-enabled"
-                : "status-disabled"
-            }
-          >
-            {flag.enabled
-              ? "Enabled"
-              : "Disabled"}
-          </span>
-        </td>
-
-        {/* Owner */}
-        <td>
-          <span className="owner-badge">
-            {flag.owner_team}
-          </span>
-        </td>
-
-        {/* Actions */}
-        <td className="action-buttons">
-
-          <button
-  className="icon-btn edit-btn"
-  title="Edit Flag"
-  onClick={() => {
-    setSelectedFlag(flag);
-    setShowForm(true);
-  }}
->
-  <MdEdit size={10} />
-</button>
-
-<button
-  className="icon-btn delete-btn"
-  title="Delete Flag"
-  onClick={() => {
-    handleDeleteClick(flag);
-  }}
->
-  <MdDelete size={10} />
-</button>
-
-        </td>
-
-      </tr>
-
-    ))
-
-  ) : (
-
-    <tr>
-
-      <td colSpan="6" className="empty">
-
-        <div>
-
-          <h3>🔍 No Feature Flags Found</h3>
-
-          <p>Try changing your search or filter.</p>
-
-        </div>
-
-      </td>
-
-    </tr>
-
-  )}
-</tbody>
-
-        </table>
-
-      )}
-
-      {showDeleteModal && (
-  <CustomModal
-    isOpen={showDeleteModal}
-    title="Delete this flag?"
-    message={
-      flagToDelete
-        ? `"${flagToDelete.flag_key}" will be permanently deleted.`
-        : ""
-    }
-    confirmText="Delete"
-    cancelText="Cancel"
-    danger={true}
-    onConfirm={confirmDelete}
-    onCancel={() => {
-      setShowDeleteModal(false);
-      setFlagToDelete(null);
-    }}
-  />
-)}
-
-<SuccessModal
-  isOpen={showSuccessModal}
-  title="Success!"
-  message={successMessage}
-  buttonText="OK"
-  onClose={() => setShowSuccessModal(false)}
-/>
 
     </div>
 
-  );
+
+
+
+
+    <div className="flags-header-actions">
+
+
+        <button
+
+            className="create-flag-btn"
+
+            onClick={()=>{
+
+                setSelectedFlag(null);
+
+                setShowForm(true);
+
+            }}
+
+        >
+
+            {t("flags.createFlag")}
+
+        </button>
+
+
+
+
+
+        <button
+
+            className="refresh-btn"
+
+            onClick={handleRefresh}
+
+        >
+
+            <FiRefreshCw />
+
+            Refresh
+
+
+        </button>
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+
+
+{/* =================================
+    FLAG STATISTICS
+================================= */}
+
+
+<div className="flag-stats-grid">
+
+
+
+<div className="flag-stat-card">
+
+
+<div className="stat-icon blue">
+
+<FiFlag/>
+
+</div>
+
+
+<div>
+
+<h4>
+
+Total Flags
+
+</h4>
+
+
+<h2>
+
+{totalFlags}
+
+</h2>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div className="flag-stat-card">
+
+
+<div className="stat-icon green">
+
+<FiCheckCircle/>
+
+</div>
+
+
+<div>
+
+<h4>
+
+Enabled
+
+</h4>
+
+
+<h2>
+
+{enabledFlags}
+
+</h2>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div className="flag-stat-card">
+
+
+<div className="stat-icon red">
+
+<FaToggleOff/>
+
+</div>
+
+
+<div>
+
+<h4>
+
+Disabled
+
+</h4>
+
+
+<h2>
+
+{disabledFlags}
+
+</h2>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div className="flag-stat-card">
+
+
+<div className="stat-icon purple">
+
+<FiUsers/>
+
+</div>
+
+
+<div>
+
+<h4>
+
+Teams
+
+</h4>
+
+
+<h2>
+
+{totalTeams}
+
+</h2>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+{/* =================================
+    FILTER TOOLBAR
+================================= */}
+
+
+<div className="flag-toolbar">
+
+
+
+<div className="filter-buttons">
+
+
+
+<button
+
+className={
+
+statusFilter==="all"
+
+?
+
+"filter-btn active-filter"
+
+:
+
+"filter-btn"
+
 }
+
+onClick={()=>{
+
+setStatusFilter("all");
+
+setCurrentPage(1);
+
+}}
+
+>
+
+
+<FiFlag/>
+
+All
+
+
+</button>
+
+
+
+
+
+<button
+
+className={
+
+statusFilter==="enabled"
+
+?
+
+"filter-btn active-filter"
+
+:
+
+"filter-btn"
+
+}
+
+onClick={()=>{
+
+setStatusFilter("enabled");
+
+setCurrentPage(1);
+
+}}
+
+>
+
+
+<FiCheckCircle/>
+
+Enabled
+
+
+</button>
+
+
+
+
+
+<button
+
+className={
+
+statusFilter==="disabled"
+
+?
+
+"filter-btn active-filter"
+
+:
+
+"filter-btn"
+
+}
+
+onClick={()=>{
+
+setStatusFilter("disabled");
+
+setCurrentPage(1);
+
+}}
+
+>
+
+
+<FaToggleOff/>
+
+Disabled
+
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+<div className="search-container">
+
+
+<FiSearch/>
+
+
+<input
+
+className="search-box"
+
+placeholder={t("flags.search")}
+
+value={searchTerm}
+
+onChange={(e)=>{
+
+setSearchTerm(e.target.value);
+
+setCurrentPage(1);
+
+}}
+
+
+/>
+
+
+</div>
+
+
+
+</div>
+
+{/* =================================
+    FLAG TABLE
+================================= */}
+
+
+<div className="flag-table-card">
+
+
+<table className="flag-table">
+
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>
+{t("flags.table.flagKey")}
+</th>
+
+<th>
+{t("flags.table.type")}
+</th>
+
+<th>
+{t("flags.table.status")}
+</th>
+
+<th>
+{t("flags.table.ownerTeam")}
+</th>
+
+<th>
+{t("flags.table.actions")}
+</th>
+
+</tr>
+
+</thead>
+
+
+
+<tbody>
+
+
+{
+
+currentFlags.length > 0
+
+?
+
+
+currentFlags.map((flag)=>(
+
+
+<tr key={flag.id}>
+
+
+<td>
+
+{flag.id}
+
+</td>
+
+
+
+
+<td>
+
+<span
+
+className="flag-key"
+
+onClick={()=>
+
+
+navigate(
+ `/flag/${encodeURIComponent(flag.flag_key)}/${flag.environment_id}`
+)
+
+
+}
+
+>
+
+{flag.flag_key}
+
+</span>
+
+
+</td>
+
+
+
+
+<td>
+
+
+<span className="type-badge">
+
+{flag.flag_type}
+
+</span>
+
+
+</td>
+
+
+
+
+<td>
+
+
+<span
+
+className={
+
+flag.enabled
+
+?
+
+"status-enabled"
+
+:
+
+"status-disabled"
+
+}
+
+>
+
+
+{
+
+flag.enabled
+
+?
+
+t("flags.enabled")
+
+:
+
+t("flags.disabled")
+
+}
+
+
+</span>
+
+
+</td>
+
+
+
+
+<td>
+
+
+<span className="owner-badge">
+
+{flag.owner_team}
+
+</span>
+
+
+</td>
+
+
+
+
+<td className="action-buttons">
+
+
+<button
+
+className="edit-btn"
+
+onClick={()=>{
+
+setSelectedFlag(flag);
+
+setShowForm(true);
+
+}}
+
+>
+
+
+Edit
+
+
+</button>
+
+
+
+
+<button
+
+className="delete-btn"
+
+onClick={()=>handleDeleteClick(flag)}
+
+>
+
+
+Delete
+
+
+</button>
+
+
+</td>
+
+
+
+</tr>
+
+
+))
+
+
+:
+
+
+<tr>
+
+<td
+
+colSpan="6"
+
+className="empty-state"
+
+>
+
+No feature flags found
+
+</td>
+
+</tr>
+
+
+}
+
+
+</tbody>
+
+
+</table>
+
+
+</div>
+
+
+
+
+
+{/* =================================
+    PAGINATION CONTROLS
+================================= */}
+
+
+
+<div className="pagination-container">
+
+
+
+<div className="rows-selector">
+
+
+<span>
+
+Show rows:
+
+</span>
+
+
+
+<select
+
+value={itemsPerPage}
+
+onChange={(e)=>
+
+changeRows(e.target.value)
+
+}
+
+>
+
+
+<option value="5">
+
+5
+
+</option>
+
+
+<option value="10">
+
+10
+
+</option>
+
+
+<option value="15">
+
+15
+
+</option>
+
+
+<option value="20">
+
+20
+
+</option>
+
+
+</select>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div className="pagination">
+
+
+
+<button
+
+disabled={currentPage===1}
+
+onClick={()=>setCurrentPage(currentPage-1)}
+
+>
+
+Previous
+
+</button>
+
+
+
+
+
+{
+
+pageNumbers.map(number=>(
+
+
+<button
+
+key={number}
+
+className={
+
+currentPage===number
+
+?
+
+"active-page"
+
+:
+
+""
+
+}
+
+onClick={()=>setCurrentPage(number)}
+
+>
+
+
+{number}
+
+
+</button>
+
+
+))
+
+
+}
+
+
+
+
+
+<button
+
+disabled={currentPage===totalPages}
+
+onClick={()=>setCurrentPage(currentPage+1)}
+
+>
+
+Next
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+{/* =================================
+    CREATE / EDIT MODAL
+================================= */}
+
+
+
+{
+
+showForm && (
+
+
+<div className="modal-overlay">
+
+
+<div className="modal-content">
+
+
+
+<FlagForm
+    flag={selectedFlag}
+    environmentId={currentEnvironmentId}
+    onClose={() => {
+        setSelectedFlag(null);
+        setShowForm(false);
+    }}
+    onFlagCreated={(message) => {
+        loadFlags();
+        setShowForm(false);
+        setSuccessMessage(message);
+        setShowSuccessModal(true);
+    }}
+/>
+
+
+</div>
+
+
+</div>
+
+
+)
+
+}
+
+
+
+
+
+
+
+
+{/* =================================
+    DELETE MODAL
+================================= */}
+
+
+
+{
+
+showDeleteModal && (
+
+
+<div className="modal-overlay">
+
+
+<div className="modal-content delete-modal">
+
+
+<h2>
+
+Delete Flag?
+
+</h2>
+
+
+
+<p>
+
+Are you sure you want to delete
+
+<strong>
+
+{" "}
+
+{flagToDelete?.flag_key}
+
+</strong>
+
+?
+
+</p>
+
+
+
+<div className="button-group">
+
+
+<button
+
+className="cancel-btn"
+
+onClick={()=>{
+
+setShowDeleteModal(false);
+
+setFlagToDelete(null);
+
+}}
+
+>
+
+Cancel
+
+</button>
+
+
+
+
+<button
+
+className="delete-confirm-btn"
+
+onClick={confirmDelete}
+
+>
+
+Delete
+
+</button>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+)
+
+}
+
+
+
+
+
+
+{
+
+showSuccessModal && (
+
+
+<SuccessModal
+
+message={successMessage}
+
+onClose={()=>setShowSuccessModal(false)}
+
+/>
+
+
+)
+
+
+}
+
+
+
+
+</div>
+
+);
+
+
+}
+
 
 export default Flags;

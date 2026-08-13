@@ -1,129 +1,178 @@
 import { useEffect, useState } from "react";
 import { FaUsers } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+import { toast } from "react-toastify";
+
 import GroupTargetingModal from "./GroupTargetingModal";
 
 import {
-    getGroupRules,
-    addGroupRule,
-    deleteGroupRule,
+  getGroupRules,
+  addGroupRule,
+  deleteGroupRule,
 } from "../services/groupTargetingService";
 
 function GroupTargetingPanel({ flagId }) {
 
-    const [groupRules, setGroupRules] = useState([]);
-    const [showModal, setShowModal] = useState(false);
+  const { t } = useTranslation();
 
-    useEffect(() => {
-        if (!flagId) return;
-        loadGroups();
-    }, [flagId]);
+  const [groupRules, setGroupRules] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
-    const loadGroups = async () => {
-        try {
-            const data = await getGroupRules(flagId);
-            setGroupRules(data);
-        } catch (error) {
-            console.error(error);
-        }
-    };
+  useEffect(() => {
+    if (!flagId) return;
+    loadGroups();
+  }, [flagId]);
 
-    const handleAddGroup = async (group) => {
-        try {
-            await addGroupRule(flagId, group);
-            loadGroups();
-            setShowModal(false);
-        } catch (error) {
-            console.error(error);
-        }
-    };
+  const loadGroups = async () => {
+    try {
+      const data = await getGroupRules(flagId);
+      setGroupRules(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
-    const handleDeleteGroup = async (ruleId) => {
-        try {
-            await deleteGroupRule(ruleId);
-            loadGroups();
-        } catch (error) {
-            console.error(error);
-        }
-    };
+  const handleAddGroup = async (group) => {
+  try {
 
-    return (
-        <div className="rules-card">
+    await addGroupRule(flagId, group);
 
-            <div className="rules-header">
+    await loadGroups();
 
-                <div>
-                    <h2>
-                        <FaUsers className="section-icon" />
-                        Group Targeting
-                    </h2>
+    setShowModal(false);
 
-                    <p className="rules-description">
-                        Grant feature access to selected user groups.
-                    </p>
-                </div>
+    toast.success(
+      t("flagDetail.groupTargeting.addSuccess")
+    );
 
-                <button
-                    className="add-user-btn"
-                    onClick={() => setShowModal(true)}
-                >
-                    + Add Group
-                </button>
+  } catch(error){
 
-            </div>
+    toast.error(
+      t("flagDetail.groupTargeting.addFailed")
+    );
 
-            {groupRules.length === 0 ? (
+  }
+};
 
-                <div className="empty-state">
-                    No group targeting rules configured yet.
-                </div>
+  const handleDeleteGroup = async(ruleId)=>{
+ try{
 
-            ) : (
+   await deleteGroupRule(ruleId);
 
-                <ul className="rule-list">
+   await loadGroups();
 
-                    {groupRules.map((rule) => (
+   toast.success(
+     t("flagDetail.groupTargeting.deleteSuccess")
+   );
 
-                        <li
-                            key={rule.id}
-                            className="rule-item"
-                        >
+ }catch(error){
 
-                            <div className="group-item-left">
+   toast.error(
+     t("flagDetail.groupTargeting.deleteFailed")
+   );
 
-                                <div className="group-icon">
-                                    <FaUsers size={22} />
-                                </div>
+ }
+};
 
-                                <div className="group-name">
-                                    {rule.rule_value}
-                                </div>
+  const getGroupName = (group) => {
 
-                            </div>
+  switch (group) {
 
-                            <button
-                                className="delete-group-btn"
-                                onClick={() => handleDeleteGroup(rule.id)}
-                            >
-                                Delete
-                            </button>
+    case "beta_users":
+      return t("flagDetail.groups.betaUsers");
 
-                        </li>
+    case "premium_plan":
+      return t("flagDetail.groups.premiumPlan");
 
-                    ))}
+    case "internal_team":
+      return t("flagDetail.groups.internalTeam");
 
-                </ul>
+    default:
+      return group;
 
-            )}
+  }
 
-            {showModal && (
-                <GroupTargetingModal
-                    onClose={() => setShowModal(false)}
-                    onSave={handleAddGroup}
-                />
-            )}
+};
+  return (
+    <div className="rules-card">
+
+      <div className="rules-header">
+
+        <div>
+
+          <h2>
+            <FaUsers className="section-icon" />
+            {t("flagDetail.groupTargeting.title")}
+          </h2>
+
+          <p className="rules-description">
+            {t("flagDetail.groupTargeting.description")}
+          </p>
 
         </div>
-    );
+
+        <button
+          className="add-user-btn"
+          onClick={() => setShowModal(true)}
+        >
+          + {t("flagDetail.groupTargeting.addGroup")}
+        </button>
+
+      </div>
+
+      {groupRules.length === 0 ? (
+
+        <div className="empty-state">
+          {t("flagDetail.groupTargeting.empty")}
+        </div>
+
+      ) : (
+
+        <div className="group-list">
+
+  {groupRules.map((rule) => (
+
+    <div
+      key={rule.id}
+      className="rule-item"
+    >
+
+              <div className="group-item-left">
+
+                <div className="group-icon">
+                  <FaUsers size={22} />
+                </div>
+
+                <div className="group-name">
+                  {getGroupName(rule.rule_value)}
+                </div>
+
+              </div>
+
+              <button
+                className="delete-group-btn"
+                onClick={() => handleDeleteGroup(rule.id)}
+              >
+                {t("common.delete")}
+              </button>
+
+                </div>
+
+  ))}
+
+</div>
+
+      )}
+
+      {showModal && (
+        <GroupTargetingModal
+          onClose={() => setShowModal(false)}
+          onSave={handleAddGroup}
+        />
+      )}
+
+    </div>
+  );
 }
 
 export default GroupTargetingPanel;

@@ -1,0 +1,1610 @@
+/* ==========================================
+   CLEANUP SUGGESTIONS CARD
+========================================== */
+
+
+.cleanup-card{
+
+    background:#ffffff;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:24px;
+
+    padding:28px;
+
+    margin-top:24px;
+
+
+    box-shadow:
+
+    0 20px 45px rgba(15,23,42,.08);
+
+
+    transition:.3s ease;
+
+}
+
+
+
+.cleanup-card:hover{
+
+    box-shadow:
+
+    0 30px 65px rgba(15,23,42,.12);
+
+}
+
+
+
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+
+.cleanup-header{
+
+    margin-bottom:26px;
+
+}
+
+
+
+.cleanup-header h2{
+
+
+    display:flex;
+
+    align-items:center;
+
+
+    gap:12px;
+
+
+    font-size:24px;
+
+
+    font-weight:800;
+
+
+    color:#0f172a;
+
+
+    margin-bottom:8px;
+
+}
+
+
+
+.cleanup-header h2 svg{
+
+
+    width:42px;
+
+    height:42px;
+
+
+    padding:10px;
+
+
+    border-radius:14px;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #fee2e2,
+        #fecaca
+    );
+
+
+    color:#dc2626;
+
+}
+
+
+
+.cleanup-header p{
+
+
+    color:#64748b;
+
+
+    font-size:15px;
+
+}
+
+
+
+
+
+/* ==========================================
+   TABLE WRAPPER
+========================================== */
+
+
+.cleanup-table-wrapper{
+
+
+    width:100%;
+
+
+    overflow-x:auto;
+
+
+    border-radius:18px;
+
+
+    border:1px solid #e2e8f0;
+
+}
+
+
+
+
+
+/* ==========================================
+   TABLE
+========================================== */
+
+
+.cleanup-table{
+
+
+    width:100%;
+
+
+    border-collapse:collapse;
+
+
+    min-width:1100px;
+
+}
+
+
+
+
+
+/* TABLE HEADER */
+
+
+.cleanup-table thead{
+
+
+    background:#f8fafc;
+
+}
+
+
+
+.cleanup-table th{
+
+
+    padding:16px 18px;
+
+
+    text-align:left;
+
+
+    font-size:13px;
+
+
+    font-weight:800;
+
+
+    color:#64748b;
+
+
+    text-transform:uppercase;
+
+
+    letter-spacing:.5px;
+
+
+    border-bottom:1px solid #e2e8f0;
+
+}
+
+
+
+
+
+/* TABLE BODY */
+
+
+.cleanup-table td{
+
+
+    padding:18px;
+
+
+    font-size:14px;
+
+
+    color:#475569;
+
+
+    border-bottom:1px solid #f1f5f9;
+
+
+    vertical-align:middle;
+
+}
+
+
+
+.cleanup-table tbody tr{
+
+
+    transition:.25s ease;
+
+}
+
+
+
+.cleanup-table tbody tr:hover{
+
+
+    background:#f8fafc;
+
+
+}
+
+/* ==========================================
+   FLAG NAME
+========================================== */
+
+
+.flag-name{
+
+    display:flex;
+
+    align-items:center;
+
+
+    gap:10px;
+
+
+    font-size:15px;
+
+
+    font-weight:800;
+
+
+    color:#0f172a;
+
+}
+
+
+
+.flag-name svg{
+
+    color:#2563eb;
+
+
+    font-size:17px;
+
+}
+
+
+
+
+
+/* ==========================================
+   ENVIRONMENT BADGE
+========================================== */
+
+
+.environment-badge{
+
+
+    display:inline-flex;
+
+
+    align-items:center;
+
+
+    padding:7px 14px;
+
+
+    border-radius:999px;
+
+
+    background:#ecfeff;
+
+
+    color:#0891b2;
+
+
+    font-size:12px;
+
+
+    font-weight:800;
+
+
+    border:1px solid #cffafe;
+
+}
+
+
+
+
+
+/* ==========================================
+   OWNER TEAM
+========================================== */
+
+
+.owner-name{
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:8px;
+
+
+    font-weight:600;
+
+
+    color:#475569;
+
+}
+
+
+
+.owner-name svg{
+
+
+    color:#64748b;
+
+
+    font-size:15px;
+
+}
+
+
+
+
+
+/* ==========================================
+   ISSUE TEXT
+========================================== */
+
+
+.issue-text{
+
+
+    color:#475569;
+
+
+    font-weight:500;
+
+
+    max-width:220px;
+
+
+    display:block;
+
+
+}
+
+
+
+
+
+/* ==========================================
+   STATUS BADGES
+========================================== */
+
+
+.severity{
+
+
+    display:inline-flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    padding:7px 14px;
+
+
+    border-radius:999px;
+
+
+    font-size:12px;
+
+
+    font-weight:800;
+
+
+    text-transform:capitalize;
+
+}
+
+
+
+
+
+/* HIGH */
+
+
+.severity.high{
+
+
+    background:#fee2e2;
+
+
+    color:#dc2626;
+
+
+    border:1px solid #fecaca;
+
+}
+
+
+
+
+
+/* MEDIUM */
+
+
+.severity.medium{
+
+
+    background:#fef3c7;
+
+
+    color:#d97706;
+
+
+    border:1px solid #fde68a;
+
+}
+
+
+
+
+
+/* LOW */
+
+
+.severity.low{
+
+
+    background:#dcfce7;
+
+
+    color:#16a34a;
+
+
+    border:1px solid #bbf7d0;
+
+}
+
+/* ==========================================
+   REVIEWED STATUS ICON
+========================================== */
+
+
+.review-yes{
+
+    font-size:22px;
+
+    color:#16a34a;
+
+
+}
+
+
+
+.review-no{
+
+    font-size:22px;
+
+    color:#dc2626;
+
+
+}
+
+
+
+
+
+/* ==========================================
+   LAST REVIEWED TIMESTAMP
+========================================== */
+
+
+.last-reviewed{
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:4px;
+
+
+}
+
+
+
+.last-reviewed span{
+
+
+    font-size:13px;
+
+
+    font-weight:700;
+
+
+    color:#334155;
+
+
+}
+
+
+
+.last-reviewed small{
+
+
+    font-size:12px;
+
+
+    font-weight:600;
+
+
+    color:#64748b;
+
+
+}
+
+
+
+
+
+/* NEVER REVIEWED */
+
+
+.never-reviewed{
+
+
+    display:inline-flex;
+
+
+    padding:7px 14px;
+
+
+    border-radius:999px;
+
+
+    background:#fee2e2;
+
+
+    color:#dc2626;
+
+
+    font-size:12px;
+
+
+    font-weight:800;
+
+
+}
+
+
+
+
+
+/* ==========================================
+   MARK REVIEWED BUTTON
+========================================== */
+
+
+.review-btn{
+
+
+    border:none;
+
+
+    padding:10px 18px;
+
+
+    border-radius:12px;
+
+
+    cursor:pointer;
+
+
+    color:white;
+
+
+    font-size:13px;
+
+
+    font-weight:700;
+
+
+    white-space:nowrap;
+
+
+
+    background:
+
+
+    linear-gradient(
+        135deg,
+        #2563eb,
+        #6366f1
+    );
+
+
+
+    box-shadow:
+
+
+    0 8px 20px rgba(37,99,235,.25);
+
+
+
+    transition:.3s ease;
+
+
+}
+
+
+
+.review-btn:hover{
+
+
+    transform:translateY(-2px);
+
+
+    box-shadow:
+
+
+    0 14px 30px rgba(37,99,235,.35);
+
+
+}
+
+
+
+.review-btn:active{
+
+
+    transform:scale(.96);
+
+
+}
+
+/* ==========================================
+   EMPTY STATE
+========================================== */
+
+
+.cleanup-empty{
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    text-align:center;
+
+
+    padding:60px 20px;
+
+
+    color:#94a3b8;
+
+}
+
+
+
+.cleanup-empty svg{
+
+
+    font-size:50px;
+
+
+    color:#22c55e;
+
+
+    margin-bottom:16px;
+
+}
+
+
+
+.cleanup-empty p{
+
+
+    font-size:15px;
+
+
+    font-weight:600;
+
+
+}
+
+
+
+
+
+/* ==========================================
+   TABLE LAST COLUMN
+========================================== */
+
+
+.cleanup-table th:last-child,
+.cleanup-table td:last-child{
+
+
+    text-align:center;
+
+}
+
+
+
+
+
+/* ==========================================
+   TABLE ROW ANIMATION
+========================================== */
+
+
+.cleanup-table tbody tr{
+
+
+    animation:rowFade .35s ease;
+
+}
+
+
+
+@keyframes rowFade{
+
+
+    from{
+
+
+        opacity:0;
+
+
+        transform:translateY(8px);
+
+    }
+
+
+    to{
+
+
+        opacity:1;
+
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+
+@media(max-width:1200px){
+
+
+    .cleanup-card{
+
+
+        padding:22px;
+
+    }
+
+
+
+    .cleanup-table{
+
+
+        min-width:950px;
+
+    }
+
+
+}
+
+
+
+
+
+@media(max-width:768px){
+
+
+    .cleanup-card{
+
+
+        padding:18px;
+
+
+        border-radius:18px;
+
+    }
+
+
+
+    .cleanup-header h2{
+
+
+        font-size:20px;
+
+    }
+
+
+
+    .cleanup-header h2 svg{
+
+
+        width:36px;
+
+
+        height:36px;
+
+    }
+
+
+
+    .cleanup-table-wrapper{
+
+
+        border-radius:14px;
+
+    }
+
+
+
+    .review-btn{
+
+
+        padding:9px 14px;
+
+
+        font-size:12px;
+
+    }
+
+
+}
+
+
+
+
+
+@media(max-width:480px){
+
+
+    .cleanup-header p{
+
+
+        font-size:13px;
+
+    }
+
+
+
+    .environment-badge,
+    .severity,
+    .never-reviewed{
+
+
+        padding:6px 10px;
+
+
+        font-size:11px;
+
+    }
+
+
+
+    .review-yes,
+    .review-no{
+
+
+        font-size:18px;
+
+    }
+
+
+}
+
+/* ==========================================
+   PAGINATION
+========================================== */
+
+
+.cleanup-pagination{
+
+    width:100%;
+
+    box-sizing:border-box;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-top:22px;
+
+    padding-top:18px;
+
+    border-top:1px solid #e2e8f0;
+
+    overflow:hidden;
+
+}
+
+
+
+
+
+.pagination-info{
+
+    font-size:14px;
+
+    font-weight:600;
+
+    color:#64748b;
+
+    white-space:nowrap;
+
+}
+
+
+
+
+
+.pagination-controls{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-end;
+
+    gap:8px;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+
+
+.pagination-controls select{
+
+
+    padding:9px 14px;
+
+    border-radius:10px;
+
+    border:1px solid #dbeafe;
+
+    background:white;
+
+    color:#334155;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+.pagination-controls button{
+
+
+    min-width:38px;
+
+    height:38px;
+
+    padding:0 12px;
+
+    border-radius:10px;
+
+    border:1px solid #dbeafe;
+
+    background:white;
+
+    color:#475569;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+
+}
+
+
+
+
+
+.pagination-controls button:hover{
+
+
+    background:#ede9fe;
+
+    color:#7c3aed;
+
+}
+
+
+
+
+
+.pagination-controls button:disabled{
+
+
+    opacity:.5;
+
+    cursor:not-allowed;
+
+}
+
+
+
+
+
+.pagination-controls .active-page{
+
+
+    background:#7c3aed;
+
+    color:white;
+
+    border-color:#7c3aed;
+
+}
+
+
+
+
+.reviewed-text{
+
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    background:#dcfce7;
+
+    color:#16a34a;
+
+    font-size:12px;
+
+    font-weight:800;
+
+}
+
+
+
+
+
+@media(max-width:768px){
+
+
+    .cleanup-pagination{
+
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:16px;
+
+    }
+
+
+    .pagination-info{
+
+
+        white-space:normal;
+
+    }
+
+
+    .pagination-controls{
+
+
+        width:100%;
+
+        justify-content:flex-start;
+
+    }
+
+
+}
+
+/* =====================================================
+   CLEANUP SUGGESTIONS — DARK MODE
+===================================================== */
+
+/* =====================================================
+   MAIN CARD
+===================================================== */
+
+html.dark .cleanup-card{
+
+    background:#111827;
+
+    border-color:#263244;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.30);
+
+}
+
+
+html.dark .cleanup-card:hover{
+
+    box-shadow:
+        0 30px 65px rgba(0,0,0,.40);
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+html.dark .cleanup-header h2{
+
+    color:#f8fafc;
+
+}
+
+
+html.dark .cleanup-header h2 svg{
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(239,68,68,.15),
+            rgba(248,113,113,.10)
+        );
+
+    color:#f87171;
+
+}
+
+
+html.dark .cleanup-header p{
+
+    color:#94a3b8;
+
+}
+
+
+/* =====================================================
+   TABLE WRAPPER
+===================================================== */
+
+html.dark .cleanup-table-wrapper{
+
+    border-color:#263244;
+
+    background:#111827;
+
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+html.dark .cleanup-table{
+
+    background:#111827;
+
+}
+
+
+html.dark .cleanup-table thead{
+
+    background:#0f172a;
+
+}
+
+
+html.dark .cleanup-table th{
+
+    color:#94a3b8;
+
+    border-bottom-color:#263244;
+
+}
+
+
+html.dark .cleanup-table td{
+
+    color:#cbd5e1;
+
+    border-bottom-color:#263244;
+
+}
+
+
+html.dark .cleanup-table tbody tr:hover{
+
+    background:#1e293b;
+
+}
+
+
+/* =====================================================
+   FLAG NAME
+===================================================== */
+
+html.dark .flag-name{
+
+    color:#f8fafc;
+
+}
+
+
+html.dark .flag-name svg{
+
+    color:#60a5fa;
+
+}
+
+
+/* =====================================================
+   ENVIRONMENT BADGE
+===================================================== */
+
+html.dark .environment-badge{
+
+    background:rgba(6,182,212,.12);
+
+    color:#67e8f9;
+
+    border-color:rgba(6,182,212,.25);
+
+}
+
+
+/* =====================================================
+   OWNER
+===================================================== */
+
+html.dark .owner-name{
+
+    color:#cbd5e1;
+
+}
+
+
+html.dark .owner-name svg{
+
+    color:#94a3b8;
+
+}
+
+
+/* =====================================================
+   ISSUE TEXT
+===================================================== */
+
+html.dark .issue-text{
+
+    color:#cbd5e1;
+
+}
+
+
+/* =====================================================
+   SEVERITY
+===================================================== */
+
+/* HIGH */
+
+html.dark .severity.high{
+
+    background:rgba(239,68,68,.12);
+
+    color:#f87171;
+
+    border-color:rgba(239,68,68,.25);
+
+}
+
+
+/* MEDIUM */
+
+html.dark .severity.medium{
+
+    background:rgba(245,158,11,.12);
+
+    color:#fbbf24;
+
+    border-color:rgba(245,158,11,.25);
+
+}
+
+
+/* LOW */
+
+html.dark .severity.low{
+
+    background:rgba(34,197,94,.12);
+
+    color:#4ade80;
+
+    border-color:rgba(34,197,94,.25);
+
+}
+
+
+/* =====================================================
+   REVIEW STATUS
+===================================================== */
+
+html.dark .review-yes{
+
+    color:#4ade80;
+
+}
+
+
+html.dark .review-no{
+
+    color:#f87171;
+
+}
+
+
+/* =====================================================
+   LAST REVIEWED
+===================================================== */
+
+html.dark .last-reviewed span{
+
+    color:#cbd5e1;
+
+}
+
+
+html.dark .last-reviewed small{
+
+    color:#94a3b8;
+
+}
+
+
+/* =====================================================
+   NEVER REVIEWED
+===================================================== */
+
+html.dark .never-reviewed{
+
+    background:rgba(239,68,68,.12);
+
+    color:#f87171;
+
+}
+
+
+/* =====================================================
+   REVIEW BUTTON
+===================================================== */
+
+html.dark .review-btn{
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #8b5cf6
+        );
+
+    color:#ffffff;
+
+    box-shadow:
+        0 8px 20px rgba(99,102,241,.25);
+
+}
+
+
+html.dark .review-btn:hover{
+
+    box-shadow:
+        0 14px 30px rgba(99,102,241,.35);
+
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+html.dark .cleanup-empty{
+
+    color:#94a3b8;
+
+}
+
+
+html.dark .cleanup-empty svg{
+
+    color:#4ade80;
+
+}
+
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+
+html.dark .cleanup-pagination{
+
+    border-top-color:#263244;
+
+}
+
+
+html.dark .pagination-info{
+
+    color:#94a3b8;
+
+}
+
+
+/* =====================================================
+   PAGINATION SELECT
+===================================================== */
+
+html.dark .pagination-controls select{
+
+    background:#111827;
+
+    color:#f8fafc;
+
+    border-color:#334155;
+
+}
+
+
+/* =====================================================
+   PAGINATION BUTTONS
+===================================================== */
+
+html.dark .pagination-controls button{
+
+    background:#111827;
+
+    color:#cbd5e1;
+
+    border-color:#334155;
+
+}
+
+
+html.dark .pagination-controls button:hover{
+
+    background:#2e1065;
+
+    color:#c4b5fd;
+
+    border-color:#6d28d9;
+
+}
+
+
+html.dark .pagination-controls button:disabled{
+
+    opacity:.45;
+
+}
+
+
+/* =====================================================
+   ACTIVE PAGE
+===================================================== */
+
+html.dark .pagination-controls .active-page{
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #a855f7
+        );
+
+    color:#ffffff;
+
+    border-color:#7c3aed;
+
+}
+
+
+/* =====================================================
+   REVIEWED TEXT
+===================================================== */
+
+html.dark .reviewed-text{
+
+    background:rgba(34,197,94,.12);
+
+    color:#4ade80;
+
+}
+
+
+/* =====================================================
+   TABLE SCROLLBAR
+===================================================== */
+
+html.dark .cleanup-table-wrapper::-webkit-scrollbar{
+
+    height:8px;
+
+}
+
+
+html.dark .cleanup-table-wrapper::-webkit-scrollbar-track{
+
+    background:#0f172a;
+
+}
+
+
+html.dark .cleanup-table-wrapper::-webkit-scrollbar-thumb{
+
+    background:#334155;
+
+    border-radius:999px;
+
+}
+
+
+html.dark .cleanup-table-wrapper::-webkit-scrollbar-thumb:hover{
+
+    background:#6366f1;
+
+}

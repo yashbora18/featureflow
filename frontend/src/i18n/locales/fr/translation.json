@@ -1,0 +1,977 @@
+{
+  "nav": {
+    "features": "Fonctionnalités",
+    "workflow": "Flux de travail",
+    "techStack": "Technologies",
+    "contact": "Contact",
+    "login": "Se connecter",
+    "getStarted": "Commencer"
+  },
+
+  "hero": {
+    "badge": "Gestion moderne des fonctionnalités",
+    "title": "Déployez vos fonctionnalités",
+    "highlight": "en toute confiance",
+    "description": "Contrôlez les versions des fonctionnalités, gérez les environnements, ciblez les utilisateurs et déployez de nouvelles fonctionnalités en toute sécurité avec FeatureFlow.",
+    "getStarted": "Commencer",
+    "learnMore": "En savoir plus"
+  },
+
+  "heroPreview": {
+    "dashboard": "Tableau de bord FeatureFlow",
+    "activeFlags": "Fonctionnalités actives",
+    "environments": "Environnements",
+    "success": "Réussite des évaluations",
+    "rollout": "Progression du déploiement",
+    "analytics": "Analyse des fonctionnalités",
+    "activities": {
+      "payment": "Fonctionnalité de paiement activée",
+      "aiSearch": "Déploiement de la recherche IA mis à jour",
+      "darkMode": "Ciblage du mode sombre modifié"
+    }
+  },
+
+  "heroStats": {
+    "activeFlags": "Fonctionnalités actives",
+    "environments": "Environnements",
+    "evaluation": "Réussite des évaluations",
+    "teams": "Équipes"
+  },
+
+  "trustedTeams": {
+    "badge": "Conçu pour les équipes modernes",
+    "title": "Adopté par toutes les équipes",
+    "description": "FeatureFlow aide les équipes d'ingénierie et de produit à gérer et fournir des fonctionnalités en toute sécurité.",
+    "cards": {
+      "engineering": {
+        "title": "Ingénierie",
+        "text": "Gérez les déploiements de fonctionnalités sans modifier le code de l'application."
+      },
+      "qa": {
+        "title": "Équipes QA",
+        "text": "Testez les fonctionnalités en toute sécurité dans différents environnements."
+      },
+      "product": {
+        "title": "Équipes produit",
+        "text": "Contrôlez les déploiements de fonctionnalités et offrez de meilleures expériences utilisateur."
+      },
+      "devops": {
+        "title": "DevOps",
+        "text": "Gérez les environnements et les déploiements en toute confiance."
+      },
+      "platform": {
+        "title": "Équipes plateforme",
+        "text": "Maintenez une gestion centralisée des fonctionnalités et de la gouvernance."
+      }
+    }
+  },
+
+  "features": {
+    "badge": "Fonctionnalités puissantes",
+    "title": "Tout ce dont vous avez besoin pour déployer en toute sécurité",
+    "description": "FeatureFlow offre à votre équipe un contrôle complet sur les versions, le ciblage, les déploiements progressifs et la surveillance des fonctionnalités.",
+    "learnMore": "En savoir plus",
+    "cards": {
+      "flags": {
+        "title": "Fonctionnalités",
+        "description": "Créez et gérez des fonctionnalités sans modifier le code de votre application."
+      },
+      "targeting": {
+        "title": "Ciblage des utilisateurs",
+        "description": "Contrôlez l'accès aux fonctionnalités pour des utilisateurs et des groupes spécifiques grâce à des règles de ciblage flexibles."
+      },
+      "rollouts": {
+        "title": "Déploiements progressifs",
+        "description": "Déployez progressivement les fonctionnalités à l'aide de pourcentages et d'étapes de déploiement."
+      },
+      "environments": {
+        "title": "Environnements",
+        "description": "Gérez indépendamment les configurations des fonctionnalités dans les environnements de développement, de test et de production."
+      },
+      "analytics": {
+        "title": "Analyses",
+        "description": "Surveillez l'utilisation des fonctionnalités et comprenez leurs performances."
+      },
+      "audit": {
+        "title": "Journaux d'audit",
+        "description": "Suivez les modifications des fonctionnalités et conservez un historique complet des actions importantes."
+      },
+      "evaluation": {
+        "title": "Évaluation des fonctionnalités",
+        "description": "Évaluez dynamiquement les fonctionnalités en fonction des utilisateurs, des groupes, des environnements et des règles de ciblage."
+      },
+      "security": {
+        "title": "Sécurité",
+        "description": "Gardez la gestion des fonctionnalités sous contrôle grâce à un accès sécurisé et à une configuration centralisée."
+      }
+    }
+  },
+
+  "showcase": {
+    "badge": "Découvrez FeatureFlow en action",
+    "title": "Tout ce dont vous avez besoin sur une seule plateforme",
+    "description": "Découvrez les outils puissants qui aident votre équipe à gérer, déployer et surveiller les fonctionnalités en toute confiance.",
+    "learnMore": "En savoir plus",
+    "cards": {
+      "flags": {
+        "title": "Fonctionnalités",
+        "subtitle": "Contrôlez les fonctionnalités instantanément",
+        "description": "Créez, gérez, activez et désactivez instantanément les fonctionnalités sans déployer de nouveau code."
+      },
+      "environment": {
+        "title": "Gestion des environnements",
+        "subtitle": "Une plateforme, plusieurs environnements",
+        "description": "Gérez facilement les configurations des fonctionnalités dans les environnements de développement, de test et de production."
+      },
+      "analytics": {
+        "title": "Analyses puissantes",
+        "subtitle": "Comprenez vos fonctionnalités",
+        "description": "Suivez les performances des fonctionnalités, la progression des déploiements et l'utilisation grâce à des analyses claires et exploitables."
+      },
+      "audit": {
+        "title": "Journaux d'audit",
+        "subtitle": "Historique complet des modifications",
+        "description": "Suivez chaque modification importante grâce à des journaux d'audit détaillés et à un historique complet."
+      }
+    }
+  },
+
+  "workflow": {
+    "badge": "Flux de travail simple",
+    "title": "De l'idée au déploiement",
+    "description": "Gérez tout le cycle de vie d'une fonctionnalité, de sa création et de son ciblage à son déploiement et sa surveillance.",
+    "steps": {
+      "create": {
+        "title": "Créer",
+        "description": "Créez une fonctionnalité et configurez son comportement par défaut."
+      },
+      "targeting": {
+        "title": "Cibler",
+        "description": "Définissez les utilisateurs et les groupes qui doivent recevoir la fonctionnalité."
+      },
+      "evaluate": {
+        "title": "Évaluer",
+        "description": "Évaluez les fonctionnalités en fonction de l'environnement et des règles de ciblage."
+      },
+      "release": {
+        "title": "Déployer",
+        "description": "Déployez progressivement la fonctionnalité auprès de vos utilisateurs en toute confiance."
+      },
+      "monitor": {
+        "title": "Surveiller",
+        "description": "Suivez les performances, les modifications et la progression du déploiement."
+      }
+    }
+  },
+
+  "architecture": {
+    "badge": "Architecture du système",
+    "title": "Conçu pour une diffusion fiable des fonctionnalités",
+    "description": "FeatureFlow utilise une architecture évolutive qui connecte le frontend, le backend, le moteur d'évaluation et la base de données.",
+    "frontend": {
+      "title": "Frontend",
+      "description": "Une interface React moderne pour gérer les fonctionnalités, les environnements, le ciblage, les analyses et les journaux d'audit."
+    },
+    "backend": {
+      "title": "API Backend",
+      "description": "Un backend FastAPI qui gère les fonctionnalités, les règles de ciblage, les demandes d'évaluation et la logique de l'application."
+    },
+    "engine": {
+      "title": "Moteur d'évaluation",
+      "description": "Évalue les fonctionnalités à l'aide des environnements, du ciblage des utilisateurs, des groupes et des règles de déploiement."
+    },
+    "modules": {
+      "flags": "Fonctionnalités",
+      "targeting": "Ciblage",
+      "audit": "Journaux d'audit"
+    },
+    "database": {
+      "title": "Base de données",
+      "description": "Stocke les fonctionnalités, les environnements, les règles de ciblage, les groupes d'utilisateurs, les versions et l'historique d'audit."
+    }
+  },
+
+  "techStack": {
+    "badge": "Technologies utilisées",
+    "title": "Construit avec des technologies modernes",
+    "description": "FeatureFlow repose sur des technologies modernes et fiables pour offrir une plateforme de gestion des fonctionnalités rapide, évolutive et facile à maintenir.",
+    "cards": {
+      "react": "Frontend moderne basé sur des composants pour une expérience utilisateur réactive et interactive.",
+      "fastapi": "API backend haute performance pour la gestion et l'évaluation des fonctionnalités.",
+      "postgresql": "Base de données relationnelle fiable pour stocker les données des fonctionnalités et de l'application.",
+      "javascript": "Langage de programmation principal qui alimente l'expérience interactive du frontend.",
+      "html": "Balisage sémantique pour construire la structure de l'application.",
+      "css": "Style moderne pour une interface utilisateur réactive et soignée.",
+      "git": "Contrôle de version pour gérer le code source et l'historique de développement.",
+      "github": "Plateforme de dépôt et de collaboration pour gérer le projet.",
+      "docker": "Architecture compatible avec les conteneurs pour des déploiements et un développement cohérents."
+    }
+  },
+
+  "premium": {
+    "badge": "Conçu pour les équipes modernes",
+    "title1": "Déployez plus vite.",
+    "title2": "Gardez le contrôle.",
+    "description": "FeatureFlow donne à votre équipe la confiance nécessaire pour déployer plus rapidement tout en conservant un contrôle total sur le ciblage, les déploiements, la sécurité et les analyses.",
+    "points": {
+      "rollout": "Déploiements de fonctionnalités sûrs et progressifs",
+      "security": "Gestion sécurisée des fonctionnalités",
+      "analytics": "Analyses puissantes des déploiements"
+    },
+    "button": "Explorer FeatureFlow",
+    "imageAlt": "Tableau de bord des analyses FeatureFlow"
+  },
+
+  "statistics": {
+    "badge": "FeatureFlow en chiffres",
+    "title": "Conçu pour évoluer avec votre équipe",
+    "description": "Des capacités puissantes de gestion des fonctionnalités conçues pour aider les équipes à déployer, contrôler et surveiller efficacement leurs fonctionnalités.",
+    "cards": {
+      "flags": {
+        "title": "Fonctionnalités",
+        "description": "Créez et gérez des fonctionnalités dans toute votre application."
+      },
+      "environments": {
+        "title": "Environnements",
+        "description": "Gérez les fonctionnalités dans les environnements de développement, de test et de production."
+      },
+      "targeting": {
+        "number": "10+",
+        "title": "Options de ciblage",
+        "description": "Contrôlez l'accès aux fonctionnalités grâce à des règles de ciblage flexibles."
+      },
+      "audit": {
+        "title": "Couverture d'audit",
+        "description": "Suivez les modifications importantes grâce à un historique d'audit complet."
+      }
+    }
+  },
+
+  "cta": {
+    "badge": "Prêt à commencer ?",
+    "title": "Déployez vos fonctionnalités plus rapidement.\nGardez le contrôle.",
+    "description": "Commencez à gérer vos déploiements de fonctionnalités avec FeatureFlow et donnez à votre équipe la confiance nécessaire pour déployer en toute sécurité.",
+    "getStarted": "Commencer",
+    "login": "Se connecter"
+  },
+
+  "footer": {
+    "description": "FeatureFlow aide les équipes à gérer les fonctionnalités, contrôler les déploiements, cibler les utilisateurs et déployer en toute confiance.",
+    "platform": "Plateforme",
+    "features": "Fonctionnalités",
+    "workflow": "Flux de travail",
+    "techStack": "Technologies",
+    "resources": "Ressources",
+    "documentation": "Documentation",
+    "api": "Référence API",
+    "support": "Assistance",
+    "connect": "Se connecter",
+    "contact": "Nous contacter",
+    "copyright": "© 2026 FeatureFlow. Tous droits réservés."
+  },
+
+  "common": {
+    "language": "Langue",
+    "loading": "Chargement...",
+    "search": "Rechercher",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "refresh": "Actualiser",
+    "close": "Fermer",
+    "create": "Créer",
+    "update": "Mettre à jour",
+    "filter": "Filtrer",
+    "yes": "Oui",
+    "no": "Non",
+    "enabled": "Activé",
+    "disabled": "Désactivé",
+    "active": "Actif",
+    "inactive": "Inactif",
+    "true": "Vrai",
+    "false": "Faux",
+    "unknown": "Inconnu",
+    "ok": "OK",
+    "show": "Afficher",
+    "rows": "lignes",
+    "page": "Page",
+    "of": "sur"
+  },
+
+  "auth": {
+    "platform": "Plateforme de gestion des fonctionnalités"
+  },
+
+  "loginLeft": {
+    "title1": "Déployez vos fonctionnalités",
+    "title2": "en toute confiance",
+    "description": "FeatureFlow aide les équipes à déployer, gérer et surveiller les fonctionnalités en toute sécurité grâce à des fonctionnalités puissantes et des déploiements contrôlés.",
+    "instantRollouts": "Déploiements instantanés",
+    "instantRolloutsDesc": "Déployez les fonctionnalités instantanément sans redéployer votre application.",
+    "safeReleases": "Déploiements sécurisés",
+    "safeReleasesDesc": "Contrôlez l'exposition des fonctionnalités et réduisez les risques de déploiement.",
+    "realTimeAnalytics": "Analyses en temps réel",
+    "realTimeAnalyticsDesc": "Surveillez les performances des fonctionnalités et l'activité des déploiements en temps réel.",
+    "enterpriseReady": "Prêt pour l'entreprise",
+    "enterpriseReadyDesc": "Conçu avec la sécurité, l'évolutivité et la collaboration des équipes à l'esprit."
+  },
+
+  "browser": {
+    "dashboardAlt": "Aperçu du tableau de bord FeatureFlow"
+  },
+
+  "login": {
+    "welcome": "Bon retour",
+    "description": "Connectez-vous à votre espace de travail FeatureFlow et continuez à gérer vos fonctionnalités.",
+    "email": "Adresse e-mail",
+    "emailPlaceholder": "Saisissez votre adresse e-mail",
+    "password": "Mot de passe",
+    "passwordPlaceholder": "Saisissez votre mot de passe",
+    "remember": "Se souvenir de moi",
+    "forgotPassword": "Mot de passe oublié ?",
+    "signIn": "Se connecter",
+    "signingIn": "Connexion...",
+    "or": "OU",
+    "continueGoogle": "Continuer avec Google",
+    "newTo": "Nouveau sur",
+    "createWorkspace": "Créer un espace de travail",
+    "welcome": "Bon retour !",
+    "messages": {
+      "enterEmail": "Veuillez saisir votre adresse e-mail.",
+      "invalidEmail": "Veuillez saisir une adresse e-mail valide.",
+      "passwordRequired": "Veuillez saisir votre mot de passe.",
+      "incorrectCredentials": "Adresse e-mail ou mot de passe incorrect.",
+      "serverError": "Erreur du serveur. Veuillez réessayer plus tard.",
+      "connectionError": "Impossible de se connecter au serveur.",
+      "signInFailed": "Échec de la connexion. Veuillez réessayer.",
+      "redirecting": "Redirection vers le tableau de bord...",
+      "googleComingSoon": "La connexion avec Google sera bientôt disponible."
+    }
+  },
+
+  "signup": {
+    "createAccount": "Créez votre compte",
+    "description": "Créez votre espace de travail FeatureFlow et commencez à gérer vos fonctionnalités.",
+    "username": "Nom d'utilisateur",
+    "usernamePlaceholder": "Saisissez votre nom d'utilisateur",
+    "email": "Adresse e-mail",
+    "emailPlaceholder": "Saisissez votre adresse e-mail",
+    "password": "Mot de passe",
+    "passwordPlaceholder": "Saisissez votre mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "confirmPasswordPlaceholder": "Confirmez votre mot de passe",
+    "terms": "J'accepte les conditions générales",
+    "creatingAccount": "Création du compte...",
+    "or": "OU",
+    "google": "Continuer avec Google",
+    "alreadyHaveWorkspace": "Vous avez déjà un espace de travail ?",
+    "signIn": "Se connecter",
+    "googleComingSoon": "L'inscription avec Google sera bientôt disponible.",
+    "success": {
+      "accountCreated": "Compte créé avec succès !"
+    },
+    "errors": {
+      "usernameRequired": "Veuillez saisir votre nom d'utilisateur.",
+      "emailRequired": "Veuillez saisir votre adresse e-mail.",
+      "invalidEmail": "Veuillez saisir une adresse e-mail valide.",
+      "passwordLength": "Le mot de passe doit comporter au moins 8 caractères.",
+      "passwordMismatch": "Les mots de passe ne correspondent pas.",
+      "acceptTerms": "Veuillez accepter les conditions générales.",
+      "signupFailed": "Échec de l'inscription. Veuillez réessayer."
+    }
+  },
+
+  "navbar": {
+    "dashboard": "Tableau de bord",
+    "environment": "Environnement",
+    "toggleTheme": "Changer de thème",
+    "notifications": "Notifications",
+    "notification1": "Un nouveau déploiement de fonctionnalité a commencé.",
+    "notification2": "La fonctionnalité a été mise à jour avec succès.",
+    "notification3": "Rapport d'analyse généré.",
+    "admin": "Administrateur",
+    "featureManager": "Gestionnaire des fonctionnalités",
+    "profile": "Profil",
+    "settings": "Paramètres",
+    "logout": "Se déconnecter",
+    "logoutConfirm": "Êtes-vous sûr de vouloir vous déconnecter ?",
+    "logoutSuccess": "Déconnexion réussie."
+  },
+
+  "sidebar": {
+    "enterprisePlatform": "Plateforme de gestion des fonctionnalités d'entreprise",
+    "dashboard": "Tableau de bord",
+    "analytics": "Analyses",
+    "flags": "Fonctionnalités",
+    "environments": "Environnements",
+    "team": "Équipe",
+    "auditLogs": "Journaux d'audit",
+    "settings": "Paramètres",
+    "systemOnline": "Système en ligne",
+    "api": "API",
+    "healthy": "Sain",
+    "database": "Base de données",
+    "connected": "Connecté",
+    "redis": "Redis",
+    "running": "En cours d'exécution",
+    "version": "Version",
+    "copyright": "© 2026 FeatureFlow"
+  },
+
+  "dashboard": {
+    "loading": "Chargement du tableau de bord..."
+  },
+
+  "dashboardHeader": {
+    "badge": "Gestion des fonctionnalités d'entreprise",
+    "goodMorning": "Bonjour",
+    "goodAfternoon": "Bon après-midi",
+    "goodEvening": "Bonsoir",
+    "user": "Utilisateur",
+    "description": "Gérez les fonctionnalités, les environnements et les déploiements depuis un seul tableau de bord.",
+    "refresh": "Actualiser"
+  },
+
+  "stats": {
+    "totalFlags": "Total des fonctionnalités",
+    "totalFlagsChange": "Fonctionnalités configurées",
+    "activeFlags": "Fonctionnalités actives",
+    "activeFlagsChange": "Actuellement activées",
+    "environments": "Environnements",
+    "environmentsChange": "Environnements de déploiement",
+    "evaluations": "Évaluations",
+    "evaluationsChange": "Évaluations des fonctionnalités aujourd'hui"
+  },
+
+  "rollout": {
+    "title": "Aperçu du déploiement",
+    "subtitle": "Surveillez la progression des déploiements de fonctionnalités dans les différents environnements.",
+    "fullRelease": "Déploiement complet",
+    "almostComplete": "Presque terminé",
+    "gradualRollout": "Déploiement progressif",
+    "empty": "Aucune donnée de déploiement disponible.",
+    "rollout": "Déploiement",
+    "percentage": "Pourcentage",
+    "stage": "Étape",
+    "disabled": "Désactivé",
+    "canary": "Déploiement canari",
+    "gradual": "Déploiement progressif",
+    "almost": "Presque terminé",
+    "full": "Déploiement complet"
+  },
+
+  "recentActivity": {
+    "title": "Activité récente",
+    "subtitle": "Suivez les modifications et mises à jour des fonctionnalités.",
+    "empty": "Aucune activité récente disponible.",
+    "created": "Créé",
+    "updated": "Mis à jour",
+    "modified": "Modifié",
+    "featureFlag": "Fonctionnalité"
+  },
+
+  "systemHealth": {
+    "title": "État du système",
+    "subtitle": "Surveillez les services de la plateforme.",
+    "backendApi": "API Backend",
+    "postgresql": "Base de données PostgreSQL",
+    "redisCache": "Cache Redis",
+    "healthy": "Sain",
+    "connected": "Connecté",
+    "running": "En cours d'exécution",
+    "offline": "Hors ligne",
+    "disconnected": "Déconnecté",
+    "operational": "Opérationnel",
+    "services": "Services",
+    "allHealthy": "Tous les services de la plateforme fonctionnent normalement.",
+    "attention": "Certains services nécessitent une attention."
+  },
+
+  "quickActions": {
+    "title": "Actions rapides",
+    "subtitle": "Accédez aux fonctionnalités de la plateforme fréquemment utilisées.",
+    "createFlag": "Créer une fonctionnalité",
+    "createDescription": "Créez rapidement une nouvelle fonctionnalité.",
+    "evaluateFlag": "Évaluer une fonctionnalité",
+    "evaluateDescription": "Testez instantanément le comportement d'une fonctionnalité.",
+    "environments": "Gérer les environnements",
+    "environmentDescription": "Gérez les déploiements en toute sécurité.",
+    "auditLogs": "Journaux d'audit",
+    "auditDescription": "Consultez l'historique des modifications."
+  },
+
+  "cleanup": {
+    "title": "Nettoyage des fonctionnalités",
+    "description": "Examinez et gérez les fonctionnalités obsolètes ou inutilisées.",
+    "flag": "Fonctionnalité",
+    "environment": "Environnement",
+    "status": "Statut",
+    "lastUpdated": "Dernière mise à jour",
+    "owner": "Propriétaire",
+    "action": "Action",
+    "delete": "Supprimer",
+    "deleteConfirm": "Êtes-vous sûr de vouloir supprimer cette fonctionnalité ?",
+    "deleteSuccess": "Fonctionnalité supprimée avec succès.",
+    "deleteFailed": "Échec de la suppression de la fonctionnalité.",
+    "empty": "Aucune fonctionnalité obsolète trouvée.",
+    "markReviewed": "Marquer comme vérifiée"
+  },
+
+  "flagLifecycle": {
+    "title": "Cycle de vie des fonctionnalités",
+    "subtitle": "Suivez l'état des fonctionnalités.",
+    "active": "Active",
+    "disabled": "Désactivée",
+    "stale": "Obsolète",
+    "total": "Total des fonctionnalités",
+    "health": "État des fonctionnalités",
+    "message": "Continuez à surveiller les fonctionnalités inutilisées et nettoyez régulièrement les anciens déploiements."
+  },
+
+  "deploymentSafety": {
+    "title": "Sécurité des déploiements",
+    "subtitle": "Surveillez la fiabilité des déploiements.",
+    "safe": "Déploiement sécurisé",
+    "warning": "Nécessite une attention",
+    "rolloutChecks": "Vérifications du déploiement",
+    "environmentChecks": "Vérifications de l'environnement",
+    "passed": "Réussi",
+    "activeFlags": "Fonctionnalités actives",
+    "totalFlags": "Total des fonctionnalités",
+    "messageSafe": "Vos déploiements sont actuellement stables et sûrs.",
+    "messageWarning": "Certains déploiements nécessitent une attention."
+  },
+
+  "targetingSummary": {
+    "title": "Résumé du ciblage",
+    "subtitle": "Surveillez les règles de ciblage de l'audience.",
+    "userRules": "Ciblage des utilisateurs",
+    "groupRules": "Ciblage des groupes",
+    "percentageRules": "Déploiement par pourcentage",
+    "totalRules": "Total des règles",
+    "coverage": "Couverture du ciblage",
+    "activeMessage": "Le ciblage de l'audience est configuré pour les déploiements de fonctionnalités.",
+    "emptyMessage": "Aucune règle de ciblage n'est encore configurée."
+  },
+
+  "analytics": {
+    "loading": "Chargement des analyses...",
+    "title": "Analyses",
+    "subtitle": "Surveillez les performances des fonctionnalités",
+    "description": "Surveillez l'utilisation des fonctionnalités, les performances des déploiements et les métriques d'évaluation.",
+    "exportCSV": "Exporter en CSV",
+    "exportPDF": "Exporter en PDF",
+    "range": {
+      "7Days": "7 jours",
+      "15Days": "15 jours",
+      "30Days": "30 jours"
+    },
+    "evaluations": "Évaluations des fonctionnalités",
+    "totalEvaluations": "Total des évaluations",
+    "activeFlags": "Fonctionnalités actives",
+    "enabled": "Activées",
+    "rolloutSuccess": "Réussite du déploiement",
+    "healthy": "Sain",
+    "environments": "Environnement",
+    "available": "Disponible",
+    "evaluationTrend": "Tendance des évaluations",
+    "evaluationOverTime": "Évaluations au fil du temps",
+    "noEvaluationData": "Aucune donnée d'évaluation",
+    "noFeatureEvaluations": "Aucune évaluation de fonctionnalité disponible pour cette période.",
+    "flagDistribution": "Répartition des fonctionnalités",
+    "enabledVsDisabled": "Fonctionnalités activées et désactivées",
+    "noAnalyticsData": "Aucune donnée d'analyse disponible.",
+    "mostEvaluatedFlags": "Fonctionnalités les plus évaluées",
+    "mostEvaluatedDescription": "Principales fonctionnalités selon l'activité d'évaluation",
+    "noTopFlagsData": "Aucune donnée disponible",
+    "environmentDistribution": "Répartition par environnement",
+    "flagUsage": "Utilisation des fonctionnalités dans les environnements",
+    "flags": "Fonctionnalités",
+    "evaluationSummary": "Résumé des évaluations",
+    "evaluationOverview": "Aperçu de l'activité d'évaluation des fonctionnalités.",
+    "todayEvaluations": "Évaluations d'aujourd'hui",
+    "averageDaily": "Moyenne quotidienne des évaluations",
+    "peakEvaluation": "Pic d'évaluations",
+    "peakDay": "Jour de pointe",
+    "growthTrend": "Tendance de croissance",
+    "increasing": "En augmentation",
+    "decreasing": "En diminution",
+    "insights": "Analyses et informations",
+    "insightsDescription": "Aperçu des performances et des habitudes d'utilisation",
+    "mostUsedFeature": "Fonctionnalité la plus utilisée",
+    "environment": "Environnement",
+    "totalFlags": "Total des fonctionnalités",
+    "noData": "Aucune donnée",
+    "noEvaluationActivity": "Aucune activité d'évaluation disponible pour le moment.",
+    "mostEvaluatedFeature": "{{flag}} est la fonctionnalité la plus évaluée.",
+    "successfulEvaluations": "Évaluations réussies",
+    "failedEvaluations": "Évaluations échouées",
+    "evaluationHistory": "Historique des évaluations",
+    "usage": "Analyses d'utilisation",
+    "performance": "Aperçu des performances"
+  },
+
+  "flags": {
+    "pageTitle": "Fonctionnalités",
+    "pageDescription": "Gérez, surveillez et contrôlez les fonctionnalités dans tous les environnements.",
+    "welcome": "Bienvenue dans les fonctionnalités",
+    "welcomeDescription": "Créez, mettez à jour et gérez facilement vos fonctionnalités.",
+    "createFlag": "Créer une fonctionnalité",
+    "editFlag": "Modifier la fonctionnalité",
+    "deleteFlag": "Supprimer la fonctionnalité",
+    "search": "Rechercher par clé, propriétaire ou type...",
+    "all": "Toutes",
+    "enabled": "Activées",
+    "disabled": "Désactivées",
+    "totalFlags": "Total des fonctionnalités",
+    "totalFlagsDesc": "Fonctionnalités disponibles",
+    "enabledDesc": "Fonctionnalités actuellement activées",
+    "disabledDesc": "Fonctionnalités actuellement désactivées",
+    "teams": "Équipes",
+    "teamsDesc": "Équipes propriétaires",
+    "emptyTitle": "Aucune fonctionnalité trouvée",
+    "emptyDescription": "Créez votre première fonctionnalité pour commencer.",
+    "emptyTableDescription": "Aucune fonctionnalité ne correspond aux filtres sélectionnés.",
+    "fetchError": "Échec du chargement des fonctionnalités.",
+    "deleteSuccess": "Fonctionnalité supprimée avec succès.",
+    "deleteFailed": "Échec de la suppression de la fonctionnalité.",
+    "deleteModalTitle": "Supprimer la fonctionnalité",
+    "deleteModalMessage": "sera définitivement supprimée. Cette action est irréversible.",
+    "success": "Succès",
+    "ok": "OK",
+    "delete": "Supprimer",
+    "cancel": "Annuler",
+    "table": {
+      "flagId": "ID",
+      "flagKey": "Clé de fonctionnalité",
+      "type": "Type",
+      "status": "Statut",
+      "ownerTeam": "Équipe propriétaire",
+      "actions": "Actions"
+    }
+  },
+
+  "flagForm": {
+    "createTitle": "Créer une fonctionnalité",
+    "updateTitle": "Mettre à jour la fonctionnalité",
+    "flagKey": "Clé de fonctionnalité",
+    "enterFlagKey": "Saisissez une clé de fonctionnalité unique",
+    "flagType": "Type de fonctionnalité",
+    "boolean": "Booléen",
+    "defaultValue": "Valeur par défaut",
+    "ownerTeam": "Équipe propriétaire",
+    "ownerPlaceholder": "Saisissez l'équipe propriétaire",
+    "description": "Description",
+    "descriptionPlaceholder": "Saisissez la description de la fonctionnalité",
+    "environment": "Environnement",
+    "status": "Statut",
+    "createButton": "Créer la fonctionnalité",
+    "updateButton": "Mettre à jour la fonctionnalité",
+    "createSuccess": "Fonctionnalité créée avec succès.",
+    "updateSuccess": "Fonctionnalité mise à jour avec succès.",
+    "operationFailed": "Échec de l'enregistrement de la fonctionnalité."
+  },
+
+  "flagDetail": {
+    "back": "Retour",
+    "headerDescription": "Configuration de la fonctionnalité, règles de ciblage, stratégie de déploiement et évaluation.",
+    "flagKey": "Clé de fonctionnalité",
+    "type": "Type",
+    "status": "Statut",
+    "ownerTeam": "Équipe propriétaire",
+    "environment": "Environnement",
+    "description": "Description",
+    "created": "Créée",
+    "updated": "Dernière mise à jour",
+    "title": "Détails de la fonctionnalité",
+    "enabled": "Activée",
+    "disabled": "Désactivée",
+
+    "targeting": {
+      "title": "Règles de ciblage",
+      "description": "Activez cette fonctionnalité uniquement pour les utilisateurs sélectionnés (liste blanche).",
+      "addUser": "Ajouter un utilisateur",
+      "empty": "Aucune règle de ciblage n'est encore configurée.",
+      "remove": "Supprimer",
+      "users": "Ciblage des utilisateurs",
+      "groups": "Ciblage des groupes",
+      "addGroup": "Ajouter un groupe",
+      "emptyUsers": "Aucune règle de ciblage utilisateur",
+      "emptyGroups": "Aucune règle de ciblage de groupe"
+    },
+
+    "rollout": {
+      "title": "Déploiement par pourcentage",
+      "description": "Déployez progressivement cette fonctionnalité auprès d'un pourcentage d'utilisateurs.",
+      "unsaved": "Modifications non enregistrées",
+      "current": "Déploiement actuel",
+      "currentDescription": "Ajustez le pourcentage de déploiement à l'aide du curseur ci-dessous.",
+      "summary": "Résumé du déploiement",
+      "rollout": "Déploiement",
+      "save": "Enregistrer le déploiement",
+      "saving": "Enregistrement..."
+    },
+
+    "analytics": {
+      "title": "Analyses de la fonctionnalité",
+      "description": "Surveillez l'utilisation, les performances d'évaluation et les informations de déploiement.",
+      "last7Days": "7 derniers jours",
+      "last15Days": "15 derniers jours",
+      "last30Days": "30 derniers jours"
+    },
+
+    "evaluation": {
+      "title": "Évaluation de la fonctionnalité",
+      "description": "Évaluez cette fonctionnalité pour un utilisateur ou un groupe spécifique.",
+      "evaluateBy": "Évaluer par",
+      "toTest": "pour la tester.",
+      "user": "Utilisateur",
+      "group": "Groupe",
+      "userId": "ID utilisateur",
+      "groupName": "Nom du groupe",
+      "enterUser": "Saisissez l'ID utilisateur",
+      "enterGroup": "Saisissez le nom du groupe",
+      "evaluate": "Évaluer",
+      "evaluating": "Évaluation...",
+      "noEvaluation": "Aucune évaluation pour le moment",
+      "noEvaluationDescription": "Lancez une évaluation à l'aide du bouton d'évaluation pour tester cette fonctionnalité.",
+      "result": "Résultat de l'évaluation",
+      "cached": "En cache",
+      "live": "En direct",
+      "lastEvaluation": "Dernière évaluation :",
+      "reason": "Raison",
+      "responseTime": "Temps de réponse",
+      "source": "Source",
+      "cachedOnly": "Cache Redis",
+      "liveOnly": "Évaluation en direct",
+      "ruleType": "Type de règle",
+      "flagType": "Type de fonctionnalité",
+      "mode": "Mode d'évaluation",
+      "userTargeting": "Ciblage des utilisateurs",
+      "groupTargeting": "Ciblage des groupes",
+      "percentageRollout": "Déploiement par pourcentage",
+      "environmentOverride": "Remplacement de l'environnement",
+      "defaultValue": "Valeur par défaut",
+      "summary": "Résumé de l'évaluation",
+      "summaryPrefix": "Fonctionnalité",
+      "summaryFor": "pour",
+      "summaryIn": "dans",
+      "summaryBecause": "car",
+      "reasons": {
+        "Matched Environment Override": "Remplacement de l'environnement",
+        "Matched User Targeting": "Ciblage des utilisateurs",
+        "Matched Group Targeting": "Ciblage des groupes",
+        "Matched Percentage Rollout": "Déploiement par pourcentage",
+        "Default Value": "Valeur par défaut"
+      }
+    }
+  },
+
+  "groups": {
+    "betaUsers": "Utilisateurs bêta",
+    "premiumPlan": "Forfait premium",
+    "internalTeam": "Équipe interne"
+  },
+
+  "groupTargetingModal": {
+    "title": "Ajouter un groupe cible",
+    "selectGroup": "Sélectionner un groupe"
+  },
+
+  "groupTargeting": {
+    "title": "Ciblage des groupes",
+    "description": "Activez cette fonctionnalité pour des groupes d'utilisateurs spécifiques.",
+    "addGroup": "Ajouter un groupe",
+    "empty": "Aucune règle de ciblage de groupe n'est encore configurée.",
+    "addSuccess": "Règle de ciblage de groupe ajoutée avec succès.",
+    "addFailed": "Échec de l'ajout de la règle de ciblage de groupe.",
+    "deleteSuccess": "Règle de ciblage de groupe supprimée avec succès.",
+    "deleteFailed": "Échec de la suppression de la règle de ciblage de groupe."
+  },
+
+  "messages": {
+    "loadFailed": "Échec du chargement de la fonctionnalité.",
+    "userAdded": "Règle de ciblage utilisateur ajoutée avec succès.",
+    "addUserFailed": "Échec de l'ajout de la règle de ciblage utilisateur.",
+    "userDeleted": "Règle de ciblage utilisateur supprimée avec succès.",
+    "deleteUserFailed": "Échec de la suppression de la règle de ciblage utilisateur.",
+    "rolloutUpdated": "Déploiement mis à jour avec succès.",
+    "rolloutFailed": "Échec de la mise à jour du déploiement.",
+    "enterUserId": "Veuillez saisir l'ID utilisateur.",
+    "enterGroupName": "Veuillez saisir le nom du groupe.",
+    "evaluationCompleted": "Évaluation de la fonctionnalité terminée.",
+    "evaluationFailed": "L'évaluation de la fonctionnalité a échoué."
+  },
+
+  "auditLogs": {
+    "title": "Journaux d'audit",
+    "description": "Suivez toutes les activités des fonctionnalités et les modifications du système.",
+    "emptyTitle": "Aucun journal d'audit trouvé",
+    "emptyDescription": "Aucune activité d'audit n'a encore été enregistrée.",
+    "searchPlaceholder": "Rechercher dans les journaux d'audit...",
+    "allActions": "Toutes les actions",
+    "allFlags": "Toutes les fonctionnalités",
+    "filter": "Filtrer",
+    "viewDiff": "Voir les modifications",
+    "detailsTitle": "Détails du journal d'audit",
+    "flag": "Fonctionnalité",
+    "action": "Action",
+    "actor": "Auteur",
+    "timestamp": "Horodatage",
+    "jsonDiff": "Différence JSON",
+    "copyJson": "Copier le JSON",
+    "table": {
+      "timestamp": "Horodatage",
+      "actor": "Auteur",
+      "flag": "Fonctionnalité",
+      "action": "Action",
+      "viewDiff": "Voir la différence"
+    },
+    "actions": {
+      "created": "Créé",
+      "updated": "Mis à jour",
+      "deleted": "Supprimé"
+    }
+  },
+
+  "team": {
+    "title": "Gestion de l'équipe",
+    "description": "Gérez les membres du projet et leurs rôles.",
+    "addMember": "Ajouter un membre",
+    "totalMembers": "Total des membres",
+    "developers": "Développeurs",
+    "managers": "Responsables",
+    "activeMembers": "Membres actifs",
+    "search": "Rechercher des membres de l'équipe...",
+    "name": "Nom",
+    "email": "E-mail",
+    "role": "Rôle",
+    "status": "Statut",
+    "actions": "Actions",
+    "roles": {
+      "Feature Manager": "Gestionnaire des fonctionnalités",
+      "Backend Developer": "Développeur Backend",
+      "Frontend Developer": "Développeur Frontend",
+      "QA Engineer": "Ingénieur QA"
+    },
+    "statuses": {
+      "Active": "Actif",
+      "Inactive": "Inactif"
+    }
+  },
+
+  "targetingModal": {
+    "title": "Ajouter un utilisateur cible",
+    "userId": "ID utilisateur",
+    "placeholder": "Saisissez l'ID utilisateur"
+  },
+
+  "environment": {
+    "development": "Développement",
+    "staging": "Test",
+    "production": "Production",
+    "pageTitle": "Environnements",
+    "pageDescription": "Gérez les environnements de développement, de test et de production.",
+    "create": "Créer",
+    "createEnvironment": "Créer un environnement",
+    "creating": "Création...",
+    "refresh": "Actualiser",
+    "refreshing": "Actualisation...",
+    "editEnvironment": "Modifier l'environnement",
+    "deleteTitle": "Supprimer l'environnement",
+    "deleteConfirm": "Êtes-vous sûr de vouloir supprimer",
+    "deleteWarning": "Cette action est irréversible.",
+    "deleting": "Suppression...",
+    "environmentName": "Nom de l'environnement",
+    "environmentDescription": "Description de l'environnement",
+    "totalEnvironments": "Total des environnements",
+    "activeEnvironments": "Environnements actifs",
+    "defaultConfigurations": "Configurations par défaut",
+    "environmentOverride": "Remplacement de l'environnement",
+    "customOverridesConfigured": "Remplacements personnalisés configurés",
+    "noOverrides": "Aucun remplacement",
+    "usingDefaultValues": "Utilisation des valeurs par défaut",
+    "searchPlaceholder": "Rechercher des environnements...",
+    "all": "Tous",
+    "onlyOverrides": "Uniquement les remplacements",
+    "noOverrideFilter": "Aucun remplacement",
+    "featureFlag": "Fonctionnalité",
+    "featureFlagDescription": "Sélectionnez une fonctionnalité pour afficher les environnements.",
+    "selectFeature": "Sélectionner une fonctionnalité",
+    "showing": "Affichage de",
+    "environments": "environnements",
+    "environmentList": "Liste des environnements",
+    "active": "Actif",
+    "emptyTable": "Aucun environnement trouvé.",
+    "emptyOverrides": "Aucun remplacement trouvé.",
+    "table": {
+      "id": "ID",
+      "environment": "Environnement",
+      "description": "Description",
+      "status": "Statut",
+      "action": "Action"
+    },
+    "overrideTitle": "Remplacements d'environnement",
+    "overrideDescription": "Gérez les valeurs des fonctionnalités pour différents environnements.",
+    "overrideValue": "Valeur de remplacement",
+    "enabledTrue": "Activé (Vrai)",
+    "disabledFalse": "Désactivé (Faux)",
+    "overridden": "Remplacé",
+    "default": "Par défaut",
+    "lastUpdated": "Dernière mise à jour",
+    "saving": "Enregistrement...",
+    "editOverride": "Modifier le remplacement",
+    "overrideInfoTitle": "Informations sur le remplacement",
+    "overrideInfoDescription": "Les valeurs de remplacement sont prioritaires sur les valeurs par défaut des fonctionnalités pour l'environnement spécifié.",
+    "messages": {
+      "created": "Environnement créé avec succès.",
+      "updated": "Environnement mis à jour avec succès.",
+      "deleted": "Environnement supprimé avec succès.",
+      "createFailed": "Échec de la création de l'environnement.",
+      "updateFailed": "Échec de la mise à jour de l'environnement.",
+      "deleteFailed": "Échec de la suppression de l'environnement."
+    }
+  },
+
+  "settings": {
+    "title": "Paramètres",
+    "description": "Gérez vos préférences FeatureFlow et les paramètres de votre compte.",
+    "profile": {
+      "title": "Paramètres du profil",
+      "description": "Consultez les informations de votre profil.",
+      "name": "Nom",
+      "email": "E-mail",
+      "role": "Rôle",
+      "admin": "Administrateur"
+    },
+    "appearance": {
+      "title": "Paramètres d'apparence",
+      "description": "Personnalisez l'apparence de votre application et l'environnement par défaut.",
+      "theme": "Thème",
+      "light": "Clair",
+      "dark": "Sombre",
+      "defaultEnvironment": "Environnement par défaut"
+    },
+    "notifications": {
+      "title": "Paramètres des notifications",
+      "description": "Gérez vos préférences de notification.",
+      "email": "Notifications par e-mail",
+      "audit": "Notifications des journaux d'audit",
+      "feature": "Notifications des fonctionnalités",
+      "deployment": "Notifications de déploiement"
+    },
+    "security": {
+      "title": "Paramètres de sécurité",
+      "description": "Gérez la sécurité de votre compte et votre mot de passe.",
+      "currentPassword": "Mot de passe actuel",
+      "currentPlaceholder": "Saisissez votre mot de passe actuel",
+      "newPassword": "Nouveau mot de passe",
+      "newPlaceholder": "Saisissez votre nouveau mot de passe",
+      "confirmPassword": "Confirmer le mot de passe",
+      "confirmPlaceholder": "Confirmez votre nouveau mot de passe",
+      "updatePassword": "Mettre à jour le mot de passe",
+      "logout": "Se déconnecter"
+    }
+  }
+}

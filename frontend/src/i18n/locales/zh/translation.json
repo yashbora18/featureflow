@@ -1,0 +1,976 @@
+{
+  "nav": {
+    "features": "功能",
+    "workflow": "工作流程",
+    "techStack": "技术栈",
+    "contact": "联系我们",
+    "login": "登录",
+    "getStarted": "开始使用"
+  },
+
+  "hero": {
+    "badge": "现代功能管理",
+    "title": "发布功能",
+    "highlight": "充满信心",
+    "description": "使用 FeatureFlow 控制功能发布、管理环境、定位用户，并安全地逐步发布新功能。",
+    "getStarted": "开始使用",
+    "learnMore": "了解更多"
+  },
+
+  "heroPreview": {
+    "dashboard": "FeatureFlow 仪表板",
+    "activeFlags": "活跃功能开关",
+    "environments": "环境",
+    "success": "评估成功率",
+    "rollout": "发布进度",
+    "analytics": "功能分析",
+    "activities": {
+      "payment": "支付功能已启用",
+      "aiSearch": "AI 搜索发布已更新",
+      "darkMode": "深色模式定位已更改"
+    }
+  },
+
+  "heroStats": {
+    "activeFlags": "活跃功能开关",
+    "environments": "环境",
+    "evaluation": "评估成功率",
+    "teams": "团队"
+  },
+
+  "trustedTeams": {
+    "badge": "为现代团队打造",
+    "title": "受到各团队信赖",
+    "description": "FeatureFlow 帮助工程和产品团队安全地管理和交付功能。",
+    "cards": {
+      "engineering": {
+        "title": "工程团队",
+        "text": "无需修改应用程序代码即可管理功能发布。"
+      },
+      "qa": {
+        "title": "质量保证团队",
+        "text": "在不同环境中安全地测试功能。"
+      },
+      "product": {
+        "title": "产品团队",
+        "text": "控制功能发布并提供更好的用户体验。"
+      },
+      "devops": {
+        "title": "DevOps",
+        "text": "充满信心地管理环境和部署。"
+      },
+      "platform": {
+        "title": "平台团队",
+        "text": "维护集中式功能管理和治理。"
+      }
+    }
+  },
+
+  "features": {
+    "badge": "强大功能",
+    "title": "安全发布所需的一切",
+    "description": "FeatureFlow 让团队能够全面控制功能发布、定位、逐步发布和监控。",
+    "learnMore": "了解更多",
+    "cards": {
+      "flags": {
+        "title": "功能开关",
+        "description": "无需修改应用程序代码即可创建和管理功能开关。"
+      },
+      "targeting": {
+        "title": "用户定位",
+        "description": "通过灵活的定位规则控制特定用户和群组的功能访问权限。"
+      },
+      "rollouts": {
+        "title": "逐步发布",
+        "description": "使用基于百分比的发布和分阶段发布逐步推出功能。"
+      },
+      "environments": {
+        "title": "环境",
+        "description": "独立管理开发、预发布和生产环境中的功能配置。"
+      },
+      "analytics": {
+        "title": "分析",
+        "description": "监控功能使用情况并了解功能开关的运行表现。"
+      },
+      "audit": {
+        "title": "审计日志",
+        "description": "跟踪功能更改并保留重要操作的完整历史记录。"
+      },
+      "evaluation": {
+        "title": "功能评估",
+        "description": "根据用户、群组、环境和定位规则动态评估功能开关。"
+      },
+      "security": {
+        "title": "安全",
+        "description": "通过安全访问和集中式配置确保功能管理受到控制。"
+      }
+    }
+  },
+
+  "showcase": {
+    "badge": "查看 FeatureFlow 的实际应用",
+    "title": "一个平台满足所有需求",
+    "description": "探索帮助团队管理、发布和监控功能的强大工具。",
+    "learnMore": "了解更多",
+    "cards": {
+      "flags": {
+        "title": "功能开关",
+        "subtitle": "即时控制功能",
+        "description": "无需部署新代码即可即时创建、管理、启用和禁用功能开关。"
+      },
+      "environment": {
+        "title": "环境管理",
+        "subtitle": "一个平台，多种环境",
+        "description": "轻松管理开发、预发布和生产环境中的功能配置。"
+      },
+      "analytics": {
+        "title": "强大分析",
+        "subtitle": "了解您的功能",
+        "description": "通过清晰且可操作的分析跟踪功能性能、发布进度和使用情况。"
+      },
+      "audit": {
+        "title": "审计日志",
+        "subtitle": "完整变更历史",
+        "description": "通过详细的审计日志和变更历史跟踪每项重要的功能变更。"
+      }
+    }
+  },
+
+  "workflow": {
+    "badge": "简单的功能工作流程",
+    "title": "从想法到发布",
+    "description": "管理从创建和定位到发布和监控的完整功能生命周期。",
+    "steps": {
+      "create": {
+        "title": "创建",
+        "description": "创建功能开关并配置其默认行为。"
+      },
+      "targeting": {
+        "title": "定位",
+        "description": "定义应该接收该功能的用户和群组。"
+      },
+      "evaluate": {
+        "title": "评估",
+        "description": "根据环境和定位规则评估功能开关。"
+      },
+      "release": {
+        "title": "发布",
+        "description": "充满信心地向用户逐步发布功能。"
+      },
+      "monitor": {
+        "title": "监控",
+        "description": "跟踪功能性能、变更和发布进度。"
+      }
+    }
+  },
+
+  "architecture": {
+    "badge": "系统架构",
+    "title": "为可靠的功能交付而构建",
+    "description": "FeatureFlow 使用可扩展的架构连接前端、后端、评估引擎和数据库。",
+    "frontend": {
+      "title": "前端",
+      "description": "用于管理功能开关、环境、定位、分析和审计日志的现代 React 界面。"
+    },
+    "backend": {
+      "title": "后端 API",
+      "description": "使用 FastAPI 构建的后端，负责功能管理、定位规则、评估请求和应用程序逻辑。"
+    },
+    "engine": {
+      "title": "评估引擎",
+      "description": "使用环境、用户定位、群组和发布规则评估功能开关。"
+    },
+    "modules": {
+      "flags": "功能开关",
+      "targeting": "定位",
+      "audit": "审计日志"
+    },
+    "database": {
+      "title": "数据库",
+      "description": "存储功能开关、环境、定位规则、用户群组、版本和审计历史记录。"
+    }
+  },
+
+  "techStack": {
+    "badge": "技术栈",
+    "title": "采用现代技术构建",
+    "description": "FeatureFlow 使用可靠的现代技术构建，为功能管理平台提供快速、可扩展且易于维护的体验。",
+    "cards": {
+      "react": "现代组件化前端，为用户提供响应式和交互式体验。",
+      "fastapi": "用于功能管理和评估的高性能后端 API。",
+      "postgresql": "用于存储功能和应用程序数据的可靠关系型数据库。",
+      "javascript": "驱动交互式前端体验的核心编程语言。",
+      "html": "用于构建应用程序结构的语义化标记语言。",
+      "css": "用于打造响应式且精致用户界面的现代样式技术。",
+      "git": "用于管理源代码和开发历史的版本控制系统。",
+      "github": "用于项目管理和协作的代码仓库平台。",
+      "docker": "用于一致开发和部署的容器化架构。"
+    }
+  },
+
+  "premium": {
+    "badge": "为现代团队打造",
+    "title1": "更快发布。",
+    "title2": "始终掌控。",
+    "description": "FeatureFlow 让团队能够更快发布功能，同时完全掌控定位、发布、安全和分析。",
+    "points": {
+      "rollout": "安全且渐进的功能发布",
+      "security": "安全的功能管理",
+      "analytics": "强大的发布分析"
+    },
+    "button": "探索 FeatureFlow",
+    "imageAlt": "FeatureFlow 分析仪表板"
+  },
+
+  "statistics": {
+    "badge": "数据中的 FeatureFlow",
+    "title": "与您的团队共同扩展",
+    "description": "强大的功能管理能力帮助团队高效地发布、控制和监控功能。",
+    "cards": {
+      "flags": {
+        "title": "功能开关",
+        "description": "在整个应用程序中创建和管理功能开关。"
+      },
+      "environments": {
+        "title": "环境",
+        "description": "管理开发、预发布和生产环境中的功能。"
+      },
+      "targeting": {
+        "number": "10+",
+        "title": "定位选项",
+        "description": "使用灵活的定位规则控制功能访问。"
+      },
+      "audit": {
+        "title": "审计覆盖",
+        "description": "通过完整的审计历史跟踪重要的功能变更。"
+      }
+    }
+  },
+
+  "cta": {
+    "badge": "准备开始了吗？",
+    "title": "更快发布功能。\n始终掌控。",
+    "description": "开始使用 FeatureFlow 管理功能发布，让您的团队能够安全地发布功能。",
+    "getStarted": "开始使用",
+    "login": "登录"
+  },
+
+  "footer": {
+    "description": "FeatureFlow 帮助团队管理功能开关、控制发布、定位用户并充满信心地发布功能。",
+    "platform": "平台",
+    "features": "功能",
+    "workflow": "工作流程",
+    "techStack": "技术栈",
+    "resources": "资源",
+    "documentation": "文档",
+    "api": "API 参考",
+    "support": "支持",
+    "connect": "连接",
+    "contact": "联系我们",
+    "copyright": "© 2026 FeatureFlow。保留所有权利。"
+  },
+
+  "common": {
+    "language": "语言",
+    "loading": "加载中...",
+    "search": "搜索",
+    "cancel": "取消",
+    "save": "保存",
+    "delete": "删除",
+    "edit": "编辑",
+    "refresh": "刷新",
+    "close": "关闭",
+    "create": "创建",
+    "update": "更新",
+    "filter": "筛选",
+    "yes": "是",
+    "no": "否",
+    "enabled": "已启用",
+    "disabled": "已禁用",
+    "active": "活跃",
+    "inactive": "非活跃",
+    "true": "真",
+    "false": "假",
+    "unknown": "未知",
+    "ok": "确定",
+    "show": "显示",
+    "rows": "行",
+    "page": "页面",
+    "of": "共"
+  },
+
+  "auth": {
+    "platform": "功能开关管理平台"
+  },
+
+  "loginLeft": {
+    "title1": "发布功能",
+    "title2": "充满信心",
+    "description": "FeatureFlow 通过强大的功能开关和受控发布帮助团队安全地发布、管理和监控功能。",
+    "instantRollouts": "即时发布",
+    "instantRolloutsDesc": "无需重新部署应用程序即可立即发布功能。",
+    "safeReleases": "安全发布",
+    "safeReleasesDesc": "控制功能曝光范围并降低部署风险。",
+    "realTimeAnalytics": "实时分析",
+    "realTimeAnalyticsDesc": "实时监控功能性能和发布活动。",
+    "enterpriseReady": "企业级支持",
+    "enterpriseReadyDesc": "专为安全性、可扩展性和团队协作而打造。"
+  },
+
+  "browser": {
+    "dashboardAlt": "FeatureFlow 仪表板预览"
+  },
+
+  "login": {
+    "welcome": "欢迎回来",
+    "description": "登录您的 FeatureFlow 工作区，继续管理您的功能。",
+    "email": "电子邮件地址",
+    "emailPlaceholder": "输入您的电子邮件地址",
+    "password": "密码",
+    "passwordPlaceholder": "输入您的密码",
+    "remember": "记住我",
+    "forgotPassword": "忘记密码？",
+    "signIn": "登录",
+    "signingIn": "正在登录...",
+    "or": "或",
+    "continueGoogle": "使用 Google 继续",
+    "newTo": "还没有使用过？",
+    "createWorkspace": "创建工作区",
+    "messages": {
+      "enterEmail": "请输入您的电子邮件地址。",
+      "invalidEmail": "请输入有效的电子邮件地址。",
+      "passwordRequired": "请输入您的密码。",
+      "incorrectCredentials": "电子邮件或密码不正确。",
+      "serverError": "服务器错误，请稍后重试。",
+      "connectionError": "无法连接到服务器。",
+      "signInFailed": "登录失败，请重试。",
+      "redirecting": "正在跳转到仪表板...",
+      "googleComingSoon": "Google 登录即将推出。"
+    }
+  },
+
+  "signup": {
+    "createAccount": "创建您的账户",
+    "description": "创建 FeatureFlow 工作区并开始管理功能开关。",
+    "username": "用户名",
+    "usernamePlaceholder": "输入您的用户名",
+    "email": "电子邮件地址",
+    "emailPlaceholder": "输入您的电子邮件地址",
+    "password": "密码",
+    "passwordPlaceholder": "输入您的密码",
+    "confirmPassword": "确认密码",
+    "confirmPasswordPlaceholder": "再次输入您的密码",
+    "terms": "我同意条款和条件",
+    "creatingAccount": "正在创建账户...",
+    "or": "或",
+    "google": "使用 Google 继续",
+    "alreadyHaveWorkspace": "已经拥有工作区？",
+    "signIn": "登录",
+    "googleComingSoon": "Google 注册即将推出。",
+    "success": {
+      "accountCreated": "账户创建成功！"
+    },
+    "errors": {
+      "usernameRequired": "请输入您的用户名。",
+      "emailRequired": "请输入您的电子邮件地址。",
+      "invalidEmail": "请输入有效的电子邮件地址。",
+      "passwordLength": "密码至少需要八个字符。",
+      "passwordMismatch": "两次输入的密码不一致。",
+      "acceptTerms": "请接受条款和条件。",
+      "signupFailed": "注册失败，请重试。"
+    }
+  },
+
+  "navbar": {
+    "dashboard": "仪表板",
+    "environment": "环境",
+    "toggleTheme": "切换主题",
+    "notifications": "通知",
+    "notification1": "新的功能发布已开始。",
+    "notification2": "功能开关已成功更新。",
+    "notification3": "分析报告已生成。",
+    "admin": "管理员",
+    "featureManager": "功能管理员",
+    "profile": "个人资料",
+    "settings": "设置",
+    "logout": "退出登录",
+    "logoutConfirm": "确定要退出登录吗？",
+    "logoutSuccess": "已成功退出登录。"
+  },
+
+  "sidebar": {
+    "enterprisePlatform": "企业级功能管理平台",
+    "dashboard": "仪表板",
+    "analytics": "分析",
+    "flags": "功能开关",
+    "environments": "环境",
+    "team": "团队",
+    "auditLogs": "审计日志",
+    "settings": "设置",
+    "systemOnline": "系统在线",
+    "api": "API",
+    "healthy": "正常",
+    "database": "数据库",
+    "connected": "已连接",
+    "redis": "Redis",
+    "running": "运行中",
+    "version": "版本",
+    "copyright": "© 2026 FeatureFlow"
+  },
+
+  "dashboard": {
+    "loading": "正在加载仪表板..."
+  },
+
+  "dashboardHeader": {
+    "badge": "企业级功能管理",
+    "goodMorning": "早上好",
+    "goodAfternoon": "下午好",
+    "goodEvening": "晚上好",
+    "user": "用户",
+    "description": "从一个仪表板管理功能开关、环境和发布。",
+    "refresh": "刷新"
+  },
+
+  "stats": {
+    "totalFlags": "功能开关总数",
+    "totalFlagsChange": "已配置的功能开关",
+    "activeFlags": "活跃功能开关",
+    "activeFlagsChange": "当前已启用",
+    "environments": "环境",
+    "environmentsChange": "部署环境",
+    "evaluations": "评估",
+    "evaluationsChange": "今日功能评估"
+  },
+
+  "rollout": {
+    "title": "发布概览",
+    "subtitle": "监控各环境中的功能发布进度。",
+    "fullRelease": "完整发布",
+    "almostComplete": "即将完成",
+    "gradualRollout": "逐步发布",
+    "empty": "没有可用的发布数据。",
+    "rollout": "发布",
+    "percentage": "百分比",
+    "stage": "阶段",
+    "disabled": "已禁用",
+    "canary": "金丝雀发布",
+    "gradual": "逐步发布",
+    "almost": "即将完成",
+    "full": "完整发布"
+  },
+
+  "recentActivity": {
+    "title": "最近活动",
+    "subtitle": "跟踪功能开关的更改和更新。",
+    "empty": "没有最近活动。",
+    "created": "已创建",
+    "updated": "已更新",
+    "modified": "已修改",
+    "featureFlag": "功能开关"
+  },
+
+  "systemHealth": {
+    "title": "系统状态",
+    "subtitle": "监控平台服务。",
+    "backendApi": "后端 API",
+    "postgresql": "PostgreSQL 数据库",
+    "redisCache": "Redis 缓存",
+    "healthy": "正常",
+    "connected": "已连接",
+    "running": "运行中",
+    "offline": "离线",
+    "disconnected": "未连接",
+    "operational": "正常运行",
+    "services": "服务",
+    "allHealthy": "所有平台服务均正常运行。",
+    "attention": "部分服务需要关注。"
+  },
+
+  "quickActions": {
+    "title": "快速操作",
+    "subtitle": "快速访问常用平台功能。",
+    "createFlag": "创建功能开关",
+    "createDescription": "快速创建新的功能开关。",
+    "evaluateFlag": "评估功能开关",
+    "evaluateDescription": "立即测试功能行为。",
+    "environments": "管理环境",
+    "environmentDescription": "安全地管理发布。",
+    "auditLogs": "审计日志",
+    "auditDescription": "跟踪变更历史。"
+  },
+
+  "cleanup": {
+    "title": "功能开关清理",
+    "description": "检查和管理过时或未使用的功能开关。",
+    "flag": "开关",
+    "environment": "环境",
+    "status": "状态",
+    "lastUpdated": "最近更新",
+    "owner": "负责人",
+    "action": "操作",
+    "delete": "删除",
+    "deleteConfirm": "确定要删除此功能开关吗？",
+    "deleteSuccess": "功能开关已成功删除。",
+    "deleteFailed": "删除功能开关失败。",
+    "empty": "未找到过时的功能开关。",
+    "markReviewed": "标记为已审核"
+  },
+
+  "flagLifecycle": {
+    "title": "功能开关生命周期",
+    "subtitle": "跟踪功能开关状态。",
+    "active": "活跃",
+    "disabled": "已禁用",
+    "stale": "过时",
+    "total": "功能开关总数",
+    "health": "功能开关状态",
+    "message": "持续监控未使用的功能开关，并定期清理过时的发布。"
+  },
+
+  "deploymentSafety": {
+    "title": "部署安全",
+    "subtitle": "监控发布稳定性。",
+    "safe": "安全部署",
+    "warning": "需要关注",
+    "rolloutChecks": "发布检查",
+    "environmentChecks": "环境检查",
+    "passed": "通过",
+    "activeFlags": "活跃功能开关",
+    "totalFlags": "功能开关总数",
+    "messageSafe": "您的部署目前稳定且安全。",
+    "messageWarning": "部分部署需要关注。"
+  },
+
+  "targetingSummary": {
+    "title": "定位摘要",
+    "subtitle": "监控用户定位规则。",
+    "userRules": "用户定位",
+    "groupRules": "群组定位",
+    "percentageRules": "百分比发布",
+    "totalRules": "规则总数",
+    "coverage": "定位覆盖范围",
+    "activeMessage": "已为功能发布配置用户定位。",
+    "emptyMessage": "尚未配置定位规则。"
+  },
+
+  "analytics": {
+    "loading": "正在加载分析...",
+    "title": "分析",
+    "subtitle": "监控功能性能",
+    "description": "监控功能使用情况、发布性能和评估指标。",
+    "exportCSV": "导出 CSV",
+    "exportPDF": "导出 PDF",
+    "range": {
+      "7Days": "七天",
+      "15Days": "十五天",
+      "30Days": "三十天"
+    },
+    "evaluations": "功能评估",
+    "totalEvaluations": "评估总数",
+    "activeFlags": "活跃功能开关",
+    "enabled": "已启用",
+    "rolloutSuccess": "发布成功率",
+    "healthy": "正常",
+    "environments": "环境",
+    "available": "可用",
+    "evaluationTrend": "评估趋势",
+    "evaluationOverTime": "一段时间内的评估",
+    "noEvaluationData": "没有评估数据",
+    "noFeatureEvaluations": "此时间段没有可用的功能评估。",
+    "flagDistribution": "功能开关分布",
+    "enabledVsDisabled": "已启用与已禁用功能开关",
+    "noAnalyticsData": "没有可用的分析数据。",
+    "mostEvaluatedFlags": "评估次数最多的功能开关",
+    "mostEvaluatedDescription": "根据评估活动排名的主要功能开关",
+    "noTopFlagsData": "没有可用数据",
+    "environmentDistribution": "环境分布",
+    "flagUsage": "各环境中的功能开关使用情况",
+    "flags": "功能开关",
+    "evaluationSummary": "评估摘要",
+    "evaluationOverview": "功能评估活动概览。",
+    "todayEvaluations": "今日评估",
+    "averageDaily": "每日平均评估",
+    "peakEvaluation": "最高评估次数",
+    "peakDay": "峰值日期",
+    "growthTrend": "增长趋势",
+    "increasing": "增长",
+    "decreasing": "下降",
+    "insights": "分析洞察",
+    "insightsDescription": "功能性能概览和使用模式",
+    "mostUsedFeature": "使用最多的功能",
+    "environment": "环境",
+    "totalFlags": "功能开关总数",
+    "noData": "无数据",
+    "noEvaluationActivity": "目前还没有评估活动。",
+    "mostEvaluatedFeature": "{{flag}} 是评估次数最多的功能。",
+    "successfulEvaluations": "成功评估",
+    "failedEvaluations": "失败评估",
+    "evaluationHistory": "评估历史",
+    "usage": "使用情况分析",
+    "performance": "性能概览"
+  },
+
+  "groups": {
+    "betaUsers": "测试版用户",
+    "premiumPlan": "高级套餐",
+    "internalTeam": "内部团队"
+  },
+
+  "groupTargetingModal": {
+    "title": "添加目标群组",
+    "selectGroup": "选择群组"
+  },
+
+  "targetingModal": {
+    "title": "添加目标用户",
+    "userId": "用户 ID",
+    "placeholder": "输入用户 ID"
+  },
+
+  "groupTargeting": {
+    "title": "群组定位",
+    "description": "为特定用户群组启用此功能。",
+    "addGroup": "添加群组",
+    "empty": "尚未配置群组定位规则。",
+    "addSuccess": "群组定位规则添加成功。",
+    "addFailed": "添加群组定位规则失败。",
+    "deleteSuccess": "群组定位规则删除成功。",
+    "deleteFailed": "删除群组定位规则失败。"
+  },
+
+  "messages": {
+    "loadFailed": "加载功能开关失败。",
+    "userAdded": "用户定位规则添加成功。",
+    "addUserFailed": "添加用户定位规则失败。",
+    "userDeleted": "用户定位规则删除成功。",
+    "deleteUserFailed": "删除用户定位规则失败。",
+    "rolloutUpdated": "发布已成功更新。",
+    "rolloutFailed": "更新发布失败。",
+    "enterUserId": "请输入用户 ID。",
+    "enterGroupName": "请输入群组名称。",
+    "evaluationCompleted": "功能评估已完成。",
+    "evaluationFailed": "功能评估失败。"
+  },
+
+  "auditLogs": {
+    "title": "审计日志",
+    "description": "跟踪所有功能开关活动和系统变更。",
+    "emptyTitle": "未找到审计日志",
+    "emptyDescription": "尚未记录任何审计活动。",
+    "searchPlaceholder": "搜索审计日志...",
+    "allActions": "所有操作",
+    "allFlags": "所有功能开关",
+    "filter": "筛选",
+    "viewDiff": "查看变更",
+    "detailsTitle": "审计日志详情",
+    "flag": "功能开关",
+    "action": "操作",
+    "actor": "操作人",
+    "timestamp": "时间戳",
+    "jsonDiff": "JSON 变更",
+    "copyJson": "复制 JSON",
+    "table": {
+      "timestamp": "时间戳",
+      "actor": "操作人",
+      "flag": "功能开关",
+      "action": "操作",
+      "viewDiff": "查看差异"
+    },
+    "actions": {
+      "created": "已创建",
+      "updated": "已更新",
+      "deleted": "已删除"
+    }
+  },
+
+  "team": {
+    "title": "团队管理",
+    "description": "管理项目成员及其角色。",
+    "addMember": "添加成员",
+    "totalMembers": "成员总数",
+    "developers": "开发人员",
+    "managers": "管理人员",
+    "activeMembers": "活跃成员",
+    "search": "搜索团队成员...",
+    "name": "姓名",
+    "email": "电子邮件",
+    "role": "角色",
+    "status": "状态",
+    "actions": "操作",
+    "roles": {
+      "Feature Manager": "功能管理员",
+      "Backend Developer": "后端开发人员",
+      "Frontend Developer": "前端开发人员",
+      "QA Engineer": "质量保证工程师"
+    },
+    "statuses": {
+      "Active": "活跃",
+      "Inactive": "非活跃"
+    }
+  },
+
+  "environment": {
+    "development": "开发环境",
+    "staging": "预发布环境",
+    "production": "生产环境",
+    "pageTitle": "环境",
+    "pageDescription": "管理开发、预发布和生产环境。",
+    "create": "创建",
+    "createEnvironment": "创建环境",
+    "creating": "创建中...",
+    "refresh": "刷新",
+    "refreshing": "刷新中...",
+    "editEnvironment": "编辑环境",
+    "deleteTitle": "删除环境",
+    "deleteConfirm": "确定要删除此环境吗",
+    "deleteWarning": "此操作无法撤销。",
+    "deleting": "删除中...",
+    "environmentName": "环境名称",
+    "environmentDescription": "环境描述",
+    "totalEnvironments": "环境总数",
+    "activeEnvironments": "活跃环境",
+    "defaultConfigurations": "默认配置",
+    "environmentOverride": "环境覆盖",
+    "customOverridesConfigured": "已配置自定义覆盖",
+    "noOverrides": "无覆盖",
+    "usingDefaultValues": "使用默认值",
+    "searchPlaceholder": "搜索环境...",
+    "all": "全部",
+    "onlyOverrides": "仅覆盖",
+    "noOverrideFilter": "无覆盖",
+    "featureFlag": "功能开关",
+    "featureFlagDescription": "选择一个功能开关以查看环境。",
+    "selectFeature": "选择功能",
+    "showing": "正在显示",
+    "environments": "环境",
+    "environmentList": "环境列表",
+    "active": "活跃",
+    "emptyTable": "未找到环境。",
+    "emptyOverrides": "未找到覆盖。",
+    "table": {
+      "id": "编号",
+      "environment": "环境",
+      "description": "描述",
+      "status": "状态",
+      "action": "操作"
+    },
+    "overrideTitle": "环境覆盖",
+    "overrideDescription": "管理不同环境中的功能开关值。",
+    "overrideValue": "覆盖值",
+    "enabledTrue": "已启用（真）",
+    "disabledFalse": "已禁用（假）",
+    "overridden": "已覆盖",
+    "default": "默认值",
+    "lastUpdated": "最近更新",
+    "saving": "保存中...",
+    "editOverride": "编辑覆盖",
+    "overrideInfoTitle": "覆盖信息",
+    "overrideInfoDescription": "对于指定环境，覆盖值优先于默认功能开关值。",
+    "messages": {
+      "created": "环境创建成功。",
+      "updated": "环境更新成功。",
+      "deleted": "环境删除成功。",
+      "createFailed": "创建环境失败。",
+      "updateFailed": "更新环境失败。",
+      "deleteFailed": "删除环境失败。"
+    }
+  },
+
+  "settings": {
+    "title": "设置",
+    "description": "管理您的 FeatureFlow 偏好设置和账户设置。",
+    "profile": {
+      "title": "个人资料设置",
+      "description": "查看您的个人资料信息。",
+      "name": "姓名",
+      "email": "电子邮件",
+      "role": "角色",
+      "admin": "管理员"
+    },
+    "appearance": {
+      "title": "外观设置",
+      "description": "自定义应用程序外观和默认环境。",
+      "theme": "主题",
+      "light": "浅色",
+      "dark": "深色",
+      "defaultEnvironment": "默认环境"
+    },
+    "notifications": {
+      "title": "通知设置",
+      "description": "管理您的通知偏好。",
+      "email": "电子邮件通知",
+      "audit": "审计日志通知",
+      "feature": "功能开关通知",
+      "deployment": "部署通知"
+    },
+    "security": {
+      "title": "安全设置",
+      "description": "管理账户安全和密码。",
+      "currentPassword": "当前密码",
+      "currentPlaceholder": "输入当前密码",
+      "newPassword": "新密码",
+      "newPlaceholder": "输入新密码",
+      "confirmPassword": "确认密码",
+      "confirmPlaceholder": "再次输入新密码",
+      "updatePassword": "更新密码",
+      "logout": "退出登录"
+    }
+  },
+
+  "flags": {
+    "pageTitle": "功能开关",
+    "pageDescription": "管理、监控和控制各环境中的功能开关。",
+    "welcome": "欢迎使用功能开关",
+    "welcomeDescription": "轻松创建、更新和管理功能开关。",
+    "createFlag": "创建功能开关",
+    "editFlag": "编辑功能开关",
+    "deleteFlag": "删除功能开关",
+    "search": "按功能开关键、负责人或类型搜索...",
+    "all": "全部",
+    "enabled": "已启用",
+    "disabled": "已禁用",
+    "totalFlags": "功能开关总数",
+    "totalFlagsDesc": "可用功能开关",
+    "enabledDesc": "当前已启用的功能开关",
+    "disabledDesc": "当前已禁用的功能开关",
+    "teams": "团队",
+    "teamsDesc": "负责团队",
+    "emptyTitle": "未找到功能开关",
+    "emptyDescription": "创建您的第一个功能开关即可开始。",
+    "emptyTableDescription": "没有功能开关符合所选筛选条件。",
+    "fetchError": "加载功能开关失败。",
+    "deleteSuccess": "功能开关删除成功。",
+    "deleteFailed": "删除功能开关失败。",
+    "deleteModalTitle": "删除功能开关",
+    "deleteModalMessage": "将被永久删除。此操作无法撤销。",
+    "success": "成功",
+    "ok": "确定",
+    "delete": "删除",
+    "cancel": "取消",
+    "table": {
+      "flagId": "编号",
+      "flagKey": "功能开关键",
+      "type": "类型",
+      "status": "状态",
+      "ownerTeam": "负责团队",
+      "actions": "操作"
+    }
+  },
+
+  "flagForm": {
+    "createTitle": "创建功能开关",
+    "updateTitle": "更新功能开关",
+    "flagKey": "功能开关键",
+    "enterFlagKey": "输入唯一的功能开关键",
+    "flagType": "功能开关类型",
+    "boolean": "布尔值",
+    "defaultValue": "默认值",
+    "ownerTeam": "负责团队",
+    "ownerPlaceholder": "输入负责团队",
+    "description": "描述",
+    "descriptionPlaceholder": "输入功能描述",
+    "environment": "环境",
+    "status": "状态",
+    "createButton": "创建功能开关",
+    "updateButton": "更新功能开关",
+    "createSuccess": "功能开关创建成功。",
+    "updateSuccess": "功能开关更新成功。",
+    "operationFailed": "保存功能开关失败。"
+  },
+
+  "flagDetail": {
+    "back": "返回",
+    "headerDescription": "功能开关配置、定位规则、发布策略和评估。",
+    "flagKey": "功能开关键",
+    "type": "类型",
+    "status": "状态",
+    "ownerTeam": "负责团队",
+    "environment": "环境",
+    "description": "描述",
+    "created": "创建时间",
+    "updated": "最近更新",
+    "title": "功能开关详情",
+    "enabled": "已启用",
+    "disabled": "已禁用",
+
+    "targeting": {
+      "title": "定位规则",
+      "description": "仅为选定用户启用此功能。",
+      "addUser": "添加用户",
+      "empty": "尚未配置定位规则。",
+      "remove": "移除",
+      "users": "用户定位",
+      "groups": "群组定位",
+      "addGroup": "添加群组",
+      "emptyUsers": "没有用户定位规则",
+      "emptyGroups": "没有群组定位规则"
+    },
+
+    "rollout": {
+      "title": "百分比发布",
+      "description": "逐步向一定比例的用户发布此功能。",
+      "unsaved": "未保存的更改",
+      "current": "当前发布比例",
+      "currentDescription": "使用下面的滑块调整发布比例。",
+      "summary": "发布摘要",
+      "rollout": "发布",
+      "save": "保存发布",
+      "saving": "保存中..."
+    },
+
+    "analytics": {
+      "title": "功能分析",
+      "description": "监控功能使用情况、评估性能和发布洞察。",
+      "last7Days": "最近七天",
+      "last15Days": "最近十五天",
+      "last30Days": "最近三十天"
+    },
+
+    "evaluation": {
+      "title": "功能评估",
+      "description": "针对特定用户或群组评估此功能开关。",
+      "evaluateBy": "评估方式",
+      "toTest": "进行测试。",
+      "user": "用户",
+      "group": "群组",
+      "userId": "用户编号",
+      "groupName": "群组名称",
+      "enterUser": "输入用户编号",
+      "enterGroup": "输入群组名称",
+      "evaluate": "评估",
+      "evaluating": "评估中...",
+      "noEvaluation": "暂无评估",
+      "noEvaluationDescription": "点击评估按钮运行功能评估，以测试此功能开关。",
+      "result": "评估结果",
+      "cached": "已缓存",
+      "live": "实时",
+      "lastEvaluation": "上次评估：",
+      "reason": "原因",
+      "responseTime": "响应时间",
+      "source": "来源",
+      "cachedOnly": "Redis 缓存",
+      "liveOnly": "实时评估",
+      "ruleType": "规则类型",
+      "flagType": "功能开关类型",
+      "mode": "评估模式",
+      "userTargeting": "用户定位",
+      "groupTargeting": "群组定位",
+      "percentageRollout": "百分比发布",
+      "environmentOverride": "环境覆盖",
+      "defaultValue": "默认值",
+      "summary": "评估摘要",
+      "summaryPrefix": "功能开关",
+      "summaryFor": "针对",
+      "summaryIn": "在",
+      "summaryBecause": "因为",
+      "reasons": {
+        "Matched Environment Override": "环境覆盖",
+        "Matched User Targeting": "用户定位",
+        "Matched Group Targeting": "群组定位",
+        "Matched Percentage Rollout": "百分比发布",
+        "Default Value": "默认值"
+      }
+    }
+  }
+}

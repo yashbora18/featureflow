@@ -1,16 +1,145 @@
-# React + Vite
+# Feature Flag Management System - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+The frontend is built using React and provides a modern dashboard for managing feature flags, environments, targeting rules, analytics, audit logs, and system settings. It communicates with the FastAPI backend through REST APIs.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+# Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- React Router
+- Axios
+- React Icons
+- React i18next
+- React Toastify
+- CSS3
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Project Structure
+
+```
+frontend/
+│
+├── public/
+│
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── locales/
+│   ├── assets/
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── package.json
+│
+└── README.md
+```
+
+---
+
+# Installation
+
+Clone the repository.
+
+```bash
+git clone <repository-url>
+```
+
+Move to the frontend folder.
+
+```bash
+cd frontend
+```
+
+Install dependencies.
+
+```bash
+npm install
+```
+
+---
+
+# Run the Application
+
+```bash
+npm run dev
+```
+
+Frontend runs on:
+
+```
+http://localhost:5173
+```
+
+---
+
+# Features
+
+- User Authentication
+- Dashboard Overview
+- Feature Flag Management
+- Environment Management
+- Targeting Rules
+- User & Group Targeting
+- Percentage Rollout
+- Analytics Dashboard
+- Audit Logs
+- Environment Switching
+- Dark / Light Theme
+- Multi-language Support
+- Responsive UI
+
+---
+
+# Supported Languages
+
+- English
+- Hindi
+- Marathi
+- Gujarati
+- Bengali
+- Tamil
+- Telugu
+- Kannada
+- Malayalam
+- Punjabi
+- Odia
+- Assamese
+- Urdu
+
+---
+
+# Folder Overview
+
+- **components/** – Reusable UI components
+- **pages/** – Application pages
+- **services/** – API calls
+- **locales/** – Translation JSON files
+- **assets/** – Images and icons
+
+---
+
+# Backend Connection
+
+Update the API base URL if required:
+
+```
+src/services/api.js
+```
+
+Example:
+
+```javascript
+http://127.0.0.1:8000
+```
+
+---
+
+# Author
+
+Developed as part of the Infosys Springboard Virtual Internship Feature Flag Management System project.

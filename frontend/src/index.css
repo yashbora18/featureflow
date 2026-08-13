@@ -1,132 +1,1180 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
-/* ==========================
+
+/* =====================================================
    LIGHT THEME
-========================== */
+===================================================== */
 
 :root {
-  --background: #f5f7fb;
-  --surface: #ffffff;
-  --surface-secondary: #f8fafc;
 
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
+    --background:#f5f7fb;
 
-  --border: #dbeafe;
+    --surface:#ffffff;
 
-  --primary: #2563eb;
-  --primary-hover: #1d4ed8;
+    --surface-secondary:#f8fafc;
 
-  --success: #22c55e;
-  --danger: #ef4444;
 
-  --shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+    --text-primary:#1e293b;
+
+    --text-secondary:#64748b;
+
+
+    --border:#dbeafe;
+
+
+    --primary:#5B5BEF;
+
+    --primary-hover:#4338CA;
+
+
+    --success:#22c55e;
+
+    --danger:#ef4444;
+
+
+    --shadow:
+        0 8px 20px rgba(15,23,42,.08);
+
+
+    --button-shadow:
+        0 12px 30px rgba(91,91,239,.35);
+
 }
 
-/* ==========================
+
+/* =====================================================
    DARK THEME
-========================== */
+===================================================== */
 
-.dark-theme {
-  --background: #0f172a;
-  --surface: #1e293b;
-  --surface-secondary: #334155;
+html.dark {
 
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
+    --background:#0b1120;
 
-  --border: #475569;
+    --surface:#111827;
 
-  --primary: #3b82f6;
-  --primary-hover: #60a5fa;
+    --surface-secondary:#0f172a;
 
-  --success: #22c55e;
-  --danger: #ef4444;
 
-  --shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+    --text-primary:#f8fafc;
+
+    --text-secondary:#94a3b8;
+
+
+    --border:#263244;
+
+
+    --primary:#6366f1;
+
+    --primary-hover:#818cf8;
+
+
+    --success:#22c55e;
+
+    --danger:#f87171;
+
+
+    --shadow:
+        0 10px 30px rgba(0,0,0,.35);
+
+
+    --button-shadow:
+        0 12px 30px rgba(99,102,241,.35);
+
 }
 
-/* ==========================
+
+/* =====================================================
    RESET
-========================== */
+===================================================== */
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:"Inter",sans-serif;
+
 }
+
 
 html,
 body,
 #root {
-  width: 100%;
-  min-height: 100vh;
+
+    width:100%;
+
+    min-height:100vh;
+
 }
 
-/* ==========================
+
+/* =====================================================
    BODY
-========================== */
+===================================================== */
 
 body {
-  background: var(--background);
-  color: var(--text-primary);
-  transition:
-    background 0.3s ease,
-    color 0.3s ease;
+
+    background:var(--background);
+
+    color:var(--text-primary);
+
+    transition:
+        background .3s ease,
+        color .3s ease;
+
 }
 
-/* ==========================
+
+/* =====================================================
    APP
-========================== */
+===================================================== */
 
 .app {
-  min-height: 100vh;
-  background: var(--background);
-  color: var(--text-primary);
-  transition:
-    background 0.3s ease,
-    color 0.3s ease;
+
+    min-height:100vh;
+
+    background:var(--background);
+
+    color:var(--text-primary);
+
+    transition:
+        background .3s ease,
+        color .3s ease;
+
 }
 
-/* ==========================
+
+/* =====================================================
+   DARK APP
+===================================================== */
+
+html.dark body {
+
+    background:#0b1120;
+
+}
+
+
+html.dark .app {
+
+    background:#0b1120;
+
+}
+
+
+/* =====================================================
    COMMON ELEMENTS
-========================== */
+===================================================== */
 
 a {
-  color: inherit;
-  text-decoration: none;
+
+    color:inherit;
+
+    text-decoration:none;
+
 }
+
 
 button,
 input,
 select,
 textarea {
-  font: inherit;
+
+    font:inherit;
+
 }
+
 
 button {
-  cursor: pointer;
+
+    cursor:pointer;
+
 }
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
 
 ::-webkit-scrollbar {
-  width: 8px;
+
+    width:8px;
+
 }
+
 
 ::-webkit-scrollbar-track {
-  background: var(--surface-secondary);
+
+    background:var(--surface-secondary);
+
 }
+
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 10px;
+
+    background:var(--border);
+
+    border-radius:10px;
+
 }
+
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
+
+    background:var(--primary);
+
 }
 
+
+html.dark ::-webkit-scrollbar-track {
+
+    background:#0f172a;
+
+}
+
+
+html.dark ::-webkit-scrollbar-thumb {
+
+    background:#334155;
+
+}
+
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+
+    background:#6366f1;
+
+}
+
+
+/* =====================================================
+   SELECTION
+===================================================== */
+
 ::selection {
-  background: var(--primary);
-  color: #ffffff;
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE LAYOUT
+===================================================== */
+
+@media(max-width:1024px){
+
+    .main-layout {
+
+        margin-left:0;
+
+        width:100%;
+
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .app {
+
+        overflow-x:hidden;
+
+    }
+
+}
+
+
+@media(max-width:480px){
+
+    body {
+
+        font-size:14px;
+
+    }
+
+}
+
+
+/* =====================================================
+   MEDIA
+===================================================== */
+
+img {
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+
+table {
+
+    width:100%;
+
+}
+
+
+input,
+select,
+textarea,
+button {
+
+    max-width:100%;
+
+}
+
+
+/* =====================================================
+   FOCUS
+===================================================== */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+
+    outline:2px solid var(--primary);
+
+    outline-offset:2px;
+
+}
+
+
+/* =====================================================
+   APPLICATION LAYOUT
+===================================================== */
+
+.main-layout {
+
+    margin-left:290px;
+
+    width:calc(100% - 290px);
+
+    min-height:100vh;
+
+}
+
+
+.content-area {
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+/* =====================================================
+   PAGE CONTENT
+===================================================== */
+
+.page-content {
+
+    width:100%;
+
+    max-width:calc(100vw - 290px);
+
+    padding:40px 32px 40px;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =====================================================
+   DASHBOARD WIDTH
+===================================================== */
+
+.dashboard-page {
+
+    width:100%;
+
+    max-width:none;
+
+    margin:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+    overflow:hidden;
+
+}
+
+
+/* =====================================================
+   STATS GRID
+===================================================== */
+
+.stats-grid {
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:24px;
+
+    width:100%;
+
+}
+
+
+/* =====================================================
+   INTELLIGENCE GRID
+===================================================== */
+
+.intelligence-grid {
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:24px;
+
+    width:100%;
+
+}
+
+
+/* =====================================================
+   NAVBAR WIDTH
+===================================================== */
+
+.navbar {
+
+    max-width:calc(100vw - 340px);
+
+}
+
+
+/* =====================================================
+   TABLE SECTIONS
+===================================================== */
+
+.dashboard-section {
+
+    width:100%;
+
+    margin-top:10px;
+
+}
+
+
+/* =====================================================
+   GLOBAL DARK SURFACES
+===================================================== */
+
+html.dark .dashboard-section {
+
+    color:var(--text-primary);
+
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1200px){
+
+    .stats-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+}
+
+
+@media(max-width:900px){
+
+    .intelligence-grid {
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    .main-layout {
+
+        margin-left:0;
+
+        width:100%;
+
+    }
+
+
+    .page-content {
+
+        padding:16px 16px 30px;
+
+    }
+
+
+    .stats-grid {
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+/* =====================================================
+   GLOBAL FEATUREFLOW PRIMARY BUTTON
+===================================================== */
+
+.back-btn,
+.login-btn,
+.signup-btn,
+.get-started-btn,
+.save-btn,
+.submit-btn,
+.refresh-btn,
+.create-btn,
+.confirm-btn,
+.sidebar .menu-item.active {
+
+    background:
+        linear-gradient(
+            135deg,
+            #5B5BEF,
+            #8B5CF6
+        ) !important;
+
+    color:#ffffff !important;
+
+    border:none;
+
+    box-shadow:
+        0 12px 30px rgba(91,91,239,.35);
+
+}
+
+
+.back-btn:hover,
+.login-btn:hover,
+.signup-btn:hover,
+.get-started-btn:hover,
+.save-btn:hover,
+.submit-btn:hover,
+.refresh-btn:hover,
+.create-btn:hover,
+.confirm-btn:hover {
+
+    background:var(--primary-hover) !important;
+
+    transform:translateY(-2px);
+
+}
+
+
+/* =====================================================
+   DARK BUTTON SHADOW
+===================================================== */
+
+html.dark .back-btn,
+html.dark .login-btn,
+html.dark .signup-btn,
+html.dark .get-started-btn,
+html.dark .save-btn,
+html.dark .submit-btn,
+html.dark .refresh-btn,
+html.dark .create-btn,
+html.dark .confirm-btn {
+
+    box-shadow:
+        0 12px 30px rgba(99,102,241,.30);
+
+}
+
+
+/* =====================================================
+   DARK TABLE / CONTENT DEFAULTS
+===================================================== */
+
+html.dark table {
+
+    color:var(--text-primary);
+
+}
+
+
+html.dark th {
+
+    color:#cbd5e1;
+
+}
+
+
+html.dark td {
+
+    color:#94a3b8;
+
+}
+
+
+/* =====================================================
+   DARK FORM ELEMENTS
+===================================================== */
+
+html.dark input,
+html.dark select,
+html.dark textarea {
+
+    background:#111827;
+
+    color:#f8fafc;
+
+    border-color:#334155;
+
+}
+
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+
+    color:#64748b;
+
+}
+
+
+html.dark input:focus,
+html.dark select:focus,
+html.dark textarea:focus {
+
+    border-color:#6366f1;
+
+    box-shadow:
+        0 0 0 4px rgba(99,102,241,.12);
+
+}
+
+
+/* =====================================================
+   DARK SELECT OPTIONS
+===================================================== */
+
+html.dark select option {
+
+    background:#111827;
+
+    color:#f8fafc;
+
+}
+
+/* =====================================================
+   DARK DASHBOARD — GLOBAL SURFACE PROTECTION
+===================================================== */
+
+html.dark .page-content,
+html.dark .dashboard-page {
+
+    color:var(--text-primary);
+
+}
+
+
+/* Common cards / panels */
+
+html.dark .card,
+html.dark .panel,
+html.dark .section-card,
+html.dark .dashboard-card {
+
+    background:var(--surface);
+
+    color:var(--text-primary);
+
+    border-color:var(--border);
+
+}
+
+
+/* Headings */
+
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+
+    color:var(--text-primary);
+
+}
+
+
+/* Secondary text */
+
+html.dark p,
+html.dark small {
+
+    color:var(--text-secondary);
+
+}
+
+
+/* =====================================================
+   DARK TABLE PROTECTION
+===================================================== */
+
+html.dark table {
+
+    background:var(--surface);
+
+}
+
+
+html.dark thead {
+
+    background:#0f172a;
+
+}
+
+
+html.dark tbody tr {
+
+    border-color:#263244;
+
+}
+
+
+html.dark tbody tr:hover {
+
+    background:#1e293b;
+
+}
+
+
+/* =====================================================
+   DARK DROPDOWN / SELECT PROTECTION
+===================================================== */
+
+html.dark select {
+
+    color-scheme:dark;
+
+}
+
+
+/* =====================================================
+   DARK CHECKBOX
+===================================================== */
+
+html.dark input[type="checkbox"] {
+
+    accent-color:#6366f1;
+
+}
+
+
+/* =====================================================
+   DARK HR / DIVIDERS
+===================================================== */
+
+html.dark hr {
+
+    border-color:#263244;
+
+}
+
+
+/* =====================================================
+   DARK MODAL / OVERLAY DEFAULT
+===================================================== */
+
+html.dark .modal-content,
+html.dark .modal-card,
+html.dark .modal {
+
+    background:#111827;
+
+    color:#f8fafc;
+
+    border-color:#334155;
+
+}
+
+
+/* =====================================================
+   DARK TOOLTIP
+===================================================== */
+
+html.dark [role="tooltip"] {
+
+    background:#020617;
+
+    color:#f8fafc;
+
+    border-color:#334155;
+
+}
+
+/* =====================================================
+   FINAL MOBILE WIDTH FIX
+   IMPORTANT: MUST BE AT THE END
+===================================================== */
+
+html,
+body,
+#root,
+.app {
+
+    width:100%;
+
+    min-width:0;
+
+    max-width:100%;
+
+    overflow-x:hidden;
+}
+
+
+/* =====================================================
+   MAIN LAYOUT
+===================================================== */
+
+@media (max-width:1024px){
+
+    .main-layout {
+
+        margin-left:0 !important;
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+    }
+
+}
+
+
+/* =====================================================
+   PAGE CONTENT
+===================================================== */
+
+@media (max-width:768px){
+
+    .page-content {
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        padding:16px 16px 30px !important;
+
+        box-sizing:border-box;
+
+        overflow-x:hidden;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .page-content {
+
+        padding:12px 12px 30px !important;
+
+    }
+
+}
+
+
+/* =====================================================
+   NAVBAR WIDTH
+===================================================== */
+
+@media (max-width:768px){
+
+    .navbar {
+
+        width:calc(100% - 24px) !important;
+
+        max-width:none !important;
+
+        min-width:0 !important;
+
+        margin-left:12px !important;
+
+        margin-right:12px !important;
+
+        box-sizing:border-box;
+    }
+
+}
+
+
+/* =====================================================
+   DASHBOARD
+===================================================== */
+
+@media (max-width:768px){
+
+    .dashboard-page {
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        margin:0 !important;
+
+        padding:0 !important;
+
+        box-sizing:border-box;
+
+        overflow-x:hidden;
+    }
+
+
+    .dashboard-header {
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        display:flex !important;
+
+        flex-direction:column !important;
+
+        align-items:stretch !important;
+
+        box-sizing:border-box;
+    }
+
+
+    .dashboard-main {
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+    }
+
+
+    .dashboard-header-right {
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        align-items:stretch !important;
+    }
+
+}
+
+/* =====================================================
+   FINAL MOBILE WIDTH + SPACING FIX
+===================================================== */
+
+html,
+body,
+#root,
+.app {
+
+    width:100%;
+
+    min-width:0;
+
+    max-width:100%;
+
+    overflow-x:hidden;
+}
+
+
+/* =====================================================
+   MAIN LAYOUT
+===================================================== */
+
+@media (max-width:1024px){
+
+    .main-layout {
+
+        margin-left:0 !important;
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE PAGE CONTENT
+===================================================== */
+
+@media (max-width:768px){
+
+    .page-content {
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        padding:16px 16px 30px !important;
+
+        box-sizing:border-box;
+
+        overflow-x:hidden;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE PAGE CONTENT
+===================================================== */
+
+@media (max-width:480px){
+
+    .page-content {
+
+        padding:12px 12px 30px !important;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE NAVBAR
+===================================================== */
+
+@media (max-width:768px){
+
+    .navbar {
+
+        width:calc(100% - 24px) !important;
+
+        max-width:none !important;
+
+        min-width:0 !important;
+
+        margin-left:12px !important;
+
+        margin-right:12px !important;
+
+        box-sizing:border-box;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE DASHBOARD
+===================================================== */
+
+@media (max-width:768px){
+
+    .dashboard-page {
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        margin:0 !important;
+
+        padding:0 !important;
+
+        box-sizing:border-box;
+
+        overflow-x:hidden;
+
+    }
+
+
+    .dashboard-header {
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        margin:0 !important;
+
+        padding:0 !important;
+
+        display:flex !important;
+
+        flex-direction:column !important;
+
+        align-items:stretch !important;
+
+        box-sizing:border-box;
+
+    }
+
+
+    .dashboard-main {
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        margin:0 !important;
+
+        padding:0 !important;
+
+    }
+
+
+    .dashboard-header-right {
+
+        width:100% !important;
+
+        max-width:100% !important;
+
+        min-width:0 !important;
+
+        align-items:stretch !important;
+
+    }
+
 }

@@ -1,0 +1,562 @@
+/* =====================================================
+   FEATURES SECTION
+===================================================== */
+
+.features-section {
+    padding: 130px 8%;
+
+    background: #f8fafc;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   FEATURES HEADING
+===================================================== */
+
+.features-heading {
+    width: 100%;
+
+    max-width: 760px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+.features-heading span {
+    display: inline-block;
+
+    padding: 10px 20px;
+
+    background: #eef2ff;
+
+    color: #4f46e5;
+
+    border-radius: 999px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+
+    max-width: 100%;
+
+    overflow-wrap: anywhere;
+}
+
+.features-heading h2 {
+    font-size: 48px;
+
+    line-height: 1.15;
+
+    color: #0f172a;
+
+    margin-bottom: 20px;
+
+    overflow-wrap: anywhere;
+}
+
+.features-heading p {
+    font-size: 18px;
+
+    color: #64748b;
+
+    line-height: 1.8;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   FEATURE GRID
+===================================================== */
+
+.feature-grid {
+    margin-top: 80px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 28px;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   FEATURE BOX
+===================================================== */
+
+.feature-box {
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 24px;
+
+    border: 1px solid #e2e8f0;
+
+    transition: .35s;
+
+    position: relative;
+
+    overflow: hidden;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+.feature-box::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 5px;
+
+    background: #4f46e5;
+
+    transform: scaleX(0);
+
+    transition: .35s;
+}
+
+.feature-box:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-box:hover {
+    transform: translateY(-12px);
+
+    box-shadow:
+        0 25px 55px rgba(79, 70, 229, .15);
+}
+
+
+/* =====================================================
+   FEATURE ICON
+===================================================== */
+
+.feature-icon {
+    width: 72px;
+
+    height: 72px;
+
+    border-radius: 18px;
+
+    background: #eef2ff;
+
+    color: #4f46e5;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 30px;
+
+    margin-bottom: 25px;
+
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   FEATURE TITLE
+===================================================== */
+
+.feature-box h3 {
+    font-size: 24px;
+
+    line-height: 1.3;
+
+    color: #0f172a;
+
+    margin-bottom: 16px;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   FEATURE DESCRIPTION
+===================================================== */
+
+.feature-box p {
+    color: #64748b;
+
+    line-height: 1.8;
+
+    margin-bottom: 28px;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   LEARN MORE BUTTON
+===================================================== */
+
+.learn-btn {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background: none;
+
+    border: none;
+
+    color: #4f46e5;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+    padding: 0;
+
+    max-width: 100%;
+}
+
+.learn-btn:hover {
+    gap: 16px;
+}
+
+
+/* =====================================================
+   LARGE TABLET
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .features-section {
+        padding: 110px 6%;
+    }
+
+    .feature-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 24px;
+    }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .features-section {
+        padding: 90px 5%;
+
+        width: 100%;
+
+        overflow-x: hidden;
+    }
+
+    .features-heading h2 {
+        font-size: 38px;
+
+        line-height: 1.2;
+    }
+
+    .features-heading p {
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+    .features-heading span {
+        padding: 9px 16px;
+
+        font-size: 12px;
+
+        margin-bottom: 16px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        margin-top: 55px;
+    }
+
+    .feature-box {
+        width: 100%;
+
+        padding: 28px;
+
+        border-radius: 22px;
+    }
+
+    .feature-box h3 {
+        font-size: 22px;
+    }
+
+    .feature-box p {
+        font-size: 15px;
+
+        line-height: 1.7;
+    }
+
+    .feature-icon {
+        width: 66px;
+
+        height: 66px;
+
+        border-radius: 17px;
+
+        font-size: 27px;
+
+        margin-bottom: 20px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .features-section {
+        padding: 70px 5%;
+    }
+
+    .features-heading {
+        width: 100%;
+    }
+
+    .features-heading span {
+        font-size: 11px;
+
+        padding: 8px 14px;
+
+        margin-bottom: 14px;
+    }
+
+    .features-heading h2 {
+        font-size: 30px;
+
+        line-height: 1.2;
+
+        margin-bottom: 16px;
+    }
+
+    .features-heading p {
+        font-size: 15px;
+
+        line-height: 1.6;
+    }
+
+    .feature-grid {
+        margin-top: 40px;
+
+        gap: 14px;
+    }
+
+    .feature-box {
+        padding: 22px;
+
+        border-radius: 20px;
+    }
+
+    .feature-box h3 {
+        font-size: 20px;
+
+        margin-bottom: 12px;
+    }
+
+    .feature-box p {
+        font-size: 14px;
+
+        line-height: 1.6;
+
+        margin-bottom: 22px;
+    }
+
+    .feature-icon {
+        width: 60px;
+
+        height: 60px;
+
+        border-radius: 16px;
+
+        font-size: 25px;
+
+        margin-bottom: 18px;
+    }
+
+    .learn-btn {
+        font-size: 14px;
+
+        gap: 8px;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .features-section {
+        padding: 60px 4%;
+    }
+
+    .features-heading h2 {
+        font-size: 27px;
+    }
+
+    .features-heading p {
+        font-size: 14px;
+    }
+
+    .feature-box {
+        padding: 19px;
+
+        border-radius: 18px;
+    }
+
+    .feature-box h3 {
+        font-size: 18px;
+    }
+
+    .feature-box p {
+        font-size: 13px;
+
+        line-height: 1.55;
+    }
+
+    .feature-icon {
+        width: 56px;
+
+        height: 56px;
+
+        font-size: 23px;
+    }
+
+    .learn-btn {
+        font-size: 13px;
+    }
+
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+html.dark .features-section {
+    background: #020617;
+}
+
+
+/* ==============================
+   FEATURES HEADING
+============================== */
+
+html.dark .features-heading span {
+    background: rgba(99, 102, 241, .15);
+
+    color: #a5b4fc;
+}
+
+html.dark .features-heading h2 {
+    color: #f8fafc;
+}
+
+html.dark .features-heading p {
+    color: #94a3b8;
+}
+
+
+/* ==============================
+   FEATURE CARDS
+============================== */
+
+html.dark .feature-box {
+    background: #0f172a;
+
+    border-color: rgba(148, 163, 184, .18);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, .22);
+}
+
+html.dark .feature-box:hover {
+    box-shadow:
+        0 25px 55px rgba(79, 70, 229, .22);
+}
+
+
+/* ==============================
+   FEATURE ICON
+============================== */
+
+html.dark .feature-icon {
+    background: rgba(99, 102, 241, .15);
+
+    color: #a5b4fc;
+}
+
+
+/* ==============================
+   FEATURE TEXT
+============================== */
+
+html.dark .feature-box h3 {
+    color: #f8fafc;
+}
+
+html.dark .feature-box p {
+    color: #94a3b8;
+}
+
+
+/* ==============================
+   LEARN MORE
+============================== */
+
+html.dark .learn-btn {
+    color: #a5b4fc;
+}
+
+html.dark .learn-btn:hover {
+    color: #c4b5fd;
+}
+
+
+/* ==============================
+   TOP HOVER LINE
+============================== */
+
+html.dark .feature-box::before {
+    background: #818cf8;
+}

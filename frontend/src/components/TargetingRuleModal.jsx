@@ -1,7 +1,15 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+
 import "./TargetingRuleModal.css";
 
-function TargetingRuleModal({ isOpen, onClose, onSave }) {
+function TargetingRuleModal({
+  isOpen,
+  onClose,
+  onSave,
+}) {
+  const { t } = useTranslation();
+
   const [userId, setUserId] = useState("");
 
   if (!isOpen) return null;
@@ -22,19 +30,26 @@ function TargetingRuleModal({ isOpen, onClose, onSave }) {
 
   return (
     <div className="modal-overlay">
+
       <div className="modal-card">
 
-        <h2>Add Target User</h2>
+        <h2>
+          {t("targetingModal.title")}
+        </h2>
 
         <form onSubmit={handleSubmit}>
 
-          <label>User ID</label>
+          <label>
+            {t("targetingModal.userId")}
+          </label>
 
           <input
             type="text"
-            placeholder="Enter User ID"
+            placeholder={t("targetingModal.placeholder")}
             value={userId}
-            onChange={(e) => setUserId(e.target.value)}
+            onChange={(e) =>
+              setUserId(e.target.value)
+            }
           />
 
           <div className="modal-actions">
@@ -44,14 +59,14 @@ function TargetingRuleModal({ isOpen, onClose, onSave }) {
               className="cancel-btn"
               onClick={onClose}
             >
-              Cancel
+              {t("common.cancel")}
             </button>
 
             <button
               type="submit"
               className="save-btn"
             >
-              Save
+              {t("common.save")}
             </button>
 
           </div>
@@ -59,6 +74,7 @@ function TargetingRuleModal({ isOpen, onClose, onSave }) {
         </form>
 
       </div>
+
     </div>
   );
 }

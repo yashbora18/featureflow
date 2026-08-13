@@ -1,0 +1,1027 @@
+{
+  "nav": {
+    "features": "Funktionen",
+    "workflow": "Arbeitsablauf",
+    "techStack": "Technologien",
+    "contact": "Kontakt",
+    "login": "Anmelden",
+    "getStarted": "Loslegen"
+  },
+
+  "hero": {
+    "badge": "Modernes Funktionsmanagement",
+    "title": "Funktionen bereitstellen",
+    "highlight": "mit Vertrauen",
+    "description": "Steuern Sie Funktionsfreigaben, verwalten Sie Umgebungen, sprechen Sie Benutzer gezielt an und führen Sie neue Funktionen sicher mit FeatureFlow ein.",
+    "getStarted": "Loslegen",
+    "learnMore": "Mehr erfahren"
+  },
+
+  "heroPreview": {
+    "dashboard": "FeatureFlow-Dashboard",
+    "activeFlags": "Aktive Funktionen",
+    "environments": "Umgebungen",
+    "success": "Auswertungserfolg",
+    "rollout": "Bereitstellungsfortschritt",
+    "analytics": "Funktionsanalysen",
+    "activities": {
+      "payment": "Zahlungsfunktion aktiviert",
+      "aiSearch": "Bereitstellung der KI-Suche aktualisiert",
+      "darkMode": "Zielgruppe für den Dunkelmodus geändert"
+    }
+  },
+
+  "heroStats": {
+    "activeFlags": "Aktive Funktionen",
+    "environments": "Umgebungen",
+    "evaluation": "Auswertungserfolg",
+    "teams": "Teams"
+  },
+
+  "trustedTeams": {
+    "badge": "Für moderne Teams entwickelt",
+    "title": "Von jedem Team genutzt",
+    "description": "FeatureFlow unterstützt Entwicklungs- und Produktteams dabei, Funktionen sicher zu verwalten und bereitzustellen.",
+    "cards": {
+      "engineering": {
+        "title": "Entwicklung",
+        "text": "Verwalten Sie Funktionsfreigaben, ohne den Anwendungscode zu ändern."
+      },
+      "qa": {
+        "title": "QA-Teams",
+        "text": "Testen Sie Funktionen sicher in verschiedenen Umgebungen."
+      },
+      "product": {
+        "title": "Produktteams",
+        "text": "Steuern Sie Funktionsfreigaben und schaffen Sie bessere Benutzererlebnisse."
+      },
+      "devops": {
+        "title": "DevOps",
+        "text": "Verwalten Sie Umgebungen und Bereitstellungen mit Vertrauen."
+      },
+      "platform": {
+        "title": "Plattformteams",
+        "text": "Sorgen Sie für ein zentrales Funktionsmanagement und eine zentrale Governance."
+      }
+    }
+  },
+
+  "features": {
+    "badge": "Leistungsstarke Funktionen",
+    "title": "Alles für eine sichere Bereitstellung",
+    "description": "FeatureFlow bietet Ihrem Team vollständige Kontrolle über Funktionsfreigaben, Zielgruppen, schrittweise Bereitstellungen und Überwachung.",
+    "learnMore": "Mehr erfahren",
+    "cards": {
+      "flags": {
+        "title": "Funktionsschalter",
+        "description": "Erstellen und verwalten Sie Funktionsschalter, ohne den Anwendungscode zu ändern."
+      },
+      "targeting": {
+        "title": "Benutzerzielgruppen",
+        "description": "Steuern Sie den Zugriff auf Funktionen für bestimmte Benutzer und Gruppen mit flexiblen Zielgruppenregeln."
+      },
+      "rollouts": {
+        "title": "Schrittweise Bereitstellungen",
+        "description": "Veröffentlichen Sie Funktionen schrittweise mithilfe prozentualer Bereitstellungen und abgestufter Freigaben."
+      },
+      "environments": {
+        "title": "Umgebungen",
+        "description": "Verwalten Sie Funktionskonfigurationen unabhängig in Entwicklungs-, Test- und Produktionsumgebungen."
+      },
+      "analytics": {
+        "title": "Analysen",
+        "description": "Überwachen Sie die Nutzung von Funktionen und verstehen Sie deren Leistung."
+      },
+      "audit": {
+        "title": "Audit-Protokolle",
+        "description": "Verfolgen Sie Funktionsänderungen und bewahren Sie einen vollständigen Verlauf wichtiger Aktionen auf."
+      },
+      "evaluation": {
+        "title": "Funktionsauswertung",
+        "description": "Werten Sie Funktionen dynamisch anhand von Benutzern, Gruppen, Umgebungen und Zielgruppenregeln aus."
+      },
+      "security": {
+        "title": "Sicherheit",
+        "description": "Halten Sie das Funktionsmanagement durch sicheren Zugriff und zentrale Konfiguration unter Kontrolle."
+      }
+    }
+  },
+
+  "showcase": {
+    "badge": "FeatureFlow in Aktion",
+    "title": "Alles, was Sie auf einer Plattform benötigen",
+    "description": "Entdecken Sie leistungsstarke Werkzeuge, mit denen Ihr Team Funktionen sicher verwalten, bereitstellen und überwachen kann.",
+    "learnMore": "Mehr erfahren",
+    "cards": {
+      "flags": {
+        "title": "Funktionsschalter",
+        "subtitle": "Funktionen sofort steuern",
+        "description": "Erstellen, verwalten, aktivieren und deaktivieren Sie Funktionen sofort, ohne neuen Code bereitzustellen."
+      },
+      "environment": {
+        "title": "Umgebungsverwaltung",
+        "subtitle": "Eine Plattform, mehrere Umgebungen",
+        "description": "Verwalten Sie Funktionskonfigurationen einfach über Entwicklungs-, Test- und Produktionsumgebungen hinweg."
+      },
+      "analytics": {
+        "title": "Leistungsstarke Analysen",
+        "subtitle": "Verstehen Sie Ihre Funktionen",
+        "description": "Verfolgen Sie Funktionsleistung, Bereitstellungsfortschritt und Nutzung mit klaren und verwertbaren Analysen."
+      },
+      "audit": {
+        "title": "Audit-Protokolle",
+        "subtitle": "Vollständiger Änderungsverlauf",
+        "description": "Verfolgen Sie jede wichtige Funktionsänderung mit detaillierten Audit-Protokollen und Änderungsverläufen."
+      }
+    }
+  },
+
+  "workflow": {
+    "badge": "Einfacher Funktionsablauf",
+    "title": "Von der Idee bis zur Veröffentlichung",
+    "description": "Verwalten Sie den gesamten Lebenszyklus einer Funktion – von der Erstellung und Zielgruppenbestimmung bis zur Veröffentlichung und Überwachung.",
+    "steps": {
+      "create": {
+        "title": "Erstellen",
+        "description": "Erstellen Sie einen Funktionsschalter und konfigurieren Sie sein Standardverhalten."
+      },
+      "targeting": {
+        "title": "Zielgruppe festlegen",
+        "description": "Definieren Sie Benutzer und Gruppen, die die Funktion erhalten sollen."
+      },
+      "evaluate": {
+        "title": "Auswerten",
+        "description": "Werten Sie Funktionsschalter anhand der Umgebung und Zielgruppenregeln aus."
+      },
+      "release": {
+        "title": "Veröffentlichen",
+        "description": "Führen Sie die Funktion schrittweise und sicher für Ihre Benutzer ein."
+      },
+      "monitor": {
+        "title": "Überwachen",
+        "description": "Verfolgen Sie Funktionsleistung, Änderungen und Bereitstellungsfortschritt."
+      }
+    }
+  },
+
+  "architecture": {
+    "badge": "Systemarchitektur",
+    "title": "Für zuverlässige Funktionsbereitstellung entwickelt",
+    "description": "FeatureFlow verwendet eine skalierbare Architektur, die Frontend, Backend, Auswertungsmodul und Datenbank miteinander verbindet.",
+    "frontend": {
+      "title": "Frontend",
+      "description": "Eine moderne React-Oberfläche zur Verwaltung von Funktionen, Umgebungen, Zielgruppen, Analysen und Audit-Protokollen."
+    },
+    "backend": {
+      "title": "Backend-API",
+      "description": "Ein FastAPI-Backend für Funktionsverwaltung, Zielgruppenregeln, Auswertungsanfragen und Anwendungslogik."
+    },
+    "engine": {
+      "title": "Auswertungsmodul",
+      "description": "Wertet Funktionsschalter anhand von Umgebungen, Benutzerzielgruppen, Gruppen und Bereitstellungsregeln aus."
+    },
+    "modules": {
+      "flags": "Funktionsschalter",
+      "targeting": "Zielgruppen",
+      "audit": "Audit-Protokolle"
+    },
+    "database": {
+      "title": "Datenbank",
+      "description": "Speichert Funktionsschalter, Umgebungen, Zielgruppenregeln, Benutzergruppen, Versionen und Audit-Verläufe."
+    }
+  },
+
+  "techStack": {
+    "badge": "Technologie-Stack",
+    "title": "Mit moderner Technologie entwickelt",
+    "description": "FeatureFlow basiert auf zuverlässigen und modernen Technologien für eine schnelle, skalierbare und wartbare Plattform zur Funktionsverwaltung.",
+    "cards": {
+      "react": "Moderne komponentenbasierte Benutzeroberfläche für eine responsive und interaktive Benutzererfahrung.",
+      "fastapi": "Leistungsstarke Backend-API für Funktionsverwaltung und Auswertung.",
+      "postgresql": "Zuverlässige relationale Datenbank zur Speicherung von Funktions- und Anwendungsdaten.",
+      "javascript": "Zentrale Programmiersprache für die interaktive Benutzeroberfläche.",
+      "html": "Semantisches Markup zum Aufbau der Anwendungsstruktur.",
+      "css": "Modernes Styling für eine responsive und ansprechende Benutzeroberfläche.",
+      "git": "Versionsverwaltung zur Verwaltung von Quellcode und Entwicklungshistorie.",
+      "github": "Repository- und Kollaborationsplattform zur Verwaltung des Projekts.",
+      "docker": "Containerfähige Architektur für konsistente Entwicklung und Bereitstellung."
+    }
+  },
+
+  "premium": {
+    "badge": "Für moderne Teams entwickelt",
+    "title1": "Schneller veröffentlichen.",
+    "title2": "Die Kontrolle behalten.",
+    "description": "FeatureFlow gibt Ihrem Team die Sicherheit, Funktionen schneller bereitzustellen und gleichzeitig vollständige Kontrolle über Zielgruppen, Bereitstellungen, Sicherheit und Analysen zu behalten.",
+    "points": {
+      "rollout": "Sichere und schrittweise Funktionsbereitstellungen",
+      "security": "Sicheres Funktionsmanagement",
+      "analytics": "Leistungsstarke Bereitstellungsanalysen"
+    },
+    "button": "FeatureFlow entdecken",
+    "imageAlt": "FeatureFlow-Analyse-Dashboard"
+  },
+
+  "statistics": {
+    "badge": "FeatureFlow in Zahlen",
+    "title": "Entwickelt, um mit Ihrem Team zu wachsen",
+    "description": "Leistungsstarke Funktionen für die Funktionsverwaltung, mit denen Teams Funktionen effizient bereitstellen, steuern und überwachen können.",
+    "cards": {
+      "flags": {
+        "title": "Funktionsschalter",
+        "description": "Erstellen und verwalten Sie Funktionsschalter in Ihrer gesamten Anwendung."
+      },
+      "environments": {
+        "title": "Umgebungen",
+        "description": "Verwalten Sie Funktionen in Entwicklungs-, Test- und Produktionsumgebungen."
+      },
+      "targeting": {
+        "number": "10+",
+        "title": "Zielgruppenoptionen",
+        "description": "Steuern Sie den Funktionszugriff mithilfe flexibler Zielgruppenregeln."
+      },
+      "audit": {
+        "title": "Audit-Abdeckung",
+        "description": "Verfolgen Sie wichtige Funktionsänderungen mit einem vollständigen Audit-Verlauf."
+      }
+    }
+  },
+
+  "cta": {
+    "badge": "Bereit zum Start?",
+    "title": "Funktionen schneller bereitstellen.\nDie Kontrolle behalten.",
+    "description": "Beginnen Sie mit FeatureFlow, Ihre Funktionsbereitstellungen zu verwalten, und geben Sie Ihrem Team die Sicherheit, Funktionen zuverlässig bereitzustellen.",
+    "getStarted": "Loslegen",
+    "login": "Anmelden"
+  },
+
+  "footer": {
+    "description": "FeatureFlow unterstützt Teams bei der Verwaltung von Funktionsschaltern, der Steuerung von Veröffentlichungen, der Zielgruppenbestimmung und der sicheren Bereitstellung von Funktionen.",
+    "platform": "Plattform",
+    "features": "Funktionen",
+    "workflow": "Arbeitsablauf",
+    "techStack": "Technologien",
+    "resources": "Ressourcen",
+    "documentation": "Dokumentation",
+    "api": "API-Referenz",
+    "support": "Support",
+    "connect": "Verbinden",
+    "contact": "Kontaktieren Sie uns",
+    "copyright": "© 2026 FeatureFlow. Alle Rechte vorbehalten."
+  },
+
+  "common": {
+    "language": "Sprache",
+    "loading": "Wird geladen...",
+    "search": "Suchen",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "refresh": "Aktualisieren",
+    "close": "Schließen",
+    "create": "Erstellen",
+    "update": "Aktualisieren",
+    "filter": "Filtern",
+    "yes": "Ja",
+    "no": "Nein",
+    "enabled": "Aktiviert",
+    "disabled": "Deaktiviert",
+    "active": "Aktiv",
+    "inactive": "Inaktiv",
+    "true": "Wahr",
+    "false": "Falsch",
+    "unknown": "Unbekannt",
+    "ok": "OK",
+    "show": "Anzeigen",
+    "rows": "Zeilen",
+    "page": "Seite",
+    "of": "von"
+  },
+
+  "auth": {
+    "platform": "Plattform zur Verwaltung von Funktionsschaltern"
+  },
+
+  "loginLeft": {
+    "title1": "Funktionen bereitstellen",
+    "title2": "mit Vertrauen",
+    "description": "FeatureFlow unterstützt Teams dabei, Funktionen sicher bereitzustellen, zu verwalten und zu überwachen – mit leistungsstarken Funktionsschaltern und kontrollierten Bereitstellungen.",
+    "instantRollouts": "Sofortige Bereitstellungen",
+    "instantRolloutsDesc": "Veröffentlichen Sie Funktionen sofort, ohne Ihre Anwendung neu bereitzustellen.",
+    "safeReleases": "Sichere Veröffentlichungen",
+    "safeReleasesDesc": "Kontrollieren Sie die Sichtbarkeit von Funktionen und reduzieren Sie Bereitstellungsrisiken.",
+    "realTimeAnalytics": "Echtzeitanalysen",
+    "realTimeAnalyticsDesc": "Überwachen Sie Funktionsleistung und Bereitstellungsaktivitäten in Echtzeit.",
+    "enterpriseReady": "Unternehmenstauglich",
+    "enterpriseReadyDesc": "Entwickelt mit Fokus auf Sicherheit, Skalierbarkeit und Teamzusammenarbeit."
+  },
+
+  "browser": {
+    "dashboardAlt": "Vorschau des FeatureFlow-Dashboards"
+  },
+
+  "login": {
+    "welcome": "Willkommen zurück",
+    "description": "Melden Sie sich bei Ihrem FeatureFlow-Arbeitsbereich an und verwalten Sie Ihre Funktionen weiter.",
+    "email": "E-Mail-Adresse",
+    "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
+    "password": "Passwort",
+    "passwordPlaceholder": "Geben Sie Ihr Passwort ein",
+    "remember": "Angemeldet bleiben",
+    "forgotPassword": "Passwort vergessen?",
+    "signIn": "Anmelden",
+    "signingIn": "Anmeldung...",
+    "or": "ODER",
+    "continueGoogle": "Mit Google fortfahren",
+    "newTo": "Neu bei",
+    "createWorkspace": "Arbeitsbereich erstellen",
+    "welcome": "Willkommen zurück!",
+    "messages": {
+      "enterEmail": "Bitte geben Sie Ihre E-Mail-Adresse ein.",
+      "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "passwordRequired": "Bitte geben Sie Ihr Passwort ein.",
+      "incorrectCredentials": "E-Mail-Adresse oder Passwort ist falsch.",
+      "serverError": "Serverfehler. Bitte versuchen Sie es später erneut.",
+      "connectionError": "Verbindung zum Server konnte nicht hergestellt werden.",
+      "signInFailed": "Anmeldung fehlgeschlagen. Bitte versuchen Sie es erneut.",
+      "redirecting": "Weiterleitung zum Dashboard...",
+      "googleComingSoon": "Die Google-Anmeldung wird bald verfügbar sein."
+    }
+  },
+
+  "signup": {
+    "createAccount": "Konto erstellen",
+    "description": "Erstellen Sie Ihren FeatureFlow-Arbeitsbereich und beginnen Sie mit der Verwaltung von Funktionsschaltern.",
+    "username": "Benutzername",
+    "usernamePlaceholder": "Geben Sie Ihren Benutzernamen ein",
+    "email": "E-Mail-Adresse",
+    "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
+    "password": "Passwort",
+    "passwordPlaceholder": "Geben Sie Ihr Passwort ein",
+    "confirmPassword": "Passwort bestätigen",
+    "confirmPasswordPlaceholder": "Bestätigen Sie Ihr Passwort",
+    "terms": "Ich stimme den Allgemeinen Geschäftsbedingungen zu",
+    "creatingAccount": "Konto wird erstellt...",
+    "or": "ODER",
+    "google": "Mit Google fortfahren",
+    "alreadyHaveWorkspace": "Sie haben bereits einen Arbeitsbereich?",
+    "signIn": "Anmelden",
+    "googleComingSoon": "Die Google-Registrierung wird bald verfügbar sein.",
+    "success": {
+      "accountCreated": "Konto erfolgreich erstellt!"
+    },
+    "errors": {
+      "usernameRequired": "Bitte geben Sie Ihren Benutzernamen ein.",
+      "emailRequired": "Bitte geben Sie Ihre E-Mail-Adresse ein.",
+      "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "passwordLength": "Das Passwort muss mindestens 8 Zeichen lang sein.",
+      "passwordMismatch": "Die Passwörter stimmen nicht überein.",
+      "acceptTerms": "Bitte akzeptieren Sie die Allgemeinen Geschäftsbedingungen.",
+      "signupFailed": "Registrierung fehlgeschlagen. Bitte versuchen Sie es erneut."
+    }
+  },
+
+  "navbar": {
+    "dashboard": "Dashboard",
+    "environment": "Umgebung",
+    "toggleTheme": "Design wechseln",
+    "notifications": "Benachrichtigungen",
+    "notification1": "Eine neue Funktionsbereitstellung wurde gestartet.",
+    "notification2": "Funktionsschalter erfolgreich aktualisiert.",
+    "notification3": "Analysebericht erstellt.",
+    "admin": "Administrator",
+    "featureManager": "Funktionsmanager",
+    "profile": "Profil",
+    "settings": "Einstellungen",
+    "logout": "Abmelden",
+    "logoutConfirm": "Möchten Sie sich wirklich abmelden?",
+    "logoutSuccess": "Erfolgreich abgemeldet."
+  },
+
+  "sidebar": {
+    "enterprisePlatform": "Unternehmensplattform für Funktionsmanagement",
+    "dashboard": "Dashboard",
+    "analytics": "Analysen",
+    "flags": "Funktionsschalter",
+    "environments": "Umgebungen",
+    "team": "Team",
+    "auditLogs": "Audit-Protokolle",
+    "settings": "Einstellungen",
+    "systemOnline": "System online",
+    "api": "API",
+    "healthy": "Funktionsfähig",
+    "database": "Datenbank",
+    "connected": "Verbunden",
+    "redis": "Redis",
+    "running": "Wird ausgeführt",
+    "version": "Version",
+    "copyright": "© 2026 FeatureFlow"
+  },
+
+  "dashboard": {
+    "loading": "Dashboard wird geladen..."
+  },
+
+  "dashboardHeader": {
+    "badge": "Unternehmensweites Funktionsmanagement",
+    "goodMorning": "Guten Morgen",
+    "goodAfternoon": "Guten Tag",
+    "goodEvening": "Guten Abend",
+    "user": "Benutzer",
+    "description": "Verwalten Sie Funktionsschalter, Umgebungen und Bereitstellungen über ein einziges Dashboard.",
+    "refresh": "Aktualisieren"
+  },
+
+  "stats": {
+    "totalFlags": "Funktionsschalter insgesamt",
+    "totalFlagsChange": "Konfigurierte Funktionsschalter",
+    "activeFlags": "Aktive Funktionsschalter",
+    "activeFlagsChange": "Derzeit aktiviert",
+    "environments": "Umgebungen",
+    "environmentsChange": "Bereitstellungsumgebungen",
+    "evaluations": "Auswertungen",
+    "evaluationsChange": "Funktionsauswertungen heute"
+  },
+
+  "rollout": {
+    "title": "Bereitstellungsübersicht",
+    "subtitle": "Überwachen Sie den Fortschritt von Funktionsfreigaben über verschiedene Umgebungen hinweg.",
+    "fullRelease": "Vollständige Freigabe",
+    "almostComplete": "Fast abgeschlossen",
+    "gradualRollout": "Schrittweise Bereitstellung",
+    "empty": "Keine Bereitstellungsdaten verfügbar.",
+    "rollout": "Bereitstellung",
+    "percentage": "Prozentsatz",
+    "stage": "Phase",
+    "disabled": "Deaktiviert",
+    "canary": "Canary-Bereitstellung",
+    "gradual": "Schrittweise Bereitstellung",
+    "almost": "Fast abgeschlossen",
+    "full": "Vollständige Freigabe"
+  },
+
+  "recentActivity": {
+    "title": "Letzte Aktivitäten",
+    "subtitle": "Verfolgen Sie Änderungen und Aktualisierungen von Funktionsschaltern.",
+    "empty": "Keine aktuellen Aktivitäten verfügbar.",
+    "created": "Erstellt",
+    "updated": "Aktualisiert",
+    "modified": "Geändert",
+    "featureFlag": "Funktionsschalter"
+  },
+
+  "systemHealth": {
+    "title": "Systemzustand",
+    "subtitle": "Überwachen Sie die Plattformdienste.",
+    "backendApi": "Backend-API",
+    "postgresql": "PostgreSQL-Datenbank",
+    "redisCache": "Redis-Cache",
+    "healthy": "Funktionsfähig",
+    "connected": "Verbunden",
+    "running": "Wird ausgeführt",
+    "offline": "Offline",
+    "disconnected": "Getrennt",
+    "operational": "Betriebsbereit",
+    "services": "Dienste",
+    "allHealthy": "Alle Plattformdienste funktionieren normal.",
+    "attention": "Einige Dienste benötigen Aufmerksamkeit."
+  },
+
+  "quickActions": {
+    "title": "Schnellaktionen",
+    "subtitle": "Greifen Sie auf häufig verwendete Plattformfunktionen zu.",
+    "createFlag": "Funktionsschalter erstellen",
+    "createDescription": "Erstellen Sie schnell einen neuen Funktionsschalter.",
+    "evaluateFlag": "Funktionsschalter auswerten",
+    "evaluateDescription": "Testen Sie das Verhalten einer Funktion sofort.",
+    "environments": "Umgebungen verwalten",
+    "environmentDescription": "Verwalten Sie Bereitstellungen sicher.",
+    "auditLogs": "Audit-Protokolle",
+    "auditDescription": "Verfolgen Sie den Änderungsverlauf."
+  },
+
+  "cleanup": {
+    "title": "Bereinigung von Funktionsschaltern",
+    "description": "Überprüfen und verwalten Sie veraltete oder nicht verwendete Funktionsschalter.",
+    "flag": "Funktionsschalter",
+    "environment": "Umgebung",
+    "status": "Status",
+    "lastUpdated": "Zuletzt aktualisiert",
+    "owner": "Verantwortlicher",
+    "action": "Aktion",
+    "delete": "Löschen",
+    "deleteConfirm": "Möchten Sie diesen Funktionsschalter wirklich löschen?",
+    "deleteSuccess": "Funktionsschalter erfolgreich gelöscht.",
+    "deleteFailed": "Funktionsschalter konnte nicht gelöscht werden.",
+    "empty": "Keine veralteten Funktionsschalter gefunden.",
+    "markReviewed": "Als überprüft markieren"
+  },
+
+  "flagLifecycle": {
+    "title": "Lebenszyklus der Funktionsschalter",
+    "subtitle": "Überwachen Sie den Zustand Ihrer Funktionsschalter.",
+    "active": "Aktiv",
+    "disabled": "Deaktiviert",
+    "stale": "Veraltet",
+    "total": "Funktionsschalter insgesamt",
+    "health": "Zustand der Funktionsschalter",
+    "message": "Überwachen Sie weiterhin nicht verwendete Funktionsschalter und bereinigen Sie veraltete Bereitstellungen regelmäßig."
+  },
+
+  "deploymentSafety": {
+    "title": "Bereitstellungssicherheit",
+    "subtitle": "Überwachen Sie die Zuverlässigkeit von Veröffentlichungen.",
+    "safe": "Sichere Bereitstellung",
+    "warning": "Aufmerksamkeit erforderlich",
+    "rolloutChecks": "Bereitstellungsprüfungen",
+    "environmentChecks": "Umgebungsprüfungen",
+    "passed": "Bestanden",
+    "activeFlags": "Aktive Funktionsschalter",
+    "totalFlags": "Funktionsschalter insgesamt",
+    "messageSafe": "Ihre Bereitstellungen sind derzeit stabil und sicher.",
+    "messageWarning": "Einige Bereitstellungen benötigen Aufmerksamkeit."
+  },
+
+  "targetingSummary": {
+    "title": "Zielgruppenübersicht",
+    "subtitle": "Überwachen Sie Zielgruppenregeln.",
+    "userRules": "Benutzerzielgruppen",
+    "groupRules": "Gruppenzielgruppen",
+    "percentageRules": "Prozentuale Bereitstellung",
+    "totalRules": "Regeln insgesamt",
+    "coverage": "Zielgruppenabdeckung",
+    "activeMessage": "Die Zielgruppenbestimmung ist für Funktionsfreigaben konfiguriert.",
+    "emptyMessage": "Noch keine Zielgruppenregeln konfiguriert."
+  },
+
+  "analytics": {
+    "loading": "Analysen werden geladen...",
+    "title": "Analysen",
+    "subtitle": "Überwachen Sie die Funktionsleistung",
+    "description": "Überwachen Sie Funktionsnutzung, Bereitstellungsleistung und Auswertungsmetriken.",
+    "exportCSV": "CSV exportieren",
+    "exportPDF": "PDF exportieren",
+
+    "range": {
+      "7Days": "7 Tage",
+      "15Days": "15 Tage",
+      "30Days": "30 Tage"
+    },
+
+    "evaluations": "Funktionsauswertungen",
+    "totalEvaluations": "Auswertungen insgesamt",
+    "activeFlags": "Aktive Funktionsschalter",
+    "enabled": "Aktiviert",
+    "rolloutSuccess": "Bereitstellungserfolg",
+    "healthy": "Funktionsfähig",
+    "environments": "Umgebung",
+    "available": "Verfügbar",
+
+    "evaluationTrend": "Auswertungstrend",
+    "evaluationOverTime": "Auswertungen im Zeitverlauf",
+
+    "noEvaluationData": "Keine Auswertungsdaten",
+    "noFeatureEvaluations": "Für diesen Zeitraum sind keine Funktionsauswertungen verfügbar.",
+
+    "flagDistribution": "Verteilung der Funktionsschalter",
+    "enabledVsDisabled": "Aktivierte und deaktivierte Funktionsschalter",
+    "noAnalyticsData": "Keine Analysedaten verfügbar.",
+
+    "mostEvaluatedFlags": "Am häufigsten ausgewertete Funktionsschalter",
+    "mostEvaluatedDescription": "Top-Funktionsschalter basierend auf der Auswertungsaktivität",
+    "noTopFlagsData": "Keine Daten verfügbar",
+
+    "environmentDistribution": "Umgebungsverteilung",
+    "flagUsage": "Funktionsschalternutzung über Umgebungen hinweg",
+    "flags": "Funktionsschalter",
+
+    "evaluationSummary": "Auswertungsübersicht",
+    "evaluationOverview": "Übersicht über die Auswertungsaktivität der Funktionen.",
+    "todayEvaluations": "Heutige Auswertungen",
+    "averageDaily": "Durchschnittliche tägliche Auswertungen",
+    "peakEvaluation": "Höchste Anzahl an Auswertungen",
+
+    "peakDay": "Tag mit den meisten Auswertungen",
+    "growthTrend": "Wachstumstrend",
+    "increasing": "Steigend",
+    "decreasing": "Fallend",
+
+    "insights": "Analyseerkenntnisse",
+    "insightsDescription": "Übersicht über Funktionsleistung und Nutzungsmuster",
+    "mostUsedFeature": "Am häufigsten verwendete Funktion",
+    "environment": "Umgebung",
+    "totalFlags": "Funktionsschalter insgesamt",
+    "noData": "Keine Daten",
+    "noEvaluationActivity": "Noch keine Auswertungsaktivität verfügbar.",
+    "mostEvaluatedFeature": "{{flag}} ist die am häufigsten ausgewertete Funktion.",
+
+    "successfulEvaluations": "Erfolgreiche Auswertungen",
+    "failedEvaluations": "Fehlgeschlagene Auswertungen",
+    "evaluationHistory": "Auswertungsverlauf",
+    "usage": "Nutzungsanalyse",
+    "performance": "Leistungsübersicht"
+  },
+
+  "flags": {
+    "pageTitle": "Funktionsschalter",
+    "pageDescription": "Verwalten, überwachen und steuern Sie Funktionsschalter über verschiedene Umgebungen hinweg.",
+    "welcome": "Willkommen bei den Funktionsschaltern",
+    "welcomeDescription": "Erstellen, aktualisieren und verwalten Sie Funktionsschalter ganz einfach.",
+    "createFlag": "Funktionsschalter erstellen",
+    "editFlag": "Funktionsschalter bearbeiten",
+    "deleteFlag": "Funktionsschalter löschen",
+    "search": "Nach Schlüssel, Verantwortlichem oder Typ suchen...",
+
+    "all": "Alle",
+    "enabled": "Aktiviert",
+    "disabled": "Deaktiviert",
+
+    "totalFlags": "Funktionsschalter insgesamt",
+    "totalFlagsDesc": "Verfügbare Funktionsschalter",
+    "enabledDesc": "Derzeit aktivierte Funktionsschalter",
+    "disabledDesc": "Derzeit deaktivierte Funktionsschalter",
+
+    "teams": "Teams",
+    "teamsDesc": "Verantwortliche Teams",
+
+    "emptyTitle": "Keine Funktionsschalter gefunden",
+    "emptyDescription": "Erstellen Sie Ihren ersten Funktionsschalter, um zu beginnen.",
+    "emptyTableDescription": "Keine Funktionsschalter entsprechen den ausgewählten Filtern.",
+
+    "fetchError": "Funktionsschalter konnten nicht geladen werden.",
+    "deleteSuccess": "Funktionsschalter erfolgreich gelöscht.",
+    "deleteFailed": "Funktionsschalter konnte nicht gelöscht werden.",
+
+    "deleteModalTitle": "Funktionsschalter löschen",
+    "deleteModalMessage": "wird dauerhaft gelöscht. Diese Aktion kann nicht rückgängig gemacht werden.",
+
+    "success": "Erfolgreich",
+    "ok": "OK",
+    "delete": "Löschen",
+    "cancel": "Abbrechen",
+
+    "table": {
+      "flagId": "ID",
+      "flagKey": "Funktionsschlüssel",
+      "type": "Typ",
+      "status": "Status",
+      "ownerTeam": "Verantwortliches Team",
+      "actions": "Aktionen"
+    }
+  },
+
+  "flagForm": {
+    "createTitle": "Funktionsschalter erstellen",
+    "updateTitle": "Funktionsschalter aktualisieren",
+    "flagKey": "Funktionsschlüssel",
+    "enterFlagKey": "Eindeutigen Funktionsschlüssel eingeben",
+    "flagType": "Funktionstyp",
+    "boolean": "Boolescher Wert",
+    "defaultValue": "Standardwert",
+    "ownerTeam": "Verantwortliches Team",
+    "ownerPlaceholder": "Verantwortliches Team eingeben",
+    "description": "Beschreibung",
+    "descriptionPlaceholder": "Funktionsbeschreibung eingeben",
+    "environment": "Umgebung",
+    "status": "Status",
+    "createButton": "Funktionsschalter erstellen",
+    "updateButton": "Funktionsschalter aktualisieren",
+    "createSuccess": "Funktionsschalter erfolgreich erstellt.",
+    "updateSuccess": "Funktionsschalter erfolgreich aktualisiert.",
+    "operationFailed": "Funktionsschalter konnte nicht gespeichert werden."
+  },
+
+  "flagDetail": {
+    "back": "Zurück",
+    "headerDescription": "Funktionskonfiguration, Zielgruppenregeln, Bereitstellungsstrategie und Auswertung.",
+    "flagKey": "Funktionsschlüssel",
+    "type": "Typ",
+    "status": "Status",
+    "ownerTeam": "Verantwortliches Team",
+    "environment": "Umgebung",
+    "description": "Beschreibung",
+    "created": "Erstellt",
+    "updated": "Zuletzt aktualisiert",
+    "title": "Funktionsdetails",
+    "enabled": "Aktiviert",
+    "disabled": "Deaktiviert",
+
+    "targeting": {
+      "title": "Zielgruppenregeln",
+      "description": "Aktivieren Sie diese Funktion nur für ausgewählte Benutzer (Positivliste).",
+      "addUser": "Benutzer hinzufügen",
+      "empty": "Noch keine Zielgruppenregeln konfiguriert.",
+      "remove": "Entfernen",
+      "users": "Benutzerzielgruppen",
+      "groups": "Gruppenzielgruppen",
+      "addGroup": "Gruppe hinzufügen",
+      "emptyUsers": "Keine Benutzerzielgruppenregeln",
+      "emptyGroups": "Keine Gruppenzielgruppenregeln"
+    },
+
+    "rollout": {
+      "title": "Prozentuale Bereitstellung",
+      "description": "Veröffentlichen Sie diese Funktion schrittweise für einen bestimmten Prozentsatz der Benutzer.",
+      "unsaved": "Ungespeicherte Änderungen",
+      "current": "Aktuelle Bereitstellung",
+      "currentDescription": "Passen Sie den Bereitstellungsprozentsatz mit dem Schieberegler unten an.",
+      "summary": "Bereitstellungsübersicht",
+      "rollout": "Bereitstellung",
+      "save": "Bereitstellung speichern",
+      "saving": "Wird gespeichert..."
+    },
+
+    "analytics": {
+      "title": "Funktionsanalysen",
+      "description": "Überwachen Sie Funktionsnutzung, Auswertungsleistung und Bereitstellungserkenntnisse.",
+      "last7Days": "Letzte 7 Tage",
+      "last15Days": "Letzte 15 Tage",
+      "last30Days": "Letzte 30 Tage"
+    },
+
+    "evaluation": {
+      "title": "Funktionsauswertung",
+      "description": "Werten Sie diesen Funktionsschalter für einen bestimmten Benutzer oder eine bestimmte Gruppe aus.",
+      "evaluateBy": "Auswerten nach",
+      "toTest": "zum Testen.",
+      "user": "Benutzer",
+      "group": "Gruppe",
+      "userId": "Benutzer-ID",
+      "groupName": "Gruppenname",
+      "enterUser": "Benutzer-ID eingeben",
+      "enterGroup": "Gruppenname eingeben",
+      "evaluate": "Auswerten",
+      "evaluating": "Wird ausgewertet...",
+      "noEvaluation": "Noch keine Auswertung",
+      "noEvaluationDescription": "Starten Sie eine Funktionsauswertung über die Auswertungsschaltfläche, um diese Funktion zu testen.",
+      "result": "Auswertungsergebnis",
+      "cached": "Gecacht",
+      "live": "Live",
+      "lastEvaluation": "Letzte Auswertung:",
+      "reason": "Grund",
+      "responseTime": "Antwortzeit",
+      "source": "Quelle",
+      "cachedOnly": "Redis-Cache",
+      "liveOnly": "Live-Auswertung",
+      "ruleType": "Regeltyp",
+      "flagType": "Funktionstyp",
+      "mode": "Auswertungsmodus",
+      "userTargeting": "Benutzerzielgruppe",
+      "groupTargeting": "Gruppenzielgruppe",
+      "percentageRollout": "Prozentuale Bereitstellung",
+      "environmentOverride": "Umgebungsüberschreibung",
+      "defaultValue": "Standardwert",
+      "summary": "Auswertungsübersicht",
+      "summaryPrefix": "Funktionsschalter",
+      "summaryFor": "für",
+      "summaryIn": "in",
+      "summaryBecause": "weil",
+      "reasons": {
+        "Matched Environment Override": "Umgebungsüberschreibung",
+        "Matched User Targeting": "Benutzerzielgruppe",
+        "Matched Group Targeting": "Gruppenzielgruppe",
+        "Matched Percentage Rollout": "Prozentuale Bereitstellung",
+        "Default Value": "Standardwert"
+      }
+    }
+  },
+
+  "groups": {
+    "betaUsers": "Beta-Benutzer",
+    "premiumPlan": "Premium-Tarif",
+    "internalTeam": "Internes Team"
+  },
+
+  "groupTargetingModal": {
+    "title": "Zielgruppe hinzufügen",
+    "selectGroup": "Gruppe auswählen"
+  },
+
+  "groupTargeting": {
+    "title": "Gruppenzielgruppe",
+    "description": "Aktivieren Sie diese Funktion für bestimmte Benutzergruppen.",
+    "addGroup": "Gruppe hinzufügen",
+    "empty": "Noch keine Gruppenzielgruppenregeln konfiguriert.",
+    "addSuccess": "Gruppenzielgruppenregel erfolgreich hinzugefügt.",
+    "addFailed": "Gruppenzielgruppenregel konnte nicht hinzugefügt werden.",
+    "deleteSuccess": "Gruppenzielgruppenregel erfolgreich gelöscht.",
+    "deleteFailed": "Gruppenzielgruppenregel konnte nicht gelöscht werden."
+  },
+
+  "messages": {
+    "loadFailed": "Funktionsschalter konnte nicht geladen werden.",
+    "userAdded": "Benutzerzielgruppenregel erfolgreich hinzugefügt.",
+    "addUserFailed": "Benutzerzielgruppenregel konnte nicht hinzugefügt werden.",
+    "userDeleted": "Benutzerzielgruppenregel erfolgreich gelöscht.",
+    "deleteUserFailed": "Benutzerzielgruppenregel konnte nicht gelöscht werden.",
+    "rolloutUpdated": "Bereitstellung erfolgreich aktualisiert.",
+    "rolloutFailed": "Bereitstellung konnte nicht aktualisiert werden.",
+    "enterUserId": "Bitte geben Sie eine Benutzer-ID ein.",
+    "enterGroupName": "Bitte geben Sie einen Gruppennamen ein.",
+    "evaluationCompleted": "Funktionsauswertung abgeschlossen.",
+    "evaluationFailed": "Funktionsauswertung fehlgeschlagen."
+  },
+
+  "auditLogs": {
+    "title": "Audit-Protokolle",
+    "description": "Verfolgen Sie alle Aktivitäten der Funktionsschalter und Systemänderungen.",
+    "emptyTitle": "Keine Audit-Protokolle gefunden",
+    "emptyDescription": "Es wurden noch keine Audit-Aktivitäten aufgezeichnet.",
+    "searchPlaceholder": "Audit-Protokolle durchsuchen...",
+    "allActions": "Alle Aktionen",
+    "allFlags": "Alle Funktionsschalter",
+    "filter": "Filtern",
+    "viewDiff": "Änderungen anzeigen",
+    "detailsTitle": "Details des Audit-Protokolls",
+    "flag": "Funktionsschalter",
+    "action": "Aktion",
+    "actor": "Ausführender",
+    "timestamp": "Zeitstempel",
+    "jsonDiff": "JSON-Differenz",
+    "copyJson": "JSON kopieren",
+    "table": {
+      "timestamp": "Zeitstempel",
+      "actor": "Ausführender",
+      "flag": "Funktionsschalter",
+      "action": "Aktion",
+      "viewDiff": "Unterschied anzeigen"
+    },
+    "actions": {
+      "created": "Erstellt",
+      "updated": "Aktualisiert",
+      "deleted": "Gelöscht"
+    }
+  },
+
+  "team": {
+    "title": "Teamverwaltung",
+    "description": "Verwalten Sie Projektmitglieder und deren Rollen.",
+    "addMember": "Mitglied hinzufügen",
+    "totalMembers": "Mitglieder insgesamt",
+    "developers": "Entwickler",
+    "managers": "Manager",
+    "activeMembers": "Aktive Mitglieder",
+    "search": "Teammitglieder suchen...",
+    "name": "Name",
+    "email": "E-Mail",
+    "role": "Rolle",
+    "status": "Status",
+    "actions": "Aktionen",
+
+    "roles": {
+      "Feature Manager": "Funktionsmanager",
+      "Backend Developer": "Backend-Entwickler",
+      "Frontend Developer": "Frontend-Entwickler",
+      "QA Engineer": "QA-Ingenieur"
+    },
+
+    "statuses": {
+      "Active": "Aktiv",
+      "Inactive": "Inaktiv"
+    }
+  },
+
+  "targetingModal": {
+    "title": "Zielbenutzer hinzufügen",
+    "userId": "Benutzer-ID",
+    "placeholder": "Benutzer-ID eingeben"
+  },
+
+  "environment": {
+    "development": "Entwicklung",
+    "staging": "Test",
+    "production": "Produktion",
+
+    "pageTitle": "Umgebungen",
+    "pageDescription": "Verwalten Sie Entwicklungs-, Test- und Produktionsumgebungen.",
+
+    "create": "Erstellen",
+    "createEnvironment": "Umgebung erstellen",
+    "creating": "Wird erstellt...",
+
+    "refresh": "Aktualisieren",
+    "refreshing": "Wird aktualisiert...",
+
+    "editEnvironment": "Umgebung bearbeiten",
+
+    "deleteTitle": "Umgebung löschen",
+    "deleteConfirm": "Möchten Sie wirklich löschen",
+    "deleteWarning": "Diese Aktion kann nicht rückgängig gemacht werden.",
+    "deleting": "Wird gelöscht...",
+
+    "environmentName": "Umgebungsname",
+    "environmentDescription": "Umgebungsbeschreibung",
+
+    "totalEnvironments": "Umgebungen insgesamt",
+    "activeEnvironments": "Aktive Umgebungen",
+    "defaultConfigurations": "Standardkonfigurationen",
+
+    "environmentOverride": "Umgebungsüberschreibung",
+    "customOverridesConfigured": "Benutzerdefinierte Überschreibungen konfiguriert",
+    "noOverrides": "Keine Überschreibungen",
+    "usingDefaultValues": "Standardwerte werden verwendet",
+
+    "searchPlaceholder": "Umgebungen durchsuchen...",
+
+    "all": "Alle",
+    "onlyOverrides": "Nur Überschreibungen",
+    "noOverrideFilter": "Keine Überschreibung",
+
+    "featureFlag": "Funktionsschalter",
+    "featureFlagDescription": "Wählen Sie einen Funktionsschalter aus, um Umgebungen anzuzeigen.",
+    "selectFeature": "Funktion auswählen",
+
+    "showing": "Angezeigt werden",
+    "environments": "Umgebungen",
+
+    "environmentList": "Umgebungsliste",
+
+    "active": "Aktiv",
+
+    "emptyTable": "Keine Umgebungen gefunden.",
+    "emptyOverrides": "Keine Überschreibungen gefunden.",
+
+    "table": {
+      "id": "ID",
+      "environment": "Umgebung",
+      "description": "Beschreibung",
+      "status": "Status",
+      "action": "Aktion"
+    },
+
+    "overrideTitle": "Umgebungsüberschreibungen",
+    "overrideDescription": "Verwalten Sie Funktionswerte für verschiedene Umgebungen.",
+    "overrideValue": "Überschreibungswert",
+
+    "enabledTrue": "Aktiviert (Wahr)",
+    "disabledFalse": "Deaktiviert (Falsch)",
+
+    "overridden": "Überschrieben",
+    "default": "Standard",
+
+    "lastUpdated": "Zuletzt aktualisiert",
+
+    "saving": "Wird gespeichert...",
+
+    "editOverride": "Überschreibung bearbeiten",
+
+    "overrideInfoTitle": "Informationen zur Überschreibung",
+
+    "overrideInfoDescription": "Überschreibungswerte haben für die angegebene Umgebung Vorrang vor den Standardwerten des Funktionsschalters.",
+
+    "messages": {
+      "created": "Umgebung erfolgreich erstellt.",
+      "updated": "Umgebung erfolgreich aktualisiert.",
+      "deleted": "Umgebung erfolgreich gelöscht.",
+      "createFailed": "Umgebung konnte nicht erstellt werden.",
+      "updateFailed": "Umgebung konnte nicht aktualisiert werden.",
+      "deleteFailed": "Umgebung konnte nicht gelöscht werden."
+    }
+  },
+
+  "settings": {
+    "title": "Einstellungen",
+    "description": "Verwalten Sie Ihre FeatureFlow-Einstellungen und Kontoeinstellungen.",
+
+    "profile": {
+      "title": "Profileinstellungen",
+      "description": "Zeigen Sie Ihre Profilinformationen an.",
+      "name": "Name",
+      "email": "E-Mail",
+      "role": "Rolle",
+      "admin": "Administrator"
+    },
+
+    "appearance": {
+      "title": "Darstellungseinstellungen",
+      "description": "Passen Sie die Darstellung Ihrer Anwendung und die Standardumgebung an.",
+      "theme": "Design",
+      "light": "Hell",
+      "dark": "Dunkel",
+      "defaultEnvironment": "Standardumgebung"
+    },
+
+    "notifications": {
+      "title": "Benachrichtigungseinstellungen",
+      "description": "Verwalten Sie Ihre Benachrichtigungseinstellungen.",
+      "email": "E-Mail-Benachrichtigungen",
+      "audit": "Audit-Protokoll-Benachrichtigungen",
+      "feature": "Funktionsbenachrichtigungen",
+      "deployment": "Bereitstellungsbenachrichtigungen"
+    },
+
+    "security": {
+      "title": "Sicherheitseinstellungen",
+      "description": "Verwalten Sie die Sicherheit Ihres Kontos und Ihr Passwort.",
+      "currentPassword": "Aktuelles Passwort",
+      "currentPlaceholder": "Geben Sie Ihr aktuelles Passwort ein",
+      "newPassword": "Neues Passwort",
+      "newPlaceholder": "Geben Sie Ihr neues Passwort ein",
+      "confirmPassword": "Passwort bestätigen",
+      "confirmPlaceholder": "Bestätigen Sie Ihr neues Passwort",
+      "updatePassword": "Passwort aktualisieren",
+      "logout": "Abmelden"
+    }
+  }
+}

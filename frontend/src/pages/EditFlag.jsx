@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Sidebar from "../components/Sidebar";
 
 function EditFlag() {
+  const { t } = useTranslation();
+
   const { flagKey } = useParams();
   const navigate = useNavigate();
 
@@ -50,10 +53,10 @@ function EditFlag() {
     );
 
     if (response.ok) {
-      alert("✅ Flag Updated Successfully");
+      alert(t("editFlag.success"));
       navigate("/flags");
     } else {
-      alert("Update Failed");
+      alert(t("editFlag.failed"));
     }
   };
 
@@ -89,10 +92,11 @@ function EditFlag() {
           }}
         >
           <h1 style={{ marginBottom: "25px" }}>
-            ✏️ Edit Feature Flag
+            ✏️ {t("editFlag.title")}
           </h1>
 
-          <label>Name</label>
+          <label>{t("editFlag.name")}</label>
+
           <input
             style={inputStyle}
             name="name"
@@ -100,7 +104,8 @@ function EditFlag() {
             onChange={handleChange}
           />
 
-          <label>Owner Team</label>
+          <label>{t("editFlag.ownerTeam")}</label>
+
           <input
             style={inputStyle}
             name="owner_team"
@@ -108,7 +113,8 @@ function EditFlag() {
             onChange={handleChange}
           />
 
-          <label>Description</label>
+          <label>{t("editFlag.description")}</label>
+
           <textarea
             rows={5}
             style={inputStyle}
@@ -117,7 +123,7 @@ function EditFlag() {
             onChange={handleChange}
           />
 
-          <label>Default Value</label>
+          <label>{t("editFlag.defaultValue")}</label>
 
           <select
             style={inputStyle}
@@ -125,8 +131,13 @@ function EditFlag() {
             value={formData.default_value}
             onChange={handleChange}
           >
-            <option value="false">False</option>
-            <option value="true">True</option>
+            <option value="false">
+              {t("common.false")}
+            </option>
+
+            <option value="true">
+              {t("common.true")}
+            </option>
           </select>
 
           <label
@@ -143,7 +154,8 @@ function EditFlag() {
               checked={formData.is_enabled}
               onChange={handleChange}
             />
-            Enable Feature
+
+            {t("editFlag.enableFeature")}
           </label>
 
           <button
@@ -159,7 +171,7 @@ function EditFlag() {
               fontWeight: "600",
             }}
           >
-            💾 Save Changes
+            💾 {t("editFlag.saveChanges")}
           </button>
         </div>
       </div>

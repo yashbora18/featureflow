@@ -2,506 +2,1582 @@
    SAAS NAVBAR
 ===================================================== */
 
-.navbar{
-    position:fixed;
-    top:16px;
-    left:266px;
-    right:18px;
+.navbar {
+    position: sticky;
+    top: 16px;
 
-    height:72px;
+    width: calc(100% - 48px);
+    min-width: 0;
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    height: 72px;
 
-    padding:0 28px;
+    margin: 16px 24px 0;
 
-    background:rgba(255,255,255,.96);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    backdrop-filter:blur(14px);
-    -webkit-backdrop-filter:blur(14px);
+    gap: 20px;
+    padding: 0 28px;
 
-    border:1px solid #e5e7eb;
+    box-sizing: border-box;
 
-    border-radius:18px;
+    background: rgba(255, 255, 255, .75);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, .4);
+
+    border-radius: 18px;
 
     box-shadow:
-        0 8px 28px rgba(15,23,42,.08);
+        0 8px 28px rgba(15, 23, 42, .08);
 
-    z-index:1000;
+    z-index: 1000;
 
-    transition:.3s ease;
+    transition: .3s ease;
 }
+
 
 /* =====================================================
-   LEFT SIDE
+   TOP ROW
 ===================================================== */
 
-.navbar-title{
+.navbar-top-row {
 
-    display:flex;
-    align-items:center;
-    gap:14px;
+    display: flex;
 
-    font-size:28px;
-    font-weight:700;
+    align-items: center;
 
-    color:#111827;
+    gap: 12px;
+
+    min-width: 0;
+
+    flex-shrink: 1;
 }
 
-.navbar-icon{
-
-    font-size:28px;
-
-    color:#2563eb;
-
-    flex-shrink:0;
-}
 
 /* =====================================================
-   RIGHT SIDE
+   TITLE
 ===================================================== */
 
-.navbar-actions{
+.navbar-title {
 
-    display:flex;
-    align-items:center;
+    min-width: 0;
 
-    gap:16px;
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: #111827;
 }
+
+
+.navbar-title span {
+
+    min-width: 0;
+
+    margin-left: 6px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    color: #64748b;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.navbar-icon {
+
+    font-size: 28px;
+
+    color: #7c3aed;
+
+    flex-shrink: 0;
+}
+
 
 /* =====================================================
-   ENVIRONMENT
+   MOBILE MENU BUTTON
 ===================================================== */
 
-.navbar-environment{
+.mobile-menu-btn {
 
-    display:flex;
-    align-items:center;
+    display: none;
 
-    gap:12px;
+    width: 44px;
+    height: 44px;
+
+    flex: 0 0 44px;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    margin: 0;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: #475569;
+
+    cursor: pointer;
+
+    position: relative;
+
+    z-index: 10003;
+
+    pointer-events: auto;
+
+    touch-action: manipulation;
+
+    -webkit-tap-highlight-color: transparent;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        color .25s ease,
+        transform .15s ease;
 }
 
-.env-label{
 
-    font-size:14px;
-    font-weight:600;
+.mobile-menu-btn:hover {
 
-    color:#64748b;
+    background: #7c3aed;
+
+    border-color: #7c3aed;
+
+    color: #ffffff;
 }
 
-.navbar-environment > div{
 
-    width:250px;
+.mobile-menu-btn:active {
+
+    transform: scale(.94);
 }
+
+
+.mobile-menu-btn svg {
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   NAVBAR ACTIONS
+===================================================== */
+
+.navbar-actions {
+
+    min-width: 0;
+
+    flex-shrink: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+/* =====================================================
+   ENVIRONMENT / LANGUAGE
+===================================================== */
+
+.navbar-environment {
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.env-label {
+
+    flex-shrink: 0;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #64748b;
+}
+
+
+.navbar-select {
+
+    width: 240px;
+
+    min-width: 0;
+}
+
+
+/* =====================================================
+   SELECT LABELS
+===================================================== */
+
+.select-full-label {
+
+    display: inline;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.select-short-label {
+
+    display: none;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
 
 /* =====================================================
    ICON BUTTONS
 ===================================================== */
 
 .notification-wrapper,
-.profile-wrapper{
+.profile-wrapper {
 
-    position:relative;
+    position: relative;
+
+    flex-shrink: 0;
 }
+
 
 .notification-btn,
-.theme-toggle{
+.theme-toggle {
 
-    width:46px;
-    height:46px;
+    width: 46px;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    height: 46px;
 
-    border-radius:14px;
+    padding: 0;
 
-    background:#ffffff;
+    display: flex;
 
-    border:1px solid #e5e7eb;
+    justify-content: center;
 
-    color:#475569;
+    align-items: center;
 
-    cursor:pointer;
+    border-radius: 14px;
 
-    transition:all .25s ease;
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    color: #475569;
+
+    cursor: pointer;
+
+    transition: all .25s ease;
 
     box-shadow:
-        0 4px 14px rgba(15,23,42,.05);
+        0 4px 14px rgba(15, 23, 42, .05);
 }
+
 
 .notification-btn:hover,
-.theme-toggle:hover{
+.theme-toggle:hover {
 
-    background:#2563eb;
+    background: #7c3aed;
 
-    color:#ffffff;
+    color: #ffffff;
 
-    border-color:#2563eb;
-
-    transform:translateY(-2px);
-
-    box-shadow:
-        0 10px 20px rgba(37,99,235,.18);
+    border-color: #7c3aed;
 }
+
 
 .notification-btn:active,
-.theme-toggle:active{
+.theme-toggle:active {
 
-    transform:scale(.96);
+    transform: scale(.96);
 }
+
 
 .notification-btn svg,
-.theme-toggle svg{
+.theme-toggle svg {
 
-    font-size:20px;
+    font-size: 20px;
 }
+
 
 /* =====================================================
-   BADGE
+   NOTIFICATION BADGE
 ===================================================== */
 
-.notification-badge{
+.notification-badge {
 
-    position:absolute;
+    position: absolute;
 
-    top:11px;
-    right:11px;
+    top: 9px;
+    right: 9px;
 
-    width:9px;
-    height:9px;
+    width: 9px;
+    height: 9px;
 
-    border-radius:50%;
+    border-radius: 50%;
 
-    background:#ef4444;
+    background: #ef4444;
 
-    border:2px solid #ffffff;
+    border: 2px solid #ffffff;
 }
+
 
 /* =====================================================
    PROFILE
 ===================================================== */
 
-.profile-card{
+.profile-card {
 
-    display:flex;
-    align-items:center;
-    gap:12px;
+    width: auto;
 
-    padding:8px 16px;
+    min-width: 190px;
 
-    background:#ffffff;
+    min-height: 46px;
 
-    border:1px solid #e5e7eb;
+    display: flex;
 
-    border-radius:16px;
+    align-items: center;
 
-    cursor:pointer;
+    gap: 12px;
 
-    transition:all .25s ease;
+    padding: 7px 14px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    flex-shrink: 1;
+
+    transition: all .25s ease;
 
     box-shadow:
-        0 4px 14px rgba(15,23,42,.05);
+        0 4px 14px rgba(15, 23, 42, .05);
 }
 
-.profile-card:hover{
 
-    transform:translateY(-2px);
+.profile-card:hover {
+
+    transform: translateY(-2px);
 
     box-shadow:
-        0 12px 24px rgba(15,23,42,.08);
+        0 12px 24px rgba(15, 23, 42, .08);
 
-    border-color:#2563eb;
+    border-color: #7c3aed;
 }
 
-.profile-avatar{
 
-    width:40px;
-    height:40px;
+.profile-avatar {
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    width: 40px;
+    height: 40px;
 
-    border-radius:50%;
+    min-width: 40px;
 
-    background:#eff6ff;
+    display: flex;
 
-    color:#2563eb;
+    justify-content: center;
+    align-items: center;
 
-    font-size:18px;
+    border-radius: 50%;
 
-    transition:.25s ease;
+    background: #eff6ff;
+
+    color: #7c3aed;
+
+    font-size: 18px;
+
+    transition: .25s ease;
 }
 
-.profile-card:hover .profile-avatar{
 
-    background:#2563eb;
+.profile-card:hover .profile-avatar {
 
-    color:#ffffff;
+    background: #7c3aed;
+
+    color: #ffffff;
 }
 
-.profile-info{
 
-    display:flex;
-    flex-direction:column;
+.profile-info {
+
+    min-width: 0;
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    text-align: left;
 }
 
-.profile-name{
 
-    font-size:14px;
-    font-weight:700;
+.profile-name {
 
-    color:#111827;
+    min-width: 0;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #111827;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
 }
 
-.profile-role{
 
-    font-size:12px;
+.profile-role {
 
-    color:#64748b;
+    min-width: 0;
+
+    font-size: 12px;
+
+    color: #64748b;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
 }
+
 
 /* =====================================================
-   DROPDOWN
+   DROPDOWNS
 ===================================================== */
 
 .notification-dropdown,
-.profile-dropdown{
+.profile-dropdown {
 
-    position:absolute;
+    position: absolute;
 
-    top:58px;
-    right:0;
+    top: calc(100% + 10px);
 
-    width:280px;
+    right: 0;
 
-    background:#ffffff;
+    width: min(280px, 90vw);
 
-    border:1px solid #e5e7eb;
+    background: #ffffff;
 
-    border-radius:16px;
+    border: 1px solid #e5e7eb;
 
-    overflow:hidden;
+    border-radius: 16px;
+
+    overflow: hidden;
 
     box-shadow:
-        0 18px 40px rgba(15,23,42,.12);
+        0 18px 40px rgba(15, 23, 42, .12);
 
-    animation:dropdown .25s ease;
+    animation: dropdown .25s ease;
 
-    z-index:9999;
+    z-index: 9999;
 }
 
-.notification-dropdown h4{
 
-    margin:0;
+.notification-dropdown h4 {
 
-    padding:16px 18px;
+    margin: 0;
 
-    font-size:15px;
-    font-weight:700;
+    padding: 16px 18px;
 
-    color:#111827;
+    font-size: 15px;
 
-    background:#f8fafc;
+    font-weight: 700;
 
-    border-bottom:1px solid #e5e7eb;
+    color: #111827;
+
+    background: #f8fafc;
+
+    border-bottom: 1px solid #e5e7eb;
 }
 
-.notification-item{
 
-    display:flex;
-    align-items:center;
-    gap:12px;
+.notification-item {
 
-    padding:16px 18px;
+    display: flex;
 
-    font-size:14px;
+    align-items: center;
 
-    color:#475569;
+    gap: 12px;
 
-    cursor:pointer;
+    padding: 16px 18px;
 
-    transition:.25s ease;
+    font-size: 14px;
+
+    color: #475569;
+
+    cursor: pointer;
+
+    transition: .25s ease;
 }
 
-.notification-icon{
 
-    font-size:18px;
+.notification-item span {
 
-    flex-shrink:0;
+    flex: 1;
+
+    min-width: 0;
 }
 
-.notification-icon.blue{
-    color:#2563eb;
+
+.notification-item:hover {
+
+    background: #f3e8ff;
+
+    color: #7c3aed;
 }
 
-.notification-icon.green{
-    color:#16a34a;
+
+/* =====================================================
+   PROFILE DROPDOWN
+===================================================== */
+
+.profile-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 18px;
+
+    font-size: 14px;
+
+    color: #475569;
+
+    cursor: pointer;
+
+    transition: .25s ease;
 }
 
-.notification-icon.orange{
-    color:#f97316;
+
+.profile-item span {
+
+    flex: 1;
 }
 
-.notification-item span{
-    flex:1;
+
+.profile-item:hover {
+
+    background: #f3e8ff;
+
+    color: #7c3aed;
 }
 
-.profile-item{
-    display:flex;
-    align-items:center;
-    gap:12px;
 
-    padding:14px 18px;
+.profile-item.logout {
 
-    font-size:14px;
-
-    color:#475569;
-
-    cursor:pointer;
-
-    transition:.25s ease;
+    color: #ef4444;
 }
 
-.profile-icon{
-    font-size:18px;
-    flex-shrink:0;
-    color:#64748b;
+
+.profile-item.logout:hover {
+
+    background: #fee2e2;
+
+    color: #dc2626;
 }
 
-.profile-item span{
-    flex:1;
-}
-
-.profile-item:hover{
-    background:#eff6ff;
-    color:#2563eb;
-}
-
-.profile-item:hover .profile-icon{
-    color:#2563eb;
-}
-
-.profile-item.logout{
-    color:#ef4444;
-}
-
-.profile-item.logout .profile-icon{
-    color:#ef4444;
-}
-
-.profile-item.logout:hover{
-    background:#fee2e2;
-    color:#dc2626;
-}
-
-.profile-item.logout:hover .profile-icon{
-    color:#dc2626;
-}
-
-.notification-item:hover,
-.profile-item:hover{
-
-    background:#eff6ff;
-
-    color:#2563eb;
-}
-
-.profile-item.logout{
-
-    color:#ef4444;
-}
-
-.profile-item.logout:hover{
-
-    background:#fee2e2;
-
-    color:#dc2626;
-}
 
 /* =====================================================
    ANIMATION
 ===================================================== */
 
-@keyframes dropdown{
+@keyframes dropdown {
 
-    from{
-
-        opacity:0;
-        transform:translateY(-10px);
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
     }
 
-    to{
-
-        opacity:1;
-        transform:translateY(0);
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 
 }
+
 
 /* =====================================================
-   RESPONSIVE
+   TABLET
 ===================================================== */
 
-@media(max-width:992px){
+@media (max-width: 1200px) {
 
-.navbar{
+    .navbar {
 
-left:0;
-right:0;
-top:0;
+        width: calc(100% - 32px);
 
-height:auto;
+        margin-left: 16px;
+        margin-right: 16px;
 
-padding:16px;
+        padding: 0 20px;
 
-border-radius:0;
+        gap: 12px;
+    }
 
-flex-direction:column;
 
-align-items:flex-start;
+    .navbar-actions {
 
-gap:18px;
+        gap: 10px;
+    }
+
+
+    .navbar-environment {
+
+        gap: 6px;
+    }
+
+
+    .env-label {
+
+        font-size: 13px;
+    }
+
+
+    .navbar-select {
+
+        width: 180px;
+    }
+
+
+    .profile-card {
+
+        min-width: 150px;
+
+        padding: 6px 10px;
+    }
+
 }
 
-.navbar-actions{
 
-width:100%;
+/* =====================================================
+   SMALL TABLET
+===================================================== */
 
-justify-content:space-between;
+@media (max-width: 992px) {
 
-flex-wrap:wrap;
+    .navbar {
+
+        height: 68px;
+
+        padding: 0 16px;
+    }
+
+
+    .navbar-title {
+
+        font-size: 21px;
+    }
+
+
+    .navbar-title span {
+
+        font-size: 14px;
+    }
+
+
+    .navbar-icon {
+
+        font-size: 24px;
+    }
+
+
+    .navbar-select {
+
+        width: 150px;
+    }
+
+
+    .profile-card {
+
+        min-width: 135px;
+
+        gap: 8px;
+    }
+
+
+    .profile-avatar {
+
+        width: 36px;
+        height: 36px;
+
+        min-width: 36px;
+    }
+
 }
 
-.navbar-environment{
 
-width:100%;
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+
+        position: relative;
+
+        top: auto;
+
+        width: calc(100% - 24px);
+
+        height: auto;
+
+        margin: 12px;
+
+        padding: 12px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        justify-content: flex-start;
+
+        gap: 12px;
+
+        border-radius: 18px;
+
+        z-index: 1000;
+    }
+
+
+    /* =================================================
+       TOP ROW
+    ================================================= */
+
+    .navbar-top-row {
+
+        position: relative;
+
+        z-index: 10002;
+
+        width: 100%;
+
+        min-height: 44px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 10px;
+
+        pointer-events: auto;
+    }
+
+
+    .mobile-menu-btn {
+
+        display: flex;
+
+        position: relative;
+
+        z-index: 10003;
+
+        pointer-events: auto;
+    }
+
+
+    .navbar-title {
+
+        flex: 1;
+
+        min-width: 0;
+
+        pointer-events: none;
+    }
+
+
+    .navbar-title span {
+
+        margin-left: 3px;
+
+        font-size: 16px;
+    }
+
+
+    .navbar-icon {
+
+        font-size: 24px;
+    }
+
+
+    /* =================================================
+       ACTIONS
+    ================================================= */
+
+    .navbar-actions {
+
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr)
+            44px
+            44px
+            minmax(95px, 1fr);
+
+        align-items: center;
+
+        gap: 8px;
+    }
+
+
+    /* =================================================
+       ENVIRONMENT
+    ================================================= */
+
+    .navbar-environment {
+
+        width: 100%;
+
+        min-width: 0;
+
+        display: block;
+    }
+
+
+    .navbar-environment .env-label {
+
+        display: none;
+    }
+
+
+    .navbar-select {
+
+        width: 100% !important;
+
+        min-width: 0 !important;
+    }
+
+
+    /* =================================================
+       SELECT LABEL
+    ================================================= */
+
+    .select-full-label {
+
+        display: none;
+    }
+
+
+    .select-short-label {
+
+        display: inline;
+    }
+
+
+    /* =================================================
+       THEME
+    ================================================= */
+
+    .theme-toggle {
+
+        width: 44px;
+
+        height: 44px;
+
+        min-width: 44px;
+    }
+
+
+    /* =================================================
+       NOTIFICATION
+    ================================================= */
+
+    .notification-wrapper {
+
+        width: 44px;
+
+        height: 44px;
+
+        min-width: 44px;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+    }
+
+
+    .notification-btn {
+
+        width: 44px;
+
+        height: 44px;
+    }
+
+
+    /* =================================================
+       PROFILE
+    ================================================= */
+
+    .profile-wrapper {
+
+        width: 100%;
+
+        min-width: 0;
+    }
+
+
+    .profile-card {
+
+        width: 100%;
+
+        min-width: 0;
+
+        height: 44px;
+
+        padding: 5px 8px;
+
+        gap: 7px;
+
+        border-radius: 12px;
+    }
+
+
+    .profile-avatar {
+
+        width: 32px;
+        height: 32px;
+
+        min-width: 32px;
+
+        font-size: 15px;
+    }
+
+
+    .profile-name {
+
+        font-size: 11px;
+    }
+
+
+    .profile-role {
+
+        font-size: 9px;
+    }
+
+
+    /* =================================================
+       DROPDOWNS
+    ================================================= */
+
+    .notification-dropdown,
+    .profile-dropdown {
+
+        position: fixed;
+
+        top: auto;
+
+        right: 12px;
+
+        width: min(
+            280px,
+            calc(100vw - 24px)
+        );
+    }
+
 }
 
-.navbar-environment>div{
 
-width:100%;
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .navbar {
+
+        width: calc(100% - 20px);
+
+        margin: 10px;
+
+        padding: 12px;
+
+        gap: 12px;
+    }
+
+
+    .mobile-menu-btn {
+
+        width: 40px;
+        height: 40px;
+
+        flex-basis: 40px;
+    }
+
+
+    .navbar-actions {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr)
+            40px
+            40px
+            minmax(78px, 1fr);
+
+        gap: 6px;
+    }
+
+
+    .theme-toggle {
+
+        width: 40px;
+        height: 40px;
+
+        min-width: 40px;
+    }
+
+
+    .notification-wrapper {
+
+        width: 40px;
+        height: 40px;
+
+        min-width: 40px;
+    }
+
+
+    .notification-btn {
+
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .profile-card {
+
+        height: 40px;
+
+        padding: 4px 6px;
+
+        gap: 5px;
+
+        border-radius: 11px;
+    }
+
+
+    .profile-avatar {
+
+        width: 28px;
+        height: 28px;
+
+        min-width: 28px;
+    }
+
+
+    .profile-name {
+
+        font-size: 10px;
+    }
+
+
+    .profile-role {
+
+        font-size: 8px;
+    }
+
 }
 
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .navbar {
+
+        width: calc(100% - 16px);
+
+        margin: 8px;
+
+        padding: 10px;
+
+        gap: 10px;
+    }
+
+
+    .mobile-menu-btn {
+
+        width: 36px;
+        height: 36px;
+
+        flex-basis: 36px;
+    }
+
+
+    .navbar-title span {
+
+        font-size: 14px;
+    }
+
+
+    .navbar-actions {
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr)
+            36px
+            36px
+            minmax(70px, 1fr);
+
+        gap: 5px;
+    }
+
+
+    .theme-toggle {
+
+        width: 36px;
+        height: 36px;
+
+        min-width: 36px;
+    }
+
+
+    .notification-wrapper {
+
+        width: 36px;
+        height: 36px;
+
+        min-width: 36px;
+    }
+
+
+    .notification-btn {
+
+        width: 36px;
+        height: 36px;
+    }
+
+
+    .profile-card {
+
+        height: 36px;
+
+        padding: 3px 5px;
+
+        gap: 4px;
+    }
+
+
+    .profile-avatar {
+
+        width: 25px;
+        height: 25px;
+
+        min-width: 25px;
+
+        font-size: 13px;
+    }
+
+
+    .profile-name {
+
+        font-size: 9px;
+    }
+
+
+    .profile-role {
+
+        font-size: 7px;
+    }
+
 }
 
-@media(max-width:768px){
 
-.navbar-title{
+/* =====================================================
+   DARK THEME
+===================================================== */
 
-font-size:22px;
+html.dark .navbar {
+
+    background: rgba(15, 23, 42, .94);
+
+    border-color: #334155;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, .35);
+
+    color: #f8fafc;
 }
 
-.navbar-icon{
 
-font-size:24px;
+html.dark .navbar-title {
+
+    color: #f8fafc;
 }
 
-.profile-info{
 
-display:none;
+html.dark .navbar-title span {
+
+    color: #94a3b8;
 }
+
+
+html.dark .navbar-icon {
+
+    color: #a78bfa;
+}
+
+
+html.dark .env-label {
+
+    color: #94a3b8;
+}
+
+
+/* =====================================================
+   DARK ICON BUTTONS
+===================================================== */
+
+html.dark .notification-btn,
+html.dark .theme-toggle,
+html.dark .mobile-menu-btn {
+
+    background: #111827;
+
+    border-color: #334155;
+
+    color: #cbd5e1;
+}
+
+
+html.dark .notification-btn:hover,
+html.dark .theme-toggle:hover,
+html.dark .mobile-menu-btn:hover {
+
+    background: #6366f1;
+
+    border-color: #6366f1;
+
+    color: #ffffff;
+}
+
+
+html.dark .notification-badge {
+
+    border-color: #111827;
+}
+
+
+/* =====================================================
+   DARK PROFILE
+===================================================== */
+
+html.dark .profile-card {
+
+    background: #111827;
+
+    border-color: #334155;
+
+    color: #f8fafc;
+}
+
+
+html.dark .profile-card:hover {
+
+    border-color: #6366f1;
+}
+
+
+html.dark .profile-avatar {
+
+    background: #1e293b;
+
+    color: #a78bfa;
+}
+
+
+html.dark .profile-card:hover .profile-avatar {
+
+    background: #6366f1;
+
+    color: #ffffff;
+}
+
+
+html.dark .profile-name {
+
+    color: #f8fafc;
+}
+
+
+html.dark .profile-role {
+
+    color: #94a3b8;
+}
+
+
+/* =====================================================
+   DARK DROPDOWNS
+===================================================== */
+
+html.dark .notification-dropdown,
+html.dark .profile-dropdown {
+
+    background: #111827;
+
+    border-color: #334155;
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, .40);
+}
+
+
+html.dark .notification-dropdown h4 {
+
+    background: #0f172a;
+
+    color: #f8fafc;
+
+    border-color: #334155;
+}
+
+
+html.dark .notification-item,
+html.dark .profile-item {
+
+    color: #cbd5e1;
+}
+
+
+html.dark .notification-item:hover,
+html.dark .profile-item:hover {
+
+    background: #1e293b;
+
+    color: #a78bfa;
+}
+
+
+html.dark .profile-item.logout {
+
+    color: #f87171;
+}
+
+
+html.dark .profile-item.logout:hover {
+
+    background: rgba(239, 68, 68, .12);
+
+    color: #f87171;
+}
+
+
+/* =====================================================
+   LOGOUT MODAL
+===================================================== */
+
+.logout-modal-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(15, 23, 42, .55);
+
+    backdrop-filter: blur(5px);
+
+    -webkit-backdrop-filter: blur(5px);
+
+    z-index: 99999;
+}
+
+
+.logout-modal {
+
+    width: 400px;
+
+    max-width: 100%;
+
+    padding: 28px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 25px 60px rgba(15, 23, 42, .20);
+
+    box-sizing: border-box;
+}
+
+
+.logout-modal h3 {
+
+    margin: 0 0 10px;
+
+    color: #111827;
+
+    font-size: 21px;
+}
+
+
+.logout-modal p {
+
+    margin: 0 0 26px;
+
+    color: #64748b;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+.logout-modal-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+}
+
+
+.logout-cancel-btn,
+.logout-confirm-btn {
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 11px 20px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.logout-cancel-btn {
+
+    background: #f1f5f9;
+
+    color: #475569;
+
+    border: 1px solid #e2e8f0;
+}
+
+
+.logout-confirm-btn {
+
+    background: #ef4444;
+
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   DARK LOGOUT
+===================================================== */
+
+html.dark .logout-modal {
+
+    background: #111827;
+
+    border-color: #334155;
+}
+
+
+html.dark .logout-modal h3 {
+
+    color: #f8fafc;
+}
+
+
+html.dark .logout-modal p {
+
+    color: #94a3b8;
+}
+
+
+html.dark .logout-cancel-btn {
+
+    background: #1e293b;
+
+    color: #cbd5e1;
+
+    border-color: #334155;
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .navbar,
+    .notification-btn,
+    .theme-toggle,
+    .mobile-menu-btn,
+    .profile-card,
+    .notification-dropdown,
+    .profile-dropdown {
+
+        transition: none;
+
+        animation: none;
+    }
 
 }

@@ -1,0 +1,787 @@
+/* =====================================================
+   PREMIUM SHOWCASE
+===================================================== */
+
+.premium-showcase {
+
+    padding: 140px 8%;
+
+    background: #0f172a;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 80px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   BACKGROUND GLOW
+===================================================== */
+
+.premium-showcase::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+
+    height: 450px;
+
+    background: #4f46e5;
+
+    filter: blur(180px);
+
+    opacity: .25;
+
+    top: -150px;
+
+    right: -120px;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   LEFT CONTENT
+===================================================== */
+
+.premium-left {
+
+    flex: 1;
+
+    min-width: 0;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   BADGE
+===================================================== */
+
+.premium-badge {
+
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    background: rgba(255, 255, 255, .08);
+
+    border: 1px solid rgba(255, 255, 255, .15);
+
+    border-radius: 999px;
+
+    margin-bottom: 24px;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    color: #a5b4fc;
+
+    font-weight: 700;
+
+    max-width: 100%;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.premium-left h2 {
+
+    font-size: 56px;
+
+    line-height: 1.15;
+
+    margin: 0 0 24px;
+
+    overflow-wrap: anywhere;
+
+    word-break: break-word;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.premium-left p {
+
+    color: #cbd5e1;
+
+    line-height: 1.9;
+
+    font-size: 18px;
+
+    max-width: 600px;
+
+    margin: 0 0 40px;
+
+    overflow-wrap: anywhere;
+
+    word-break: break-word;
+}
+
+
+/* =====================================================
+   POINTS
+===================================================== */
+
+.premium-points {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    margin-bottom: 40px;
+
+}
+
+
+.premium-points div {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    font-size: 17px;
+
+    min-width: 0;
+
+}
+
+
+.premium-points span {
+
+    overflow-wrap: anywhere;
+
+    word-break: break-word;
+}
+
+
+.premium-points svg {
+
+    color: #818cf8;
+
+    font-size: 22px;
+
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+.premium-left button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    padding: 16px 30px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #4f46e5;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: .35s;
+
+    max-width: 100%;
+
+}
+
+
+.premium-left button:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 20px 50px rgba(79, 70, 229, .35);
+
+}
+
+
+/* =====================================================
+   RIGHT CONTENT
+===================================================== */
+
+.premium-right {
+
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+}
+
+
+/* =====================================================
+   DASHBOARD WINDOW
+===================================================== */
+
+.dashboard-window {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    background: #1e293b;
+
+    box-shadow:
+        0 40px 80px rgba(0, 0, 0, .35);
+
+}
+
+
+.window-header {
+
+    height: 56px;
+
+    background: #111827;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding-left: 20px;
+
+}
+
+
+.window-header span {
+
+    width: 13px;
+
+    height: 13px;
+
+    border-radius: 50%;
+
+    flex-shrink: 0;
+}
+
+
+.window-header span:nth-child(1) {
+
+    background: #ef4444;
+
+}
+
+
+.window-header span:nth-child(2) {
+
+    background: #f59e0b;
+
+}
+
+
+.window-header span:nth-child(3) {
+
+    background: #22c55e;
+
+}
+
+
+.dashboard-window img {
+
+    width: 100%;
+
+    height: auto;
+
+    max-width: 100%;
+
+    display: block;
+}
+
+
+/* =====================================================
+   LARGE TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+    .premium-showcase {
+
+        padding: 110px 6%;
+
+        gap: 50px;
+
+    }
+
+    .premium-left h2 {
+
+        font-size: 48px;
+
+    }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .premium-showcase {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        gap: 60px;
+
+        padding: 100px 6%;
+
+    }
+
+    .premium-left {
+
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+    .premium-left h2 {
+
+        font-size: 42px;
+
+    }
+
+    .premium-left p {
+
+        max-width: 700px;
+
+    }
+
+    .premium-points {
+
+        align-items: flex-start;
+
+        text-align: left;
+
+    }
+
+    .premium-right {
+
+        width: 100%;
+
+    }
+
+    .dashboard-window {
+
+        max-width: 700px;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .premium-showcase {
+
+        padding: 75px 5%;
+
+        gap: 45px;
+
+    }
+
+    .premium-badge {
+
+        padding: 9px 15px;
+
+        font-size: 12px;
+
+        margin-bottom: 20px;
+
+    }
+
+    .premium-left h2 {
+
+        font-size: 36px;
+
+        line-height: 1.2;
+
+        margin-bottom: 20px;
+
+    }
+
+    .premium-left p {
+
+        font-size: 15px;
+
+        line-height: 1.75;
+
+        margin-bottom: 30px;
+
+    }
+
+    .premium-points {
+
+        width: 100%;
+
+        gap: 15px;
+
+        margin-bottom: 30px;
+
+    }
+
+    .premium-points div {
+
+        font-size: 15px;
+
+        gap: 12px;
+
+    }
+
+    .premium-points svg {
+
+        font-size: 19px;
+
+    }
+
+    .premium-left button {
+
+        width: 100%;
+
+        max-width: 280px;
+
+        padding: 14px 24px;
+
+        font-size: 15px;
+
+    }
+
+    .dashboard-window {
+
+        border-radius: 18px;
+
+    }
+
+    .window-header {
+
+        height: 45px;
+
+        padding-left: 15px;
+
+        gap: 7px;
+
+    }
+
+    .window-header span {
+
+        width: 10px;
+
+        height: 10px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .premium-showcase {
+
+        padding: 60px 5%;
+
+        gap: 35px;
+
+    }
+
+    .premium-left h2 {
+
+        font-size: 30px;
+
+        line-height: 1.2;
+
+    }
+
+    .premium-left p {
+
+        font-size: 14px;
+
+        line-height: 1.7;
+
+    }
+
+    .premium-points div {
+
+        font-size: 14px;
+
+    }
+
+    .premium-left button {
+
+        width: 100%;
+
+        max-width: none;
+
+    }
+
+    .dashboard-window {
+
+        border-radius: 15px;
+
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .premium-showcase {
+
+        padding: 50px 4%;
+
+        gap: 30px;
+
+    }
+
+    .premium-badge {
+
+        font-size: 11px;
+
+        padding: 8px 13px;
+
+    }
+
+    .premium-left h2 {
+
+        font-size: 27px;
+
+    }
+
+    .premium-left p {
+
+        font-size: 13px;
+
+    }
+
+    .premium-points div {
+
+        font-size: 13px;
+
+        gap: 10px;
+
+    }
+
+    .premium-points svg {
+
+        font-size: 17px;
+
+    }
+
+    .window-header {
+
+        height: 38px;
+
+        padding-left: 12px;
+
+    }
+
+    .window-header span {
+
+        width: 8px;
+
+        height: 8px;
+
+    }
+
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+html.dark .premium-showcase {
+
+    background: #020617;
+
+    color: #f8fafc;
+
+}
+
+
+/* ==============================
+   BACKGROUND GLOW
+============================== */
+
+html.dark .premium-showcase::before {
+
+    background: #6366f1;
+
+    opacity: .20;
+
+}
+
+
+/* ==============================
+   BADGE
+============================== */
+
+html.dark .premium-badge {
+
+    background: rgba(99, 102, 241, .12);
+
+    border-color: rgba(129, 140, 248, .25);
+
+    color: #a5b4fc;
+
+}
+
+
+/* ==============================
+   TITLE
+============================== */
+
+html.dark .premium-left h2 {
+
+    color: #f8fafc;
+
+}
+
+
+/* ==============================
+   DESCRIPTION
+============================== */
+
+html.dark .premium-left p {
+
+    color: #cbd5e1;
+
+}
+
+
+/* ==============================
+   POINTS
+============================== */
+
+html.dark .premium-points div {
+
+    color: #e2e8f0;
+
+}
+
+
+html.dark .premium-points svg {
+
+    color: #a5b4fc;
+
+}
+
+
+/* ==============================
+   BUTTON
+============================== */
+
+html.dark .premium-left button {
+
+    background: #6366f1;
+
+    color: #ffffff;
+
+}
+
+
+html.dark .premium-left button:hover {
+
+    background: #818cf8;
+
+    box-shadow:
+        0 20px 50px rgba(79, 70, 229, .40);
+
+}
+
+
+/* ==============================
+   DASHBOARD WINDOW
+============================== */
+
+html.dark .dashboard-window {
+
+    background: #0f172a;
+
+    box-shadow:
+        0 40px 80px rgba(0, 0, 0, .45);
+
+}
+
+
+html.dark .window-header {
+
+    background: #020617;
+
+}

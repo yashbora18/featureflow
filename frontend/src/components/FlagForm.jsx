@@ -1,326 +1,842 @@
 import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
+import { useTranslation } from "react-i18next";
 
 import { getEnvironments } from "../services/environmentService";
+
 import {
   createFlag,
   updateFlag,
 } from "../services/flagService";
 
+import "./FlagForm.css";
+
+
 function FlagForm({
   flag,
+  environmentId,
   onFlagCreated,
   onClose,
 }) {
+
+  const { t } = useTranslation();
+
+
+  // =====================================================
+  // FORM STATE
+  // =====================================================
+
   const [formData, setFormData] = useState({
+
     flag_key: "",
+
     flag_type: "boolean",
+
     default_value: false,
+
     enabled: false,
+
     description: "",
+
     owner_team: "",
-    environment_id: 1,
+
+    environment_id:
+      environmentId || 1,
+
   });
+
+
+  // =====================================================
+  // ENVIRONMENTS
+  // =====================================================
 
   const [environments, setEnvironments] = useState([]);
 
+
+  // =====================================================
+  // LOAD ENVIRONMENTS
+  // =====================================================
+
   useEffect(() => {
+
     loadEnvironments();
+
   }, []);
 
+
   const loadEnvironments = async () => {
+
     try {
+
       const data = await getEnvironments();
+
       setEnvironments(data);
+
     } catch (error) {
-      console.error("Failed to load environments:", error);
+
+      console.error(
+        "Failed to load environments:",
+        error
+      );
+
     }
+
   };
 
+
+  // =====================================================
+  // LOAD FLAG FOR EDIT
+  // =====================================================
+
   useEffect(() => {
+
     if (flag) {
+
       setFormData({
-        flag_key: flag.flag_key,
-        flag_type: flag.flag_type,
+
+        flag_key:
+          flag.flag_key,
+
+        flag_type:
+          flag.flag_type,
+
         default_value:
           flag.default_value === true ||
           flag.default_value === "true",
-        enabled: flag.enabled,
-        description: flag.description,
-        owner_team: flag.owner_team,
-        environment_id: flag.environment_id,
+
+        enabled:
+          flag.enabled,
+
+        description:
+          flag.description || "",
+
+        owner_team:
+          flag.owner_team || "",
+
+        environment_id:
+          flag.environment_id,
+
       });
+
     }
+
   }, [flag]);
-    const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+
+
+  // =====================================================
+  // HANDLE INPUT CHANGE
+  // =====================================================
+
+  const handleChange = (e) => {
+
+    const {
+      name,
+      value,
+      type,
+      checked,
+    } = e.target;
+
+
+    let updatedValue = value;
+
+
+    // ---------------------------------------------
+    // NORMALIZE FLAG KEY
+    // ---------------------------------------------
+
+    if (name === "flag_key") {
+
+      updatedValue = value
+        .toLowerCase()
+        .replace(/\s+/g, "_")
+        .replace(
+          /[^a-z0-9_]/g,
+          ""
+        );
+
+    }
+
 
     setFormData({
+
       ...formData,
+
       [name]:
+
         type === "checkbox"
+
           ? checked
+
           : name === "environment_id"
+
           ? Number(value)
-          : value,
+
+          : updatedValue,
+
     });
+
   };
+
+
+  // =====================================================
+  // HANDLE SUBMIT
+  // =====================================================
 
   const handleSubmit = async (e) => {
+
     e.preventDefault();
 
+
     try {
+
+      console.log(
+        "Submitting Flag:",
+        formData
+      );
+
+
+      // =================================================
+      // UPDATE EXISTING FLAG
+      // =================================================
+
       if (flag) {
-        await updateFlag(flag.flag_key, formData);
 
-        toast.success("Feature Flag Updated Successfully!");
+        /*
+         * IMPORTANT
+         *
+         * The URL must contain the OLD environment ID.
+         *
+         * Example:
+         *
+         * Existing:
+         * beta_search → Development (1)
+         *
+         * Selected:
+         * Production (3)
+         *
+         * Request:
+         *
+         * PUT /flags/beta_search?environment_id=1
+         *
+         * Body:
+         * environment_id: 3
+         */
+
+
+        const originalEnvironmentId =
+          flag.environment_id;
+
+
+        await updateFlag(
+
+          flag.flag_key,
+
+          originalEnvironmentId,
+
+          formData
+
+        );
+
+
+        toast.success(
+
+          t(
+            "flagForm.updateSuccess"
+          )
+
+        );
+
 
         if (onFlagCreated) {
+
           onFlagCreated(
-            "Feature Flag Updated Successfully!"
+
+            t(
+              "flagForm.updateSuccess"
+            )
+
           );
+
         }
 
-      } else {
-        await createFlag(formData);
-
-        toast.success("Feature Flag Created Successfully!");
-
-        if (onFlagCreated) {
-          onFlagCreated(
-            "Feature Flag Created Successfully!"
-          );
-        }
       }
+
+
+      // =================================================
+      // CREATE NEW FLAG
+      // =================================================
+
+      else {
+
+        await createFlag(
+          formData
+        );
+
+
+        toast.success(
+
+          t(
+            "flagForm.createSuccess"
+          )
+
+        );
+
+
+        if (onFlagCreated) {
+
+          onFlagCreated(
+
+            t(
+              "flagForm.createSuccess"
+            )
+
+          );
+
+        }
+
+      }
+
+
+      // =================================================
+      // RESET FORM
+      // =================================================
 
       setFormData({
+
         flag_key: "",
+
         flag_type: "boolean",
+
         default_value: false,
+
         enabled: false,
+
         description: "",
+
         owner_team: "",
-        environment_id: 1,
+
+        environment_id:
+          environmentId || 1,
+
       });
 
+
+      // =================================================
+      // CLOSE MODAL
+      // =================================================
+
       if (onClose) {
+
         onClose();
+
       }
 
+
     } catch (error) {
-      console.error(error);
 
-      console.log(error.response?.data);
+      console.error(
+        "Failed to save feature flag:",
+        error
+      );
 
-      toast.error("Operation Failed!");
+
+      console.error(
+        "Backend response:",
+        error.response?.data
+      );
+
+
+      toast.error(
+
+        t(
+          "flagForm.operationFailed"
+        )
+
+      );
+
     }
+
   };
 
+
+  // =====================================================
+  // UI
+  // =====================================================
+
   return (
+
     <div className="flag-form">
-            <div className="form-header">
+
+
+      {/* =================================================
+          HEADER
+      ================================================= */}
+
+      <div className="form-header">
 
         <h2>
+
           {flag
-            ? "✏️ Update Feature Flag"
-            : "Create Feature Flag"}
+
+            ? t(
+                "flagForm.updateTitle"
+              )
+
+            : t(
+                "flagForm.createTitle"
+              )
+
+          }
+
         </h2>
 
+
         <button
+
           type="button"
+
           className="close-icon"
+
           onClick={onClose}
+
         >
+
           ✕
+
         </button>
 
       </div>
 
+
+
       <form onSubmit={handleSubmit}>
 
-        {/* Flag Key */}
+
+        {/* =================================================
+            FLAG KEY
+        ================================================= */}
 
         <div>
 
-          <label>Flag Key</label>
+          <label>
+
+            {t(
+              "flagForm.flagKey"
+            )}
+
+          </label>
+
 
           <input
+
             type="text"
+
             name="flag_key"
-            placeholder="Enter Flag Key"
-            value={formData.flag_key}
-            onChange={handleChange}
+
+            placeholder={t(
+              "flagForm.enterFlagKey"
+            )}
+
+            value={
+              formData.flag_key
+            }
+
+            onChange={
+              handleChange
+            }
+
             required
+
           />
 
         </div>
 
-        {/* Flag Type */}
+
+
+        {/* =================================================
+            FLAG TYPE
+        ================================================= */}
 
         <div>
 
-          <label>Flag Type</label>
+          <label>
+
+            {t(
+              "flagForm.flagType"
+            )}
+
+          </label>
+
 
           <input
+
             type="text"
-            value="Boolean"
+
+            value={t(
+              "flagForm.boolean"
+            )}
+
             disabled
+
           />
 
         </div>
 
-        {/* Default Value */}
+
+
+        {/* =================================================
+            DEFAULT VALUE
+        ================================================= */}
 
         <div>
 
-          <label>Default Value</label>
+          <label>
+
+            {t(
+              "flagForm.defaultValue"
+            )}
+
+          </label>
+
 
           <div className="toggle-group">
 
             <label className="switch">
 
               <input
+
                 type="checkbox"
-                checked={formData.default_value}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    default_value: e.target.checked,
-                  })
+
+                checked={
+                  formData.default_value
                 }
+
+                onChange={(e) =>
+
+                  setFormData({
+
+                    ...formData,
+
+                    default_value:
+                      e.target.checked,
+
+                  })
+
+                }
+
               />
+
 
               <span className="slider"></span>
 
             </label>
 
+
             <span className="toggle-text">
+
               {formData.default_value
-                ? "True"
-                : "False"}
+
+                ? t(
+                    "common.true"
+                  )
+
+                : t(
+                    "common.false"
+                  )
+
+              }
+
             </span>
 
           </div>
 
         </div>
 
-        {/* Owner Team */}
+
+
+        {/* =================================================
+            OWNER TEAM
+        ================================================= */}
 
         <div>
 
-          <label>Owner Team</label>
+          <label>
+
+            {t(
+              "flagForm.ownerTeam"
+            )}
+
+          </label>
+
 
           <input
+
             type="text"
+
             name="owner_team"
-            placeholder="Frontend Team"
-            value={formData.owner_team}
-            onChange={handleChange}
+
+            placeholder={t(
+              "flagForm.ownerPlaceholder"
+            )}
+
+            value={
+              formData.owner_team
+            }
+
+            onChange={
+              handleChange
+            }
+
             required
+
           />
 
         </div>
 
-        {/* Description */}
+
+
+        {/* =================================================
+            DESCRIPTION
+        ================================================= */}
 
         <div className="full-width">
 
-          <label>Description</label>
+          <label>
+
+            {t(
+              "flagForm.description"
+            )}
+
+          </label>
+
 
           <input
+
             type="text"
+
             name="description"
-            placeholder="Enter Description"
-            value={formData.description}
-            onChange={handleChange}
+
+            placeholder={t(
+              "flagForm.descriptionPlaceholder"
+            )}
+
+            value={
+              formData.description
+            }
+
+            onChange={
+              handleChange
+            }
+
           />
 
         </div>
 
-        {/* Environment */}
+
+
+        {/* =================================================
+            ENVIRONMENT
+        ================================================= */}
 
         <div>
 
-          <label>Environment</label>
+          <label>
+
+            {t(
+              "flagForm.environment"
+            )}
+
+          </label>
+
 
           <select
+
             name="environment_id"
-            value={formData.environment_id}
-            onChange={handleChange}
+
+            value={
+              formData.environment_id
+            }
+
+            onChange={
+              handleChange
+            }
+
           >
-            {environments.map((env) => (
-              <option
-                key={env.id}
-                value={env.id}
-              >
-                {env.name}
-              </option>
-            ))}
+
+            {environments.map(
+              (env) => (
+
+                <option
+
+                  key={env.id}
+
+                  value={env.id}
+
+                >
+
+                  {env.name ===
+                    "Development"
+
+                    ? t(
+                        "environment.development"
+                      )
+
+                    : env.name ===
+                      "Staging"
+
+                    ? t(
+                        "environment.staging"
+                      )
+
+                    : env.name ===
+                      "Production"
+
+                    ? t(
+                        "environment.production"
+                      )
+
+                    : env.name
+
+                  }
+
+                </option>
+
+              )
+            )}
+
           </select>
 
         </div>
 
-        {/* Status */}
+
+
+        {/* =================================================
+            STATUS
+        ================================================= */}
 
         <div>
 
-          <label>Status</label>
+          <label>
+
+            {t(
+              "flagForm.status"
+            )}
+
+          </label>
+
 
           <div className="toggle-group">
 
             <label className="switch">
 
               <input
+
                 type="checkbox"
-                checked={formData.enabled}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    enabled: e.target.checked,
-                  })
+
+                checked={
+                  formData.enabled
                 }
+
+                onChange={(e) =>
+
+                  setFormData({
+
+                    ...formData,
+
+                    enabled:
+                      e.target.checked,
+
+                  })
+
+                }
+
               />
+
 
               <span className="slider"></span>
 
             </label>
 
+
             <span className="toggle-text">
+
               {formData.enabled
-                ? "Enabled"
-                : "Disabled"}
+
+                ? t(
+                    "flags.enabled"
+                  )
+
+                : t(
+                    "flags.disabled"
+                  )
+
+              }
+
             </span>
 
           </div>
 
         </div>
-                {/* Buttons */}
+
+
+
+        {/* =================================================
+            BUTTONS
+        ================================================= */}
 
         <div className="button-group">
 
-          <button
-            type="button"
-            className="cancel-btn"
-            onClick={onClose}
-          >
-            Cancel
-          </button>
 
           <button
-            type="submit"
-            className="submit-btn"
+
+            type="button"
+
+            className="cancel-btn"
+
+            onClick={onClose}
+
           >
-            {flag
-              ? "Update Flag"
-              : "Create Flag"}
+
+            {t(
+              "common.cancel"
+            )}
+
           </button>
+
+
+          <button
+
+            type="submit"
+
+            className="submit-btn"
+
+          >
+
+            {flag
+
+              ? t(
+                  "flagForm.updateButton"
+                )
+
+              : t(
+                  "flagForm.createButton"
+                )
+
+            }
+
+          </button>
+
 
         </div>
+
 
       </form>
 
     </div>
+
   );
+
 }
+
 
 export default FlagForm;

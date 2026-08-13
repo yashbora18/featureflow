@@ -1,68 +1,307 @@
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import {
+  Routes,
+  Route,
+  useLocation
+} from "react-router-dom";
 
-import "react-toastify/dist/ReactToastify.css";
+
+// =====================================================
+// AUTHENTICATION
+// =====================================================
+
+import Auth from "./components/auth/Auth";
+
+
+// =====================================================
+// LAYOUT
+// =====================================================
 
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
+import ProtectedRoute from "./components/ProtectedRoute";
+
+
+// =====================================================
+// PAGES
+// =====================================================
+
+import Landing from "./pages/Landing";
+import Dashboard from "./pages/Dashboard";
+import Analytics from "./pages/Analytics";
 import Flags from "./pages/Flags";
 import FlagDetail from "./pages/FlagDetail";
 import Environments from "./pages/Environments";
+import Team from "./pages/Team";
+import AuditLogs from "./pages/AuditLogs";
+import Settings from "./pages/Settings";
 
-import "./App.css";
+
+// =====================================================
+// APP
+// =====================================================
 
 function App() {
 
-  const [environment, setEnvironment] = useState("Development");
-  const [showForm, setShowForm] = useState(false);
+  const [environment, setEnvironment] =
+    useState("Development");
 
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("theme") === "dark";
-  });
+
+  const [showForm, setShowForm] =
+    useState(false);
+
+
+  // MOBILE SIDEBAR
+  const [isSidebarOpen, setIsSidebarOpen] =
+    useState(false);
+
+
+  const location = useLocation();
+
+
+  // DARK MODE
+  const [darkMode, setDarkMode] = useState(
+    () =>
+      localStorage.getItem("theme") === "dark"
+  );
+
+
+  // =====================================================
+  // DARK MODE
+  // =====================================================
 
   useEffect(() => {
-    localStorage.setItem("theme", darkMode ? "dark" : "light");
+
+    document.documentElement.classList.toggle(
+      "dark",
+      darkMode
+    );
+
+    localStorage.setItem(
+      "theme",
+      darkMode ? "dark" : "light"
+    );
+
   }, [darkMode]);
 
+
+  // =====================================================
+  // CLOSE SIDEBAR AFTER NAVIGATION
+  // =====================================================
+
+  useEffect(() => {
+
+    setIsSidebarOpen(false);
+
+  }, [location.pathname]);
+
+
+  // =====================================================
+  // PUBLIC PAGES
+  // =====================================================
+
+  const isPublicPage =
+    location.pathname === "/" ||
+    location.pathname === "/auth";
+
+
+  if (isPublicPage) {
+
+    return (
+
+      <Routes>
+
+        <Route
+          path="/"
+          element={<Landing />}
+        />
+
+        <Route
+          path="/auth"
+          element={<Auth />}
+        />
+
+      </Routes>
+
+    );
+
+  }
+
+
+  // =====================================================
+  // APPLICATION
+  // =====================================================
+
   return (
-    <>
-      <div className={darkMode ? "app dark-theme" : "app"}>
 
-        <Sidebar />
+    <div
+      className={
+        darkMode
+          ? "app dark-theme"
+          : "app"
+      }
+    >
 
-        <div className="main-layout">
+
+      {/* =================================================
+          SIDEBAR
+          IMPORTANT:
+          Sidebar is OUTSIDE main-layout
+      ================================================= */}
+
+      <Sidebar
+        isOpen={isSidebarOpen}
+        setIsOpen={setIsSidebarOpen}
+      />
+
+
+      {/* =================================================
+          MAIN LAYOUT
+      ================================================= */}
+
+      <div className="main-layout">
+
+
+        {/* =================================================
+            CONTENT
+        ================================================= */}
+
+        <div className="content-area">
+
+
+          {/* =================================================
+              NAVBAR
+          ================================================= */}
 
           <Navbar
+
             environment={environment}
+
             setEnvironment={setEnvironment}
+
             darkMode={darkMode}
+
             setDarkMode={setDarkMode}
+
+            isOpen={isSidebarOpen}
+
+            setIsOpen={setIsSidebarOpen}
+
           />
+
+
+          {/* =================================================
+              PAGE CONTENT
+          ================================================= */}
 
           <main className="page-content">
 
             <Routes>
 
+
+              {/* DASHBOARD */}
+
               <Route
-                path="/"
+                path="/dashboard"
                 element={
-                  <Flags
-                    environment={environment}
-                    showForm={showForm}
-                    setShowForm={setShowForm}
-                  />
+                  <ProtectedRoute>
+                    <Dashboard
+                      environment={environment}
+                    />
+                  </ProtectedRoute>
                 }
               />
 
+
+              {/* ANALYTICS */}
+
               <Route
-                path="/flag/:id"
-                element={<FlagDetail />}
+                path="/analytics"
+                element={
+                  <ProtectedRoute>
+                    <Analytics
+                      environment={environment}
+                    />
+                  </ProtectedRoute>
+                }
               />
+
+
+              {/* FLAGS */}
+
+              <Route
+                path="/flags"
+                element={
+                  <ProtectedRoute>
+                    <Flags
+                      environment={environment}
+                      showForm={showForm}
+                      setShowForm={setShowForm}
+                    />
+                  </ProtectedRoute>
+                }
+              />
+
+
+              {/* FLAG DETAIL */}
+
+              <Route
+                path="/flag/:id/:environmentId"
+                element={
+                  <ProtectedRoute>
+                    <FlagDetail />
+                  </ProtectedRoute>
+                }
+              />
+
+
+              {/* ENVIRONMENTS */}
 
               <Route
                 path="/environments"
-                element={<Environments />}
+                element={
+                  <ProtectedRoute>
+                    <Environments />
+                  </ProtectedRoute>
+                }
+              />
+
+
+              {/* TEAM */}
+
+              <Route
+                path="/team"
+                element={
+                  <ProtectedRoute>
+                    <Team />
+                  </ProtectedRoute>
+                }
+              />
+
+
+              {/* AUDIT LOGS */}
+
+              <Route
+                path="/audit-logs"
+                element={
+                  <ProtectedRoute>
+                    <AuditLogs
+                      environment={environment}
+                    />
+                  </ProtectedRoute>
+                }
+              />
+
+
+              {/* SETTINGS */}
+
+              <Route
+                path="/settings"
+                element={
+                  <ProtectedRoute>
+                    <Settings />
+                  </ProtectedRoute>
+                }
               />
 
             </Routes>
@@ -73,13 +312,11 @@ function App() {
 
       </div>
 
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        theme="colored"
-      />
-    </>
+    </div>
+
   );
+
 }
+
 
 export default App;

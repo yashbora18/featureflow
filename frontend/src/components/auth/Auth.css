@@ -1,0 +1,1509 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body,
+#root{
+
+    width:100%;
+    min-height:100vh;
+
+    font-family:"Inter",sans-serif;
+
+}
+
+body{
+
+    overflow-x:hidden;
+
+}
+
+
+/* =====================================================
+   AUTH PAGE
+===================================================== */
+
+.auth-page{
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:flex-start;
+
+    padding:36px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #ede9fe,
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #ddd6fe,
+            transparent 40%
+        ),
+        #f8fafc;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.auth-container{
+
+    width:100%;
+    max-width:1550px;
+
+    min-height:92vh;
+    height:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1.1fr .9fr;
+
+    position:relative;
+
+    background:#ffffff;
+
+    border-radius:32px;
+
+    overflow:hidden;
+
+    border:1px solid #e5e7eb;
+
+    box-shadow:
+        0 35px 90px rgba(15,23,42,.12);
+
+    animation:
+        authAppear .7s ease;
+
+}
+
+
+/* =====================================================
+   LEFT PANEL
+===================================================== */
+
+.auth-left{
+
+    position:relative;
+
+    padding:45px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255,255,255,.25),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(255,255,255,.15),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #4338CA,
+            #5B5BEF,
+            #7C83FF
+        );
+
+    overflow:hidden;
+
+}
+
+
+.auth-left::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    top:-220px;
+    right:-150px;
+
+    background:
+        rgba(255,255,255,.12);
+
+    filter:blur(20px);
+
+    animation:
+        lightMove 12s infinite ease-in-out;
+
+}
+
+
+.auth-left::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    bottom:-150px;
+    left:-120px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    filter:blur(15px);
+
+    animation:
+        lightMove 15s infinite reverse ease-in-out;
+
+}
+
+
+@keyframes lightMove{
+
+    0%{
+
+        transform:translate(0,0);
+
+    }
+
+    50%{
+
+        transform:translate(-30px,40px);
+
+    }
+
+    100%{
+
+        transform:translate(0,0);
+
+    }
+
+}
+
+
+/* =====================================================
+   RIGHT PANEL
+===================================================== */
+
+.auth-right{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+    align-items:center;
+
+    padding:90px 56px 60px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(124,58,237,.12),
+            transparent 35%
+        ),
+        #f8fafc;
+
+    overflow-y:auto;
+
+    min-width:0;
+
+}
+
+
+/* =====================================================
+   LOGIN CARD
+===================================================== */
+
+.auth-card{
+
+    width:100%;
+    max-width:520px;
+
+    min-height:auto;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.98),
+            #ffffff
+        );
+
+    border-radius:32px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(124,58,237,.12);
+
+    box-shadow:
+        0 35px 90px rgba(15,23,42,.15),
+        0 0 0 1px rgba(255,255,255,.6) inset;
+
+    position:relative;
+
+    transition:.35s ease;
+
+    min-width:0;
+
+}
+
+
+.auth-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7c3aed,
+            #a855f7
+        );
+
+}
+
+
+.auth-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 45px 110px rgba(124,58,237,.18);
+
+}
+
+
+/* =====================================================
+   LOGIN / SIGNUP SLIDER
+===================================================== */
+
+.form-wrapper{
+
+    width:200%;
+
+    display:flex;
+
+    transition:
+        transform .6s ease;
+
+}
+
+
+.signup-active{
+
+    transform:
+        translateX(-50%);
+
+}
+
+
+.form-slide{
+
+    width:50%;
+
+    flex-shrink:0;
+
+    padding:34px 34px 0;
+
+    min-width:0;
+
+}
+
+
+/* =====================================================
+   AUTH FOOTER
+===================================================== */
+
+.auth-footer{
+
+    margin-top:30px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:22px;
+
+    color:#94a3b8;
+
+    font-size:.9rem;
+
+    flex-wrap:wrap;
+
+    text-align:center;
+
+}
+
+
+.auth-footer span{
+
+    cursor:pointer;
+
+    transition:.25s ease;
+
+}
+
+
+.auth-footer span:hover{
+
+    color:#7c3aed;
+
+}
+
+
+/* =====================================================
+   AUTH ANIMATION
+===================================================== */
+
+@keyframes authAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   AUTH TOP CONTROLS
+===================================================== */
+
+.auth-top-controls{
+
+    position:absolute;
+
+    top:24px;
+    right:30px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    z-index:100;
+
+}
+
+
+.auth-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+
+/* =====================================================
+   THEME BUTTON
+===================================================== */
+
+.theme-btn{
+
+    width:46px;
+    height:46px;
+
+    border-radius:50%;
+
+    border:1px solid #e2e8f0;
+
+    background:#ffffff;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    font-size:1.3rem;
+
+    cursor:pointer;
+
+    color:#1e293b;
+
+    transition:.25s ease;
+
+    flex-shrink:0;
+
+}
+
+
+.theme-btn:hover{
+
+    background:#5B5BEF;
+
+    border-color:#5B5BEF;
+
+    color:#ffffff;
+
+}
+
+
+/* =====================================================
+   LANGUAGE BUTTON
+===================================================== */
+
+.language-btn{
+
+    height:46px;
+
+    padding:0 18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:15px;
+
+    border-radius:14px;
+
+    background:#ffffff;
+
+    border:1px solid #dbeafe;
+
+    color:#334155;
+
+    font-size:.95rem;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+
+    white-space:nowrap;
+
+}
+
+
+.language-btn span{
+
+    font-size:1.2rem;
+
+    color:#64748b;
+
+}
+
+
+.language-btn:hover{
+
+    border-color:#5B5BEF;
+
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.back-btn{
+
+    height:46px;
+
+    padding:0 18px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    border-radius:14px;
+
+    background:#ffffff;
+
+    border:1px solid #e2e8f0;
+
+    color:#334155;
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+
+    white-space:nowrap;
+
+}
+
+
+.back-btn:hover{
+
+    background:#6366f1;
+
+    border-color:#6366f1;
+
+    color:#ffffff;
+
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+.auth-right::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+
+.auth-right::-webkit-scrollbar-track{
+
+    background:#f1f5f9;
+
+}
+
+
+.auth-right::-webkit-scrollbar-thumb{
+
+    background:#cbd5e1;
+
+    border-radius:10px;
+
+}
+
+
+.auth-right::-webkit-scrollbar-thumb:hover{
+
+    background:#6366f1;
+
+}
+
+
+/* =====================================================
+   PREVENT OVERFLOW
+===================================================== */
+
+.auth-page,
+.auth-container,
+.auth-right,
+.auth-card{
+
+    max-width:100%;
+
+}
+
+
+.auth-container{
+
+    overflow:hidden;
+
+}
+
+
+.form-wrapper{
+
+    max-width:none;
+
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+.auth-page.dark{
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(91,91,239,.20),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(124,58,237,.18),
+            transparent 40%
+        ),
+        #020617;
+
+}
+
+
+/* =====================================================
+   DARK MAIN CONTAINER
+===================================================== */
+
+.auth-page.dark .auth-container{
+
+    background:#0f172a;
+
+    border-color:
+        rgba(148,163,184,.15);
+
+    box-shadow:
+        0 35px 90px rgba(0,0,0,.45);
+
+}
+
+
+/* =====================================================
+   DARK RIGHT PANEL
+===================================================== */
+
+.auth-page.dark .auth-right{
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(124,58,237,.16),
+            transparent 35%
+        ),
+        #0b1120;
+
+}
+
+
+/* =====================================================
+   DARK AUTH CARD
+===================================================== */
+
+.auth-page.dark .auth-card{
+
+    background:
+        linear-gradient(
+            180deg,
+            #111827,
+            #0f172a
+        );
+
+    border-color:
+        rgba(139,92,246,.20);
+
+    color:#f8fafc;
+
+    box-shadow:
+        0 35px 90px rgba(0,0,0,.40),
+        0 0 0 1px rgba(255,255,255,.02) inset;
+
+}
+
+
+.auth-page.dark .auth-card:hover{
+
+    box-shadow:
+        0 45px 110px rgba(0,0,0,.50),
+        0 0 40px rgba(124,58,237,.10);
+
+}
+
+
+/* =====================================================
+   DARK FORM INPUTS
+===================================================== */
+
+.auth-page.dark input,
+.auth-page.dark textarea,
+.auth-page.dark select{
+
+    background:#1e293b;
+
+    color:#f8fafc;
+
+    border-color:#334155;
+
+}
+
+
+.auth-page.dark input::placeholder,
+.auth-page.dark textarea::placeholder{
+
+    color:#94a3b8;
+
+}
+
+
+.auth-page.dark input:focus,
+.auth-page.dark textarea:focus,
+.auth-page.dark select:focus{
+
+    border-color:#6366f1;
+
+    outline:none;
+
+}
+
+
+/* =====================================================
+   DARK LABELS
+===================================================== */
+
+.auth-page.dark label{
+
+    color:#e2e8f0;
+
+}
+
+
+/* =====================================================
+   DARK HEADINGS
+===================================================== */
+
+.auth-page.dark h1,
+.auth-page.dark h2,
+.auth-page.dark h3,
+.auth-page.dark h4{
+
+    color:#f8fafc;
+
+}
+
+
+/* =====================================================
+   DARK PARAGRAPHS
+===================================================== */
+
+.auth-page.dark p{
+
+    color:#94a3b8;
+
+}
+
+
+/* =====================================================
+   DARK LINKS
+===================================================== */
+
+.auth-page.dark a{
+
+    color:#a78bfa;
+
+}
+
+
+.auth-page.dark a:hover{
+
+    color:#c4b5fd;
+
+}
+
+
+/* =====================================================
+   DARK FOOTER
+===================================================== */
+
+.auth-page.dark .auth-footer{
+
+    color:#64748b;
+
+}
+
+
+.auth-page.dark .auth-footer span{
+
+    color:#94a3b8;
+
+}
+
+
+.auth-page.dark .auth-footer span:hover{
+
+    color:#a78bfa;
+
+}
+
+
+/* =====================================================
+   DARK THEME BUTTON
+===================================================== */
+
+.auth-page.dark .theme-btn{
+
+    background:#1e293b;
+
+    border-color:#334155;
+
+    color:#e2e8f0;
+
+}
+
+
+.auth-page.dark .theme-btn:hover{
+
+    background:#6366f1;
+
+    border-color:#6366f1;
+
+    color:#ffffff;
+
+}
+
+
+/* =====================================================
+   DARK LANGUAGE BUTTON
+===================================================== */
+
+.auth-page.dark .language-btn{
+
+    background:#1e293b;
+
+    border-color:#334155;
+
+    color:#e2e8f0;
+
+}
+
+
+.auth-page.dark .language-btn span{
+
+    color:#94a3b8;
+
+}
+
+
+.auth-page.dark .language-btn:hover{
+
+    border-color:#6366f1;
+
+}
+
+
+/* =====================================================
+   DARK BACK BUTTON
+===================================================== */
+
+.auth-page.dark .back-btn{
+
+    background:#1e293b;
+
+    border-color:#334155;
+
+    color:#e2e8f0;
+
+}
+
+
+.auth-page.dark .back-btn:hover{
+
+    background:#6366f1;
+
+    border-color:#6366f1;
+
+    color:#ffffff;
+
+}
+
+
+/* =====================================================
+   DARK SELECT OPTIONS
+===================================================== */
+
+.auth-page.dark select option{
+
+    background:#1e293b;
+
+    color:#f8fafc;
+
+}
+
+
+/* =====================================================
+   DARK SCROLLBAR
+===================================================== */
+
+.auth-page.dark .auth-right::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+
+.auth-page.dark .auth-right::-webkit-scrollbar-track{
+
+    background:#0b1120;
+
+}
+
+
+.auth-page.dark .auth-right::-webkit-scrollbar-thumb{
+
+    background:#334155;
+
+    border-radius:10px;
+
+}
+
+
+.auth-page.dark .auth-right::-webkit-scrollbar-thumb:hover{
+
+    background:#6366f1;
+
+}
+
+
+/* =====================================================
+   LARGE DESKTOP — 1350px
+===================================================== */
+
+@media(max-width:1350px){
+
+    .auth-container{
+
+        grid-template-columns:
+            minmax(0,1fr)
+            minmax(460px,520px);
+
+    }
+
+    .auth-right{
+
+        padding-left:40px;
+        padding-right:40px;
+
+    }
+
+}
+
+
+/* =====================================================
+   LARGE TABLET — 1150px
+===================================================== */
+
+@media(max-width:1150px){
+
+    .auth-page{
+
+        padding:24px;
+
+    }
+
+
+    .auth-container{
+
+        width:100%;
+
+        max-width:900px;
+
+        min-height:auto;
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .auth-left{
+
+        min-height:420px;
+
+        padding:36px;
+
+    }
+
+
+    .auth-right{
+
+        width:100%;
+
+        min-height:auto;
+
+        padding:50px 35px;
+
+        overflow:visible;
+
+    }
+
+
+    .auth-card{
+
+        max-width:520px;
+
+    }
+
+
+    .auth-top-controls{
+
+        top:20px;
+
+        right:24px;
+
+    }
+
+}
+
+
+/* =====================================================
+   TABLET — 900px
+===================================================== */
+
+@media(max-width:900px){
+
+    .auth-page{
+
+        padding:20px;
+
+        align-items:flex-start;
+
+    }
+
+
+    .auth-left{
+
+        display:none;
+
+    }
+
+
+    .auth-container{
+
+        width:100%;
+
+        max-width:560px;
+
+        min-height:auto;
+
+        display:block;
+
+        border-radius:28px;
+
+    }
+
+
+    .auth-right{
+
+        width:100%;
+
+        min-height:auto;
+
+        padding:30px;
+
+        overflow:visible;
+
+    }
+
+
+    .auth-card{
+
+        width:100%;
+
+        max-width:520px;
+
+        min-height:auto;
+
+        margin:0 auto;
+
+        border-radius:26px;
+
+    }
+
+
+    .form-slide{
+
+        padding:32px 28px 0;
+
+    }
+
+
+    .auth-top-controls{
+
+        position:relative;
+
+        top:auto;
+
+        right:auto;
+
+        width:100%;
+
+        display:flex;
+
+        justify-content:flex-end;
+
+        margin-bottom:18px;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE — 600px
+===================================================== */
+
+@media(max-width:600px){
+
+    .auth-page{
+
+        width:100%;
+
+        min-height:100vh;
+
+        padding:14px;
+
+        align-items:flex-start;
+
+    }
+
+
+    .auth-container{
+
+        width:100%;
+
+        max-width:100%;
+
+        border-radius:22px;
+
+    }
+
+
+    .auth-right{
+
+        padding:18px;
+
+    }
+
+
+    .auth-card{
+
+        width:100%;
+
+        min-height:auto;
+
+        border-radius:22px;
+
+    }
+
+
+    .form-wrapper{
+
+        width:200%;
+
+    }
+
+
+    .form-slide{
+
+        padding:28px 20px 0;
+
+    }
+
+
+    /* TOP CONTROLS */
+
+    .auth-top-controls{
+
+        width:100%;
+
+        justify-content:flex-end;
+
+        gap:8px;
+
+        margin-bottom:14px;
+
+    }
+
+
+    .auth-actions{
+
+        gap:8px;
+
+    }
+
+
+    .theme-btn{
+
+        width:42px;
+
+        height:42px;
+
+    }
+
+
+    .language-btn{
+
+        height:42px;
+
+        padding:0 13px;
+
+        gap:8px;
+
+        font-size:.85rem;
+
+    }
+
+
+    .language-btn span{
+
+        font-size:1rem;
+
+    }
+
+
+    .back-btn{
+
+        height:42px;
+
+        padding:0 14px;
+
+        font-size:.85rem;
+
+    }
+
+
+    /* FOOTER */
+
+    .auth-footer{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:12px 18px;
+
+        margin-top:24px;
+
+        font-size:.8rem;
+
+    }
+
+
+    /* DARK MOBILE */
+
+    .auth-page.dark .auth-card{
+
+        box-shadow:
+            0 20px 50px rgba(0,0,0,.45);
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE — 430px
+===================================================== */
+
+@media(max-width:430px){
+
+    .auth-page{
+
+        padding:10px;
+
+    }
+
+
+    .auth-container{
+
+        border-radius:18px;
+
+    }
+
+
+    .auth-right{
+
+        padding:12px;
+
+    }
+
+
+    .auth-card{
+
+        border-radius:18px;
+
+        box-shadow:
+            0 20px 50px rgba(15,23,42,.12);
+
+    }
+
+
+    .form-slide{
+
+        padding:24px 16px 0;
+
+    }
+
+
+    /* TOP CONTROLS */
+
+    .auth-top-controls{
+
+        justify-content:space-between;
+
+        gap:6px;
+
+    }
+
+
+    .auth-actions{
+
+        gap:6px;
+
+    }
+
+
+    .theme-btn{
+
+        width:40px;
+
+        height:40px;
+
+        font-size:1.1rem;
+
+    }
+
+
+    .language-btn{
+
+        height:40px;
+
+        padding:0 10px;
+
+        border-radius:12px;
+
+        font-size:.8rem;
+
+    }
+
+
+    .language-btn span{
+
+        font-size:.9rem;
+
+    }
+
+
+    .back-btn{
+
+        height:40px;
+
+        padding:0 11px;
+
+        border-radius:12px;
+
+        font-size:.8rem;
+
+    }
+
+
+    .auth-footer{
+
+        gap:10px 14px;
+
+        font-size:.75rem;
+
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE — 360px
+===================================================== */
+
+@media(max-width:360px){
+
+    .auth-page{
+
+        padding:6px;
+
+    }
+
+
+    .auth-right{
+
+        padding:8px;
+
+    }
+
+
+    .auth-container{
+
+        border-radius:15px;
+
+    }
+
+
+    .auth-card{
+
+        border-radius:15px;
+
+    }
+
+
+    .form-slide{
+
+        padding:22px 13px 0;
+
+    }
+
+
+    .auth-top-controls{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+
+    .auth-actions{
+
+        justify-content:flex-end;
+
+    }
+
+
+    .back-btn{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+}

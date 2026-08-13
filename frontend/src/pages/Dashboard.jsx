@@ -1,159 +1,355 @@
-import { useEffect, useState } from "react";
-import Sidebar from "../components/Sidebar";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
-function Dashboard() {
-  const [flags, setFlags] = useState([]);
+import DashboardHeader from "../components/dashboard/DashboardHeader";
+import StatsGrid from "../components/dashboard/StatsGrid";
+import RolloutOverview from "../components/dashboard/RolloutOverview";
+import RecentActivity from "../components/dashboard/RecentActivity";
+import SystemHealth from "../components/dashboard/SystemHealth";
+import QuickActions from "../components/dashboard/QuickActions";
+import DeploymentSafety from "../components/dashboard/DeploymentSafety";
+import FlagLifecycle from "../components/dashboard/FlagLifecycle";
+import TargetingSummary from "../components/dashboard/TargetingSummary";
+import CleanupSuggestions from "../components/CleanupSuggestions";
 
-  useEffect(() => {
-    fetch("http://127.0.0.1:8000/flags/")
-      .then((response) => response.json())
-      .then((data) => setFlags(data))
-      .catch((error) => console.error(error));
-  }, []);
+import { getDashboardData } from "../services/dashboardService";
 
-  const totalFlags = flags.length;
-  const enabledFlags = flags.filter((flag) => flag.is_enabled).length;
-  const disabledFlags = flags.filter((flag) => !flag.is_enabled).length;
+import "../components/dashboard/Dashboard.css";
 
-  const cardStyle = {
-     background: "white",
-  padding: "25px",
-  borderRadius: "18px",
-  boxShadow: "0 10px 25px rgba(0,0,0,.08)",
-  transition: "all .3s ease",
-  cursor: "pointer",
-};
 
-  return (
-    <>
-      <Sidebar />
+export default function Dashboard({ environment }) {
 
-      <div
-        style={{
-          marginLeft: "280px",
-          padding: "35px",
-          background: "#f5f7fb",
-          minHeight: "100vh",
-        }}
-      >
-        <h1
-          style={{
-            fontSize: "34px",
-            marginBottom: "8px",
-            color: "#1e293b",
-          }}
-        >
-          👋 Welcome Back
-        </h1>
+    const { t } = useTranslation();
 
-        <p
-          style={{
-            color: "#64748b",
-            marginBottom: "35px",
-          }}
-        >
-          Manage your Feature Flags from one place.
-        </p>
 
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))",
-            gap: "25px",
-          }}
-        >
-          <div style={cardStyle}>
-            <h3 style={{ color: "#64748b" }}>🚩 Total Flags</h3>
+    // =====================================================
+    // ENVIRONMENT MAPPING
+    // =====================================================
 
-            <h1
-              style={{
-                color: "#2563eb",
-                marginTop: "15px",
-              }}
-            >
-              {totalFlags}
-            </h1>
-          </div>
+    const environmentMap = {
 
-          <div style={cardStyle}>
-            <h3 style={{ color: "#64748b" }}>
-              🟢 Enabled Flags
-            </h3>
+        Development: 1,
 
-            <h1
-              style={{
-                color: "#16a34a",
-                marginTop: "15px",
-              }}
-            >
-              {enabledFlags}
-            </h1>
-          </div>
+        Staging: 2,
 
-          <div style={cardStyle}>
-            <h3 style={{ color: "#64748b" }}>
-              🔴 Disabled Flags
-            </h3>
+        Production: 3,
 
-            <h1
-              style={{
-                color: "#dc2626",
-                marginTop: "15px",
-              }}
-            >
-              {disabledFlags}
-            </h1>
-          </div>
+    };
 
-          <div style={cardStyle}>
-            <h3 style={{ color: "#64748b" }}>
-              🌍 Environments
-            </h3>
 
-            <h1
-              style={{
-                color: "#7c3aed",
-                marginTop: "15px",
-              }}
-            >
-              4
-            </h1>
-          </div>
+    const environmentId =
+        environmentMap[environment] || 1;
+
+
+
+    // =====================================================
+    // STATE
+    // =====================================================
+
+    const [dashboard, setDashboard] =
+        useState(null);
+
+
+    const [loading, setLoading] =
+        useState(true);
+
+
+    const [error, setError] =
+        useState("");
+
+
+
+    // =====================================================
+    // LOAD DASHBOARD DATA
+    // =====================================================
+
+    useEffect(() => {
+
+
+        async function loadDashboard() {
+
+
+            try {
+
+
+                setLoading(true);
+
+                setError("");
+
+
+                console.log(
+                    "Loading Dashboard for:",
+                    environment
+                );
+
+
+                console.log(
+                    "Environment ID:",
+                    environmentId
+                );
+
+
+
+                const data =
+                    await getDashboardData(
+                        environmentId
+                    );
+
+
+
+                console.log(
+                    "Dashboard Data:",
+                    data
+                );
+
+
+
+                setDashboard(data);
+
+
+            }
+
+
+            catch (error) {
+
+
+                console.error(
+                    "Dashboard Error:",
+                    error
+                );
+
+
+                setError(
+                    t(
+                        "dashboard.error",
+                        {
+                            defaultValue:
+                                "Unable to load dashboard data."
+                        }
+                    )
+                );
+
+
+                setDashboard(null);
+
+
+            }
+
+
+            finally {
+
+
+                setLoading(false);
+
+
+            }
+
+
+        }
+
+
+
+        loadDashboard();
+
+
+    }, [
+        environment,
+        environmentId,
+        t
+    ]);
+
+
+
+    // =====================================================
+    // LOADING
+    // =====================================================
+
+    if (loading) {
+
+
+        return (
+
+            <div className="dashboard-page">
+
+                <h2>
+
+                    {
+                        t(
+                            "dashboard.loading",
+                            {
+                                defaultValue:
+                                    "Loading Dashboard..."
+                            }
+                        )
+                    }
+
+                </h2>
+
+            </div>
+
+        );
+
+    }
+
+
+
+    // =====================================================
+    // ERROR
+    // =====================================================
+
+    if (error) {
+
+
+        return (
+
+            <div className="dashboard-page">
+
+                <h2>
+
+                    {
+                        t(
+                            "dashboard.errorTitle",
+                            {
+                                defaultValue:
+                                    "Dashboard Error"
+                            }
+                        )
+                    }
+
+                </h2>
+
+
+                <p>
+
+                    {error}
+
+                </p>
+
+            </div>
+
+        );
+
+    }
+
+
+
+    // =====================================================
+    // DASHBOARD
+    // =====================================================
+
+    return (
+
+        <div className="dashboard-page">
+
+
+            {/* =========================
+                HEADER
+            ========================= */}
+
+            <DashboardHeader />
+
+
+
+            {/* =========================
+                STATS
+            ========================= */}
+
+            <StatsGrid
+
+                dashboard={dashboard}
+
+            />
+
+
+
+            {/* =========================
+                PLATFORM INTELLIGENCE
+            ========================= */}
+
+            <div className="intelligence-grid">
+
+
+                <DeploymentSafety
+
+                    dashboard={dashboard}
+
+                />
+
+
+                <SystemHealth
+
+                    dashboard={dashboard}
+
+                />
+
+
+                <FlagLifecycle
+
+                    dashboard={dashboard}
+
+                />
+
+
+                <TargetingSummary
+
+                    dashboard={dashboard}
+
+                />
+
+
+            </div>
+
+
+
+            {/* =========================
+                ROLLOUT OVERVIEW
+            ========================= */}
+
+            <div className="dashboard-section">
+
+                <RolloutOverview
+
+                    dashboard={dashboard}
+
+                />
+
+            </div>
+
+
+
+            {/* =========================
+                RECENT ACTIVITY
+            ========================= */}
+
+            <div className="dashboard-section">
+
+                <RecentActivity
+
+                    dashboard={dashboard}
+
+                />
+
+            </div>
+
+
+
+            {/* =========================
+                QUICK ACTIONS
+            ========================= */}
+
+            <QuickActions />
+
+
+
+            {/* =========================
+                CLEANUP SUGGESTIONS
+            ========================= */}
+
+            <CleanupSuggestions />
+
+
         </div>
 
-        <div
-          style={{
-            marginTop: "35px",
-            background: "white",
-            borderRadius: "18px",
-            padding: "30px",
-            boxShadow: "0 10px 25px rgba(0,0,0,.08)",
-          }}
-        >
-          <h2
-            style={{
-              marginBottom: "15px",
-              color: "#1e293b",
-            }}
-          >
-            📈 Project Overview
-          </h2>
+    );
 
-          <p
-            style={{
-              color: "#64748b",
-              lineHeight: "30px",
-            }}
-          >
-            This dashboard helps teams manage Feature Flags,
-            monitor enabled and disabled features, evaluate
-            environments, and prepare for future targeting
-            rules in Milestone 2.
-          </p>
-        </div>
-      </div>
-    </>
-  );
 }
-
-export default Dashboard;

@@ -1,8 +1,13 @@
+import { useTranslation } from "react-i18next";
+
 function AuditLog() {
+  const { t } = useTranslation();
+
   return (
     <div>
-      <h1>Audit Log Page</h1>
-      <p>Welcome to the Audit Log page.</p>
+      <h1>{t("auditLog.title")}</h1>
+
+      <p>{t("auditLog.description")}</p>
     </div>
   );
 }

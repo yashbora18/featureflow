@@ -1,34 +1,97 @@
-#root {
-  width: 100%;
-  min-height: 100vh;
-}
-
-.app{
-    display:flex;
-    min-height:100vh;
-    background:#f8fafc;
-}
+/* =====================================================
+   MAIN APPLICATION LAYOUT FIX
+===================================================== */
 
 .main-layout{
 
-    margin-left:250px;
+display:flex;
 
-    width:calc(100% - 250px);
+min-height:100vh;
+
+}
+
+
+.content-area{
+
+    margin-left:290px;
+
+    width:calc(100% - 290px);
 
     min-height:100vh;
 
     display:flex;
 
     flex-direction:column;
+
 }
+
+
+/* =====================================================
+   PAGE CONTENT
+===================================================== */
+
 
 .page-content{
 
-    padding:100px 30px 30px;
+    width:100%;
+
+    padding:120px 32px 32px;
+
+    min-height:100vh;
+
+    background:var(--background);
+
+    overflow-x:hidden;
+
+}
+
+
+
+
+
+/* =====================================================
+   FIX DASHBOARD WIDTH
+===================================================== */
+
+
+.dashboard-page{
 
     width:100%;
 
-    flex:1;
+    max-width:1600px;
 
-    overflow-x:hidden;
+    margin:0 auto;
+
+}
+
+
+
+
+
+/* =====================================================
+   MOBILE LAYOUT
+===================================================== */
+
+
+@media(max-width:768px){
+
+
+.main-layout{
+
+    margin-left:0;
+
+    width:100%;
+
+}
+
+
+
+.page-content{
+
+    padding:100px 16px 24px;
+
+}
+
+
+
 }

@@ -9,19 +9,35 @@ import {
   FaFlask,
   FaRocket,
   FaEdit,
+  FaCheckCircle,
+  FaTimesCircle,
+  FaServer,
 } from "react-icons/fa";
+
+
 import "./Environments.css";
+import { useTranslation } from "react-i18next";
+import PageHeader from "../components/common/PageHeader";
+import {
+  FiGlobe,
+  FiPlus,
+  FiSearch, 
+  FiFilter,
+  FiRefreshCw,
+} from "react-icons/fi";
+
 
 function Environments() {
+  const { t } = useTranslation();
   /* ==========================
           STATE
   ========================== */
 
   const [showOverrideModal, setShowOverrideModal] = useState(false);
 
-const [selectedOverride, setSelectedOverride] = useState(null);
+  const [selectedOverride, setSelectedOverride] = useState(null);
 
-const [overrideValue, setOverrideValue] = useState("false");
+  const [overrideValue, setOverrideValue] = useState("false");
 
   const [environments, setEnvironments] = useState([]);
   const [flags, setFlags] = useState([]);
@@ -31,6 +47,8 @@ const [overrideValue, setOverrideValue] = useState("false");
   const [filterType, setFilterType] = useState("all");
 
   const [overrides, setOverrides] = useState([]);
+
+  const [isRefreshing, setIsRefreshing] = useState(false);
 
   /* ==========================
           CREATE
@@ -86,6 +104,11 @@ const [editedDescription, setEditedDescription] = useState("");
   const totalWithoutOverrides =
     totalEnvironments - totalOverrides;
 
+    const activeEnvironments =
+    environments.filter(
+      (env)=> env.name !== "Testing"
+    ).length;
+
   /* ==========================
           FILTERED ENVIRONMENTS
   ========================== */
@@ -120,14 +143,14 @@ const [editedDescription, setEditedDescription] = useState("");
   ========================== */
 
   useEffect(() => {
-    const fetchData = async () => {
-      await loadEnvironments();
-      await loadFlags();
-      await loadOverrides();
-    };
+  const fetchData = async () => {
+    await loadEnvironments();
+    await loadFlags();
+    await loadOverrides();
+  };
 
-    fetchData();
-  }, []);
+  fetchData();
+}, [t]);
 
   /* ==========================
           LOAD ENVIRONMENTS
@@ -151,7 +174,7 @@ const [editedDescription, setEditedDescription] = useState("");
         error
       );
 
-      toast.error("Unable to load environments.");
+      toast.error(t("environment.messages.loadFailed"));
     }
   };
 
@@ -178,7 +201,7 @@ const [editedDescription, setEditedDescription] = useState("");
 
       console.error(error);
 
-      toast.error("Unable to load flags.");
+      toast.error(t("environment.messages.flagsLoadFailed"));
     }
   };
 
@@ -201,9 +224,41 @@ const [editedDescription, setEditedDescription] = useState("");
 
       console.error(error);
 
-      toast.error("Unable to load overrides.");
+      toast.error(t("environment.messages.overridesLoadFailed"));
     }
   };
+
+  const refreshEnvironmentData = async () => {
+
+  try {
+
+    setIsRefreshing(true);
+
+
+    await Promise.all([
+      loadEnvironments(),
+      loadFlags(),
+      loadOverrides()
+    ]);
+
+
+    toast.success("Environment data refreshed successfully");
+
+
+  } catch(error){
+
+    console.error(error);
+
+    toast.error("Failed to refresh data");
+
+
+  } finally {
+
+    setIsRefreshing(false);
+
+  }
+
+};
   /* ==========================
         CREATE ENVIRONMENT
 ========================== */
@@ -211,7 +266,7 @@ const [editedDescription, setEditedDescription] = useState("");
 const createEnvironment = async () => {
 
   if (!newEnvironment.name.trim()) {
-    toast.warning("Environment name is required.");
+    toast.warning(t("environment.messages.nameRequired"));
     return;
   }
 
@@ -234,7 +289,7 @@ const createEnvironment = async () => {
       throw new Error("Failed to create environment");
     }
 
-    toast.success("Environment created successfully!");
+    toast.success(t("environment.messages.created"));
 
     setShowCreateModal(false);
 
@@ -249,7 +304,7 @@ const createEnvironment = async () => {
 
     console.error(error);
 
-    toast.error("Unable to create environment.");
+    toast.error(t("environment.messages.createFailed"));
 
   } finally {
 
@@ -266,7 +321,7 @@ const createEnvironment = async () => {
 const updateEnvironment = async () => {
 
   if (!editedName.trim()) {
-    toast.warning("Environment name cannot be empty.");
+    toast.warning(t("environment.messages.nameEmpty"));
     return;
   }
 
@@ -294,7 +349,7 @@ const updateEnvironment = async () => {
 
     await loadEnvironments();
 
-    toast.success("Environment updated successfully!");
+    toast.success(t("environment.messages.updated"));
 
     setEditingEnvironment(null);
     setEditedName("");
@@ -303,7 +358,7 @@ const updateEnvironment = async () => {
 
     console.error(error);
 
-    toast.error("Unable to update environment.");
+    toast.error(t("environment.messages.updateFailed"));
 
   } finally {
 
@@ -337,7 +392,7 @@ const deleteEnvironment = async () => {
     await loadEnvironments();
     await loadOverrides();
 
-    toast.success("Environment deleted successfully!");
+    toast.success(t("environment.messages.deleted"));
 
     setShowDeleteModal(false);
     setEnvironmentToDelete(null);
@@ -346,7 +401,7 @@ const deleteEnvironment = async () => {
 
     console.error(error);
 
-    toast.error("Unable to delete environment.");
+    toast.error(t("environment.messages.deleteFailed"));
 
   } finally {
 
@@ -417,10 +472,10 @@ const saveOverride = async () => {
     }
 
     toast.success(
-      isUpdate
-        ? "Override updated successfully!"
-        : "Override created successfully!"
-    );
+  isUpdate
+    ? t("environment.messages.overrideUpdated")
+    : t("environment.messages.overrideCreated")
+);
 
     setShowOverrideModal(false);
 
@@ -428,7 +483,7 @@ const saveOverride = async () => {
 
   } catch (error) {
     console.error(error);
-    toast.error(error.message);
+    toast.error(t("environment.messages.overrideFailed"));
   }
 };
 
@@ -436,128 +491,232 @@ return (
 
 <div className="environment-page">
 
-  {/* ===========================
-          PAGE HEADER
-  =========================== */}
+  <PageHeader
 
-  <div className="page-header">
+icon={<FiGlobe />}
 
-    <h1>Environment Management</h1>
+title={t("environment.pageTitle")}
 
-    <p>
-      Manage all environments used in your Feature Flag System.
-    </p>
+description={t("environment.pageDescription")}
 
-  </div>
+action={
+<>
+<button
+className="primary-btn"
+onClick={() => setShowCreateModal(true)}
+>
+
+<FiPlus />
+
+{t("environment.createEnvironment")}
+
+</button>
+
+
+<button
+className="primary-btn"
+onClick={refreshEnvironmentData}
+disabled={isRefreshing}
+>
+
+<FiRefreshCw
+className={isRefreshing ? "rotate-icon" : ""}
+/>
+
+{
+isRefreshing
+? "Refreshing..."
+: "Refresh"
+}
+
+</button>
+
+</>
+}
+
+/>
 
   {/* ===========================
           DASHBOARD STATISTICS
-  =========================== */}
+=========================== */}
 
-  <div className="stats-grid">
+<div className="stats-grid">
 
-    {/* Total Environments */}
 
-    <div className="stat-card">
+{/* TOTAL ENVIRONMENTS */}
 
-      <div className="stat-icon">
-        <FaGlobe />
-      </div>
+<div className="stat-card">
 
-      <h2>{totalEnvironments}</h2>
+  <div className="stat-icon">
+    <FaGlobe />
+  </div>
 
-      <p>Total Environments</p>
 
-      <span className="stat-description">
+  <div className="stat-content">
 
-        {environments
-          .filter((env) => env.name !== "Testing")
-          .map((env) => env.name)
-          .join(" • ")}
-
-      </span>
-
+    <div className="stat-value">
+      {totalEnvironments}
     </div>
 
-    {/* Overrides */}
 
-    <div className="stat-card">
-
-      <div className="stat-icon">
-        <FaCog />
-      </div>
-
-      <h2>{totalOverrides}</h2>
-
-      <p>Environment Overrides</p>
-
-      <span className="stat-description">
-        Custom override values configured
-      </span>
-
+    <div className="stat-title">
+      {t("environment.totalEnvironments")}
     </div>
 
-    {/* No Overrides */}
 
-    <div className="stat-card">
+    <div className="stat-description">
 
-      <div className="stat-icon">
-        <FaInbox />
-      </div>
-
-      <h2>{totalWithoutOverrides}</h2>
-
-      <p>No Overrides</p>
-
-      <span className="stat-description">
-        Using feature flag default values
-      </span>
+      {environments
+        .filter((env)=>env.name !== "Testing")
+        .map((env)=>
+          env.name === "Development"
+          ? t("environment.development")
+          : env.name === "Staging"
+          ? t("environment.staging")
+          : env.name === "Production"
+          ? t("environment.production")
+          : env.name
+        )
+        .join(" • ")}
 
     </div>
 
   </div>
 
-  {/* ===========================
-          SEARCH & FILTER
-  =========================== */}
+</div>
+
+
+
+
+{/* ACTIVE ENVIRONMENTS */}
+
+<div className="stat-card">
+
+  <div className="stat-icon">
+    <FaServer />
+  </div>
+
+
+  <div className="stat-content">
+
+    <div className="stat-value">
+      {activeEnvironments}
+    </div>
+
+
+   <div className="stat-title">
+  {t("environment.activeEnvironments")}
+</div>
+
+<div className="stat-description">
+  {t("environment.allEnvironmentsAvailable")}
+</div>
+
+  </div>
+
+</div>
+
+
+
+
+{/* ENVIRONMENT OVERRIDES */}
+
+<div className="stat-card">
+
+  <div className="stat-icon">
+    <FaCog />
+  </div>
+
+
+  <div className="stat-content">
+
+    <div className="stat-value">
+      {totalOverrides}
+    </div>
+
+
+    <div className="stat-title">
+      {t("environment.environmentOverride")}
+    </div>
+
+
+    <div className="stat-description">
+      {t("environment.customOverridesConfigured")}
+    </div>
+
+  </div>
+
+</div>
+
+
+
+
+{/* DEFAULT CONFIGURATIONS */}
+
+<div className="stat-card">
+
+  <div className="stat-icon">
+    <FaInbox />
+  </div>
+
+
+  <div className="stat-content">
+
+    <div className="stat-value">
+      {totalWithoutOverrides}
+    </div>
+
+
+    <div className="stat-title">
+  {t("environment.defaultConfigurations")}
+</div>
+
+<div className="stat-description">
+  {t("environment.usingDefaultValues")}
+</div>
+
+  </div>
+
+</div>
+
+
+</div>
 
   <div className="toolbar">
 
+  <div className="toolbar-left">
+
     <div className="search-box">
+
+      <FiSearch className="search-icon" />
 
       <input
         type="text"
-        placeholder="🔍 Search Environment..."
+        placeholder={t("environment.searchPlaceholder")}
         value={searchTerm}
-        onChange={(e) =>
-          setSearchTerm(e.target.value)
-        }
+        onChange={(e) => setSearchTerm(e.target.value)}
       />
-
 
     </div>
 
     <div className="filter-box">
 
-      <label>Filter</label>
+      <FiFilter className="filter-icon" />
 
       <select
         value={filterType}
-        onChange={(e) =>
-          setFilterType(e.target.value)
-        }
+        onChange={(e) => setFilterType(e.target.value)}
       >
-
         <option value="all">
-          All
+          {t("environment.all")}
         </option>
 
         <option value="override">
-          Only Overrides
+          {t("environment.onlyOverrides")}
         </option>
 
         <option value="no-override">
-          No Overrides
+          {t("environment.noOverrideFilter")}
         </option>
 
       </select>
@@ -565,6 +724,8 @@ return (
     </div>
 
   </div>
+
+</div>
 
   {/* ===========================
           FEATURE FLAG SELECTOR
@@ -580,15 +741,16 @@ return (
 
       <div className="flag-content">
 
-        <h3>Feature Flag</h3>
+       <h3>{t("environment.featureFlag")}</h3>
+        
 
-        <p>
-          Manage environment overrides for the selected feature.
-        </p>
+        <p>{t("environment.featureFlagDescription")}</p>
 
         <span className="environment-count">
 
-          Showing <strong>{filteredEnvironments.length}</strong> environments
+          {t("environment.showing")}{" "}
+<strong>{filteredEnvironments.length}</strong>{" "}
+{t("environment.environments")}
 
         </span>
 
@@ -598,7 +760,7 @@ return (
 
     <div className="flag-dropdown">
 
-      <label>Select Feature</label>
+      <label>{t("environment.selectFeature")}</label>
 
       <select
         value={selectedFlag ?? ""}
@@ -634,21 +796,28 @@ return (
 
     <div>
 
-      <h3>Environment List</h3>
+      <div className="table-title">
+
+    <div className="table-title-icon">
+        <FiGlobe />
+    </div>
+
+    <h3>
+        {t("environment.environmentList")}
+    </h3>
+
+</div>
 
       <p>
-        Showing <strong>{filteredEnvironments.length}</strong> of{" "}
-        <strong>{totalEnvironments}</strong> environments
-      </p>
+  {t("environment.showing")}{" "}
+  <strong>{filteredEnvironments.length}</strong>{" "}
+  {t("environment.environments")} /{" "}
+  <strong>{totalEnvironments}</strong>
+</p>
 
     </div>
 
-    <button
-      className="add-environment-btn"
-      onClick={() => setShowCreateModal(true)}
-    >
-      + Add Environment
-    </button>
+    
 
   </div>
 
@@ -658,11 +827,11 @@ return (
 
       <tr>
 
-        <th>ID</th>
-        <th>Environment</th>
-        <th>Description</th>
-        <th>Status</th>
-        <th>Action</th>
+        <th>{t("environment.table.id")}</th>
+<th>{t("environment.table.environment")}</th>
+<th>{t("environment.table.description")}</th>
+<th>{t("environment.table.status")}</th>
+<th>{t("environment.table.action")}</th>
 
       </tr>
 
@@ -692,7 +861,15 @@ return (
 
                 </span>
 
-                {env.name}
+                {
+  env.name === "Development"
+    ? t("environment.development")
+    : env.name === "Staging"
+    ? t("environment.staging")
+    : env.name === "Production"
+    ? t("environment.production")
+    : env.name
+}
 
               </div>
 
@@ -703,8 +880,9 @@ return (
             <td>
 
               <span className="status-enabled">
-                Active
-              </span>
+  <FaCheckCircle />
+  {t("environment.active")}
+</span>
 
             </td>
 
@@ -720,7 +898,7 @@ setEditedName(env.name);
 setEditedDescription(env.description || "");
                   }}
                 >
-                  Edit
+                  {t("common.edit")}
                 </button>
 
                 <button
@@ -730,7 +908,7 @@ setEditedDescription(env.description || "");
                     setShowDeleteModal(true);
                   }}
                 >
-                  Delete
+                  {t("common.delete")}
                 </button>
 
               </div>
@@ -746,8 +924,8 @@ setEditedDescription(env.description || "");
         <tr>
 
           <td colSpan="5">
-            No environments found.
-          </td>
+  {t("environment.emptyTable")}
+</td>
 
         </tr>
 
@@ -784,11 +962,11 @@ setEditedDescription(env.description || "");
     onClick={(e) => e.stopPropagation()}
   >
 
-    <h2>Create Environment</h2>
+    <h2>{t("environment.createEnvironment")}</h2>
 
     <input
       type="text"
-      placeholder="Environment Name"
+      placeholder={t("environment.environmentName")}
       value={newEnvironment.name}
       onChange={(e) =>
         setNewEnvironment({
@@ -799,17 +977,17 @@ setEditedDescription(env.description || "");
     />
 
     <textarea
-      placeholder="Environment Description"
-      rows="4"
-      value={newEnvironment.description}
-      onChange={(e) =>
-        setNewEnvironment({
-          ...newEnvironment,
-          description: e.target.value,
-        })
-      }
-      style={{ marginTop: "15px" }}
-    />
+  placeholder={t("environment.environmentDescription")}
+  rows="4"
+  value={newEnvironment.description}
+  onChange={(e) =>
+    setNewEnvironment({
+      ...newEnvironment,
+      description: e.target.value,
+    })
+  }
+  style={{ marginTop: "15px" }}
+></textarea>
 
     <div className="modal-actions">
 
@@ -826,7 +1004,7 @@ setEditedDescription(env.description || "");
 
         }}
       >
-        Cancel
+        {t("common.cancel")}
       </button>
 
       <button
@@ -834,7 +1012,9 @@ setEditedDescription(env.description || "");
         onClick={createEnvironment}
         disabled={isCreating}
       >
-        {isCreating ? "Creating..." : "Create"}
+        {isCreating
+  ? t("environment.creating")
+  : t("environment.create")}
       </button>
 
     </div>
@@ -855,12 +1035,19 @@ setEditedDescription(env.description || "");
 
     <div>
 
-      <h3>Flag Overrides by Environment</h3>
+      <div className="table-title">
 
-      <p>
-        Configure override values for the selected feature flag
-        in each environment.
-      </p>
+    <div className="table-title-icon">
+        <FiRefreshCw />
+    </div>
+
+    <h3>
+        {t("environment.overrideTitle")}
+    </h3>
+
+</div>
+
+      <p>{t("environment.overrideDescription")}</p>
 
     </div>
 
@@ -872,11 +1059,11 @@ setEditedDescription(env.description || "");
 
       <tr>
 
-        <th>Environment</th>
-        <th>Override Value</th>
-        <th>Status</th>
-        <th>Last Updated</th>
-        <th>Action</th>
+        <th>{t("environment.table.environment")}</th>
+<th>{t("environment.overrideValue")}</th>
+<th>{t("environment.table.status")}</th>
+<th>{t("environment.lastUpdated")}</th>
+<th>{t("environment.table.action")}</th>
 
       </tr>
 
@@ -906,7 +1093,15 @@ setEditedDescription(env.description || "");
 
                   </span>
 
-                  {env.name}
+                  {
+  env.name === "Development"
+    ? t("environment.development")
+    : env.name === "Staging"
+    ? t("environment.staging")
+    : env.name === "Production"
+    ? t("environment.production")
+    : env.name
+}
 
                 </div>
 
@@ -933,14 +1128,16 @@ setEditedDescription(env.description || "");
                 {override ? (
 
                   <span className="status-enabled">
-                    Overridden
-                  </span>
+  <FaCheckCircle />
+  {t("environment.overridden")}
+</span>
 
                 ) : (
 
                   <span className="status-disabled">
-                    Default
-                  </span>
+  <FaTimesCircle />
+  {t("environment.default")}
+</span>
 
                 )}
 
@@ -969,8 +1166,8 @@ setEditedDescription(env.description || "");
   setShowOverrideModal(true);
 }}
                 >
-                  <FaEdit size={16} />
-<span>Edit</span>
+                  
+<span>{t("common.edit")}</span>
                 </button>
 
               </td>
@@ -986,7 +1183,7 @@ setEditedDescription(env.description || "");
         <tr>
 
           <td colSpan="5">
-            No override records available.
+            {t("environment.emptyOverrides")}
           </td>
 
         </tr>
@@ -1003,13 +1200,9 @@ setEditedDescription(env.description || "");
   </div>
 
   <div className="override-info-content">
-    <strong>Environment Overrides</strong>
+    <strong>{t("environment.overrideInfoTitle")}</strong>
 
-    <p>
-      Override values apply only to the selected environment.
-      If no override is configured, the feature flag will use its
-      default value during evaluation.
-    </p>
+    <p>{t("environment.overrideInfoDescription")}</p>
   </div>
 </div>
 
@@ -1036,7 +1229,7 @@ setEditedDescription(env.description || "");
     onClick={(e) => e.stopPropagation()}
   >
 
-    <h2>Edit Environment</h2>
+    <h2>{t("environment.editEnvironment")}</h2>
 
     <input
       type="text"
@@ -1048,11 +1241,11 @@ setEditedDescription(env.description || "");
 
     <textarea
   rows="4"
-  placeholder="Environment Description"
+  placeholder={t("environment.environmentDescription")}
   value={editedDescription}
   onChange={(e) => setEditedDescription(e.target.value)}
   style={{ marginTop: "15px" }}
-/>
+></textarea>
 
     <div className="modal-actions">
 
@@ -1065,7 +1258,7 @@ setEditedDescription(env.description || "");
 
         }}
       >
-        Cancel
+        {t("common.cancel")}
       </button>
 
       <button
@@ -1073,7 +1266,9 @@ setEditedDescription(env.description || "");
         onClick={updateEnvironment}
         disabled={isSaving}
       >
-        {isSaving ? "Saving..." : "Save"}
+        {isSaving
+  ? t("environment.saving")
+  : t("common.save")}
       </button>
 
     </div>
@@ -1105,22 +1300,27 @@ setEditedDescription(env.description || "");
     onClick={(e) => e.stopPropagation()}
   >
 
-    <h2>Delete Environment</h2>
+    <h2>{t("environment.deleteTitle")}</h2>
 
     <p className="delete-message">
 
-      Are you sure you want to delete
+      {t("environment.deleteConfirm")}
 
       <strong>
-        {" "}
-        {environmentToDelete?.name}
-      </strong>
+  {environmentToDelete?.name === "Development"
+    ? t("environment.development")
+    : environmentToDelete?.name === "Staging"
+    ? t("environment.staging")
+    : environmentToDelete?.name === "Production"
+    ? t("environment.production")
+    : environmentToDelete?.name}
+</strong>
       ?
 
     </p>
 
     <p className="delete-warning">
-      This action cannot be undone.
+      {t("environment.deleteWarning")}
     </p>
 
     <div className="modal-actions">
@@ -1134,7 +1334,7 @@ setEditedDescription(env.description || "");
 
         }}
       >
-        Cancel
+        {t("common.cancel")}
       </button>
 
       <button
@@ -1142,7 +1342,9 @@ setEditedDescription(env.description || "");
         onClick={deleteEnvironment}
         disabled={isDeleting}
       >
-        {isDeleting ? "Deleting..." : "Delete"}
+        {isDeleting
+  ? t("environment.deleting")
+  : t("common.delete")}
       </button>
 
     </div>
@@ -1157,17 +1359,17 @@ setEditedDescription(env.description || "");
   <div className="custom-modal-overlay">
     <div className="custom-modal">
 
-      <h2>Edit Override</h2>
+      <h2>{t("environment.editOverride")}</h2>
 
       <div className="form-group">
-        <label>Override Value</label>
+        <label>{t("environment.overrideValue")}</label>
 
         <select
           value={overrideValue}
           onChange={(e) => setOverrideValue(e.target.value)}
         >
-          <option value="true">Enabled (True)</option>
-          <option value="false">Disabled (False)</option>
+          <option value="true">{t("environment.enabledTrue")}</option>
+          <option value="false">{t("environment.disabledFalse")}</option>
         </select>
       </div>
 
@@ -1177,20 +1379,22 @@ setEditedDescription(env.description || "");
           className="secondary-button"
           onClick={() => setShowOverrideModal(false)}
         >
-          Cancel
+          {t("common.cancel")}
         </button>
 
         <button
           className="primary-button"
           onClick={saveOverride}
         >
-          Save
-        </button>
+          {t("common.save")}
+              </button>
 
       </div>
 
     </div>
+
   </div>
+
 )}
 
 </div>
@@ -1198,5 +1402,6 @@ setEditedDescription(env.description || "");
 );
 
 }
+
 
 export default Environments;

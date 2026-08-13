@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function CreateFlagForm({ onFlagCreated }) {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     flag_key: "",
     name: "",
@@ -33,7 +36,7 @@ function CreateFlagForm({ onFlagCreated }) {
       const data = await response.json();
 
       if (response.ok) {
-        alert("✅ Feature Flag Created Successfully");
+        alert(t("createFlag.success"));
 
         if (onFlagCreated) onFlagCreated();
 
@@ -50,7 +53,7 @@ function CreateFlagForm({ onFlagCreated }) {
         alert(data.detail);
       }
     } catch (err) {
-      alert("Backend Connection Failed");
+      alert(t("createFlag.connectionError"));
     }
   };
 
@@ -72,7 +75,7 @@ function CreateFlagForm({ onFlagCreated }) {
           color: "#1e293b",
         }}
       >
-        🚀 Create Feature Flag
+        🚀 {t("createFlag.title")}
       </h2>
 
       <div
@@ -83,7 +86,9 @@ function CreateFlagForm({ onFlagCreated }) {
         }}
       >
         <div>
-          <label style={{ fontWeight: "600" }}>Flag Key</label>
+          <label style={{ fontWeight: "600" }}>
+            {t("createFlag.flagKey")}
+          </label>
 
           <input
             style={inputStyle}
@@ -95,31 +100,37 @@ function CreateFlagForm({ onFlagCreated }) {
         </div>
 
         <div>
-          <label style={{ fontWeight: "600" }}>Flag Name</label>
+          <label style={{ fontWeight: "600" }}>
+            {t("createFlag.flagName")}
+          </label>
 
           <input
             style={inputStyle}
             name="name"
             value={formData.name}
             onChange={handleChange}
-            placeholder="Login Version 3"
+            placeholder={t("createFlag.flagNamePlaceholder")}
           />
         </div>
 
         <div>
-          <label style={{ fontWeight: "600" }}>Owner Team</label>
+          <label style={{ fontWeight: "600" }}>
+            {t("createFlag.ownerTeam")}
+          </label>
 
           <input
             style={inputStyle}
             name="owner_team"
             value={formData.owner_team}
             onChange={handleChange}
-            placeholder="Frontend Team"
+            placeholder={t("createFlag.ownerPlaceholder")}
           />
         </div>
 
         <div>
-          <label style={{ fontWeight: "600" }}>Default Value</label>
+          <label style={{ fontWeight: "600" }}>
+            {t("createFlag.defaultValue")}
+          </label>
 
           <select
             name="default_value"
@@ -127,8 +138,13 @@ function CreateFlagForm({ onFlagCreated }) {
             onChange={handleChange}
             style={inputStyle}
           >
-            <option value="false">False</option>
-            <option value="true">True</option>
+            <option value="false">
+              {t("common.false")}
+            </option>
+
+            <option value="true">
+              {t("common.true")}
+            </option>
           </select>
         </div>
       </div>
@@ -138,14 +154,16 @@ function CreateFlagForm({ onFlagCreated }) {
           marginTop: "20px",
         }}
       >
-        <label style={{ fontWeight: "600" }}>Description</label>
+        <label style={{ fontWeight: "600" }}>
+          {t("createFlag.description")}
+        </label>
 
         <textarea
           name="description"
           value={formData.description}
           onChange={handleChange}
           rows={4}
-          placeholder="Describe your feature..."
+          placeholder={t("createFlag.descriptionPlaceholder")}
           style={{
             ...inputStyle,
             resize: "none",
@@ -176,7 +194,7 @@ function CreateFlagForm({ onFlagCreated }) {
             onChange={handleChange}
           />
 
-          Enable Feature
+          {t("createFlag.enableFeature")}
         </label>
 
         <button
@@ -194,7 +212,7 @@ function CreateFlagForm({ onFlagCreated }) {
             boxShadow: "0 10px 20px rgba(37,99,235,.25)",
           }}
         >
-          + Create Flag
+          + {t("createFlag.createButton")}
         </button>
       </div>
     </div>

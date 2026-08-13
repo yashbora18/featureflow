@@ -161,7 +161,7 @@ export default function FlagDetailsPage() {
           }
         />
         <DetailRow
-          label="Environment"
+          label={t("environment.environment")}
           value={
             <Badge
               variant="outline"

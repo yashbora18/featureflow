@@ -1,0 +1,616 @@
+/* =====================================================
+   SKELETON WRAPPER
+===================================================== */
+
+.skeleton-wrapper{
+
+    width:100%;
+
+    min-width:0;
+
+}
+
+
+/* =====================================================
+   BASE SKELETON
+===================================================== */
+
+.skeleton{
+
+    background:
+        linear-gradient(
+            90deg,
+            #e2e8f0 25%,
+            #f8fafc 50%,
+            #e2e8f0 75%
+        );
+
+    background-size:200% 100%;
+
+    border-radius:12px;
+
+    animation:
+        skeletonLoading 1.5s ease-in-out infinite;
+
+}
+
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+@keyframes skeletonLoading{
+
+    0%{
+
+        background-position:200% 0;
+
+    }
+
+    100%{
+
+        background-position:-200% 0;
+
+    }
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.skeleton-header{
+
+    width:100%;
+
+    min-width:0;
+
+    margin-bottom:25px;
+
+}
+
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.skeleton-title{
+
+    width:280px;
+
+    max-width:80%;
+
+    height:32px;
+
+    margin-bottom:12px;
+
+}
+
+
+/* =====================================================
+   SUBTITLE
+===================================================== */
+
+.skeleton-subtitle{
+
+    width:420px;
+
+    max-width:95%;
+
+    height:18px;
+
+}
+
+
+/* =====================================================
+   SKELETON GRID
+===================================================== */
+
+.skeleton-grid{
+
+    width:100%;
+
+    min-width:0;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:24px;
+
+    margin-bottom:30px;
+
+}
+
+
+/* =====================================================
+   SKELETON CARD
+===================================================== */
+
+.skeleton-card{
+
+    width:100%;
+
+    min-width:0;
+
+    height:150px;
+
+    padding:24px;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+}
+
+
+/* =====================================================
+   SKELETON ICON
+===================================================== */
+
+.skeleton-icon{
+
+    width:45px;
+
+    height:45px;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    margin-bottom:20px;
+
+}
+
+
+/* =====================================================
+   SKELETON LINE
+===================================================== */
+
+.skeleton-line{
+
+    width:120px;
+
+    max-width:80%;
+
+    height:16px;
+
+    margin-bottom:15px;
+
+}
+
+
+/* =====================================================
+   SKELETON NUMBER
+===================================================== */
+
+.skeleton-number{
+
+    width:80px;
+
+    max-width:60%;
+
+    height:28px;
+
+}
+
+
+/* =====================================================
+   CHART CONTAINER
+===================================================== */
+
+.skeleton-chart{
+
+    width:100%;
+
+    min-width:0;
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:30px;
+
+    overflow:hidden;
+
+}
+
+
+/* =====================================================
+   CHART BOX
+===================================================== */
+
+.skeleton-chart-box{
+
+    width:100%;
+
+    min-width:0;
+
+    height:320px;
+
+}
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+html.dark .skeleton{
+
+    background:
+        linear-gradient(
+            90deg,
+            #1e293b 25%,
+            #334155 50%,
+            #1e293b 75%
+        );
+
+    background-size:200% 100%;
+
+}
+
+
+html.dark .skeleton-card,
+html.dark .skeleton-chart{
+
+    background:var(--surface);
+
+    border-color:var(--border);
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media(max-width:1000px){
+
+    .skeleton-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+        gap:20px;
+
+    }
+
+
+    .skeleton-card{
+
+        height:140px;
+
+        padding:20px;
+
+        border-radius:20px;
+
+    }
+
+
+    .skeleton-chart{
+
+        padding:24px;
+
+        border-radius:20px;
+
+    }
+
+
+    .skeleton-chart-box{
+
+        height:300px;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:768px){
+
+    .skeleton-header{
+
+        margin-bottom:20px;
+
+    }
+
+
+    .skeleton-title{
+
+        width:220px;
+
+        max-width:85%;
+
+        height:28px;
+
+    }
+
+
+    .skeleton-subtitle{
+
+        width:320px;
+
+        max-width:95%;
+
+        height:16px;
+
+    }
+
+
+    .skeleton-grid{
+
+        grid-template-columns:1fr;
+
+        gap:16px;
+
+        margin-bottom:20px;
+
+    }
+
+
+    .skeleton-card{
+
+        height:125px;
+
+        padding:20px;
+
+        border-radius:18px;
+
+    }
+
+
+    .skeleton-icon{
+
+        width:40px;
+
+        height:40px;
+
+        margin-bottom:16px;
+
+    }
+
+
+    .skeleton-line{
+
+        width:110px;
+
+        height:15px;
+
+        margin-bottom:12px;
+
+    }
+
+
+    .skeleton-number{
+
+        width:70px;
+
+        height:25px;
+
+    }
+
+
+    .skeleton-chart{
+
+        padding:20px;
+
+        border-radius:20px;
+
+    }
+
+
+    .skeleton-chart-box{
+
+        height:260px;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media(max-width:480px){
+
+    .skeleton-title{
+
+        width:190px;
+
+        height:25px;
+
+    }
+
+
+    .skeleton-subtitle{
+
+        width:260px;
+
+        height:15px;
+
+    }
+
+
+    .skeleton-card{
+
+        height:115px;
+
+        padding:17px;
+
+        border-radius:16px;
+
+    }
+
+
+    .skeleton-icon{
+
+        width:36px;
+
+        height:36px;
+
+        margin-bottom:14px;
+
+    }
+
+
+    .skeleton-line{
+
+        width:95px;
+
+        height:14px;
+
+    }
+
+
+    .skeleton-number{
+
+        width:62px;
+
+        height:22px;
+
+    }
+
+
+    .skeleton-chart{
+
+        padding:16px;
+
+        border-radius:17px;
+
+    }
+
+
+    .skeleton-chart-box{
+
+        height:220px;
+
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media(max-width:360px){
+
+    .skeleton-title{
+
+        width:160px;
+
+        height:22px;
+
+    }
+
+
+    .skeleton-subtitle{
+
+        width:220px;
+
+        height:14px;
+
+    }
+
+
+    .skeleton-grid{
+
+        gap:12px;
+
+    }
+
+
+    .skeleton-card{
+
+        height:105px;
+
+        padding:15px;
+
+        border-radius:14px;
+
+    }
+
+
+    .skeleton-icon{
+
+        width:32px;
+
+        height:32px;
+
+        margin-bottom:12px;
+
+    }
+
+
+    .skeleton-line{
+
+        width:85px;
+
+        height:13px;
+
+        margin-bottom:10px;
+
+    }
+
+
+    .skeleton-number{
+
+        width:55px;
+
+        height:20px;
+
+    }
+
+
+    .skeleton-chart{
+
+        padding:14px;
+
+        border-radius:15px;
+
+    }
+
+
+    .skeleton-chart-box{
+
+        height:190px;
+
+    }
+
+}
+
+
+/* =====================================================
+   ACCESSIBILITY — REDUCE MOTION
+===================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+    .skeleton{
+
+        animation:none;
+
+        background:#e2e8f0;
+
+    }
+
+
+    html.dark .skeleton{
+
+        background:#334155;
+
+    }
+
+}

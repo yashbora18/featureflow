@@ -1,0 +1,987 @@
+{
+  "nav": {
+    "features": "الميزات",
+    "workflow": "سير العمل",
+    "techStack": "التقنيات",
+    "contact": "اتصل بنا",
+    "login": "تسجيل الدخول",
+    "getStarted": "ابدأ الآن"
+  },
+
+  "hero": {
+    "badge": "إدارة حديثة للميزات",
+    "title": "أطلق الميزات",
+    "highlight": "بثقة",
+    "description": "تحكم في إصدارات الميزات، وأدر البيئات، واستهدف المستخدمين، واطلق الميزات الجديدة بأمان باستخدام FeatureFlow.",
+    "getStarted": "ابدأ الآن",
+    "learnMore": "اعرف المزيد"
+  },
+
+  "heroPreview": {
+    "dashboard": "لوحة تحكم FeatureFlow",
+    "activeFlags": "العلامات النشطة",
+    "environments": "البيئات",
+    "success": "نجاح التقييم",
+    "rollout": "تقدم الإطلاق",
+    "analytics": "تحليلات الميزات",
+    "activities": {
+      "payment": "تم تفعيل ميزة الدفع",
+      "aiSearch": "تم تحديث إطلاق البحث بالذكاء الاصطناعي",
+      "darkMode": "تم تغيير استهداف الوضع الداكن"
+    }
+  },
+
+  "heroStats": {
+    "activeFlags": "العلامات النشطة",
+    "environments": "البيئات",
+    "evaluation": "نجاح التقييم",
+    "teams": "الفرق"
+  },
+
+  "trustedTeams": {
+    "badge": "مصمم للفرق الحديثة",
+    "title": "موثوق به من جميع الفرق",
+    "description": "يساعد FeatureFlow فرق الهندسة والمنتج على إدارة الميزات وتسليمها بأمان.",
+    "cards": {
+      "engineering": {
+        "title": "الهندسة",
+        "text": "إدارة إصدارات الميزات دون تغيير كود التطبيق."
+      },
+      "qa": {
+        "title": "فرق ضمان الجودة",
+        "text": "اختبر الميزات بأمان عبر بيئات مختلفة."
+      },
+      "product": {
+        "title": "فرق المنتج",
+        "text": "تحكم في إطلاق الميزات وقدم تجارب مستخدم أفضل."
+      },
+      "devops": {
+        "title": "DevOps",
+        "text": "إدارة البيئات وعمليات النشر بثقة."
+      },
+      "platform": {
+        "title": "فرق المنصة",
+        "text": "الحفاظ على إدارة مركزية للميزات والحوكمة."
+      }
+    }
+  },
+
+  "features": {
+    "badge": "ميزات قوية",
+    "title": "كل ما تحتاجه للإطلاق بأمان",
+    "description": "يمنح FeatureFlow فريقك تحكمًا كاملاً في إصدارات الميزات والاستهداف والإطلاق التدريجي والمراقبة.",
+    "learnMore": "اعرف المزيد",
+    "cards": {
+      "flags": {
+        "title": "علامات الميزات",
+        "description": "أنشئ علامات الميزات وأدرها دون تغيير كود التطبيق."
+      },
+      "targeting": {
+        "title": "استهداف المستخدمين",
+        "description": "تحكم في الوصول إلى الميزات لمستخدمين ومجموعات محددة باستخدام قواعد استهداف مرنة."
+      },
+      "rollouts": {
+        "title": "الإطلاق التدريجي",
+        "description": "أطلق الميزات تدريجيًا باستخدام نسب الإطلاق والإصدارات المرحلية."
+      },
+      "environments": {
+        "title": "البيئات",
+        "description": "إدارة تكوينات الميزات بشكل مستقل في بيئات التطوير والاختبار والإنتاج."
+      },
+      "analytics": {
+        "title": "التحليلات",
+        "description": "راقب استخدام الميزات وافهم أداء علامات الميزات."
+      },
+      "audit": {
+        "title": "سجلات التدقيق",
+        "description": "تتبع تغييرات الميزات واحتفظ بسجل كامل للإجراءات المهمة."
+      },
+      "evaluation": {
+        "title": "تقييم الميزات",
+        "description": "قيّم علامات الميزات ديناميكيًا بناءً على المستخدمين والمجموعات والبيئات وقواعد الاستهداف."
+      },
+      "security": {
+        "title": "الأمان",
+        "description": "حافظ على التحكم في إدارة الميزات من خلال الوصول الآمن والتكوين المركزي."
+      }
+    }
+  },
+
+  "showcase": {
+    "badge": "شاهد FeatureFlow أثناء العمل",
+    "title": "كل ما تحتاجه في منصة واحدة",
+    "description": "استكشف الأدوات القوية التي تساعد فريقك على إدارة الميزات وإطلاقها ومراقبتها بثقة.",
+    "learnMore": "اعرف المزيد",
+    "cards": {
+      "flags": {
+        "title": "علامات الميزات",
+        "subtitle": "تحكم في الميزات فورًا",
+        "description": "أنشئ علامات الميزات وأدرها وفعّلها وعطّلها فورًا دون نشر كود جديد."
+      },
+      "environment": {
+        "title": "إدارة البيئات",
+        "subtitle": "منصة واحدة، بيئات متعددة",
+        "description": "إدارة تكوينات الميزات بسهولة عبر بيئات التطوير والاختبار والإنتاج."
+      },
+      "analytics": {
+        "title": "تحليلات قوية",
+        "subtitle": "افهم ميزاتك",
+        "description": "تتبع أداء الميزات وتقدم الإطلاق والاستخدام من خلال تحليلات واضحة وقابلة للتنفيذ."
+      },
+      "audit": {
+        "title": "سجلات التدقيق",
+        "subtitle": "سجل تغييرات كامل",
+        "description": "تتبع كل تغيير مهم في الميزات من خلال سجلات تدقيق مفصلة وسجل كامل للتغييرات."
+      }
+    }
+  },
+
+  "workflow": {
+    "badge": "سير عمل بسيط للميزات",
+    "title": "من الفكرة إلى الإطلاق",
+    "description": "إدارة دورة حياة الميزة بالكامل من الإنشاء والاستهداف إلى الإطلاق والمراقبة.",
+    "steps": {
+      "create": {
+        "title": "إنشاء",
+        "description": "أنشئ علامة ميزة وقم بتكوين سلوكها الافتراضي."
+      },
+      "targeting": {
+        "title": "استهداف",
+        "description": "حدد المستخدمين والمجموعات الذين يجب أن يحصلوا على الميزة."
+      },
+      "evaluate": {
+        "title": "تقييم",
+        "description": "قيّم علامات الميزات بناءً على البيئة وقواعد الاستهداف."
+      },
+      "release": {
+        "title": "إطلاق",
+        "description": "أطلق الميزة تدريجيًا للمستخدمين بثقة."
+      },
+      "monitor": {
+        "title": "مراقبة",
+        "description": "تتبع أداء الميزات والتغييرات وتقدم الإطلاق."
+      }
+    }
+  },
+
+  "architecture": {
+    "badge": "بنية النظام",
+    "title": "مصمم لتقديم ميزات موثوقة",
+    "description": "يستخدم FeatureFlow بنية قابلة للتوسع تربط الواجهة الأمامية والخلفية ومحرك التقييم وقاعدة البيانات.",
+    "frontend": {
+      "title": "الواجهة الأمامية",
+      "description": "واجهة React حديثة لإدارة علامات الميزات والبيئات والاستهداف والتحليلات وسجلات التدقيق."
+    },
+    "backend": {
+      "title": "واجهة برمجة التطبيقات الخلفية",
+      "description": "خلفية FastAPI تتعامل مع إدارة الميزات وقواعد الاستهداف وطلبات التقييم ومنطق التطبيق."
+    },
+    "engine": {
+      "title": "محرك التقييم",
+      "description": "يقيم علامات الميزات باستخدام البيئات واستهداف المستخدمين والمجموعات وقواعد الإطلاق."
+    },
+    "modules": {
+      "flags": "علامات الميزات",
+      "targeting": "الاستهداف",
+      "audit": "سجلات التدقيق"
+    },
+    "database": {
+      "title": "قاعدة البيانات",
+      "description": "تخزن علامات الميزات والبيئات وقواعد الاستهداف ومجموعات المستخدمين والإصدارات وسجل التدقيق."
+    }
+  },
+
+  "techStack": {
+    "badge": "مجموعة التقنيات",
+    "title": "مبني باستخدام تقنيات حديثة",
+    "description": "تم بناء FeatureFlow باستخدام تقنيات موثوقة وحديثة لتوفير منصة سريعة وقابلة للتوسع وسهلة الصيانة لإدارة الميزات.",
+    "cards": {
+      "react": "واجهة أمامية حديثة قائمة على المكونات لتوفير تجربة مستخدم تفاعلية ومتجاوبة.",
+      "fastapi": "واجهة خلفية عالية الأداء لإدارة الميزات وتقييمها.",
+      "postgresql": "قاعدة بيانات علائقية موثوقة لتخزين بيانات الميزات والتطبيق.",
+      "javascript": "لغة البرمجة الأساسية التي تدعم تجربة الواجهة الأمامية التفاعلية.",
+      "html": "لغة ترميز دلالية لبناء هيكل التطبيق.",
+      "css": "تنسيقات حديثة لواجهة مستخدم متجاوبة ومتقنة.",
+      "git": "نظام للتحكم في الإصدارات وإدارة كود المصدر وسجل التطوير.",
+      "github": "منصة للمستودعات والتعاون في إدارة المشروع.",
+      "docker": "بنية تعتمد على الحاويات لتوفير تطوير ونشر متسقين."
+    }
+  },
+
+  "premium": {
+    "badge": "مصمم للفرق الحديثة",
+    "title1": "أطلق بشكل أسرع.",
+    "title2": "حافظ على التحكم.",
+    "description": "يمنح FeatureFlow فريقك الثقة لإطلاق الميزات بشكل أسرع مع الحفاظ على التحكم الكامل في الاستهداف والإطلاق والأمان والتحليلات.",
+    "points": {
+      "rollout": "إطلاق آمن وتدريجي للميزات",
+      "security": "إدارة آمنة للميزات",
+      "analytics": "تحليلات قوية للإصدارات"
+    },
+    "button": "استكشف FeatureFlow",
+    "imageAlt": "لوحة تحليلات FeatureFlow"
+  },
+
+  "statistics": {
+    "badge": "FeatureFlow بالأرقام",
+    "title": "مصمم للتوسع مع فريقك",
+    "description": "إمكانات قوية لإدارة الميزات مصممة لمساعدة الفرق على إطلاق الميزات والتحكم فيها ومراقبتها بكفاءة.",
+    "cards": {
+      "flags": {
+        "title": "علامات الميزات",
+        "description": "أنشئ علامات الميزات وأدرها عبر تطبيقك."
+      },
+      "environments": {
+        "title": "البيئات",
+        "description": "إدارة الميزات عبر بيئات التطوير والاختبار والإنتاج."
+      },
+      "targeting": {
+        "number": "أكثر من 10",
+        "title": "خيارات الاستهداف",
+        "description": "تحكم في الوصول إلى الميزات باستخدام قواعد استهداف مرنة."
+      },
+      "audit": {
+        "title": "تغطية التدقيق",
+        "description": "تتبع تغييرات الميزات المهمة من خلال سجل تدقيق كامل."
+      }
+    }
+  },
+
+  "cta": {
+    "badge": "هل أنت مستعد للبدء؟",
+    "title": "أطلق الميزات بشكل أسرع.\nحافظ على التحكم.",
+    "description": "ابدأ بإدارة إصدارات الميزات باستخدام FeatureFlow وامنح فريقك الثقة للإطلاق بأمان.",
+    "getStarted": "ابدأ الآن",
+    "login": "تسجيل الدخول"
+  },
+
+  "footer": {
+    "description": "يساعد FeatureFlow الفرق على إدارة علامات الميزات والتحكم في الإصدارات واستهداف المستخدمين وإطلاق الميزات بثقة.",
+    "platform": "المنصة",
+    "features": "الميزات",
+    "workflow": "سير العمل",
+    "techStack": "التقنيات",
+    "resources": "الموارد",
+    "documentation": "التوثيق",
+    "api": "مرجع واجهة برمجة التطبيقات",
+    "support": "الدعم",
+    "connect": "تواصل",
+    "contact": "اتصل بنا",
+    "copyright": "© ٢٠٢٦ FeatureFlow. جميع الحقوق محفوظة."
+  },
+
+  "common": {
+    "language": "اللغة",
+    "loading": "جارٍ التحميل...",
+    "search": "بحث",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "refresh": "تحديث",
+    "close": "إغلاق",
+    "create": "إنشاء",
+    "update": "تحديث",
+    "filter": "تصفية",
+    "yes": "نعم",
+    "no": "لا",
+    "enabled": "مفعّل",
+    "disabled": "معطّل",
+    "active": "نشط",
+    "inactive": "غير نشط",
+    "true": "صحيح",
+    "false": "خطأ",
+    "unknown": "غير معروف",
+    "ok": "موافق",
+    "show": "عرض",
+    "rows": "صفوف",
+    "page": "صفحة",
+    "of": "من"
+  },
+
+  "auth": {
+    "platform": "منصة إدارة علامات الميزات"
+  },
+
+  "loginLeft": {
+    "title1": "أطلق الميزات",
+    "title2": "بثقة",
+    "description": "يساعد FeatureFlow الفرق على إطلاق الميزات وإدارتها ومراقبتها بأمان باستخدام علامات الميزات والإطلاقات المتحكم بها.",
+    "instantRollouts": "إطلاقات فورية",
+    "instantRolloutsDesc": "أطلق الميزات فورًا دون إعادة نشر تطبيقك.",
+    "safeReleases": "إصدارات آمنة",
+    "safeReleasesDesc": "تحكم في تعرض الميزات وقلل مخاطر النشر.",
+    "realTimeAnalytics": "تحليلات فورية",
+    "realTimeAnalyticsDesc": "راقب أداء الميزات ونشاط الإطلاق في الوقت الفعلي.",
+    "enterpriseReady": "جاهز للمؤسسات",
+    "enterpriseReadyDesc": "مصمم مع مراعاة الأمان وقابلية التوسع والتعاون بين الفرق."
+  },
+
+  "browser": {
+    "dashboardAlt": "معاينة لوحة تحكم FeatureFlow"
+  },
+
+  "login": {
+    "welcome": "مرحبًا بعودتك",
+    "description": "سجّل الدخول إلى مساحة عمل FeatureFlow الخاصة بك وتابع إدارة ميزاتك.",
+    "email": "عنوان البريد الإلكتروني",
+    "emailPlaceholder": "أدخل عنوان بريدك الإلكتروني",
+    "password": "كلمة المرور",
+    "passwordPlaceholder": "أدخل كلمة المرور",
+    "remember": "تذكرني",
+    "forgotPassword": "هل نسيت كلمة المرور؟",
+    "signIn": "تسجيل الدخول",
+    "signingIn": "جارٍ تسجيل الدخول...",
+    "or": "أو",
+    "continueGoogle": "المتابعة باستخدام Google",
+    "newTo": "جديد على",
+    "createWorkspace": "إنشاء مساحة عمل",
+    "messages": {
+      "enterEmail": "يرجى إدخال عنوان بريدك الإلكتروني.",
+      "invalidEmail": "يرجى إدخال عنوان بريد إلكتروني صالح.",
+      "passwordRequired": "يرجى إدخال كلمة المرور.",
+      "incorrectCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+      "serverError": "خطأ في الخادم. يرجى المحاولة لاحقًا.",
+      "connectionError": "تعذر الاتصال بالخادم.",
+      "signInFailed": "فشل تسجيل الدخول. يرجى المحاولة مرة أخرى.",
+      "redirecting": "جارٍ الانتقال إلى لوحة التحكم...",
+      "googleComingSoon": "تسجيل الدخول باستخدام Google قريبًا."
+    }
+  },
+
+  "signup": {
+    "createAccount": "أنشئ حسابك",
+    "description": "أنشئ مساحة عمل FeatureFlow وابدأ في إدارة علامات الميزات.",
+    "username": "اسم المستخدم",
+    "usernamePlaceholder": "أدخل اسم المستخدم",
+    "email": "عنوان البريد الإلكتروني",
+    "emailPlaceholder": "أدخل عنوان بريدك الإلكتروني",
+    "password": "كلمة المرور",
+    "passwordPlaceholder": "أدخل كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "confirmPasswordPlaceholder": "أكد كلمة المرور",
+    "terms": "أوافق على الشروط والأحكام",
+    "creatingAccount": "جارٍ إنشاء الحساب...",
+    "or": "أو",
+    "google": "المتابعة باستخدام Google",
+    "alreadyHaveWorkspace": "لديك مساحة عمل بالفعل؟",
+    "signIn": "تسجيل الدخول",
+    "googleComingSoon": "التسجيل باستخدام Google قريبًا.",
+    "success": {
+      "accountCreated": "تم إنشاء الحساب بنجاح!"
+    },
+    "errors": {
+      "usernameRequired": "يرجى إدخال اسم المستخدم.",
+      "emailRequired": "يرجى إدخال عنوان بريدك الإلكتروني.",
+      "invalidEmail": "يرجى إدخال عنوان بريد إلكتروني صالح.",
+      "passwordLength": "يجب أن تتكون كلمة المرور من ثمانية أحرف على الأقل.",
+      "passwordMismatch": "كلمتا المرور غير متطابقتين.",
+      "acceptTerms": "يرجى قبول الشروط والأحكام.",
+      "signupFailed": "فشل التسجيل. يرجى المحاولة مرة أخرى."
+    }
+  },
+
+  "navbar": {
+    "dashboard": "لوحة التحكم",
+    "environment": "البيئة",
+    "toggleTheme": "تبديل المظهر",
+    "notifications": "الإشعارات",
+    "notification1": "بدأ إطلاق ميزة جديدة.",
+    "notification2": "تم تحديث علامة الميزة بنجاح.",
+    "notification3": "تم إنشاء تقرير التحليلات.",
+    "admin": "المسؤول",
+    "featureManager": "مدير الميزات",
+    "profile": "الملف الشخصي",
+    "settings": "الإعدادات",
+    "logout": "تسجيل الخروج",
+    "logoutConfirm": "هل أنت متأكد من رغبتك في تسجيل الخروج؟",
+    "logoutSuccess": "تم تسجيل الخروج بنجاح."
+  },
+
+  "sidebar": {
+    "enterprisePlatform": "منصة إدارة ميزات المؤسسات",
+    "dashboard": "لوحة التحكم",
+    "analytics": "التحليلات",
+    "flags": "علامات الميزات",
+    "environments": "البيئات",
+    "team": "الفريق",
+    "auditLogs": "سجلات التدقيق",
+    "settings": "الإعدادات",
+    "systemOnline": "النظام متصل",
+    "api": "واجهة برمجة التطبيقات",
+    "healthy": "سليم",
+    "database": "قاعدة البيانات",
+    "connected": "متصل",
+    "redis": "Redis",
+    "running": "قيد التشغيل",
+    "version": "الإصدار",
+    "copyright": "© ٢٠٢٦ FeatureFlow"
+  },
+
+  "dashboard": {
+    "loading": "جارٍ تحميل لوحة التحكم..."
+  },
+
+  "dashboardHeader": {
+    "badge": "إدارة ميزات المؤسسات",
+    "goodMorning": "صباح الخير",
+    "goodAfternoon": "مساء الخير",
+    "goodEvening": "مساء الخير",
+    "user": "المستخدم",
+    "description": "إدارة علامات الميزات والبيئات والإطلاقات من لوحة تحكم واحدة.",
+    "refresh": "تحديث"
+  },
+
+  "stats": {
+    "totalFlags": "إجمالي العلامات",
+    "totalFlagsChange": "علامات الميزات المكوّنة",
+    "activeFlags": "العلامات النشطة",
+    "activeFlagsChange": "مفعّلة حاليًا",
+    "environments": "البيئات",
+    "environmentsChange": "بيئات النشر",
+    "evaluations": "التقييمات",
+    "evaluationsChange": "تقييمات الميزات اليوم"
+  },
+
+  "rollout": {
+    "title": "نظرة عامة على الإطلاق",
+    "subtitle": "راقب تقدم إصدار الميزات عبر البيئات.",
+    "fullRelease": "إصدار كامل",
+    "almostComplete": "شبه مكتمل",
+    "gradualRollout": "إطلاق تدريجي",
+    "empty": "لا تتوفر بيانات للإطلاق.",
+    "rollout": "الإطلاق",
+    "percentage": "النسبة المئوية",
+    "stage": "المرحلة",
+    "disabled": "معطّل",
+    "canary": "إصدار تجريبي",
+    "gradual": "إطلاق تدريجي",
+    "almost": "شبه مكتمل",
+    "full": "إصدار كامل"
+  },
+
+  "recentActivity": {
+    "title": "النشاط الأخير",
+    "subtitle": "تتبع تغييرات وتحديثات علامات الميزات.",
+    "empty": "لا يتوفر نشاط حديث.",
+    "created": "تم الإنشاء",
+    "updated": "تم التحديث",
+    "modified": "تم التعديل",
+    "featureFlag": "علامة ميزة"
+  },
+
+  "systemHealth": {
+    "title": "حالة النظام",
+    "subtitle": "راقب خدمات المنصة.",
+    "backendApi": "واجهة برمجة التطبيقات الخلفية",
+    "postgresql": "قاعدة بيانات PostgreSQL",
+    "redisCache": "ذاكرة Redis المؤقتة",
+    "healthy": "سليم",
+    "connected": "متصل",
+    "running": "قيد التشغيل",
+    "offline": "غير متصل",
+    "disconnected": "منقطع الاتصال",
+    "operational": "يعمل بشكل طبيعي",
+    "services": "الخدمات",
+    "allHealthy": "جميع خدمات المنصة تعمل بشكل طبيعي.",
+    "attention": "بعض الخدمات تحتاج إلى الانتباه."
+  },
+
+  "quickActions": {
+    "title": "إجراءات سريعة",
+    "subtitle": "الوصول إلى ميزات المنصة المستخدمة بشكل متكرر.",
+    "createFlag": "إنشاء علامة ميزة",
+    "createDescription": "إنشاء تبديل ميزة جديد بسرعة.",
+    "evaluateFlag": "تقييم علامة",
+    "evaluateDescription": "اختبر سلوك الميزة فورًا.",
+    "environments": "إدارة البيئات",
+    "environmentDescription": "إدارة الإصدارات بأمان.",
+    "auditLogs": "سجلات التدقيق",
+    "auditDescription": "تتبع سجل التغييرات."
+  },
+
+  "cleanup": {
+    "title": "تنظيف علامات الميزات",
+    "description": "راجع علامات الميزات القديمة أو غير المستخدمة وأدرها.",
+    "flag": "العلامة",
+    "environment": "البيئة",
+    "status": "الحالة",
+    "lastUpdated": "آخر تحديث",
+    "owner": "المالك",
+    "action": "الإجراء",
+    "delete": "حذف",
+    "deleteConfirm": "هل أنت متأكد من رغبتك في حذف علامة الميزة هذه؟",
+    "deleteSuccess": "تم حذف علامة الميزة بنجاح.",
+    "deleteFailed": "فشل حذف علامة الميزة.",
+    "empty": "لم يتم العثور على علامات ميزات قديمة.",
+    "markReviewed": "وضع علامة كمراجعة"
+  },
+
+  "flagLifecycle": {
+    "title": "دورة حياة العلامة",
+    "subtitle": "تتبع حالة علامات الميزات.",
+    "active": "نشطة",
+    "disabled": "معطلة",
+    "stale": "قديمة",
+    "total": "إجمالي العلامات",
+    "health": "حالة العلامات",
+    "message": "استمر في مراقبة العلامات غير المستخدمة وتنظيف الإصدارات القديمة بانتظام."
+  },
+
+  "deploymentSafety": {
+    "title": "أمان النشر",
+    "subtitle": "راقب موثوقية الإصدارات.",
+    "safe": "نشر آمن",
+    "warning": "يحتاج إلى الانتباه",
+    "rolloutChecks": "فحوصات الإطلاق",
+    "environmentChecks": "فحوصات البيئة",
+    "passed": "تم الاجتياز",
+    "activeFlags": "العلامات النشطة",
+    "totalFlags": "إجمالي العلامات",
+    "messageSafe": "عمليات النشر الحالية مستقرة وآمنة.",
+    "messageWarning": "بعض عمليات النشر تحتاج إلى الانتباه."
+  },
+
+  "targetingSummary": {
+    "title": "ملخص الاستهداف",
+    "subtitle": "راقب قواعد استهداف الجمهور.",
+    "userRules": "استهداف المستخدمين",
+    "groupRules": "استهداف المجموعات",
+    "percentageRules": "الإطلاق بالنسبة المئوية",
+    "totalRules": "إجمالي القواعد",
+    "coverage": "تغطية الاستهداف",
+    "activeMessage": "تم تكوين استهداف الجمهور لإصدارات الميزات.",
+    "emptyMessage": "لم يتم تكوين قواعد استهداف بعد."
+  },
+
+  "analytics": {
+    "loading": "جارٍ تحميل التحليلات...",
+    "title": "التحليلات",
+    "subtitle": "راقب أداء الميزات",
+    "description": "راقب استخدام الميزات وأداء الإطلاق ومقاييس التقييم.",
+    "exportCSV": "تصدير CSV",
+    "exportPDF": "تصدير PDF",
+
+    "range": {
+      "7Days": "سبعة أيام",
+      "15Days": "خمسة عشر يومًا",
+      "30Days": "ثلاثون يومًا"
+    },
+
+    "evaluations": "تقييمات الميزات",
+    "totalEvaluations": "إجمالي التقييمات",
+    "activeFlags": "العلامات النشطة",
+    "enabled": "مفعّل",
+    "rolloutSuccess": "نجاح الإطلاق",
+    "healthy": "سليم",
+    "environments": "البيئة",
+    "available": "متاح",
+
+    "evaluationTrend": "اتجاه التقييم",
+    "evaluationOverTime": "التقييمات بمرور الوقت",
+
+    "noEvaluationData": "لا توجد بيانات تقييم",
+    "noFeatureEvaluations": "لا توجد تقييمات للميزات لهذه الفترة.",
+
+    "flagDistribution": "توزيع العلامات",
+    "enabledVsDisabled": "علامات الميزات المفعلة مقابل المعطلة",
+    "noAnalyticsData": "لا تتوفر بيانات تحليلات.",
+
+    "mostEvaluatedFlags": "علامات الميزات الأكثر تقييمًا",
+    "mostEvaluatedDescription": "أهم علامات الميزات بناءً على نشاط التقييم",
+    "noTopFlagsData": "لا تتوفر بيانات",
+
+    "environmentDistribution": "توزيع البيئات",
+    "flagUsage": "علامات الميزات عبر البيئات",
+    "flags": "العلامات",
+
+    "evaluationSummary": "ملخص التقييم",
+    "evaluationOverview": "نظرة عامة على نشاط تقييم الميزات.",
+    "todayEvaluations": "تقييمات اليوم",
+    "averageDaily": "متوسط التقييمات اليومية",
+    "peakEvaluation": "أعلى عدد من التقييمات",
+
+    "peakDay": "يوم الذروة",
+    "growthTrend": "اتجاه النمو",
+    "increasing": "متزايد",
+    "decreasing": "متناقص",
+
+    "insights": "رؤى التحليلات",
+    "insightsDescription": "نظرة عامة على أداء الميزات وأنماط الاستخدام",
+    "mostUsedFeature": "الميزة الأكثر استخدامًا",
+    "environment": "البيئة",
+    "totalFlags": "إجمالي العلامات",
+    "noData": "لا توجد بيانات",
+    "noEvaluationActivity": "لا يتوفر نشاط تقييم حتى الآن.",
+    "mostEvaluatedFeature": "{{flag}} هي الميزة الأكثر تقييمًا.",
+
+    "successfulEvaluations": "التقييمات الناجحة",
+    "failedEvaluations": "التقييمات الفاشلة",
+    "evaluationHistory": "سجل التقييمات",
+    "usage": "تحليلات الاستخدام",
+    "performance": "نظرة عامة على الأداء"
+  },
+
+  "flags": {
+    "pageTitle": "علامات الميزات",
+    "pageDescription": "إدارة ومراقبة والتحكم في علامات الميزات عبر البيئات.",
+    "welcome": "مرحبًا بك في علامات الميزات",
+    "welcomeDescription": "أنشئ علامات الميزات وحدّثها وأدرها بسهولة.",
+    "createFlag": "إنشاء علامة ميزة",
+    "editFlag": "تعديل علامة الميزة",
+    "deleteFlag": "حذف علامة الميزة",
+    "search": "البحث حسب مفتاح العلامة أو المالك أو النوع...",
+    "all": "الكل",
+    "enabled": "مفعّل",
+    "disabled": "معطّل",
+    "totalFlags": "إجمالي العلامات",
+    "totalFlagsDesc": "علامات الميزات المتاحة",
+    "enabledDesc": "العلامات المفعلة حاليًا",
+    "disabledDesc": "العلامات المعطلة حاليًا",
+    "teams": "الفرق",
+    "teamsDesc": "فرق المالك",
+    "emptyTitle": "لم يتم العثور على علامات ميزات",
+    "emptyDescription": "أنشئ أول علامة ميزة للبدء.",
+    "emptyTableDescription": "لا توجد علامات تطابق عوامل التصفية المحددة.",
+    "fetchError": "فشل تحميل علامات الميزات.",
+    "deleteSuccess": "تم حذف علامة الميزة بنجاح.",
+    "deleteFailed": "فشل حذف علامة الميزة.",
+    "deleteModalTitle": "حذف علامة الميزة",
+    "deleteModalMessage": "سيتم حذفها نهائيًا. لا يمكن التراجع عن هذا الإجراء.",
+    "success": "نجاح",
+    "ok": "موافق",
+    "delete": "حذف",
+    "cancel": "إلغاء",
+    "table": {
+      "flagId": "المعرّف",
+      "flagKey": "مفتاح العلامة",
+      "type": "النوع",
+      "status": "الحالة",
+      "ownerTeam": "فريق المالك",
+      "actions": "الإجراءات"
+    }
+  },
+
+  "flagForm": {
+    "createTitle": "إنشاء علامة ميزة",
+    "updateTitle": "تحديث علامة الميزة",
+    "flagKey": "مفتاح العلامة",
+    "enterFlagKey": "أدخل مفتاح علامة فريدًا",
+    "flagType": "نوع العلامة",
+    "boolean": "منطقي",
+    "defaultValue": "القيمة الافتراضية",
+    "ownerTeam": "فريق المالك",
+    "ownerPlaceholder": "أدخل فريق المالك",
+    "description": "الوصف",
+    "descriptionPlaceholder": "أدخل وصف الميزة",
+    "environment": "البيئة",
+    "status": "الحالة",
+    "createButton": "إنشاء العلامة",
+    "updateButton": "تحديث العلامة",
+    "createSuccess": "تم إنشاء علامة الميزة بنجاح.",
+    "updateSuccess": "تم تحديث علامة الميزة بنجاح.",
+    "operationFailed": "فشل حفظ علامة الميزة."
+  },
+
+  "flagDetail": {
+    "back": "رجوع",
+    "headerDescription": "تكوين علامة الميزة وقواعد الاستهداف واستراتيجية الإطلاق والتقييم.",
+    "flagKey": "مفتاح العلامة",
+    "type": "النوع",
+    "status": "الحالة",
+    "ownerTeam": "فريق المالك",
+    "environment": "البيئة",
+    "description": "الوصف",
+    "created": "تم الإنشاء",
+    "updated": "آخر تحديث",
+    "title": "تفاصيل العلامة",
+    "enabled": "مفعّل",
+    "disabled": "معطّل",
+
+    "targeting": {
+      "title": "قواعد الاستهداف",
+      "description": "فعّل هذه الميزة للمستخدمين المحددين فقط.",
+      "addUser": "إضافة مستخدم",
+      "empty": "لم يتم تكوين قواعد استهداف بعد.",
+      "remove": "إزالة",
+      "users": "استهداف المستخدمين",
+      "groups": "استهداف المجموعات",
+      "addGroup": "إضافة مجموعة",
+      "emptyUsers": "لا توجد قواعد لاستهداف المستخدمين",
+      "emptyGroups": "لا توجد قواعد لاستهداف المجموعات"
+    },
+
+    "rollout": {
+      "title": "الإطلاق بالنسبة المئوية",
+      "description": "أطلق هذه الميزة تدريجيًا لنسبة من المستخدمين.",
+      "unsaved": "تغييرات غير محفوظة",
+      "current": "الإطلاق الحالي",
+      "currentDescription": "اضبط نسبة الإطلاق باستخدام شريط التمرير أدناه.",
+      "summary": "ملخص الإطلاق",
+      "rollout": "الإطلاق",
+      "save": "حفظ الإطلاق",
+      "saving": "جارٍ الحفظ..."
+    },
+
+    "analytics": {
+      "title": "تحليلات الميزة",
+      "description": "راقب استخدام الميزة وأداء التقييم ورؤى الإطلاق.",
+      "last7Days": "آخر سبعة أيام",
+      "last15Days": "آخر خمسة عشر يومًا",
+      "last30Days": "آخر ثلاثين يومًا"
+    },
+
+    "evaluation": {
+      "title": "تقييم الميزة",
+      "description": "قيّم علامة الميزة هذه لمستخدم أو مجموعة محددة.",
+      "evaluateBy": "التقييم حسب",
+      "toTest": "لاختبارها.",
+      "user": "المستخدم",
+      "group": "المجموعة",
+      "userId": "معرّف المستخدم",
+      "groupName": "اسم المجموعة",
+      "enterUser": "أدخل معرّف المستخدم",
+      "enterGroup": "أدخل اسم المجموعة",
+      "evaluate": "تقييم",
+      "evaluating": "جارٍ التقييم...",
+      "noEvaluation": "لا يوجد تقييم بعد",
+      "noEvaluationDescription": "شغّل تقييمًا للميزة باستخدام زر التقييم لاختبار علامة الميزة.",
+      "result": "نتيجة التقييم",
+      "cached": "مخزّن مؤقتًا",
+      "live": "مباشر",
+      "lastEvaluation": "آخر تقييم:",
+      "reason": "السبب",
+      "responseTime": "زمن الاستجابة",
+      "source": "المصدر",
+      "cachedOnly": "ذاكرة Redis المؤقتة",
+      "liveOnly": "تقييم مباشر",
+      "ruleType": "نوع القاعدة",
+      "flagType": "نوع العلامة",
+      "mode": "وضع التقييم",
+      "userTargeting": "استهداف المستخدم",
+      "groupTargeting": "استهداف المجموعة",
+      "percentageRollout": "الإطلاق بالنسبة المئوية",
+      "environmentOverride": "تجاوز البيئة",
+      "defaultValue": "القيمة الافتراضية",
+      "summary": "ملخص التقييم",
+      "summaryPrefix": "علامة الميزة",
+      "summaryFor": "لـ",
+      "summaryIn": "في",
+      "summaryBecause": "لأن",
+      "reasons": {
+        "Matched Environment Override": "تجاوز البيئة",
+        "Matched User Targeting": "استهداف المستخدم",
+        "Matched Group Targeting": "استهداف المجموعة",
+        "Matched Percentage Rollout": "الإطلاق بالنسبة المئوية",
+        "Default Value": "القيمة الافتراضية"
+      }
+    }
+  },
+
+  "groups": {
+    "betaUsers": "المستخدمون التجريبيون",
+    "premiumPlan": "الخطة المميزة",
+    "internalTeam": "الفريق الداخلي"
+  },
+
+  "groupTargetingModal": {
+    "title": "إضافة مجموعة مستهدفة",
+    "selectGroup": "اختر مجموعة"
+  },
+
+  "groupTargeting": {
+    "title": "استهداف المجموعات",
+    "description": "فعّل هذه الميزة لمجموعات مستخدمين محددة.",
+    "addGroup": "إضافة مجموعة",
+    "empty": "لم يتم تكوين قواعد استهداف المجموعات بعد.",
+    "addSuccess": "تمت إضافة قاعدة استهداف المجموعة بنجاح.",
+    "addFailed": "فشلت إضافة قاعدة استهداف المجموعة.",
+    "deleteSuccess": "تم حذف قاعدة استهداف المجموعة بنجاح.",
+    "deleteFailed": "فشل حذف قاعدة استهداف المجموعة."
+  },
+
+  "messages": {
+    "loadFailed": "فشل تحميل علامة الميزة.",
+    "userAdded": "تمت إضافة قاعدة استهداف المستخدم بنجاح.",
+    "addUserFailed": "فشلت إضافة قاعدة استهداف المستخدم.",
+    "userDeleted": "تم حذف قاعدة استهداف المستخدم بنجاح.",
+    "deleteUserFailed": "فشل حذف قاعدة استهداف المستخدم.",
+    "rolloutUpdated": "تم تحديث الإطلاق بنجاح.",
+    "rolloutFailed": "فشل تحديث الإطلاق.",
+    "enterUserId": "يرجى إدخال معرّف المستخدم.",
+    "enterGroupName": "يرجى إدخال اسم المجموعة.",
+    "evaluationCompleted": "اكتمل تقييم الميزة.",
+    "evaluationFailed": "فشل تقييم الميزة."
+  },
+
+  "auditLogs": {
+    "title": "سجلات التدقيق",
+    "description": "تتبع جميع أنشطة علامات الميزات وتغييرات النظام.",
+    "emptyTitle": "لم يتم العثور على سجلات تدقيق",
+    "emptyDescription": "لم يتم تسجيل أي نشاط تدقيق بعد.",
+    "searchPlaceholder": "البحث في سجلات التدقيق...",
+    "allActions": "جميع الإجراءات",
+    "allFlags": "جميع العلامات",
+    "filter": "تصفية",
+    "viewDiff": "عرض الفرق",
+    "detailsTitle": "تفاصيل سجل التدقيق",
+    "flag": "العلامة",
+    "action": "الإجراء",
+    "actor": "المنفذ",
+    "timestamp": "الطابع الزمني",
+    "jsonDiff": "فرق JSON",
+    "copyJson": "نسخ JSON",
+    "table": {
+      "timestamp": "الطابع الزمني",
+      "actor": "المنفذ",
+      "flag": "علامة الميزة",
+      "action": "الإجراء",
+      "viewDiff": "عرض الفرق"
+    },
+    "actions": {
+      "created": "تم الإنشاء",
+      "updated": "تم التحديث",
+      "deleted": "تم الحذف"
+    }
+  },
+
+  "team": {
+    "title": "إدارة الفريق",
+    "description": "إدارة أعضاء المشروع وأدوارهم.",
+    "addMember": "إضافة عضو",
+    "totalMembers": "إجمالي الأعضاء",
+    "developers": "المطورون",
+    "managers": "المديرون",
+    "activeMembers": "الأعضاء النشطون",
+    "search": "البحث عن أعضاء الفريق...",
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "role": "الدور",
+    "status": "الحالة",
+    "actions": "الإجراءات",
+    "roles": {
+      "Feature Manager": "مدير الميزات",
+      "Backend Developer": "مطور Backend",
+      "Frontend Developer": "مطور Frontend",
+      "QA Engineer": "مهندس ضمان الجودة"
+    },
+    "statuses": {
+      "Active": "نشط",
+      "Inactive": "غير نشط"
+    }
+  },
+
+  "targetingModal": {
+    "title": "إضافة مستخدم مستهدف",
+    "userId": "معرّف المستخدم",
+    "placeholder": "أدخل معرّف المستخدم"
+  },
+
+  "environment": {
+    "development": "التطوير",
+    "staging": "الاختبار",
+    "production": "الإنتاج",
+    "pageTitle": "البيئات",
+    "pageDescription": "إدارة بيئات التطوير والاختبار والإنتاج.",
+    "create": "إنشاء",
+    "createEnvironment": "إنشاء بيئة",
+    "creating": "جارٍ الإنشاء...",
+    "refresh": "تحديث",
+    "refreshing": "جارٍ التحديث...",
+    "editEnvironment": "تعديل البيئة",
+    "deleteTitle": "حذف البيئة",
+    "deleteConfirm": "هل أنت متأكد من رغبتك في حذف",
+    "deleteWarning": "لا يمكن التراجع عن هذا الإجراء.",
+    "deleting": "جارٍ الحذف...",
+    "environmentName": "اسم البيئة",
+    "environmentDescription": "وصف البيئة",
+    "totalEnvironments": "إجمالي البيئات",
+    "activeEnvironments": "البيئات النشطة",
+    "defaultConfigurations": "التكوينات الافتراضية",
+    "environmentOverride": "تجاوز البيئة",
+    "customOverridesConfigured": "تم تكوين تجاوزات مخصصة",
+    "noOverrides": "لا توجد تجاوزات",
+    "usingDefaultValues": "استخدام القيم الافتراضية",
+    "searchPlaceholder": "البحث عن البيئات...",
+    "all": "الكل",
+    "onlyOverrides": "التجاوزات فقط",
+    "noOverrideFilter": "بدون تجاوز",
+    "featureFlag": "علامة الميزة",
+    "featureFlagDescription": "حدد علامة ميزة لعرض البيئات.",
+    "selectFeature": "اختر ميزة",
+    "showing": "عرض",
+    "environments": "البيئات",
+    "environmentList": "قائمة البيئات",
+    "active": "نشط",
+    "emptyTable": "لم يتم العثور على بيئات.",
+    "emptyOverrides": "لم يتم العثور على تجاوزات.",
+    "table": {
+      "id": "المعرّف",
+      "environment": "البيئة",
+      "description": "الوصف",
+      "status": "الحالة",
+      "action": "الإجراء"
+    },
+    "overrideTitle": "تجاوزات البيئة",
+    "overrideDescription": "إدارة قيم علامات الميزات للبيئات المختلفة.",
+    "overrideValue": "قيمة التجاوز",
+    "enabledTrue": "مفعّل (صحيح)",
+    "disabledFalse": "معطّل (خطأ)",
+    "overridden": "تم التجاوز",
+    "default": "افتراضي",
+    "lastUpdated": "آخر تحديث",
+    "saving": "جارٍ الحفظ...",
+    "editOverride": "تعديل التجاوز",
+    "overrideInfoTitle": "معلومات التجاوز",
+    "overrideInfoDescription": "تأخذ قيم التجاوز الأولوية على قيم العلامة الافتراضية للبيئة المحددة.",
+    "messages": {
+      "created": "تم إنشاء البيئة بنجاح.",
+      "updated": "تم تحديث البيئة بنجاح.",
+      "deleted": "تم حذف البيئة بنجاح.",
+      "createFailed": "فشل إنشاء البيئة.",
+      "updateFailed": "فشل تحديث البيئة.",
+      "deleteFailed": "فشل حذف البيئة."
+    }
+  },
+
+  "settings": {
+    "title": "الإعدادات",
+    "description": "إدارة تفضيلات FeatureFlow وإعدادات الحساب.",
+    "profile": {
+      "title": "إعدادات الملف الشخصي",
+      "description": "عرض معلومات ملفك الشخصي.",
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
+      "role": "الدور",
+      "admin": "مسؤول"
+    },
+    "appearance": {
+      "title": "إعدادات المظهر",
+      "description": "تخصيص مظهر التطبيق والبيئة الافتراضية.",
+      "theme": "المظهر",
+      "light": "فاتح",
+      "dark": "داكن",
+      "defaultEnvironment": "البيئة الافتراضية"
+    },
+    "notifications": {
+      "title": "إعدادات الإشعارات",
+      "description": "إدارة تفضيلات الإشعارات.",
+      "email": "إشعارات البريد الإلكتروني",
+      "audit": "إشعارات سجلات التدقيق",
+      "feature": "إشعارات علامات الميزات",
+      "deployment": "إشعارات النشر"
+    },
+    "security": {
+      "title": "إعدادات الأمان",
+      "description": "إدارة أمان الحساب وكلمة المرور.",
+      "currentPassword": "كلمة المرور الحالية",
+      "currentPlaceholder": "أدخل كلمة المرور الحالية",
+      "newPassword": "كلمة المرور الجديدة",
+      "newPlaceholder": "أدخل كلمة المرور الجديدة",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "confirmPlaceholder": "أكد كلمة المرور الجديدة",
+      "updatePassword": "تحديث كلمة المرور",
+      "logout": "تسجيل الخروج"
+    }
+  }
+}
