@@ -35,6 +35,7 @@ import Environments from "./pages/Environments";
 import Team from "./pages/Team";
 import AuditLogs from "./pages/AuditLogs";
 import Settings from "./pages/Settings";
+import Profile from "./pages/Profile";
 
 
 // =====================================================
@@ -303,6 +304,17 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+
+              {/* PROFILE */}
+
+<Route
+  path="/profile"
+  element={
+    <ProtectedRoute>
+      <Profile />
+    </ProtectedRoute>
+  }
+/>
 
             </Routes>
 

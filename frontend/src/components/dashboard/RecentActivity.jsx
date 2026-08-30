@@ -1,8 +1,10 @@
 import {
-    HiCheckCircle,
-    HiPencilSquare,
-    HiPlusCircle,
+  HiCheckCircle,
+  HiPencilSquare,
+  HiPlusCircle,
 } from "react-icons/hi2";
+
+import { FiActivity } from "react-icons/fi";
 
 
 import { useState } from "react";
@@ -254,48 +256,28 @@ return (
 
 
 <div className="section-header">
+  <div>
+    <h3>
+      <FiActivity />
+      {" "}
+      {t(
+        "recentActivity.title",
+        {
+          defaultValue: "Recent Activity"
+        }
+      )}
+    </h3>
 
-
-<div>
-
-
-<h3>
-
-{
-t(
-"recentActivity.title",
-{
-defaultValue:"Recent Activity"
-}
-)
-}
-
-</h3>
-
-
-
-
-
-<p>
-
-{
-t(
-"recentActivity.subtitle",
-{
-defaultValue:
-"Track feature flag changes and updates"
-}
-)
-}
-
-</p>
-
-
-
-</div>
-
-
-
+    <p>
+      {t(
+        "recentActivity.subtitle",
+        {
+          defaultValue:
+            "Track feature flag changes and updates"
+        }
+      )}
+    </p>
+  </div>
 </div>
 
 

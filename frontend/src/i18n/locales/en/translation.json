@@ -7,7 +7,6 @@
     "login": "Login",
     "getStarted": "Get Started"
   },
-
   "hero": {
     "badge": "Modern Feature Management",
     "title": "Ship Features",
@@ -16,7 +15,6 @@
     "getStarted": "Get Started",
     "learnMore": "Learn More"
   },
-
   "heroPreview": {
     "dashboard": "FeatureFlow Dashboard",
     "activeFlags": "Active Flags",
@@ -30,14 +28,12 @@
       "darkMode": "Dark Mode targeting changed"
     }
   },
-
   "heroStats": {
     "activeFlags": "Active Flags",
     "environments": "Environments",
     "evaluation": "Evaluation Success",
     "teams": "Teams"
   },
-
   "trustedTeams": {
     "badge": "Built for Modern Teams",
     "title": "Trusted by Every Team",
@@ -65,7 +61,6 @@
       }
     }
   },
-
   "features": {
     "badge": "Powerful Features",
     "title": "Everything You Need to Ship Safely",
@@ -106,7 +101,6 @@
       }
     }
   },
-
   "showcase": {
     "badge": "See FeatureFlow in Action",
     "title": "Everything You Need in One Platform",
@@ -135,7 +129,6 @@
       }
     }
   },
-
   "workflow": {
     "badge": "Simple Feature Workflow",
     "title": "From Idea to Release",
@@ -163,7 +156,6 @@
       }
     }
   },
-
   "architecture": {
     "badge": "System Architecture",
     "title": "Built for Reliable Feature Delivery",
@@ -190,7 +182,6 @@
       "description": "Stores feature flags, environments, targeting rules, user groups, versions, and audit history."
     }
   },
-
   "techStack": {
     "badge": "Technology Stack",
     "title": "Built With Modern Technology",
@@ -207,7 +198,6 @@
       "docker": "Container-ready architecture for consistent deployment and development."
     }
   },
-
   "premium": {
     "badge": "Built for Modern Teams",
     "title1": "Release Faster.",
@@ -221,7 +211,6 @@
     "button": "Explore FeatureFlow",
     "imageAlt": "FeatureFlow Analytics Dashboard"
   },
-
   "statistics": {
     "badge": "FeatureFlow by the Numbers",
     "title": "Built to Scale With Your Team",
@@ -246,7 +235,6 @@
       }
     }
   },
-
   "cta": {
     "badge": "Ready to Get Started?",
     "title": "Ship Features Faster.\nStay in Control.",
@@ -254,7 +242,6 @@
     "getStarted": "Get Started",
     "login": "Login"
   },
-
   "footer": {
     "description": "FeatureFlow helps teams manage feature flags, control releases, target users, and ship features with confidence.",
     "platform": "Platform",
@@ -268,9 +255,7 @@
     "connect": "Connect",
     "contact": "Contact Us",
     "copyright": "© 2026 FeatureFlow. All rights reserved."
-  
-},
-
+  },
   "common": {
     "language": "Language",
     "loading": "Loading...",
@@ -299,107 +284,73 @@
     "page": "Page",
     "of": "of"
   },
-
   "auth": {
     "platform": "Feature Flag Management Platform"
   },
-
   "loginLeft": {
     "title1": "Ship Features",
     "title2": "With Confidence",
     "description": "FeatureFlow helps teams safely release, manage, and monitor features with powerful feature flagging and controlled rollouts.",
-
     "instantRollouts": "Instant Rollouts",
     "instantRolloutsDesc": "Release features instantly without redeploying your application.",
-
     "safeReleases": "Safe Releases",
     "safeReleasesDesc": "Control feature exposure and reduce deployment risks.",
-
     "realTimeAnalytics": "Real-Time Analytics",
     "realTimeAnalyticsDesc": "Monitor feature performance and rollout activity in real time.",
-
     "enterpriseReady": "Enterprise Ready",
     "enterpriseReadyDesc": "Built with security, scalability, and team collaboration in mind."
   },
-
   "browser": {
     "dashboardAlt": "FeatureFlow dashboard preview"
   },
-
   "login": {
-    "welcome": "Welcome Back",
+    "welcome": "Welcome back!",
     "description": "Sign in to your FeatureFlow workspace and continue managing your features.",
-
     "email": "Email Address",
     "emailPlaceholder": "Enter your email address",
-
     "password": "Password",
     "passwordPlaceholder": "Enter your password",
-
     "remember": "Remember me",
     "forgotPassword": "Forgot password?",
-
     "signIn": "Sign In",
     "signingIn": "Signing In...",
-
     "or": "OR",
-
     "continueGoogle": "Continue with Google",
-
     "newTo": "New to",
     "createWorkspace": "Create Workspace",
-
-    "welcome": "Welcome back!",
-
     "messages": {
       "enterEmail": "Please enter your email address.",
       "invalidEmail": "Please enter a valid email address.",
       "passwordRequired": "Please enter your password.",
-
       "incorrectCredentials": "Incorrect email or password.",
       "serverError": "Server error. Please try again later.",
       "connectionError": "Unable to connect to the server.",
       "signInFailed": "Sign in failed. Please try again.",
-
       "redirecting": "Redirecting to dashboard...",
-
       "googleComingSoon": "Google login is coming soon."
     }
   },
-
-   "signup": {
+  "signup": {
     "createAccount": "Create Your Account",
     "description": "Create your FeatureFlow workspace and start managing feature flags.",
-
     "username": "Username",
     "usernamePlaceholder": "Enter your username",
-
     "email": "Email Address",
     "emailPlaceholder": "Enter your email address",
-
     "password": "Password",
     "passwordPlaceholder": "Enter your password",
-
     "confirmPassword": "Confirm Password",
     "confirmPasswordPlaceholder": "Confirm your password",
-
     "terms": "I agree to the Terms and Conditions",
-
     "creatingAccount": "Creating Account...",
-
     "or": "OR",
-
     "google": "Continue with Google",
-
     "alreadyHaveWorkspace": "Already have a workspace?",
     "signIn": "Sign In",
-
     "googleComingSoon": "Google signup is coming soon.",
-
     "success": {
       "accountCreated": "Account created successfully!"
     },
-
     "errors": {
       "usernameRequired": "Please enter your username.",
       "emailRequired": "Please enter your email address.",
@@ -410,7 +361,6 @@
       "signupFailed": "Signup failed. Please try again."
     }
   },
-
   "navbar": {
     "dashboard": "Dashboard",
     "environment": "Environment",
@@ -427,7 +377,6 @@
     "logoutConfirm": "Are you sure you want to logout?",
     "logoutSuccess": "Logged out successfully."
   },
-
   "sidebar": {
     "enterprisePlatform": "Enterprise Feature Management Platform",
     "dashboard": "Dashboard",
@@ -447,11 +396,9 @@
     "version": "Version",
     "copyright": "© 2026 FeatureFlow"
   },
-
   "dashboard": {
     "loading": "Loading dashboard..."
   },
-
   "dashboardHeader": {
     "badge": "Enterprise Feature Management",
     "goodMorning": "Good Morning",
@@ -461,7 +408,6 @@
     "description": "Manage feature flags, environments and rollouts from a single dashboard.",
     "refresh": "Refresh"
   },
-
   "stats": {
     "totalFlags": "Total Flags",
     "totalFlagsChange": "Configured feature flags",
@@ -472,7 +418,6 @@
     "evaluations": "Evaluations",
     "evaluationsChange": "Feature evaluations today"
   },
-
   "rollout": {
     "title": "Rollout Overview",
     "subtitle": "Monitor feature release progress across environments.",
@@ -489,7 +434,6 @@
     "almost": "Almost Complete",
     "full": "Full Release"
   },
-
   "recentActivity": {
     "title": "Recent Activity",
     "subtitle": "Track feature flag changes and updates.",
@@ -499,7 +443,6 @@
     "modified": "Modified",
     "featureFlag": "Feature Flag"
   },
-
   "systemHealth": {
     "title": "System Health",
     "subtitle": "Monitor platform services.",
@@ -516,7 +459,6 @@
     "allHealthy": "All platform services are running normally.",
     "attention": "Some services need attention."
   },
-
   "quickActions": {
     "title": "Quick Actions",
     "subtitle": "Access frequently used platform features.",
@@ -529,24 +471,25 @@
     "auditLogs": "Audit Logs",
     "auditDescription": "Track change history."
   },
-
   "cleanup": {
-  "title": "Feature Flag Cleanup",
-  "description": "Review and manage stale or unused feature flags.",
-  "flag": "Flag",
-  "environment": "Environment",
-  "status": "Status",
-  "lastUpdated": "Last Updated",
-  "owner": "Owner",
-  "action": "Action",
-  "delete": "Delete",
-  "deleteConfirm": "Are you sure you want to delete this feature flag?",
-  "deleteSuccess": "Feature flag deleted successfully.",
-  "deleteFailed": "Failed to delete feature flag.",
-  "empty": "No stale feature flags found.",
-  "markReviewed": "Mark as Reviewed"
-},
-
+    "title": "Feature Flag Cleanup",
+    "description": "Review and manage stale or unused feature flags.",
+    "flag": "Flag",
+    "environment": "Environment",
+    "status": "Status",
+    "lastUpdated": "Last Updated",
+    "owner": "Owner",
+    "action": "Action",
+    "delete": "Delete",
+    "deleteConfirm": "Are you sure you want to delete this feature flag?",
+    "deleteSuccess": "Feature flag deleted successfully.",
+    "deleteFailed": "Failed to delete feature flag.",
+    "empty": "No stale feature flags found.",
+    "markReviewed": "Mark as Reviewed",
+    "messages": {
+      "markSuccess": "Cleanup marked successfully"
+    }
+  },
   "flagLifecycle": {
     "title": "Flag Lifecycle",
     "subtitle": "Track feature flag health.",
@@ -557,7 +500,6 @@
     "health": "Flag Health",
     "message": "Keep monitoring unused flags and clean stale releases regularly."
   },
-
   "deploymentSafety": {
     "title": "Deployment Safety",
     "subtitle": "Monitor release confidence.",
@@ -571,7 +513,6 @@
     "messageSafe": "Your deployments are currently stable and safe.",
     "messageWarning": "Some deployments require attention."
   },
-
   "targetingSummary": {
     "title": "Targeting Summary",
     "subtitle": "Monitor audience targeting rules.",
@@ -583,638 +524,350 @@
     "activeMessage": "Audience targeting is configured for feature releases.",
     "emptyMessage": "No targeting rules configured yet."
   },
-
-"analytics": {
-  "loading": "Loading analytics...",
-
-  "title": "Analytics",
-  "subtitle": "Monitor feature performance",
-  "description": "Monitor feature usage, rollout performance and evaluation metrics.",
-
-  "exportCSV": "Export CSV",
-  "exportPDF": "Export PDF",
-
-  "range": {
-    "7Days": "7 Days",
-    "15Days": "15 Days",
-    "30Days": "30 Days"
-  },
-
-  "evaluations": "Feature Evaluations",
-  "totalEvaluations": "Total Evaluations",
-  "activeFlags": "Active Flags",
-  "enabled": "Enabled",
-  "rolloutSuccess": "Rollout Success",
-  "healthy": "Healthy",
-  "environments": "Environment",
-  "available": "Available",
-
-  "evaluationTrend": "Evaluation Trend",
-  "evaluationOverTime": "Evaluations Over Time",
-
-  "noEvaluationData": "No Evaluation Data",
-  "noFeatureEvaluations": "No feature evaluations available for this period.",
-
-  "flagDistribution": "Flag Distribution",
-  "enabledVsDisabled": "Enabled vs Disabled feature flags",
-  "noAnalyticsData": "No analytics data available.",
-
-  "mostEvaluatedFlags": "Most Evaluated Feature Flags",
-  "mostEvaluatedDescription": "Top feature flags based on evaluation activity",
-  "noTopFlagsData": "No Data Available",
-
-  "environmentDistribution": "Environment Distribution",
-  "flagUsage": "Feature flags across environments",
-  "flags": "Flags",
-
-  "evaluationSummary": "Evaluation Summary",
-  "evaluationOverview": "Overview of feature evaluation activity.",
-  "todayEvaluations": "Today's Evaluations",
-  "averageDaily": "Average Daily Evaluations",
-  "peakEvaluation": "Peak Evaluations",
-
-  "peakDay": "Peak Day",
-  "growthTrend": "Growth Trend",
-  "increasing": "Increasing",
-  "decreasing": "Decreasing",
-
-  "insights": "Analytics Insights",
-  "insightsDescription": "Feature performance overview and usage patterns",
-  "mostUsedFeature": "Most Used Feature",
-  "environment": "Environment",
-  "totalFlags": "Total Flags",
-  "noData": "No Data",
-  "noEvaluationActivity": "No evaluation activity available yet.",
-  "mostEvaluatedFeature": "{{flag}} is the most evaluated feature.",
-
-  "successfulEvaluations": "Successful Evaluations",
-  "failedEvaluations": "Failed Evaluations",
-  "evaluationHistory": "Evaluation History",
-  "usage": "Usage Analytics",
-  "performance": "Performance Overview"
-},
-
-
-"flags": {
-
-  "pageTitle": "Feature Flags",
-
-  "pageDescription": "Manage, monitor and control feature flags across environments.",
-
-  "welcome": "Welcome to Feature Flags",
-
-  "welcomeDescription": "Create, update and manage feature flags with ease.",
-
-  "createFlag": "Create Feature Flag",
-
-  "editFlag": "Edit Feature Flag",
-
-  "deleteFlag": "Delete Feature Flag",
-
-  "search": "Search by flag key, owner or type...",
-
-
-  "all": "All",
-
-  "enabled": "Enabled",
-
-  "disabled": "Disabled",
-
-
-  "totalFlags": "Total Flags",
-
-  "totalFlagsDesc": "Available feature flags",
-
-  "enabledDesc": "Currently enabled flags",
-
-  "disabledDesc": "Currently disabled flags",
-
-
-  "teams": "Teams",
-
-  "teamsDesc": "Owner teams",
-
-
-  "emptyTitle": "No Feature Flags Found",
-
-  "emptyDescription": "Create your first feature flag to get started.",
-
-  "emptyTableDescription": "No flags match the selected filters.",
-
-
-  "fetchError": "Failed to load feature flags.",
-
-  "deleteSuccess": "Feature flag deleted successfully.",
-
-  "deleteFailed": "Failed to delete feature flag.",
-
-
-  "deleteModalTitle": "Delete Feature Flag",
-
-  "deleteModalMessage": "will be permanently deleted. This action cannot be undone.",
-
-
-  "success": "Success",
-
-  "ok": "OK",
-
-  "delete": "Delete",
-
-  "cancel": "Cancel",
-
-
-  "table": {
-
-    "flagId": "ID",
-
-    "flagKey": "Flag Key",
-
-    "type": "Type",
-
-    "status": "Status",
-
-    "ownerTeam": "Owner Team",
-
-    "actions": "Actions"
-
-  }
-
-},
-
-
-"flagForm": {
-
-  "createTitle": "Create Feature Flag",
-
-  "updateTitle": "Update Feature Flag",
-
-  "flagKey": "Flag Key",
-
-  "enterFlagKey": "Enter unique flag key",
-
-  "flagType": "Flag Type",
-
-  "boolean": "Boolean",
-
-  "defaultValue": "Default Value",
-
-  "ownerTeam": "Owner Team",
-
-  "ownerPlaceholder": "Enter owner team",
-
-  "description": "Description",
-
-  "descriptionPlaceholder": "Enter feature description",
-
-  "environment": "Environment",
-
-  "status": "Status",
-
-  "createButton": "Create Flag",
-
-  "updateButton": "Update Flag",
-
-  "createSuccess": "Feature flag created successfully.",
-
-  "updateSuccess": "Feature flag updated successfully.",
-
-  "operationFailed": "Failed to save feature flag."
-
-},
-
-"flagDetail": {
-
-  "back": "Back",
-
-  "headerDescription": "Feature flag configuration, targeting rules, rollout strategy, and evaluation.",
-
-  "flagKey": "Flag Key",
-
-  "type": "Type",
-
-  "status": "Status",
-
-  "ownerTeam": "Owner Team",
-
-  "environment": "Environment",
-
-  "description": "Description",
-
-  "created": "Created",
-
-  "updated": "Last Updated",
-
-  "title": "Flag Details",
-
-  "enabled": "Enabled",
-
-  "disabled": "Disabled",
-
-
-  "targeting": {
-
-    "title": "Targeting Rules",
-
-    "description": "Enable this feature only for selected users (whitelist).",
-
-    "addUser": "Add User",
-
-    "empty": "No targeting rules configured yet.",
-
-    "remove": "Remove",
-
-    "users": "User Targeting",
-
-    "groups": "Group Targeting",
-
-    "addGroup": "Add Group",
-
-    "emptyUsers": "No user targeting rules",
-
-    "emptyGroups": "No group targeting rules"
-
-  },
-
-
-  "rollout": {
-
-    "title": "Percentage Rollout",
-
-    "description": "Gradually release this feature to a percentage of users.",
-
-    "unsaved": "Unsaved Changes",
-
-    "current": "Current Rollout",
-
-    "currentDescription": "Adjust the rollout percentage using the slider below.",
-
-    "summary": "Rollout Summary",
-
-    "rollout": "Rollout",
-
-    "save": "Save Rollout",
-
-    "saving": "Saving..."
-
-  },
-
   "analytics": {
-
-  "title": "Feature Analytics",
-
-  "description": "Monitor feature usage, evaluation performance and rollout insights.",
-
-  "last7Days": "Last 7 Days",
-
-  "last15Days": "Last 15 Days",
-
-  "last30Days": "Last 30 Days"
-
-},
-
-
-  "evaluation": {
-
-    "title": "Feature Evaluation",
-
-    "description": "Evaluate this feature flag for a specific user or group.",
-
-    "evaluateBy": "Evaluate By",
-
-    "toTest": "to test it.",
-
-    "user": "User",
-
-    "group": "Group",
-
-    "userId": "User ID",
-
-    "groupName": "Group Name",
-
-    "enterUser": "Enter User ID",
-
-    "enterGroup": "Enter Group Name",
-
-    "evaluate": "Evaluate",
-
-    "evaluating": "Evaluating...",
-
-    "noEvaluation": "No Evaluation Yet",
-
-    "noEvaluationDescription": "Run a feature evaluation using the evaluate button to test this feature flag.",
-
-    "result": "Evaluation Result",
-
-    "cached": "Cached",
-
-    "live": "Live",
-
-    "lastEvaluation": "Last Evaluation:",
-
-    "reason": "Reason",
-
-    "responseTime": "Response Time",
-
-    "source": "Source",
-
-    "cachedOnly": "Redis Cache",
-
-    "liveOnly": "Live Evaluation",
-
-    "ruleType": "Rule Type",
-
+    "loading": "Loading analytics...",
+    "title": "Analytics",
+    "subtitle": "Monitor feature performance",
+    "description": "Monitor feature usage, rollout performance and evaluation metrics.",
+    "exportCSV": "Export CSV",
+    "exportPDF": "Export PDF",
+    "range": {
+      "7Days": "7 Days",
+      "15Days": "15 Days",
+      "30Days": "30 Days"
+    },
+    "evaluations": "Feature Evaluations",
+    "totalEvaluations": "Total Evaluations",
+    "activeFlags": "Active Flags",
+    "enabled": "Enabled",
+    "rolloutSuccess": "Rollout Success",
+    "healthy": "Healthy",
+    "environments": "Environment",
+    "available": "Available",
+    "evaluationTrend": "Evaluation Trend",
+    "evaluationOverTime": "Evaluations Over Time",
+    "noEvaluationData": "No Evaluation Data",
+    "noFeatureEvaluations": "No feature evaluations available for this period.",
+    "flagDistribution": "Flag Distribution",
+    "enabledVsDisabled": "Enabled vs Disabled feature flags",
+    "noAnalyticsData": "No analytics data available.",
+    "mostEvaluatedFlags": "Most Evaluated Feature Flags",
+    "mostEvaluatedDescription": "Top feature flags based on evaluation activity",
+    "noTopFlagsData": "No Data Available",
+    "environmentDistribution": "Environment Distribution",
+    "flagUsage": "Feature flags across environments",
+    "flags": "Flags",
+    "evaluationSummary": "Evaluation Summary",
+    "evaluationOverview": "Overview of feature evaluation activity.",
+    "todayEvaluations": "Today's Evaluations",
+    "averageDaily": "Average Daily Evaluations",
+    "peakEvaluation": "Peak Evaluations",
+    "peakDay": "Peak Day",
+    "growthTrend": "Growth Trend",
+    "increasing": "Increasing",
+    "decreasing": "Decreasing",
+    "insights": "Analytics Insights",
+    "insightsDescription": "Feature performance overview and usage patterns",
+    "mostUsedFeature": "Most Used Feature",
+    "environment": "Environment",
+    "totalFlags": "Total Flags",
+    "noData": "No Data",
+    "noEvaluationActivity": "No evaluation activity available yet.",
+    "mostEvaluatedFeature": "{{flag}} is the most evaluated feature.",
+    "successfulEvaluations": "Successful Evaluations",
+    "failedEvaluations": "Failed Evaluations",
+    "evaluationHistory": "Evaluation History",
+    "usage": "Usage Analytics",
+    "performance": "Performance Overview"
+  },
+  "flags": {
+    "pageTitle": "Feature Flags",
+    "pageDescription": "Manage, monitor and control feature flags across environments.",
+    "welcome": "Welcome to Feature Flags",
+    "welcomeDescription": "Create, update and manage feature flags with ease.",
+    "createFlag": "Create Feature Flag",
+    "editFlag": "Edit Feature Flag",
+    "deleteFlag": "Delete Feature Flag",
+    "search": "Search by flag key, owner or type...",
+    "all": "All",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "totalFlags": "Total Flags",
+    "totalFlagsDesc": "Available feature flags",
+    "enabledDesc": "Currently enabled flags",
+    "disabledDesc": "Currently disabled flags",
+    "teams": "Teams",
+    "teamsDesc": "Owner teams",
+    "emptyTitle": "No Feature Flags Found",
+    "emptyDescription": "Create your first feature flag to get started.",
+    "emptyTableDescription": "No flags match the selected filters.",
+    "fetchError": "Failed to load feature flags.",
+    "deleteSuccess": "Feature flag deleted successfully.",
+    "deleteFailed": "Failed to delete feature flag.",
+    "deleteModalTitle": "Delete Feature Flag",
+    "deleteModalMessage": "will be permanently deleted. This action cannot be undone.",
+    "success": "Success",
+    "ok": "OK",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "table": {
+      "flagId": "ID",
+      "flagKey": "Flag Key",
+      "type": "Type",
+      "status": "Status",
+      "ownerTeam": "Owner Team",
+      "actions": "Actions"
+    }
+  },
+  "flagForm": {
+    "createTitle": "Create Feature Flag",
+    "updateTitle": "Update Feature Flag",
+    "flagKey": "Flag Key",
+    "enterFlagKey": "Enter unique flag key",
     "flagType": "Flag Type",
-
-    "mode": "Evaluation Mode",
-
-    "userTargeting": "User Targeting",
-
-    "groupTargeting": "Group Targeting",
-
-    "percentageRollout": "Percentage Rollout",
-
-    "environmentOverride": "Environment Override",
-
+    "boolean": "Boolean",
     "defaultValue": "Default Value",
-
-    "summary": "Evaluation Summary",
-
-    "summaryPrefix": "Feature flag",
-
-    "summaryFor": "for",
-
-    "summaryIn": "in",
-
-    "summaryBecause": "because",
-
-"reasons": {
-
-  "Matched Environment Override": "Environment Override",
-
-  "Matched User Targeting": "User Targeting",
-
-  "Matched Group Targeting": "Group Targeting",
-
-  "Matched Percentage Rollout": "Percentage Rollout",
-
-  "Default Value": "Default Value"
-
-}
-
-},
-
-"groups": {
-  "betaUsers": "Beta Users",
-  "premiumPlan": "Premium Plan",
-  "internalTeam": "Internal Team"
-},
-
-"groupTargetingModal": {
-  "title": "Add Target Group",
-  "selectGroup": "Select Group"
-},
-
-  
-
-  "groupTargeting": {
-
-    "title": "Group Targeting",
-
-    "description": "Enable this feature for specific user groups.",
-
-    "addGroup": "Add Group",
-
-    "empty": "No group targeting rules configured yet.",
-
-    "addSuccess": "Group targeting rule added successfully.",
-
-    "addFailed": "Failed to add group targeting rule.",
-
-    "deleteSuccess": "Group targeting rule deleted successfully.",
-
-    "deleteFailed": "Failed to delete group targeting rule."
-
+    "ownerTeam": "Owner Team",
+    "ownerPlaceholder": "Enter owner team",
+    "description": "Description",
+    "descriptionPlaceholder": "Enter feature description",
+    "environment": "Environment",
+    "status": "Status",
+    "createButton": "Create Flag",
+    "updateButton": "Update Flag",
+    "createSuccess": "Feature flag created successfully.",
+    "updateSuccess": "Feature flag updated successfully.",
+    "operationFailed": "Failed to save feature flag."
   },
-
-
-
-
-
-  "messages": {
-
-    "loadFailed": "Failed to load feature flag.",
-
-    "userAdded": "User targeting rule added successfully.",
-
-    "addUserFailed": "Failed to add user targeting rule.",
-
-    "userDeleted": "User targeting rule deleted successfully.",
-
-    "deleteUserFailed": "Failed to delete user targeting rule.",
-
-    "rolloutUpdated": "Rollout updated successfully.",
-
-    "rolloutFailed": "Failed to update rollout.",
-
-    "enterUserId": "Please enter user ID.",
-
-    "enterGroupName": "Please enter group name.",
-
-    "evaluationCompleted": "Feature evaluation completed.",
-
-    "evaluationFailed": "Feature evaluation failed."
-
-  }
-
-},
-
-
-
-"auditLogs": {
-
-  "title": "Audit Logs",
-
-  "description": "Track all feature flag activities and system changes.",
-
-  "emptyTitle": "No Audit Logs Found",
-
-  "emptyDescription": "No audit activity has been recorded yet.",
-
-  "searchPlaceholder": "Search audit logs...",
-
-  "allActions": "All Actions",
-
-  "allFlags": "All Flags",
-
-  "filter": "Filter",
-
-  "viewDiff": "View Diff",
-
-  "detailsTitle": "Audit Log Details",
-
-  "flag": "Flag",
-
-  "action": "Action",
-
-  "actor": "Actor",
-
-  "timestamp": "Timestamp",
-
-  "jsonDiff": "JSON Diff",
-
-  "copyJson": "Copy JSON",
-
-  "table": {
-
-    "timestamp": "Timestamp",
-
-    "actor": "Actor",
-
-    "flag": "Feature Flag",
-
-    "action": "Action",
-
-    "viewDiff": "View Difference"
-
-  },
-
-  "actions": {
-
+  "flagDetail": {
+    "back": "Back",
+    "headerDescription": "Feature flag configuration, targeting rules, rollout strategy, and evaluation.",
+    "flagKey": "Flag Key",
+    "type": "Type",
+    "status": "Status",
+    "ownerTeam": "Owner Team",
+    "environment": "Environment",
+    "description": "Description",
     "created": "Created",
-
-    "updated": "Updated",
-
-    "deleted": "Deleted"
-
-  }
-
-},
-
-
-"team": {
-
-  "title": "Team Management",
-
-  "description": "Manage project members and their roles.",
-
-  "addMember": "Add Member",
-
-  "totalMembers": "Total Members",
-
-  "developers": "Developers",
-
-  "managers": "Managers",
-
-  "activeMembers": "Active Members",
-
-  "search": "Search team members...",
-
-  "name": "Name",
-
-  "email": "Email",
-
-  "role": "Role",
-
-  "status": "Status",
-
-  "actions": "Actions",
-
-
-  "roles": {
-
-    "Feature Manager": "Feature Manager",
-
-    "Backend Developer": "Backend Developer",
-
-    "Frontend Developer": "Frontend Developer",
-
-    "QA Engineer": "QA Engineer"
-
+    "updated": "Last Updated",
+    "title": "Flag Details",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "targeting": {
+      "title": "Targeting Rules",
+      "description": "Enable this feature only for selected users (whitelist).",
+      "addUser": "Add User",
+      "empty": "No targeting rules configured yet.",
+      "remove": "Remove",
+      "users": "User Targeting",
+      "groups": "Group Targeting",
+      "addGroup": "Add Group",
+      "emptyUsers": "No user targeting rules",
+      "emptyGroups": "No group targeting rules"
+    },
+    "rollout": {
+      "title": "Percentage Rollout",
+      "description": "Gradually release this feature to a percentage of users.",
+      "unsaved": "Unsaved Changes",
+      "current": "Current Rollout",
+      "currentDescription": "Adjust the rollout percentage using the slider below.",
+      "summary": "Rollout Summary",
+      "rollout": "Rollout",
+      "save": "Save Rollout",
+      "saving": "Saving..."
+    },
+    "analytics": {
+      "title": "Feature Analytics",
+      "description": "Monitor feature usage, evaluation performance and rollout insights.",
+      "last7Days": "Last 7 Days",
+      "last15Days": "Last 15 Days",
+      "last30Days": "Last 30 Days"
+    },
+    "evaluation": {
+      "title": "Feature Evaluation",
+      "description": "Evaluate this feature flag for a specific user or group.",
+      "evaluateBy": "Evaluate By",
+      "toTest": "to test it.",
+      "user": "User",
+      "group": "Group",
+      "userId": "User ID",
+      "groupName": "Group Name",
+      "enterUser": "Enter User ID",
+      "enterGroup": "Enter Group Name",
+      "evaluate": "Evaluate",
+      "evaluating": "Evaluating...",
+      "noEvaluation": "No Evaluation Yet",
+      "noEvaluationDescription": "Run a feature evaluation using the evaluate button to test this feature flag.",
+      "result": "Evaluation Result",
+      "cached": "Cached",
+      "live": "Live",
+      "lastEvaluation": "Last Evaluation:",
+      "reason": "Reason",
+      "responseTime": "Response Time",
+      "source": "Source",
+      "cachedOnly": "Redis Cache",
+      "liveOnly": "Live Evaluation",
+      "ruleType": "Rule Type",
+      "flagType": "Flag Type",
+      "mode": "Evaluation Mode",
+      "userTargeting": "User Targeting",
+      "groupTargeting": "Group Targeting",
+      "percentageRollout": "Percentage Rollout",
+      "environmentOverride": "Environment Override",
+      "defaultValue": "Default Value",
+      "summary": "Evaluation Summary",
+      "summaryPrefix": "Feature flag",
+      "summaryFor": "for",
+      "summaryIn": "in",
+      "summaryBecause": "because",
+      "reasons": {
+        "Matched Environment Override": "Environment Override",
+        "Matched User Targeting": "User Targeting",
+        "Matched Group Targeting": "Group Targeting",
+        "Matched Percentage Rollout": "Percentage Rollout",
+        "Default Value": "Default Value"
+      }
+    },
+    "groups": {
+      "betaUsers": "Beta Users",
+      "premiumPlan": "Premium Plan",
+      "internalTeam": "Internal Team"
+    },
+    "groupTargetingModal": {
+      "title": "Add Target Group",
+      "selectGroup": "Select Group"
+    },
+    "groupTargeting": {
+      "title": "Group Targeting",
+      "description": "Enable this feature for specific user groups.",
+      "addGroup": "Add Group",
+      "empty": "No group targeting rules configured yet.",
+      "addSuccess": "Group targeting rule added successfully.",
+      "addFailed": "Failed to add group targeting rule.",
+      "deleteSuccess": "Group targeting rule deleted successfully.",
+      "deleteFailed": "Failed to delete group targeting rule."
+    },
+    "messages": {
+      "loadFailed": "Failed to load feature flag.",
+      "userAdded": "User targeting rule added successfully.",
+      "addUserFailed": "Failed to add user targeting rule.",
+      "userDeleted": "User targeting rule deleted successfully.",
+      "deleteUserFailed": "Failed to delete user targeting rule.",
+      "rolloutUpdated": "Rollout updated successfully.",
+      "rolloutFailed": "Failed to update rollout.",
+      "enterUserId": "Please enter user ID.",
+      "enterGroupName": "Please enter group name.",
+      "evaluationCompleted": "Feature evaluation completed.",
+      "evaluationFailed": "Feature evaluation failed."
+    }
   },
-
-
-  "statuses": {
-
-    "Active": "Active",
-
-    "Inactive": "Inactive"
-
-  }
-
-},
-
-
-"targetingModal": {
-  "title": "Add Target User",
-  "userId": "User ID",
-  "placeholder": "Enter User ID"
-},
-
-"groups": {
-  "betaUsers": "Beta Users",
-  "premiumPlan": "Premium Plan",
-  "internalTeam": "Internal Team"
-},
-
-"groupTargetingModal": {
-  "title": "Add Target Group",
-  "selectGroup": "Select Group"
-},
-
+  "auditLogs": {
+    "title": "Audit Logs",
+    "description": "Track all feature flag activities and system changes.",
+    "emptyTitle": "No Audit Logs Found",
+    "emptyDescription": "No audit activity has been recorded yet.",
+    "searchPlaceholder": "Search audit logs...",
+    "allActions": "All Actions",
+    "allFlags": "All Flags",
+    "filter": "Filter",
+    "viewDiff": "View Diff",
+    "detailsTitle": "Audit Log Details",
+    "flag": "Flag",
+    "action": "Action",
+    "actor": "Actor",
+    "timestamp": "Timestamp",
+    "jsonDiff": "JSON Diff",
+    "copyJson": "Copy JSON",
+    "table": {
+      "timestamp": "Timestamp",
+      "actor": "Actor",
+      "flag": "Feature Flag",
+      "action": "Action",
+      "viewDiff": "View Difference"
+    },
+    "actions": {
+      "created": "Created",
+      "updated": "Updated",
+      "deleted": "Deleted"
+    }
+  },
+  "team": {
+    "title": "Team Management",
+    "description": "Manage project members and their roles.",
+    "addMember": "Add Member",
+    "totalMembers": "Total Members",
+    "developers": "Developers",
+    "managers": "Managers",
+    "activeMembers": "Active Members",
+    "search": "Search team members...",
+    "name": "Name",
+    "email": "Email",
+    "role": "Role",
+    "status": "Status",
+    "actions": "Actions",
+    "roles": {
+      "Feature Manager": "Feature Manager",
+      "Backend Developer": "Backend Developer",
+      "Frontend Developer": "Frontend Developer",
+      "QA Engineer": "QA Engineer"
+    },
+    "statuses": {
+      "Active": "Active",
+      "Inactive": "Inactive"
+    }
+  },
+  "targetingModal": {
+    "title": "Add Target User",
+    "userId": "User ID",
+    "placeholder": "Enter User ID"
+  },
+  "groups": {
+    "betaUsers": "Beta Users",
+    "premiumPlan": "Premium Plan",
+    "internalTeam": "Internal Team"
+  },
+  "groupTargetingModal": {
+    "title": "Add Target Group",
+    "selectGroup": "Select Group"
+  },
   "environment": {
     "development": "Development",
     "staging": "Staging",
     "production": "Production",
-
     "pageTitle": "Environments",
     "pageDescription": "Manage Development, Staging and Production environments.",
-
     "create": "Create",
     "createEnvironment": "Create Environment",
     "creating": "Creating...",
-
     "refresh": "Refresh",
-  "refreshing": "Refreshing...",
-
+    "refreshing": "Refreshing...",
     "editEnvironment": "Edit Environment",
-
     "deleteTitle": "Delete Environment",
     "deleteConfirm": "Are you sure you want to delete",
     "deleteWarning": "This action cannot be undone.",
     "deleting": "Deleting...",
-
     "environmentName": "Environment Name",
     "environmentDescription": "Environment Description",
-
     "totalEnvironments": "Total Environments",
     "activeEnvironments": "Active Environments",
     "defaultConfigurations": "Default Configurations",
-
     "environmentOverride": "Environment Override",
     "customOverridesConfigured": "Custom overrides configured",
     "noOverrides": "No Overrides",
     "usingDefaultValues": "Using default values",
-
     "searchPlaceholder": "Search environments...",
-
     "all": "All",
     "onlyOverrides": "Only Overrides",
     "noOverrideFilter": "No Override",
-
     "featureFlag": "Feature Flag",
     "featureFlagDescription": "Select a feature flag to view environments.",
     "selectFeature": "Select Feature",
-
     "showing": "Showing",
     "environments": "Environments",
-
     "environmentList": "Environment List",
-
     "active": "Active",
-
     "emptyTable": "No environments found.",
     "emptyOverrides": "No overrides found.",
-
     "table": {
       "id": "ID",
       "environment": "Environment",
@@ -1222,44 +875,30 @@
       "status": "Status",
       "action": "Action"
     },
-
     "overrideTitle": "Environment Overrides",
-
     "overrideDescription": "Manage feature flag values for different environments.",
-
     "overrideValue": "Override Value",
-
     "enabledTrue": "Enabled (True)",
     "disabledFalse": "Disabled (False)",
-
     "overridden": "Overridden",
     "default": "Default",
-
     "lastUpdated": "Last Updated",
-
     "saving": "Saving...",
-
     "editOverride": "Edit Override",
-
     "overrideInfoTitle": "Override Information",
-
     "overrideInfoDescription": "Override values take precedence over default flag values for the specified environment.",
-
     "messages": {
-    "created": "Environment created successfully.",
-    "updated": "Environment updated successfully.",
-    "deleted": "Environment deleted successfully.",
-    "createFailed": "Failed to create environment.",
-    "updateFailed": "Failed to update environment.",
-    "deleteFailed": "Failed to delete environment."
-  }
+      "created": "Environment created successfully.",
+      "updated": "Environment updated successfully.",
+      "deleted": "Environment deleted successfully.",
+      "createFailed": "Failed to create environment.",
+      "updateFailed": "Failed to update environment.",
+      "deleteFailed": "Failed to delete environment."
+    }
   },
-
-
   "settings": {
     "title": "Settings",
     "description": "Manage your FeatureFlow preferences and account settings.",
-
     "profile": {
       "title": "Profile Settings",
       "description": "View your profile information.",
@@ -1268,7 +907,6 @@
       "role": "Role",
       "admin": "Administrator"
     },
-
     "appearance": {
       "title": "Appearance Settings",
       "description": "Customize your application appearance and default environment.",
@@ -1277,7 +915,6 @@
       "dark": "Dark",
       "defaultEnvironment": "Default Environment"
     },
-
     "notifications": {
       "title": "Notification Settings",
       "description": "Manage your notification preferences.",
@@ -1286,7 +923,6 @@
       "feature": "Feature Flag Notifications",
       "deployment": "Deployment Notifications"
     },
-
     "security": {
       "title": "Security Settings",
       "description": "Manage your account security and password.",
@@ -1299,4 +935,5 @@
       "updatePassword": "Update Password",
       "logout": "Logout"
     }
-  }}
+  }
+}

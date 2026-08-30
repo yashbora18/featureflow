@@ -1628,3 +1628,48 @@
     }
 
 }
+
+.theme-toggle-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #334155;
+  border-radius: 50%;
+
+  background: #1e293b;
+  color: #f8fafc;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: translateY(-2px);
+  background: #334155;
+}
+
+html:not(.dark-theme) .theme-toggle-btn {
+  background: #ffffff;
+  color: #1e293b;
+  border-color: #cbd5e1;
+}
+
+html:not(.dark-theme) .theme-toggle-btn:hover {
+  background: #f1f5f9;
+}
+

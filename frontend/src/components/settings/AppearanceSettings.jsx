@@ -1,11 +1,56 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { toast } from "react-toastify";
 
 export default function AppearanceSettings() {
   const { t } = useTranslation();
 
-  const [theme, setTheme] = useState("Light");
-  const [environment, setEnvironment] = useState("Development");
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") === "dark"
+      ? "Dark"
+      : "Light"
+  );
+
+  const [environment, setEnvironment] = useState(
+    localStorage.getItem("defaultEnvironment") ||
+      "Development"
+  );
+
+  useEffect(() => {
+    const isDark = theme === "Dark";
+
+    localStorage.setItem(
+      "theme",
+      isDark ? "dark" : "light"
+    );
+
+    document.documentElement.classList.toggle(
+      "dark",
+      isDark
+    );
+  }, [theme]);
+
+  const handleThemeChange = (e) => {
+    setTheme(e.target.value);
+
+    toast.success(
+      e.target.value === "Dark"
+        ? "Dark mode enabled"
+        : "Light mode enabled"
+    );
+  };
+
+  const handleEnvironmentChange = (e) => {
+    const value = e.target.value;
+
+    setEnvironment(value);
+    localStorage.setItem(
+      "defaultEnvironment",
+      value
+    );
+
+    toast.success("Default environment updated");
+  };
 
   return (
     <div className="settings-card">
@@ -20,11 +65,13 @@ export default function AppearanceSettings() {
 
         <div className="form-group">
 
-          <label>{t("settings.appearance.theme")}</label>
+          <label>
+            {t("settings.appearance.theme")}
+          </label>
 
           <select
             value={theme}
-            onChange={(e) => setTheme(e.target.value)}
+            onChange={handleThemeChange}
           >
             <option value="Light">
               {t("settings.appearance.light")}
@@ -40,12 +87,14 @@ export default function AppearanceSettings() {
         <div className="form-group">
 
           <label>
-            {t("settings.appearance.defaultEnvironment")}
+            {t(
+              "settings.appearance.defaultEnvironment"
+            )}
           </label>
 
           <select
             value={environment}
-            onChange={(e) => setEnvironment(e.target.value)}
+            onChange={handleEnvironmentChange}
           >
             <option value="Development">
               {t("environment.development")}

@@ -3352,3 +3352,183 @@ body,
 
 }
 
+/* =====================================================
+   ROLLOUT OVERVIEW - LEFT ALIGN HEADER
+===================================================== */
+
+.dashboard-table-card .section-header {
+  width: 100%;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+.dashboard-table-card .section-header > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+.dashboard-table-card .section-header h3 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  width: 100%;
+  margin: 0 0 6px;
+  text-align: left !important;
+}
+
+.dashboard-table-card .section-header p {
+  width: 100%;
+  margin: 0;
+  text-align: left !important;
+}
+
+/* =====================================================
+   RECENT ACTIVITY HEADER
+===================================================== */
+
+.dashboard-table-card .section-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  text-align: left;
+}
+
+.dashboard-table-card .section-title svg {
+  width: 24px;
+  height: 24px;
+  color: #a78bfa;
+  flex-shrink: 0;
+}
+
+/* =====================================================
+   RECENT ACTIVITY - SAME STYLE AS ROLLOUT OVERVIEW
+===================================================== */
+
+.dashboard-table-card .section-header {
+  width: 100%;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+.dashboard-table-card .section-header > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+.dashboard-table-card .section-header h3 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+
+  width: 100%;
+  margin: 0 0 6px;
+
+  text-align: left !important;
+}
+
+.dashboard-table-card .section-header h3 svg {
+  width: 24px;
+  height: 24px;
+  color: #a78bfa;
+  flex-shrink: 0;
+}
+
+.dashboard-table-card .section-header p {
+  width: 100%;
+  margin: 0;
+  text-align: left !important;
+}
+
+/* =====================================================
+   MOBILE NAVBAR — ENVIRONMENT DROPDOWN FIX
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .nav-right {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-width: 0;
+        flex-wrap: nowrap;
+    }
+
+    /* Environment dropdown */
+    .nav-right select {
+        min-width: 0;
+        flex: 1 1 auto;
+        width: auto;
+        max-width: none;
+        box-sizing: border-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    /* Buttons/icons inside navbar */
+    .nav-right button {
+        flex-shrink: 0;
+    }
+}
+
+
+/* =====================================================
+   IPHONE SE / SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .nav-right {
+        gap: 7px;
+    }
+
+    .nav-right select {
+        height: 54px;
+        min-width: 0;
+        padding: 0 10px;
+        font-size: 14px;
+    }
+
+    .nav-right button {
+        width: 50px;
+        height: 50px;
+        flex-shrink: 0;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL SCREEN
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .nav-right {
+        gap: 6px;
+    }
+
+    .nav-right select {
+        height: 50px;
+        padding: 0 8px;
+        font-size: 13px;
+    }
+
+    .nav-right button {
+        width: 46px;
+        height: 46px;
+    }
+}
