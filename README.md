@@ -154,48 +154,6 @@ The interface is responsive and designed for:
            │            │ │            │ │  Services  │
            └────────────┘ └────────────┘ └────────────┘
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 🛠️ Tech Stack
 Frontend
 - React.js
