@@ -13,7 +13,7 @@ ecdsa==0.19.2
 email-validator==2.3.0
 fastapi==0.139.0
 greenlet==3.5.3
-google-auth
+google-auth==2.40.3
 h11==0.16.0
 httptools==0.8.0
 idna==3.18
