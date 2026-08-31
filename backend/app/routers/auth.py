@@ -1,23 +1,21 @@
 import os
 import secrets
 
-from google.oauth2 import id_token
-from app.core.dependencies import get_current_user
-from google.auth.transport import requests as google_requests
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
 from app.core.database import SessionLocal
+from app.core.dependencies import get_current_user
+from app.core.security import (
+    hash_password,
+    verify_password,
+    create_access_token,
+)
 from app.models.user import User
 from app.schemas.user import (
     UserRegister,
     UserLogin,
     UserResponse,
-)
-from app.core.security import (
-    hash_password,
-    verify_password,
-    create_access_token,
 )
 
 router = APIRouter(
@@ -42,7 +40,6 @@ def register(
     user: UserRegister,
     db: Session = Depends(get_db),
 ):
-
     existing_email = (
         db.query(User)
         .filter(User.email == user.email)
@@ -85,7 +82,6 @@ def login(
     user: UserLogin,
     db: Session = Depends(get_db),
 ):
-
     db_user = (
         db.query(User)
         .filter(User.email == user.email)
@@ -123,11 +119,22 @@ def login(
         },
     }
 
+
 @router.post("/google")
 def google_login(
     data: dict,
     db: Session = Depends(get_db),
 ):
+    # Import Google libraries only when Google login is used.
+    try:
+        from google.oauth2 import id_token
+        from google.auth.transport import requests as google_requests
+    except ImportError:
+        raise HTTPException(
+            status_code=500,
+            detail="Google authentication dependency is not installed",
+        )
+
     credential = data.get("credential")
 
     if not credential:
@@ -136,15 +143,15 @@ def google_login(
             detail="Google credential is required",
         )
 
+    google_client_id = os.getenv("GOOGLE_CLIENT_ID")
+
+    if not google_client_id:
+        raise HTTPException(
+            status_code=500,
+            detail="Google Client ID is not configured",
+        )
+
     try:
-        google_client_id = os.getenv("GOOGLE_CLIENT_ID")
-
-        if not google_client_id:
-            raise HTTPException(
-                status_code=500,
-                detail="Google Client ID is not configured",
-            )
-
         google_user = id_token.verify_oauth2_token(
             credential,
             google_requests.Request(),
@@ -152,13 +159,14 @@ def google_login(
         )
 
         email = google_user.get("email")
-        name = google_user.get("name") or email.split("@")[0]
 
         if not email:
             raise HTTPException(
                 status_code=400,
                 detail="Google account email not available",
             )
+
+        name = google_user.get("name") or email.split("@")[0]
 
     except ValueError:
         raise HTTPException(
@@ -174,6 +182,9 @@ def google_login(
 
     if not db_user:
         username = name.replace(" ", "").lower()
+
+        if not username:
+            username = "user"
 
         existing_username = (
             db.query(User)
@@ -211,6 +222,7 @@ def google_login(
             "email": db_user.email,
         },
     }
+
 
 @router.put("/change-password")
 def change_password(
