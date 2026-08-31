@@ -18,7 +18,7 @@ function EditFlag() {
   });
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/flags/${flagKey}`)
+    fetch(`${import.meta.env.VITE_API_URL || "http://127.0.0.1:8000"}/flags/${flagKey}`)
       .then((res) => res.json())
       .then((data) => {
         setFormData({
@@ -42,7 +42,7 @@ function EditFlag() {
 
   const handleUpdate = async () => {
     const response = await fetch(
-      `http://127.0.0.1:8000/flags/${flagKey}`,
+      `${import.meta.env.VITE_API_URL || "http://127.0.0.1:8000"}/flags/${flagKey}`,
       {
         method: "PUT",
         headers: {

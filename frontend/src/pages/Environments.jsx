@@ -160,7 +160,7 @@ const [editedDescription, setEditedDescription] = useState("");
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8000/environments/"
+        `${import.meta.env.VITE_API_URL || "http://127.0.0.1:8000"}/environments/`
       );
 
       const data = await response.json();
@@ -186,7 +186,7 @@ const [editedDescription, setEditedDescription] = useState("");
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8000/flags/"
+        `${import.meta.env.VITE_API_URL || "http://127.0.0.1:8000"}/flags/`
       );
 
       const data = await response.json();
@@ -213,7 +213,7 @@ const [editedDescription, setEditedDescription] = useState("");
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8000/flag-overrides/"
+        `${import.meta.env.VITE_API_URL || "http://127.0.0.1:8000"}/flag-overrides/`
       );
 
       const data = await response.json();
@@ -275,7 +275,7 @@ const createEnvironment = async () => {
     setIsCreating(true);
 
     const response = await fetch(
-      "http://127.0.0.1:8000/environments/",
+      `${import.meta.env.VITE_API_URL || "http://127.0.0.1:8000"}/environments/`,
       {
         method: "POST",
         headers: {
@@ -330,7 +330,7 @@ const updateEnvironment = async () => {
     setIsSaving(true);
 
     const response = await fetch(
-      `http://127.0.0.1:8000/environments/${editingEnvironment.id}`,
+      `${import.meta.env.VITE_API_URL || "http://127.0.0.1:8000"}/environments/${editingEnvironment.id}`,
       {
         method: "PUT",
         headers: {
@@ -379,7 +379,7 @@ const deleteEnvironment = async () => {
     setIsDeleting(true);
 
     const response = await fetch(
-      `http://127.0.0.1:8000/environments/${environmentToDelete.id}`,
+      `${import.meta.env.VITE_API_URL || "http://127.0.0.1:8000"}/environments/${environmentToDelete.id}`,
       {
         method: "DELETE",
       }
@@ -444,8 +444,8 @@ const saveOverride = async () => {
                      selectedOverride.override !== null;
 
     const url = isUpdate
-      ? `http://127.0.0.1:8000/flag-overrides/${selectedOverride.override.id}`
-      : "http://127.0.0.1:8000/flag-overrides/";
+      ? `${import.meta.env.VITE_API_URL || "http://127.0.0.1:8000"}/flag-overrides/${selectedOverride.override.id}`
+      : `${import.meta.env.VITE_API_URL || "http://127.0.0.1:8000"}/flag-overrides/`;
 
     const method = isUpdate ? "PUT" : "POST";
 

@@ -406,3 +406,4 @@ const flagKey = decodeURIComponent(id);
 export default FlagDetail;
 
 
+

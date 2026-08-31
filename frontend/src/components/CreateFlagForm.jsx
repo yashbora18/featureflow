@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
+const API_URL = `${
+  import.meta.env.VITE_API_URL || `${import.meta.env.VITE_API_URL || "http://127.0.0.1:8000"}`
+}/flags`;
+
 function CreateFlagForm({ onFlagCreated }) {
   const { t } = useTranslation();
 
@@ -25,7 +29,7 @@ function CreateFlagForm({ onFlagCreated }) {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/flags/", {
+      const response = await fetch(`${API_URL}/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -38,7 +42,9 @@ function CreateFlagForm({ onFlagCreated }) {
       if (response.ok) {
         alert(t("createFlag.success"));
 
-        if (onFlagCreated) onFlagCreated();
+        if (onFlagCreated) {
+          onFlagCreated();
+        }
 
         setFormData({
           flag_key: "",
@@ -138,22 +144,13 @@ function CreateFlagForm({ onFlagCreated }) {
             onChange={handleChange}
             style={inputStyle}
           >
-            <option value="false">
-              {t("common.false")}
-            </option>
-
-            <option value="true">
-              {t("common.true")}
-            </option>
+            <option value="false">{t("common.false")}</option>
+            <option value="true">{t("common.true")}</option>
           </select>
         </div>
       </div>
 
-      <div
-        style={{
-          marginTop: "20px",
-        }}
-      >
+      <div style={{ marginTop: "20px" }}>
         <label style={{ fontWeight: "600" }}>
           {t("createFlag.description")}
         </label>
@@ -200,8 +197,7 @@ function CreateFlagForm({ onFlagCreated }) {
         <button
           onClick={handleSubmit}
           style={{
-            background:
-              "linear-gradient(135deg,#2563eb,#7c3aed)",
+            background: "linear-gradient(135deg,#2563eb,#7c3aed)",
             color: "white",
             border: "none",
             padding: "14px 28px",
