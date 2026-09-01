@@ -2,6 +2,8 @@ import os
 import secrets
 from datetime import datetime, timedelta
 
+import resend
+
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
@@ -29,11 +31,31 @@ router = APIRouter(
 )
 
 
+# =====================================================
+# CONFIGURATION
+# =====================================================
+
+RESEND_API_KEY = os.getenv("RESEND_API_KEY")
+
+FRONTEND_URL = os.getenv(
+    "FRONTEND_URL",
+    "http://localhost:5173",
+)
+
+if RESEND_API_KEY:
+    resend.api_key = RESEND_API_KEY
+
+
+# =====================================================
+# DATABASE
+# =====================================================
+
 def get_db():
     db = SessionLocal()
 
     try:
         yield db
+
     finally:
         db.close()
 
@@ -152,7 +174,9 @@ def google_login(
         )
 
     try:
-        google_client_id = os.getenv("GOOGLE_CLIENT_ID")
+        google_client_id = os.getenv(
+            "GOOGLE_CLIENT_ID"
+        )
 
         if not google_client_id:
             raise HTTPException(
@@ -192,7 +216,9 @@ def google_login(
     )
 
     if not db_user:
-        username = name.replace(" ", "").lower()
+        username = name.replace(
+            " ", ""
+        ).lower()
 
         existing_username = (
             db.query(User)
@@ -242,16 +268,26 @@ def google_login(
 @router.put("/change-password")
 def change_password(
     data: dict,
-    current_user: User = Depends(get_current_user),
+    current_user: User = Depends(
+        get_current_user
+    ),
     db: Session = Depends(get_db),
 ):
-    current_password = data.get("current_password")
-    new_password = data.get("new_password")
+    current_password = data.get(
+        "current_password"
+    )
+
+    new_password = data.get(
+        "new_password"
+    )
 
     if not current_password or not new_password:
         raise HTTPException(
             status_code=400,
-            detail="Current password and new password are required",
+            detail=(
+                "Current password and new password "
+                "are required"
+            ),
         )
 
     if not verify_password(
@@ -266,7 +302,10 @@ def change_password(
     if len(new_password) < 8:
         raise HTTPException(
             status_code=400,
-            detail="New password must be at least 8 characters",
+            detail=(
+                "New password must be at least "
+                "8 characters"
+            ),
         )
 
     current_user.hashed_password = hash_password(
@@ -303,7 +342,7 @@ def forgot_password(
         .first()
     )
 
-    # Do not reveal whether the email exists
+    # Do not reveal whether an account exists
     if not db_user:
         return {
             "message": (
@@ -311,6 +350,13 @@ def forgot_password(
                 "a reset link has been generated."
             )
         }
+
+    # Check Resend configuration
+    if not RESEND_API_KEY:
+        raise HTTPException(
+            status_code=500,
+            detail="Email service is not configured",
+        )
 
     # Generate secure reset token
     reset_token = secrets.token_urlsafe(32)
@@ -324,24 +370,107 @@ def forgot_password(
 
     db.commit()
 
-    # Development reset URL
+    # Create FRONTEND reset URL
     reset_link = (
-        "http://localhost:5173/"
-        "reset-password"
+        f"{FRONTEND_URL}/reset-password"
         f"?token={reset_token}"
     )
 
-    print("\n" + "=" * 50)
-    print("PASSWORD RESET REQUEST")
-    print("=" * 50)
-    print(f"Email: {db_user.email}")
-    print(f"Reset Link: {reset_link}")
-    print("Expires: 30 minutes")
-    print("=" * 50 + "\n")
+    try:
+        response = resend.Emails.send(
+            {
+                "from": "onboarding@resend.dev",
+                "to": [db_user.email],
+                "subject": (
+                    "FeatureFlow - Reset Your Password"
+                ),
+                "html": f"""
+                    <div style="
+                        font-family: Arial, sans-serif;
+                        max-width: 600px;
+                        margin: 0 auto;
+                        padding: 30px;
+                        color: #222;
+                    ">
+
+                        <h2>
+                            Reset your FeatureFlow password
+                        </h2>
+
+                        <p>
+                            We received a request to reset
+                            your FeatureFlow password.
+                        </p>
+
+                        <p>
+                            Click the button below to create
+                            a new password:
+                        </p>
+
+                        <p>
+                            <a
+                                href="{reset_link}"
+                                style="
+                                    display: inline-block;
+                                    padding: 12px 24px;
+                                    background: #4f46e5;
+                                    color: white;
+                                    text-decoration: none;
+                                    border-radius: 8px;
+                                    font-weight: bold;
+                                "
+                            >
+                                Reset Password
+                            </a>
+                        </p>
+
+                        <p>
+                            This link will expire in
+                            <strong>30 minutes</strong>.
+                        </p>
+
+                        <p>
+                            If you did not request this
+                            password reset, you can safely
+                            ignore this email.
+                        </p>
+
+                        <p>
+                            — FeatureFlow Team
+                        </p>
+
+                    </div>
+                """,
+            }
+        )
+
+        print(
+            "Password reset email sent:",
+            response,
+        )
+
+    except Exception as e:
+
+        # Remove token if email sending failed
+        db_user.reset_token = None
+        db_user.reset_token_expires = None
+
+        db.commit()
+
+        print(
+            "Resend email error:",
+            str(e),
+        )
+
+        raise HTTPException(
+            status_code=500,
+            detail="Unable to send password reset email",
+        )
 
     return {
-        "message": "Password reset link generated successfully.",
-        "reset_link": reset_link,
+        "message": (
+            "Password reset link sent to your email."
+        )
     }
 
 
@@ -355,7 +484,10 @@ def reset_password(
     db: Session = Depends(get_db),
 ):
     token = data.get("token")
-    new_password = data.get("new_password")
+
+    new_password = data.get(
+        "new_password"
+    )
 
     if not token:
         raise HTTPException(
@@ -372,12 +504,17 @@ def reset_password(
     if len(new_password) < 8:
         raise HTTPException(
             status_code=400,
-            detail="Password must be at least 8 characters",
+            detail=(
+                "Password must be at least "
+                "8 characters"
+            ),
         )
 
     db_user = (
         db.query(User)
-        .filter(User.reset_token == token)
+        .filter(
+            User.reset_token == token
+        )
         .first()
     )
 
@@ -405,6 +542,7 @@ def reset_password(
         )
 
     if datetime.utcnow() > expires_at:
+
         db_user.reset_token = None
         db_user.reset_token_expires = None
 
@@ -420,7 +558,7 @@ def reset_password(
         new_password
     )
 
-    # Make token single-use
+    # Make reset token single-use
     db_user.reset_token = None
     db_user.reset_token_expires = None
 
