@@ -8,11 +8,13 @@ import {
 } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 import "./Profile.css";
 
 function Profile() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const [user, setUser] = useState(() =>
     JSON.parse(localStorage.getItem("user") || "null")
@@ -39,12 +41,16 @@ function Profile() {
     if (!file) return;
 
     if (!file.type.startsWith("image/")) {
-      toast.error("Please select an image file");
+      toast.error(
+        t("settings.profile.messages.invalidImage")
+      );
       return;
     }
 
     if (file.size > 2 * 1024 * 1024) {
-      toast.error("Profile picture must be less than 2MB");
+      toast.error(
+        t("settings.profile.messages.imageTooLarge")
+      );
       return;
     }
 
@@ -59,7 +65,10 @@ function Profile() {
 
   const removeProfilePicture = () => {
     setProfilePicture("");
-    toast.info("Profile picture removed");
+
+    toast.info(
+      t("settings.profile.messages.pictureRemoved")
+    );
   };
 
   /* =====================================================
@@ -67,9 +76,16 @@ function Profile() {
   ===================================================== */
 
   const handleSave = () => {
+    if (!name.trim()) {
+      toast.error(
+        t("settings.profile.messages.nameEmpty")
+      );
+      return;
+    }
+
     const updatedUser = {
       ...user,
-      username: name,
+      username: name.trim(),
       profilePicture: profilePicture,
     };
 
@@ -80,16 +96,16 @@ function Profile() {
 
     setUser(updatedUser);
 
-    toast.success("Profile updated successfully");
+    toast.success(
+      t("settings.profile.messages.updated")
+    );
   };
 
   return (
     <div className="profile-page">
       <div className="profile-container">
 
-        {/* =================================================
-            BACK
-        ================================================= */}
+        {/* BACK */}
 
         <button
           type="button"
@@ -97,12 +113,10 @@ function Profile() {
           onClick={() => navigate("/dashboard")}
         >
           <FiArrowLeft />
-          Back to Dashboard
+          {t("settings.profile.backToDashboard")}
         </button>
 
-        {/* =================================================
-            PROFILE HEADER
-        ================================================= */}
+        {/* PROFILE HEADER */}
 
         <div className="profile-header">
 
@@ -111,7 +125,9 @@ function Profile() {
             {profilePicture ? (
               <img
                 src={profilePicture}
-                alt="Profile"
+                alt={t(
+                  "settings.profile.profilePictureAlt"
+                )}
                 className="profile-picture"
               />
             ) : (
@@ -125,7 +141,9 @@ function Profile() {
             <label
               htmlFor="profile-picture-upload"
               className="profile-camera-button"
-              title="Change profile picture"
+              title={t(
+                "settings.profile.changePicture"
+              )}
             >
               <FiCamera size={17} />
             </label>
@@ -141,10 +159,12 @@ function Profile() {
           </div>
 
           <div>
-            <h1>My Profile</h1>
+            <h1>
+              {t("settings.profile.pageTitle")}
+            </h1>
 
             <p>
-              Manage your FeatureFlow account information.
+              {t("settings.profile.pageDescription")}
             </p>
 
             <div className="profile-picture-actions">
@@ -154,7 +174,7 @@ function Profile() {
                 className="change-picture-button"
               >
                 <FiCamera />
-                Change Picture
+                {t("settings.profile.changePicture")}
               </label>
 
               {profilePicture && (
@@ -164,7 +184,7 @@ function Profile() {
                   onClick={removeProfilePicture}
                 >
                   <FiTrash2 />
-                  Remove
+                  {t("settings.profile.remove")}
                 </button>
               )}
 
@@ -173,21 +193,25 @@ function Profile() {
 
         </div>
 
-        {/* =================================================
-            PROFILE CARD
-        ================================================= */}
+        {/* PROFILE CARD */}
 
         <div className="profile-card-page">
 
           <div className="profile-section">
 
-            <h2>Personal Information</h2>
+            <h2>
+              {t(
+                "settings.profile.personalInformation"
+              )}
+            </h2>
 
             {/* NAME */}
 
             <div className="profile-field">
 
-              <label>Name</label>
+              <label>
+                {t("settings.profile.name")}
+              </label>
 
               <div className="input-wrapper">
 
@@ -199,7 +223,9 @@ function Profile() {
                   onChange={(e) =>
                     setName(e.target.value)
                   }
-                  placeholder="Enter your name"
+                  placeholder={t(
+                    "settings.profile.namePlaceholder"
+                  )}
                 />
 
               </div>
@@ -210,7 +236,9 @@ function Profile() {
 
             <div className="profile-field">
 
-              <label>Email Address</label>
+              <label>
+                {t("settings.profile.email")}
+              </label>
 
               <div className="input-wrapper disabled">
 
@@ -230,7 +258,9 @@ function Profile() {
 
             <div className="profile-field">
 
-              <label>Role</label>
+              <label>
+                {t("settings.profile.role")}
+              </label>
 
               <div className="input-wrapper disabled">
 
@@ -253,7 +283,7 @@ function Profile() {
               className="save-profile-button"
               onClick={handleSave}
             >
-              Save Changes
+              {t("settings.profile.saveChanges")}
             </button>
 
           </div>

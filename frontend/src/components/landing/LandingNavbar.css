@@ -3,47 +3,37 @@
 ===================================================== */
 
 .landing-navbar {
-    position: fixed;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 
-    top: 20px;
+  width: min(1320px, 92%);
+  height: 78px;
 
-    left: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    transform: translateX(-50%);
+  padding: 0 30px;
 
-    width: min(1320px, 92%);
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
 
-    height: 78px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 22px;
 
-    display: flex;
+  z-index: 999;
 
-    justify-content: space-between;
+  transition: 0.35s ease;
 
-    align-items: center;
+  box-shadow:
+    0 15px 45px rgba(15, 23, 42, 0.08),
+    0 3px 10px rgba(79, 70, 229, 0.08);
 
-    padding: 0 30px;
-
-    background: rgba(255, 255, 255, .78);
-
-    backdrop-filter: blur(24px);
-
-    -webkit-backdrop-filter: blur(24px);
-
-    border: 1px solid rgba(255, 255, 255, .35);
-
-    border-radius: 22px;
-
-    z-index: 999;
-
-    transition: .35s ease;
-
-    box-shadow:
-        0 15px 45px rgba(15, 23, 42, .08),
-        0 3px 10px rgba(79, 70, 229, .08);
-
-    box-sizing: border-box;
-
-    max-width: 100%;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 
@@ -52,12 +42,12 @@
 ===================================================== */
 
 .landing-navbar.scrolled {
-    top: 10px;
+  top: 10px;
 
-    background: rgba(255, 255, 255, .90);
+  background: rgba(255, 255, 255, 0.9);
 
-    box-shadow:
-        0 20px 55px rgba(15, 23, 42, .12);
+  box-shadow:
+    0 20px 55px rgba(15, 23, 42, 0.12);
 }
 
 
@@ -66,88 +56,72 @@
 ===================================================== */
 
 .logo {
-    display: flex;
+  display: flex;
+  align-items: center;
+  gap: 14px;
 
-    align-items: center;
+  cursor: pointer;
+  user-select: none;
 
-    gap: 14px;
+  transition: 0.35s ease;
 
-    cursor: pointer;
-
-    user-select: none;
-
-    transition: .35s ease;
-
-    flex-shrink: 0;
-
-    min-width: 0;
+  flex-shrink: 0;
+  min-width: 0;
 }
-
 
 .logo:hover {
-    transform: translateY(-2px);
+  transform: translateY(-2px);
 }
-
 
 .logo span {
-    font-size: 24px;
+  font-size: 24px;
+  font-weight: 800;
 
-    font-weight: 800;
+  color: var(--text-primary);
 
-    color: var(--text-primary);
-
-    letter-spacing: -.5px;
-
-    white-space: nowrap;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
 }
-
 
 .logo-box {
-    width: 72px;
+  width: 72px;
+  height: 72px;
 
-    height: 72px;
+  border-radius: 22px;
 
-    border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    display: flex;
+  overflow: hidden;
 
-    align-items: center;
+  background:
+    linear-gradient(
+      135deg,
+      #4f46e5,
+      #6366f1
+    );
 
-    justify-content: center;
+  box-shadow:
+    0 18px 40px rgba(79, 70, 229, 0.35);
 
-    overflow: hidden;
+  transition: 0.35s ease;
 
-    background:
-        linear-gradient(
-            135deg,
-            #4f46e5,
-            #6366f1
-        );
-
-    box-shadow:
-        0 18px 40px rgba(79, 70, 229, .35);
-
-    transition: .35s ease;
-
-    flex-shrink: 0;
+  flex-shrink: 0;
 }
-
 
 .logo-image {
-    width: 100%;
+  width: 100%;
+  height: 100%;
 
-    height: 100%;
-
-    object-fit: contain;
-
-    padding: 8px;
+  object-fit: contain;
+  padding: 8px;
 }
 
-
 .logo:hover .logo-box {
-    transform:
-        translateY(-3px)
-        scale(1.05);
+  transform:
+    translateY(-3px)
+    scale(1.05);
 }
 
 
@@ -156,94 +130,83 @@
 ===================================================== */
 
 .nav-links {
-    display: flex;
+  display: flex;
+  align-items: center;
 
-    align-items: center;
+  gap: 36px;
 
-    gap: 36px;
+  list-style: none;
 
-    list-style: none;
+  margin: 0;
+  padding: 0;
 
-    margin: 0;
-
-    padding: 0;
-
-    min-width: 0;
+  min-width: 0;
 }
-
 
 .nav-links li {
-    list-style: none;
-
-    min-width: 0;
+  list-style: none;
+  min-width: 0;
 }
-
 
 .nav-links a {
-    position: relative;
+  position: relative;
 
-    text-decoration: none;
+  text-decoration: none;
 
-    color: var(--text-primary);
+  color: var(--text-primary);
 
-    font-weight: 600;
+  font-weight: 600;
 
-    padding: 6px 2px;
+  padding: 6px 2px;
 
-    transition: .35s ease;
+  transition: 0.35s ease;
 
-    white-space: nowrap;
+  white-space: nowrap;
 }
-
 
 .nav-links a::after {
-    content: "";
+  content: "";
 
-    position: absolute;
+  position: absolute;
 
-    left: 0;
+  left: 0;
+  bottom: -8px;
 
-    bottom: -8px;
+  width: 0;
+  height: 3px;
 
-    width: 0;
+  border-radius: 50px;
 
-    height: 3px;
+  background:
+    linear-gradient(
+      90deg,
+      var(--primary),
+      #8b5cf6
+    );
 
-    border-radius: 50px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--primary),
-            #8b5cf6
-        );
-
-    transition: .35s ease;
+  transition: 0.35s ease;
 }
-
 
 .nav-links a:hover {
-    color: var(--primary);
+  color: var(--primary);
 }
 
-
 .nav-links a:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 
 /* =====================================================
-   ACTIONS
+   DESKTOP ACTIONS
 ===================================================== */
 
 .nav-actions {
-    display: flex;
+  display: flex;
+  align-items: center;
 
-    align-items: center;
+  gap: 14px;
 
-    gap: 14px;
-
-    flex-shrink: 0;
+  flex-shrink: 0;
 }
 
 
@@ -252,9 +215,350 @@
 ===================================================== */
 
 .theme-switch {
-    width: 44px;
+  width: 44px;
+  height: 44px;
 
-    height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: 1px solid #dbe3f0;
+  border-radius: 12px;
+
+  background: #ffffff;
+  color: #1e293b;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.theme-switch:hover {
+  background: #f1f5f9;
+
+  color: #4f46e5;
+
+  border-color: #c7d2fe;
+
+  transform: translateY(-2px);
+}
+
+.theme-switch:active {
+  transform: scale(0.94);
+}
+
+
+/* =====================================================
+   LOGIN BUTTON
+===================================================== */
+
+.login-btn {
+  padding: 13px 24px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: transparent;
+
+  color: var(--text-primary);
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.35s ease;
+
+  white-space: nowrap;
+}
+
+.login-btn:hover {
+  background: rgba(79, 70, 229, 0.08);
+
+  color: var(--primary);
+
+  transform: translateY(-2px);
+}
+
+.login-btn:active {
+  transform: scale(0.96);
+}
+
+
+/* =====================================================
+   PRIMARY BUTTON
+===================================================== */
+
+.primary-btn {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  padding: 17px 34px;
+
+  border: none;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6366f1,
+      #5b4ce8
+    );
+
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 30px rgba(99, 102, 241, 0.35);
+
+  transition: 0.35s ease;
+
+  white-space: nowrap;
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 18px 35px rgba(99, 102, 241, 0.45);
+}
+
+
+/* =====================================================
+   MOBILE MENU BUTTON
+===================================================== */
+
+.mobile-menu-btn {
+  display: none;
+
+  width: 48px;
+  height: 48px;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: rgba(79, 70, 229, 0.08);
+
+  color: var(--text-primary);
+
+  cursor: pointer;
+
+  font-size: 30px;
+
+  transition: 0.35s ease;
+}
+
+.mobile-menu-btn:hover {
+  background: rgba(79, 70, 229, 0.15);
+
+  color: var(--primary);
+}
+
+.mobile-menu-btn:active {
+  transform: scale(0.92);
+}
+
+
+/* =====================================================
+   MOBILE ACTIONS
+===================================================== */
+
+.mobile-actions {
+  display: none;
+}
+
+
+/* =====================================================
+   TABLET / MOBILE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .landing-navbar {
+    width: 94%;
+    padding: 0 24px;
+  }
+
+
+  /* -----------------------------
+     MOBILE MENU
+  ----------------------------- */
+
+  .nav-links {
+    position: absolute;
+
+    top: 88px;
+
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+
+    border: 1px solid rgba(226, 232, 240, 0.9);
+
+    border-radius: 20px;
+
+    padding: 24px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 20px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transform: translateY(-15px);
+
+    transition: 0.3s ease;
+
+    box-shadow:
+      0 20px 50px rgba(15, 23, 42, 0.15);
+
+    box-sizing: border-box;
+
+    max-height: calc(100vh - 110px);
+
+    overflow-y: auto;
+  }
+
+
+  .nav-links.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+    transform: translateY(0);
+  }
+
+
+  /* -----------------------------
+     LINKS
+  ----------------------------- */
+
+  .nav-links li {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+  }
+
+
+  .nav-links a {
+    padding: 8px 4px;
+
+    text-align: center;
+
+    white-space: normal;
+
+    overflow-wrap: anywhere;
+
+    font-size: 17px;
+  }
+
+
+  /* -----------------------------
+     HIDE DESKTOP ACTIONS
+  ----------------------------- */
+
+  .nav-actions {
+    display: none;
+  }
+
+
+  /* -----------------------------
+     SHOW HAMBURGER
+  ----------------------------- */
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+
+  /* -----------------------------
+     MOBILE ACTIONS
+  ----------------------------- */
+
+  .mobile-actions {
+    display: flex !important;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    width: 100%;
+
+    gap: 12px;
+
+    margin-top: 8px;
+
+    padding-top: 20px;
+
+    border-top:
+      1px solid rgba(148, 163, 184, 0.25);
+  }
+
+
+  /* -----------------------------
+     MOBILE LANGUAGE
+  ----------------------------- */
+
+  .mobile-language {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+  }
+
+
+  .mobile-language > * {
+    max-width: 280px;
+  }
+
+
+  /* -----------------------------
+     MOBILE THEME
+  ----------------------------- */
+
+  .mobile-theme-btn {
+    width: min(280px, 100%);
+
+    min-height: 46px;
 
     display: flex;
 
@@ -262,7 +566,7 @@
 
     justify-content: center;
 
-    flex-shrink: 0;
+    gap: 10px;
 
     border: 1px solid #dbe3f0;
 
@@ -272,252 +576,113 @@
 
     color: #1e293b;
 
-    font-size: 20px;
-
-    cursor: pointer;
-
-    transition: .25s ease;
-}
-
-
-.theme-switch:hover {
-    background: #f1f5f9;
-
-    color: #4f46e5;
-
-    border-color: #c7d2fe;
-
-    transform: translateY(-2px);
-}
-
-
-.theme-switch:active {
-    transform: scale(.94);
-}
-
-
-/* =====================================================
-   LOGIN BUTTON
-===================================================== */
-
-.login-btn {
-    padding: 13px 24px;
-
-    border: none;
-
-    border-radius: 14px;
-
-    background: transparent;
-
-    color: var(--text-primary);
+    font-size: 15px;
 
     font-weight: 700;
 
     cursor: pointer;
 
-    transition: .35s ease;
-
-    white-space: nowrap;
-}
+    transition: 0.25s ease;
+  }
 
 
-.login-btn:hover {
-    background: rgba(79, 70, 229, .08);
+  .mobile-theme-btn svg {
+    font-size: 20px;
+  }
+
+
+  .mobile-theme-btn:hover {
+    background: #f1f5f9;
+
+    color: #4f46e5;
+
+    border-color: #c7d2fe;
+  }
+
+
+  /* -----------------------------
+     MOBILE LOGIN
+  ----------------------------- */
+
+  .mobile-login-btn {
+    width: min(280px, 100%);
+
+    min-height: 46px;
+
+    border: 1px solid #dbe3f0;
+
+    border-radius: 12px;
+
+    background: transparent;
+
+    color: var(--text-primary);
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+  }
+
+
+  .mobile-login-btn:hover {
+    background: rgba(79, 70, 229, 0.08);
 
     color: var(--primary);
-}
+
+    border-color: #c7d2fe;
+  }
 
 
-.login-btn:active {
-    transform: scale(.96);
-}
+  /* -----------------------------
+     MOBILE GET STARTED
+  ----------------------------- */
 
+  .mobile-primary-btn {
+    width: min(280px, 100%);
 
-/* =====================================================
-   PRIMARY BUTTON
-===================================================== */
+    min-height: 48px;
 
-.primary-btn {
     display: flex;
 
     align-items: center;
 
     justify-content: center;
 
-    gap: 12px;
-
-    padding: 17px 34px;
-
     border: none;
 
-    border-radius: 18px;
+    border-radius: 13px;
 
     background:
-        linear-gradient(
-            135deg,
-            #6366f1,
-            #5b4ce8
-        );
+      linear-gradient(
+        135deg,
+        #6366f1,
+        #5b4ce8
+      );
 
     color: #ffffff;
 
-    font-size: 16px;
+    font-size: 15px;
 
     font-weight: 700;
 
     cursor: pointer;
 
     box-shadow:
-        0 12px 30px rgba(99, 102, 241, .35);
+      0 10px 25px rgba(99, 102, 241, 0.30);
 
-    transition: .35s ease;
-
-    white-space: nowrap;
-}
+    transition: 0.25s ease;
+  }
 
 
-.primary-btn:hover {
-    transform: translateY(-3px);
+  .mobile-primary-btn:hover {
+    transform: translateY(-2px);
 
     box-shadow:
-        0 18px 35px rgba(99, 102, 241, .45);
-}
-
-
-/* =====================================================
-   MOBILE MENU BUTTON
-===================================================== */
-
-.mobile-menu-btn {
-    display: none;
-
-    width: 48px;
-
-    height: 48px;
-
-    align-items: center;
-
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    border: none;
-
-    border-radius: 14px;
-
-    background: rgba(79, 70, 229, .08);
-
-    color: var(--text-primary);
-
-    cursor: pointer;
-
-    font-size: 30px;
-
-    transition: .35s ease;
-}
-
-
-.mobile-menu-btn:hover {
-    background: rgba(79, 70, 229, .15);
-
-    color: var(--primary);
-}
-
-
-.mobile-menu-btn:active {
-    transform: scale(.92);
-}
-
-
-/* =====================================================
-   TABLET / MOBILE NAV
-===================================================== */
-
-@media (max-width: 1100px) {
-
-    .landing-navbar {
-        width: 94%;
-
-        padding: 0 24px;
-    }
-
-
-    .nav-links {
-        position: absolute;
-
-        top: 88px;
-
-        left: 0;
-
-        right: 0;
-
-        width: 100%;
-
-        background: rgba(255, 255, 255, .96);
-
-        backdrop-filter: blur(24px);
-
-        -webkit-backdrop-filter: blur(24px);
-
-        border: 1px solid rgba(226, 232, 240, .9);
-
-        border-radius: 20px;
-
-        padding: 24px;
-
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 20px;
-
-        opacity: 0;
-
-        visibility: hidden;
-
-        pointer-events: none;
-
-        transform: translateY(-15px);
-
-        transition: .3s ease;
-
-        box-shadow:
-            0 20px 50px rgba(15, 23, 42, .15);
-
-        box-sizing: border-box;
-    }
-
-
-    .nav-links.show {
-        opacity: 1;
-
-        visibility: visible;
-
-        pointer-events: auto;
-
-        transform: translateY(0);
-    }
-
-
-    .nav-links a {
-        padding: 8px 4px;
-
-        text-align: center;
-
-        white-space: normal;
-
-        overflow-wrap: anywhere;
-    }
-
-
-    .nav-actions {
-        display: none;
-    }
-
-
-    .mobile-menu-btn {
-        display: flex;
-    }
+      0 15px 30px rgba(99, 102, 241, 0.40);
+  }
 
 }
 
@@ -528,38 +693,37 @@
 
 @media (max-width: 768px) {
 
-    .landing-navbar {
-        width: 95%;
+  .landing-navbar {
+    width: 95%;
 
-        height: 72px;
+    height: 72px;
 
-        padding: 0 20px;
+    padding: 0 20px;
 
-        border-radius: 20px;
-    }
-
-
-    .logo span {
-        font-size: 20px;
-    }
+    border-radius: 20px;
+  }
 
 
-    .logo-box {
-        width: 48px;
-
-        height: 48px;
-
-        border-radius: 14px;
-    }
+  .logo span {
+    font-size: 20px;
+  }
 
 
-    .nav-links {
-        top: 82px;
+  .logo-box {
+    width: 48px;
+    height: 48px;
 
-        padding: 22px;
+    border-radius: 14px;
+  }
 
-        gap: 18px;
-    }
+
+  .nav-links {
+    top: 82px;
+
+    padding: 22px;
+
+    gap: 18px;
+  }
 
 }
 
@@ -570,70 +734,88 @@
 
 @media (max-width: 480px) {
 
-    .landing-navbar {
-        top: 10px;
+  .landing-navbar {
+    top: 10px;
 
-        width: 94%;
+    width: 94%;
 
-        height: 64px;
+    height: 64px;
 
-        border-radius: 18px;
+    border-radius: 18px;
 
-        padding: 0 14px;
-    }
-
-
-    .landing-navbar.scrolled {
-        top: 8px;
-    }
+    padding: 0 14px;
+  }
 
 
-    .logo span {
-        display: none;
-    }
+  .landing-navbar.scrolled {
+    top: 8px;
+  }
 
 
-    .logo-box {
-        width: 46px;
-
-        height: 46px;
-
-        border-radius: 13px;
-    }
+  .logo span {
+    display: none;
+  }
 
 
-    .logo-image {
-        padding: 6px;
-    }
+  .logo-box {
+    width: 46px;
+
+    height: 46px;
+
+    border-radius: 13px;
+  }
 
 
-    .mobile-menu-btn {
-        width: 44px;
-
-        height: 44px;
-
-        font-size: 26px;
-
-        border-radius: 12px;
-    }
+  .logo-image {
+    padding: 6px;
+  }
 
 
-    .nav-links {
-        top: 72px;
+  .mobile-menu-btn {
+    width: 44px;
 
-        border-radius: 18px;
+    height: 44px;
 
-        padding: 20px 16px;
+    font-size: 26px;
 
-        gap: 16px;
-    }
+    border-radius: 12px;
+  }
 
 
-    .nav-links a {
-        font-size: 15px;
+  .nav-links {
+    top: 72px;
 
-        width: 100%;
-    }
+    border-radius: 18px;
+
+    padding: 20px 16px;
+
+    gap: 16px;
+
+    max-height: calc(100vh - 90px);
+  }
+
+
+  .nav-links a {
+    font-size: 15px;
+
+    width: 100%;
+  }
+
+
+  .mobile-actions {
+    gap: 10px;
+
+    padding-top: 16px;
+  }
+
+
+  .mobile-theme-btn,
+  .mobile-login-btn,
+  .mobile-primary-btn {
+    width: 100%;
+
+    max-width: 260px;
+  }
 
 }
 
@@ -644,53 +826,64 @@
 
 @media (max-width: 360px) {
 
-    .landing-navbar {
-        width: 94%;
+  .landing-navbar {
+    width: 94%;
 
-        height: 60px;
+    height: 60px;
 
-        padding: 0 11px;
+    padding: 0 11px;
 
-        border-radius: 16px;
-    }
-
-
-    .logo-box {
-        width: 42px;
-
-        height: 42px;
-
-        border-radius: 12px;
-    }
+    border-radius: 16px;
+  }
 
 
-    .mobile-menu-btn {
-        width: 40px;
+  .logo-box {
+    width: 42px;
 
-        height: 40px;
+    height: 42px;
 
-        font-size: 24px;
-
-        border-radius: 11px;
-    }
+    border-radius: 12px;
+  }
 
 
-    .nav-links {
-        top: 68px;
+  .mobile-menu-btn {
+    width: 40px;
 
-        padding: 18px 14px;
+    height: 40px;
 
-        gap: 14px;
+    font-size: 24px;
 
-        border-radius: 16px;
-    }
+    border-radius: 11px;
+  }
 
 
-    .nav-links a {
-        font-size: 14px;
+  .nav-links {
+    top: 68px;
 
-        padding: 7px 3px;
-    }
+    padding: 18px 14px;
+
+    gap: 14px;
+
+    border-radius: 16px;
+  }
+
+
+  .nav-links a {
+    font-size: 14px;
+
+    padding: 7px 3px;
+  }
+
+
+  .mobile-theme-btn,
+  .mobile-login-btn,
+  .mobile-primary-btn {
+    max-width: 240px;
+
+    min-height: 43px;
+
+    font-size: 14px;
+  }
 
 }
 
@@ -700,23 +893,24 @@
 ===================================================== */
 
 html.dark .landing-navbar {
-    background: rgba(15, 23, 42, .82);
+  background: rgba(15, 23, 42, 0.82);
 
-    border: 1px solid rgba(148, 163, 184, .18);
+  border: 1px solid rgba(148, 163, 184, 0.18);
 
-    box-shadow:
-        0 15px 45px rgba(0, 0, 0, .30),
-        0 3px 10px rgba(99, 102, 241, .12);
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.30),
+    0 3px 10px rgba(99, 102, 241, 0.12);
 }
 
 
 html.dark .landing-navbar.scrolled {
-    background: rgba(15, 23, 42, .94);
+  background: rgba(15, 23, 42, 0.94);
 
-    border-color: rgba(148, 163, 184, .20);
+  border-color:
+    rgba(148, 163, 184, 0.20);
 
-    box-shadow:
-        0 20px 55px rgba(0, 0, 0, .40);
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.40);
 }
 
 
@@ -725,7 +919,7 @@ html.dark .landing-navbar.scrolled {
 ===================================================== */
 
 html.dark .logo span {
-    color: #f8fafc;
+  color: #f8fafc;
 }
 
 
@@ -734,12 +928,12 @@ html.dark .logo span {
 ===================================================== */
 
 html.dark .nav-links a {
-    color: #e2e8f0;
+  color: #e2e8f0;
 }
 
 
 html.dark .nav-links a:hover {
-    color: #818cf8;
+  color: #818cf8;
 }
 
 
@@ -748,20 +942,20 @@ html.dark .nav-links a:hover {
 ===================================================== */
 
 html.dark .theme-switch {
-    background: #111827;
+  background: #111827;
 
-    color: #f8fafc;
+  color: #f8fafc;
 
-    border-color: #334155;
+  border-color: #334155;
 }
 
 
 html.dark .theme-switch:hover {
-    background: #1e293b;
+  background: #1e293b;
 
-    color: #a5b4fc;
+  color: #a5b4fc;
 
-    border-color: #6366f1;
+  border-color: #6366f1;
 }
 
 
@@ -770,14 +964,14 @@ html.dark .theme-switch:hover {
 ===================================================== */
 
 html.dark .login-btn {
-    color: #f8fafc;
+  color: #f8fafc;
 }
 
 
 html.dark .login-btn:hover {
-    background: rgba(99, 102, 241, .16);
+  background: rgba(99, 102, 241, 0.16);
 
-    color: #a5b4fc;
+  color: #a5b4fc;
 }
 
 
@@ -786,26 +980,81 @@ html.dark .login-btn:hover {
 ===================================================== */
 
 html.dark .nav-links {
-    background: rgba(15, 23, 42, .97);
+  background: rgba(15, 23, 42, 0.97);
 
-    border-color: rgba(148, 163, 184, .15);
+  border-color:
+    rgba(148, 163, 184, 0.15);
 
-    box-shadow:
-        0 20px 50px rgba(0, 0, 0, .35);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35);
 }
 
 
 html.dark .mobile-menu-btn {
-    color: #f8fafc;
+  color: #f8fafc;
 
-    background: rgba(255, 255, 255, .08);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 
 html.dark .mobile-menu-btn:hover {
-    background: rgba(99, 102, 241, .18);
+  background: rgba(99, 102, 241, 0.18);
 
-    color: #a5b4fc;
+  color: #a5b4fc;
+}
+
+
+/* =====================================================
+   DARK MOBILE THEME
+===================================================== */
+
+html.dark .mobile-theme-btn {
+  background: #111827;
+
+  color: #f8fafc;
+
+  border-color: #334155;
+}
+
+
+html.dark .mobile-theme-btn:hover {
+  background: #1e293b;
+
+  color: #a5b4fc;
+
+  border-color: #6366f1;
+}
+
+
+/* =====================================================
+   DARK MOBILE LOGIN
+===================================================== */
+
+html.dark .mobile-login-btn {
+  background: transparent;
+
+  color: #f8fafc;
+
+  border-color: #334155;
+}
+
+
+html.dark .mobile-login-btn:hover {
+  background: rgba(99, 102, 241, 0.16);
+
+  color: #a5b4fc;
+
+  border-color: #6366f1;
+}
+
+
+/* =====================================================
+   DARK MOBILE ACTIONS BORDER
+===================================================== */
+
+html.dark .mobile-actions {
+  border-top-color:
+    rgba(148, 163, 184, 0.18);
 }
 
 
@@ -814,56 +1063,51 @@ html.dark .mobile-menu-btn:hover {
 ===================================================== */
 
 html.dark .landing-navbar .primary-btn {
-    background:
-        linear-gradient(
-            135deg,
-            #6366f1,
-            #4f46e5
-        ) !important;
+  background:
+    linear-gradient(
+      135deg,
+      #6366f1,
+      #4f46e5
+    ) !important;
 
-    color: #ffffff !important;
+  color: #ffffff !important;
 
-    box-shadow:
-        0 15px 35px rgba(79, 70, 229, .40) !important;
+  box-shadow:
+    0 15px 35px rgba(79, 70, 229, 0.40) !important;
 }
 
 
 html.dark .landing-navbar .primary-btn:hover {
-    background:
-        linear-gradient(
-            135deg,
-            #818cf8,
-            #6366f1
-        ) !important;
+  background:
+    linear-gradient(
+      135deg,
+      #818cf8,
+      #6366f1
+    ) !important;
 
-    color: #ffffff !important;
+  color: #ffffff !important;
 
-    box-shadow:
-        0 25px 55px rgba(79, 70, 229, .50) !important;
+  box-shadow:
+    0 25px 55px rgba(79, 70, 229, 0.50) !important;
 }
 
 
 /* =====================================================
-   DARK MODE MOBILE
+   DARK MOBILE PRIMARY BUTTON
 ===================================================== */
 
-@media (max-width: 1100px) {
+html.dark .mobile-primary-btn {
+  background:
+    linear-gradient(
+      135deg,
+      #6366f1,
+      #4f46e5
+    );
 
-    html.dark .nav-links {
-        background: rgba(15, 23, 42, .97);
+  color: #ffffff;
 
-        border-color: rgba(148, 163, 184, .15);
-    }
-
-}
-
-
-@media (max-width: 768px) {
-
-    html.dark .landing-navbar {
-        background: rgba(15, 23, 42, .90);
-    }
-
+  box-shadow:
+    0 15px 35px rgba(79, 70, 229, 0.40);
 }
 
 
@@ -872,47 +1116,45 @@ html.dark .landing-navbar .primary-btn:hover {
 ===================================================== */
 
 .landing-navbar .login-btn {
-    padding: 13px 24px;
+  padding: 13px 24px;
 
-    border: none;
+  border: none;
 
-    border-radius: 14px;
+  border-radius: 14px;
 
-    background: transparent !important;
+  background: transparent !important;
 
-    color: var(--text-primary) !important;
+  color: var(--text-primary) !important;
 
-    font-weight: 700;
+  font-weight: 700;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    box-shadow: none !important;
+  box-shadow: none !important;
 
-    transition: .35s ease;
+  transition: 0.35s ease;
 
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 
 .landing-navbar .login-btn:hover {
-    background: rgba(79, 70, 229, .08) !important;
+  background: rgba(79, 70, 229, 0.08) !important;
 
-    color: var(--primary) !important;
+  color: var(--primary) !important;
 
-    transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 
 /* =====================================================
-   MOBILE LOGIN OVERRIDE
+   HIDE DESKTOP ACTIONS ON MOBILE
 ===================================================== */
 
 @media (max-width: 1100px) {
 
-    .landing-navbar .login-btn,
-    .landing-navbar .primary-btn,
-    .landing-navbar .theme-switch {
-        display: none;
-    }
+  .landing-navbar .nav-actions {
+    display: none;
+  }
 
 }

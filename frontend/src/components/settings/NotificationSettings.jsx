@@ -41,8 +41,8 @@ export default function NotificationSettings() {
 
       toast.success(
         updated[key]
-          ? "Notification enabled"
-          : "Notification disabled"
+          ? t("settings.notifications.enabled")
+          : t("settings.notifications.disabled")
       );
 
       return updated;
@@ -52,7 +52,9 @@ export default function NotificationSettings() {
   return (
     <div className="settings-card">
 
-      <h3>{t("settings.notifications.title")}</h3>
+      <h3>
+        {t("settings.notifications.title")}
+      </h3>
 
       <p>
         {t("settings.notifications.description")}

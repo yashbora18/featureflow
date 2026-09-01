@@ -361,6 +361,23 @@
       "signupFailed": "Signup failed. Please try again."
     }
   },
+
+  "forgotPassword": {
+  "title": "Forgot Password?",
+  "description": "Enter your email address and we'll send you a password reset link.",
+  "email": "Email Address",
+  "emailPlaceholder": "Enter your email address",
+  "sendLink": "Send Reset Link",
+  "sending": "Sending...",
+  "backToLogin": "Back to Login",
+  "messages": {
+    "emailRequired": "Please enter your email address.",
+    "invalidEmail": "Please enter a valid email address.",
+    "success": "Password reset link sent successfully.",
+    "failed": "Failed to send password reset link."
+  }
+},
+
   "navbar": {
     "dashboard": "Dashboard",
     "environment": "Environment",
@@ -897,43 +914,80 @@
     }
   },
   "settings": {
-    "title": "Settings",
-    "description": "Manage your FeatureFlow preferences and account settings.",
-    "profile": {
-      "title": "Profile Settings",
-      "description": "View your profile information.",
-      "name": "Name",
-      "email": "Email",
-      "role": "Role",
-      "admin": "Administrator"
-    },
-    "appearance": {
-      "title": "Appearance Settings",
-      "description": "Customize your application appearance and default environment.",
-      "theme": "Theme",
-      "light": "Light",
-      "dark": "Dark",
-      "defaultEnvironment": "Default Environment"
-    },
-    "notifications": {
-      "title": "Notification Settings",
-      "description": "Manage your notification preferences.",
-      "email": "Email Notifications",
-      "audit": "Audit Log Notifications",
-      "feature": "Feature Flag Notifications",
-      "deployment": "Deployment Notifications"
-    },
-    "security": {
-      "title": "Security Settings",
-      "description": "Manage your account security and password.",
-      "currentPassword": "Current Password",
-      "currentPlaceholder": "Enter your current password",
-      "newPassword": "New Password",
-      "newPlaceholder": "Enter your new password",
-      "confirmPassword": "Confirm Password",
-      "confirmPlaceholder": "Confirm your new password",
-      "updatePassword": "Update Password",
-      "logout": "Logout"
-    }
+  "title": "Settings",
+  "description": "Manage your FeatureFlow preferences and account settings.",
+
+  "profile": {
+    "title": "Profile Settings",
+    "description": "View your profile information.",
+    "name": "Name",
+    "email": "Email",
+    "role": "Role",
+    "admin": "Administrator",
+    "saveChanges": "Save Changes",
+    "nameEmpty": "Name cannot be empty",
+    "updated": "Profile updated successfully",
+
+    "pageTitle": "My Profile",
+  "pageDescription": "Manage your FeatureFlow account information.",
+  "backToDashboard": "Back to Dashboard",
+  "changePicture": "Change Picture",
+  "remove": "Remove",
+  "personalInformation": "Personal Information",
+  "namePlaceholder": "Enter your name",
+  "profilePictureAlt": "Profile",
+
+  "messages": {
+    "invalidImage": "Please select an image file",
+    "imageTooLarge": "Profile picture must be less than 2MB",
+    "pictureRemoved": "Profile picture removed",
+    "nameEmpty": "Name cannot be empty",
+    "updated": "Profile updated successfully"
   }
+  },
+
+  "appearance": {
+  "title": "Appearance Settings",
+  "description": "Customize your application appearance and default environment.",
+  "theme": "Theme",
+  "light": "Light",
+  "dark": "Dark",
+  "defaultEnvironment": "Default Environment",
+  "darkModeEnabled": "Dark mode enabled",
+  "lightModeEnabled": "Light mode enabled",
+  "defaultEnvironmentUpdated": "Default environment updated"
+},
+
+  "notifications": {
+    "title": "Notification Settings",
+    "description": "Manage your notification preferences.",
+    "email": "Email Notifications",
+    "audit": "Audit Log Notifications",
+    "feature": "Feature Flag Notifications",
+    "deployment": "Deployment Notifications",
+    "enabled": "Notification enabled",
+    "disabled": "Notification disabled"
+  },
+
+  "security": {
+  "title": "Security Settings",
+  "description": "Manage your account security and password.",
+  "currentPassword": "Current Password",
+  "currentPlaceholder": "Enter your current password",
+  "newPassword": "New Password",
+  "newPlaceholder": "Enter your new password",
+  "confirmPassword": "Confirm Password",
+  "confirmPlaceholder": "Confirm your new password",
+  "updatePassword": "Update Password",
+  "logout": "Logout",
+  "currentPasswordRequired": "Enter your current password",
+  "newPasswordRequired": "Enter a new password",
+  "passwordMinLength": "New password must be at least 8 characters",
+  "passwordMismatch": "Passwords do not match",
+  "passwordUpdated": "Password updated successfully",
+  "passwordUpdateFailed": "Failed to update password",
+  "logoutSuccess": "Logged out successfully",
+  "updating": "Updating..."
+}
+}
 }

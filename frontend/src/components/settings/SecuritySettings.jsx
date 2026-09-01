@@ -23,24 +23,30 @@ export default function SecuritySettings() {
 
   const handleUpdatePassword = async () => {
     if (!passwords.current) {
-      toast.error("Enter your current password");
+      toast.error(
+        t("settings.security.currentPasswordRequired")
+      );
       return;
     }
 
     if (!passwords.new) {
-      toast.error("Enter a new password");
+      toast.error(
+        t("settings.security.newPasswordRequired")
+      );
       return;
     }
 
     if (passwords.new.length < 8) {
       toast.error(
-        "New password must be at least 8 characters"
+        t("settings.security.passwordMinLength")
       );
       return;
     }
 
     if (passwords.new !== passwords.confirm) {
-      toast.error("Passwords do not match");
+      toast.error(
+        t("settings.security.passwordMismatch")
+      );
       return;
     }
 
@@ -53,7 +59,7 @@ export default function SecuritySettings() {
       });
 
       toast.success(
-        "Password updated successfully"
+        t("settings.security.passwordUpdated")
       );
 
       setPasswords({
@@ -64,7 +70,7 @@ export default function SecuritySettings() {
     } catch (error) {
       toast.error(
         error.response?.data?.detail ||
-          "Failed to update password"
+          t("settings.security.passwordUpdateFailed")
       );
     } finally {
       setLoading(false);
@@ -75,7 +81,9 @@ export default function SecuritySettings() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
 
-    toast.success("Logged out successfully");
+    toast.success(
+      t("settings.security.logoutSuccess")
+    );
 
     setTimeout(() => {
       window.location.href = "/auth";
@@ -154,10 +162,8 @@ export default function SecuritySettings() {
           disabled={loading}
         >
           {loading
-            ? "Updating..."
-            : t(
-                "settings.security.updatePassword"
-              )}
+            ? t("settings.security.updating")
+            : t("settings.security.updatePassword")}
         </button>
 
         <button

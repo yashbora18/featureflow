@@ -25,7 +25,7 @@ function CreateFlagForm({ onFlagCreated }) {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch("http://127.0.0.1:8000/flags/", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:8000"}/flags/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

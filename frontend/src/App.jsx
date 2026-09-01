@@ -36,7 +36,7 @@ import Team from "./pages/Team";
 import AuditLogs from "./pages/AuditLogs";
 import Settings from "./pages/Settings";
 import Profile from "./pages/Profile";
-
+import ForgotPassword from "./pages/ForgotPassword";
 
 // =====================================================
 // APP
@@ -102,8 +102,9 @@ function App() {
   // =====================================================
 
   const isPublicPage =
-    location.pathname === "/" ||
-    location.pathname === "/auth";
+  location.pathname === "/" ||
+  location.pathname === "/auth" ||
+  location.pathname === "/forgot-password";
 
 
   if (isPublicPage) {
@@ -121,6 +122,11 @@ function App() {
           path="/auth"
           element={<Auth />}
         />
+
+        <Route
+        path="/forgot-password"
+        element={<ForgotPassword />}
+      />
 
       </Routes>
 

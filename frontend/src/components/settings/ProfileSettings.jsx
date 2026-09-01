@@ -16,7 +16,9 @@ export default function ProfileSettings() {
   });
 
   const [name, setName] = useState(
-    user?.username || user?.name || "Admin"
+    user?.username ||
+      user?.name ||
+      t("settings.profile.admin")
   );
 
   const email =
@@ -28,7 +30,9 @@ export default function ProfileSettings() {
 
   const handleSave = () => {
     if (!name.trim()) {
-      toast.error("Name cannot be empty");
+      toast.error(
+        t("settings.profile.nameEmpty")
+      );
       return;
     }
 
@@ -45,7 +49,7 @@ export default function ProfileSettings() {
     setUser(updatedUser);
 
     toast.success(
-      "Profile updated successfully"
+      t("settings.profile.updated")
     );
   };
 
@@ -63,7 +67,6 @@ export default function ProfileSettings() {
       <div className="settings-grid">
 
         <div className="form-group">
-
           <label>
             {t("settings.profile.name")}
           </label>
@@ -75,11 +78,9 @@ export default function ProfileSettings() {
               setName(e.target.value)
             }
           />
-
         </div>
 
         <div className="form-group">
-
           <label>
             {t("settings.profile.email")}
           </label>
@@ -89,11 +90,9 @@ export default function ProfileSettings() {
             value={email}
             readOnly
           />
-
         </div>
 
         <div className="form-group">
-
           <label>
             {t("settings.profile.role")}
           </label>
@@ -103,20 +102,19 @@ export default function ProfileSettings() {
             value={role}
             readOnly
           />
-
         </div>
 
       </div>
 
       <div className="settings-actions">
-  <button
-    type="button"
-    className="primary-btn"
-    onClick={handleSave}
-  >
-    Save Changes
-  </button>
-</div>
+        <button
+          type="button"
+          className="primary-btn"
+          onClick={handleSave}
+        >
+          {t("settings.profile.saveChanges")}
+        </button>
+      </div>
 
     </div>
   );

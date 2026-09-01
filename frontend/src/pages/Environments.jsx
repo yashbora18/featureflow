@@ -26,6 +26,8 @@ import {
   FiRefreshCw,
 } from "react-icons/fi";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+
 
 function Environments() {
   const { t } = useTranslation();
@@ -160,8 +162,8 @@ const [editedDescription, setEditedDescription] = useState("");
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8000/environments/"
-      );
+  `${API_URL}/environments/`
+);
 
       const data = await response.json();
 
@@ -186,8 +188,8 @@ const [editedDescription, setEditedDescription] = useState("");
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8000/flags/"
-      );
+  `${API_URL}/flags/`
+);
 
       const data = await response.json();
 
@@ -213,8 +215,8 @@ const [editedDescription, setEditedDescription] = useState("");
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8000/flag-overrides/"
-      );
+  `${API_URL}/flag-overrides/`
+);
 
       const data = await response.json();
 
@@ -275,7 +277,7 @@ const createEnvironment = async () => {
     setIsCreating(true);
 
     const response = await fetch(
-      "http://127.0.0.1:8000/environments/",
+  `${API_URL}/environments/`,
       {
         method: "POST",
         headers: {
@@ -330,7 +332,7 @@ const updateEnvironment = async () => {
     setIsSaving(true);
 
     const response = await fetch(
-      `http://127.0.0.1:8000/environments/${editingEnvironment.id}`,
+      `${API_URL}/environments/${editingEnvironment.id}`,
       {
         method: "PUT",
         headers: {
@@ -379,7 +381,7 @@ const deleteEnvironment = async () => {
     setIsDeleting(true);
 
     const response = await fetch(
-      `http://127.0.0.1:8000/environments/${environmentToDelete.id}`,
+      `${API_URL}/environments/${environmentToDelete.id}`,
       {
         method: "DELETE",
       }
@@ -444,8 +446,8 @@ const saveOverride = async () => {
                      selectedOverride.override !== null;
 
     const url = isUpdate
-      ? `http://127.0.0.1:8000/flag-overrides/${selectedOverride.override.id}`
-      : "http://127.0.0.1:8000/flag-overrides/";
+      ? `${API_URL}/flag-overrides/${selectedOverride.override.id}`
+      : `${API_URL}/flag-overrides/`;
 
     const method = isUpdate ? "PUT" : "POST";
 

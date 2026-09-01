@@ -363,13 +363,12 @@ export default function LoginForm({ onSignup }) {
           </label>
 
           <button
-            type="button"
-            className="forgot-btn"
-          >
-            {t(
-              "login.forgotPassword"
-            )}
-          </button>
+  type="button"
+  className="forgot-btn"
+  onClick={() => navigate("/forgot-password")}
+>
+  {t("login.forgotPassword")}
+</button>
 
         </div>
 

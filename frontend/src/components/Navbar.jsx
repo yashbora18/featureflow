@@ -92,13 +92,15 @@ function Navbar({
             env.name.trim().toLowerCase() !== "testing"
         )
         .map((env) => {
-          let icon = "🟢";
+  const environmentName = env.name.trim().toLowerCase();
 
-          if (env.name === "Staging") {
-            icon = "🟡";
-          } else if (env.name === "Production") {
-            icon = "🔴";
-          }
+  let icon = "🔵";
+
+  if (environmentName === "staging") {
+    icon = "🟡";
+  } else if (environmentName === "production") {
+    icon = "🔴";
+  }
 
           const translatedName =
             env.name === "Development"

@@ -35,8 +35,8 @@ export default function AppearanceSettings() {
 
     toast.success(
       e.target.value === "Dark"
-        ? "Dark mode enabled"
-        : "Light mode enabled"
+        ? t("settings.appearance.darkModeEnabled")
+        : t("settings.appearance.lightModeEnabled")
     );
   };
 
@@ -44,18 +44,23 @@ export default function AppearanceSettings() {
     const value = e.target.value;
 
     setEnvironment(value);
+
     localStorage.setItem(
       "defaultEnvironment",
       value
     );
 
-    toast.success("Default environment updated");
+    toast.success(
+      t("settings.appearance.defaultEnvironmentUpdated")
+    );
   };
 
   return (
     <div className="settings-card">
 
-      <h3>{t("settings.appearance.title")}</h3>
+      <h3>
+        {t("settings.appearance.title")}
+      </h3>
 
       <p>
         {t("settings.appearance.description")}
