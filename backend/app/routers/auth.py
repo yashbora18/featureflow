@@ -1,25 +1,27 @@
 import os
 import secrets
-
-from google.oauth2 import id_token
-from app.core.dependencies import get_current_user
-from google.auth.transport import requests as google_requests
-from fastapi import APIRouter, Depends, HTTPException
 from datetime import datetime, timedelta
+
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
+from google.oauth2 import id_token
+from google.auth.transport import requests as google_requests
+
 from app.core.database import SessionLocal
+from app.core.dependencies import get_current_user
+from app.core.security import (
+    hash_password,
+    verify_password,
+    create_access_token,
+)
 from app.models.user import User
 from app.schemas.user import (
     UserRegister,
     UserLogin,
     UserResponse,
 )
-from app.core.security import (
-    hash_password,
-    verify_password,
-    create_access_token,
-)
+
 
 router = APIRouter(
     prefix="/auth",
@@ -29,11 +31,16 @@ router = APIRouter(
 
 def get_db():
     db = SessionLocal()
+
     try:
         yield db
     finally:
         db.close()
 
+
+# =====================================================
+# REGISTER
+# =====================================================
 
 @router.post(
     "/register",
@@ -43,7 +50,6 @@ def register(
     user: UserRegister,
     db: Session = Depends(get_db),
 ):
-
     existing_email = (
         db.query(User)
         .filter(User.email == user.email)
@@ -81,12 +87,15 @@ def register(
     return new_user
 
 
+# =====================================================
+# LOGIN
+# =====================================================
+
 @router.post("/login")
 def login(
     user: UserLogin,
     db: Session = Depends(get_db),
 ):
-
     db_user = (
         db.query(User)
         .filter(User.email == user.email)
@@ -124,6 +133,11 @@ def login(
         },
     }
 
+
+# =====================================================
+# GOOGLE LOGIN
+# =====================================================
+
 @router.post("/google")
 def google_login(
     data: dict,
@@ -153,13 +167,17 @@ def google_login(
         )
 
         email = google_user.get("email")
-        name = google_user.get("name") or email.split("@")[0]
 
         if not email:
             raise HTTPException(
                 status_code=400,
                 detail="Google account email not available",
             )
+
+        name = (
+            google_user.get("name")
+            or email.split("@")[0]
+        )
 
     except ValueError:
         raise HTTPException(
@@ -183,7 +201,10 @@ def google_login(
         )
 
         if existing_username:
-            username = username + secrets.token_hex(3)
+            username = (
+                username
+                + secrets.token_hex(3)
+            )
 
         db_user = User(
             username=username,
@@ -212,6 +233,11 @@ def google_login(
             "email": db_user.email,
         },
     }
+
+
+# =====================================================
+# CHANGE PASSWORD
+# =====================================================
 
 @router.put("/change-password")
 def change_password(
@@ -253,6 +279,7 @@ def change_password(
         "message": "Password updated successfully"
     }
 
+
 # =====================================================
 # FORGOT PASSWORD
 # =====================================================
@@ -276,39 +303,45 @@ def forgot_password(
         .first()
     )
 
-    # Don't reveal whether the email exists
+    # Do not reveal whether the email exists
     if not db_user:
         return {
-            "message": "If an account exists with this email, a reset link has been generated."
+            "message": (
+                "If an account exists with this email, "
+                "a reset link has been generated."
+            )
         }
 
     # Generate secure reset token
     reset_token = secrets.token_urlsafe(32)
 
     db_user.reset_token = reset_token
+
     db_user.reset_token_expires = (
-        datetime.utcnow() + timedelta(minutes=30)
+        datetime.utcnow()
+        + timedelta(minutes=30)
     ).isoformat()
 
     db.commit()
 
-    # DEVELOPMENT ONLY
-    # The reset link will appear in the backend terminal.
+    # Development reset URL
     reset_link = (
-        f"http://localhost:5173/reset-password"
+        "http://localhost:5173/"
+        "reset-password"
         f"?token={reset_token}"
     )
 
-    print("\n========================================")
+    print("\n" + "=" * 50)
     print("PASSWORD RESET REQUEST")
-    print("========================================")
+    print("=" * 50)
     print(f"Email: {db_user.email}")
     print(f"Reset Link: {reset_link}")
     print("Expires: 30 minutes")
-    print("========================================\n")
+    print("=" * 50 + "\n")
 
     return {
-        "message": "Password reset link generated successfully."
+        "message": "Password reset link generated successfully.",
+        "reset_link": reset_link,
     }
 
 
@@ -364,6 +397,7 @@ def reset_password(
         expires_at = datetime.fromisoformat(
             db_user.reset_token_expires
         )
+
     except ValueError:
         raise HTTPException(
             status_code=400,
@@ -373,6 +407,7 @@ def reset_password(
     if datetime.utcnow() > expires_at:
         db_user.reset_token = None
         db_user.reset_token_expires = None
+
         db.commit()
 
         raise HTTPException(
