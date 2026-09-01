@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { FaRocket, FaEnvelope, FaArrowLeft } from "react-icons/fa";
@@ -13,6 +13,32 @@ export default function ForgotPassword() {
 
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
+
+  // =========================================
+  // THEME
+  // =========================================
+
+  const [darkMode, setDarkMode] = useState(
+    () => localStorage.getItem("theme") === "dark"
+  );
+
+  useEffect(() => {
+    const updateTheme = () => {
+      setDarkMode(localStorage.getItem("theme") === "dark");
+    };
+
+    updateTheme();
+
+    window.addEventListener("storage", updateTheme);
+
+    return () => {
+      window.removeEventListener("storage", updateTheme);
+    };
+  }, []);
+
+  // =========================================
+  // SUBMIT
+  // =========================================
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -47,20 +73,33 @@ export default function ForgotPassword() {
     }
   };
 
+  // =========================================
+  // UI
+  // =========================================
+
   return (
-    <div className="forgot-password-page">
+    <div
+      className={`forgot-password-page ${
+        darkMode ? "dark-theme" : "light-theme"
+      }`}
+    >
       <div className="forgot-password-card">
 
         {/* LOGO */}
         <div className="forgot-password-header">
+
           <div className="forgot-password-logo">
             <FaRocket />
           </div>
 
           <div className="forgot-password-brand">
             <h2>FeatureFlow</h2>
-            <span>Feature Flag Management Platform</span>
+
+            <span>
+              Feature Flag Management Platform
+            </span>
           </div>
+
         </div>
 
         {/* TITLE */}
@@ -76,21 +115,26 @@ export default function ForgotPassword() {
           className="forgot-password-form"
           onSubmit={handleSubmit}
         >
+
           <label htmlFor="forgot-email">
             Email Address
           </label>
 
           <div className="forgot-password-input">
+
             <FaEnvelope />
 
             <input
               id="forgot-email"
+              name="email"
               type="email"
               placeholder="Enter your email address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               autoComplete="email"
+              disabled={loading}
             />
+
           </div>
 
           <button
@@ -98,8 +142,11 @@ export default function ForgotPassword() {
             className="forgot-password-submit"
             disabled={loading}
           >
-            {loading ? "Sending..." : "Send Reset Link"}
+            {loading
+              ? "Sending..."
+              : "Send Reset Link"}
           </button>
+
         </form>
 
         {/* BACK */}

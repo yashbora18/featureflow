@@ -10,6 +10,8 @@ export default function ResetPassword() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
 
+  // Get token from:
+  // /reset-password?token=xxxxx
   const token = searchParams.get("token");
 
   const [newPassword, setNewPassword] = useState("");
@@ -68,7 +70,7 @@ export default function ResetPassword() {
     <div className="reset-password-page">
       <div className="reset-password-card">
 
-        {/* LOGO */}
+        {/* HEADER */}
         <div className="reset-password-header">
           <div className="reset-password-logo">
             <FaRocket />
@@ -76,6 +78,7 @@ export default function ResetPassword() {
 
           <div className="reset-password-brand">
             <h2>FeatureFlow</h2>
+
             <span>
               Feature Flag Management Platform
             </span>
@@ -95,6 +98,8 @@ export default function ResetPassword() {
           className="reset-password-form"
           onSubmit={handleSubmit}
         >
+
+          {/* NEW PASSWORD */}
           <label htmlFor="new-password">
             New Password
           </label>
@@ -115,6 +120,7 @@ export default function ResetPassword() {
             />
           </div>
 
+          {/* CONFIRM PASSWORD */}
           <label htmlFor="confirm-password">
             Confirm Password
           </label>
@@ -135,12 +141,15 @@ export default function ResetPassword() {
             />
           </div>
 
+          {/* SUBMIT */}
           <button
             type="submit"
             className="reset-password-submit"
             disabled={loading}
           >
-            {loading ? "Resetting..." : "Reset Password"}
+            {loading
+              ? "Resetting..."
+              : "Reset Password"}
           </button>
         </form>
 
