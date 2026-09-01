@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import { FaRocket, FaLock, FaArrowLeft } from "react-icons/fa";
 import { toast } from "react-toastify";
 
-function ResetPassword() {
+import "./ResetPassword.css";
+import api from "../services/api";
+
+export default function ResetPassword() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
 
@@ -12,14 +16,11 @@ function ResetPassword() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const API_URL =
-    import.meta.env.VITE_API_URL || "http://localhost:8000";
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!token) {
-      toast.error("Invalid or missing reset link.");
+      toast.error("Invalid or missing reset token.");
       return;
     }
 
@@ -41,27 +42,10 @@ function ResetPassword() {
     try {
       setLoading(true);
 
-      const response = await fetch(
-        `${API_URL}/auth/reset-password`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            token,
-            new_password: newPassword,
-          }),
-        }
-      );
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(
-          data.detail || "Password reset failed."
-        );
-      }
+      await api.post("/auth/reset-password", {
+        token: token,
+        new_password: newPassword,
+      });
 
       toast.success("Password reset successfully!");
 
@@ -69,7 +53,12 @@ function ResetPassword() {
         navigate("/auth");
       }, 1500);
     } catch (error) {
-      toast.error(error.message);
+      console.error("Reset password error:", error);
+
+      toast.error(
+        error.response?.data?.detail ||
+          "Unable to reset password."
+      );
     } finally {
       setLoading(false);
     }
@@ -78,62 +67,94 @@ function ResetPassword() {
   return (
     <div className="reset-password-page">
       <div className="reset-password-card">
+
+        {/* LOGO */}
+        <div className="reset-password-header">
+          <div className="reset-password-logo">
+            <FaRocket />
+          </div>
+
+          <div className="reset-password-brand">
+            <h2>FeatureFlow</h2>
+            <span>
+              Feature Flag Management Platform
+            </span>
+          </div>
+        </div>
+
+        {/* TITLE */}
         <h1>Reset Password</h1>
 
-        <p>
+        <p className="reset-password-description">
           Enter a new password for your FeatureFlow
           account.
         </p>
 
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>New Password</label>
+        {/* FORM */}
+        <form
+          className="reset-password-form"
+          onSubmit={handleSubmit}
+        >
+          <label htmlFor="new-password">
+            New Password
+          </label>
+
+          <div className="reset-password-input">
+            <FaLock />
 
             <input
+              id="new-password"
               type="password"
               placeholder="Enter new password"
               value={newPassword}
               onChange={(e) =>
                 setNewPassword(e.target.value)
               }
+              autoComplete="new-password"
               disabled={loading}
             />
           </div>
 
-          <div>
-            <label>Confirm Password</label>
+          <label htmlFor="confirm-password">
+            Confirm Password
+          </label>
+
+          <div className="reset-password-input">
+            <FaLock />
 
             <input
+              id="confirm-password"
               type="password"
               placeholder="Confirm new password"
               value={confirmPassword}
               onChange={(e) =>
                 setConfirmPassword(e.target.value)
               }
+              autoComplete="new-password"
               disabled={loading}
             />
           </div>
 
           <button
             type="submit"
+            className="reset-password-submit"
             disabled={loading}
           >
-            {loading
-              ? "Resetting Password..."
-              : "Reset Password"}
+            {loading ? "Resetting..." : "Reset Password"}
           </button>
         </form>
 
+        {/* BACK */}
         <button
           type="button"
+          className="reset-password-back"
           onClick={() => navigate("/auth")}
-          className="back-login"
         >
+          <FaArrowLeft />
           Back to Login
         </button>
+
       </div>
     </div>
   );
 }
-
-export default ResetPassword;
